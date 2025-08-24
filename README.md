@@ -22,8 +22,9 @@ A modern frontend dashboard for displaying different metrics using bar charts.
 
 ## ⚡ Performance
 
-The dashboard uses **rolldown-vite** for significantly faster build times:
-- **Build Performance**: ~13.8x faster builds (309ms vs 4.28s)
+The dashboard uses **rolldown-vite** for significantly faster build times and **oxlint** for ultra-fast linting:
+- **Build Performance**: ~13.8x faster builds (309ms vs 4.28s) with Rolldown
+- **Linting Performance**: Extremely fast linting (~2ms) with oxlint
 - **Development**: Fast startup (306ms) with Rolldown's Rust-based bundler
 - **Hot Module Replacement**: Instant updates during development
 
