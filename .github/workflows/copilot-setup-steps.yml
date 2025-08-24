@@ -1,0 +1,48 @@
+name: Copilot Setup Steps
+
+# This workflow defines the setup steps that GitHub Copilot agents will use
+# to prepare the development environment for the vibe-dashboard project.
+# It preinstalls tools and dependencies needed for Node.js and TypeScript development.
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [opened, synchronize]
+    paths:
+      - .github/workflows/copilot-setup-steps.yml
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/copilot-setup-steps.yml
+
+permissions: {}
+
+jobs:
+  copilot-setup-steps:
+    name: Setup Development Environment for Copilot
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout full repo for git history.
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: '10'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run lint
+        run: pnpm lint
+
+      - name: Build project
+        run: pnpm build
