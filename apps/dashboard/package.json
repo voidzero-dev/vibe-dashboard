@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "oxlint --config ../../.oxlintrc.json .",
     "preview": "vite preview",
     "clean": "rm -rf dist"
   },

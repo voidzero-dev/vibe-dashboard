@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "pnpm --filter dashboard dev",
     "build": "pnpm -r build",
-    "lint": "pnpm -r lint",
+    "lint": "oxlint .",
     "test": "pnpm -r test",
     "clean": "pnpm -r clean",
     "build-deploy": "pnpm lint && pnpm build"
