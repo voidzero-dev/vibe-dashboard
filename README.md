@@ -71,6 +71,18 @@ pnpm dev
 - `pnpm lint` - Run linting across all packages
 - `pnpm test` - Run tests across all packages
 - `pnpm clean` - Clean build artifacts
+- `pnpm build-deploy` - Lint and build for deployment
+
+### Deployment
+
+The dashboard is automatically deployed to GitHub Pages when changes are pushed to the `main` branch.
+
+**Live Demo**: [https://boshen.github.io/vibe-dashboard/](https://boshen.github.io/vibe-dashboard/)
+
+The deployment process:
+1. Runs linting and builds the project
+2. Deploys the built assets to GitHub Pages
+3. The app is served with the correct base path `/vibe-dashboard/`
 
 ## 📊 Dashboard Features
 
