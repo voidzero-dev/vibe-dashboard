@@ -53,5 +53,10 @@ jobs:
 
       - name: Check build artifacts
         run: |
-          ls -la apps/dashboard/dist/
-          echo "Build completed successfully"
+          if [ -d "apps/dashboard/dist" ]; then
+            echo "✅ Build artifacts created successfully"
+            ls -la apps/dashboard/dist/
+          else
+            echo "❌ Build artifacts not found"
+            exit 1
+          fi
