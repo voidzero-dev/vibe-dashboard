@@ -106,7 +106,6 @@ async function getLatestNpmVersionDate() {
         try {
           const packageInfo = JSON.parse(data);
           const latestVersion = packageInfo['dist-tags'].latest;
-          const latestVersionInfo = packageInfo.versions[latestVersion];
           const publishDate = new Date(packageInfo.time[latestVersion]);
           
           resolve(publishDate);
