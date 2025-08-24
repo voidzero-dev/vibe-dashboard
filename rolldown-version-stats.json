@@ -1,0 +1,147 @@
+[
+  {
+    "version": "7.1.4",
+    "timestamp": "2025-08-24T15:47:35.547Z",
+    "files": [
+      {
+        "path": "assets/index-C_guGHi2.js",
+        "size": 563794,
+        "type": "js"
+      },
+      {
+        "path": "assets/index-DD-rq4eS.css",
+        "size": 2812,
+        "type": "css"
+      },
+      {
+        "path": "index.html",
+        "size": 506,
+        "type": "html"
+      },
+      {
+        "path": "vite.svg",
+        "size": 1497,
+        "type": "other"
+      }
+    ],
+    "totalSize": 568609,
+    "totalGzipSize": 0,
+    "buildTime": 3420
+  },
+  {
+    "version": "7.1.3",
+    "timestamp": "2025-08-24T15:47:40.578Z",
+    "files": [
+      {
+        "path": "assets/index-C_guGHi2.js",
+        "size": 563794,
+        "type": "js"
+      },
+      {
+        "path": "assets/index-DD-rq4eS.css",
+        "size": 2812,
+        "type": "css"
+      },
+      {
+        "path": "index.html",
+        "size": 506,
+        "type": "html"
+      },
+      {
+        "path": "vite.svg",
+        "size": 1497,
+        "type": "other"
+      }
+    ],
+    "totalSize": 568609,
+    "totalGzipSize": 0,
+    "buildTime": 3319
+  },
+  {
+    "version": "7.1.2",
+    "timestamp": "2025-08-24T15:47:46.136Z",
+    "files": [
+      {
+        "path": "assets/index-DD-rq4eS.css",
+        "size": 2812,
+        "type": "css"
+      },
+      {
+        "path": "assets/index-xMD4_U6M.js",
+        "size": 564629,
+        "type": "js"
+      },
+      {
+        "path": "index.html",
+        "size": 506,
+        "type": "html"
+      },
+      {
+        "path": "vite.svg",
+        "size": 1497,
+        "type": "other"
+      }
+    ],
+    "totalSize": 569444,
+    "totalGzipSize": 0,
+    "buildTime": 3556
+  },
+  {
+    "version": "7.1.1",
+    "timestamp": "2025-08-24T15:47:51.354Z",
+    "files": [
+      {
+        "path": "assets/index-DD-rq4eS.css",
+        "size": 2812,
+        "type": "css"
+      },
+      {
+        "path": "assets/index-xMD4_U6M.js",
+        "size": 564629,
+        "type": "js"
+      },
+      {
+        "path": "index.html",
+        "size": 506,
+        "type": "html"
+      },
+      {
+        "path": "vite.svg",
+        "size": 1497,
+        "type": "other"
+      }
+    ],
+    "totalSize": 569444,
+    "totalGzipSize": 0,
+    "buildTime": 3382
+  },
+  {
+    "version": "7.1.0",
+    "timestamp": "2025-08-24T15:47:57.019Z",
+    "files": [
+      {
+        "path": "assets/index-DD-rq4eS.css",
+        "size": 2812,
+        "type": "css"
+      },
+      {
+        "path": "assets/index-xJMNECRy.js",
+        "size": 564642,
+        "type": "js"
+      },
+      {
+        "path": "index.html",
+        "size": 506,
+        "type": "html"
+      },
+      {
+        "path": "vite.svg",
+        "size": 1497,
+        "type": "other"
+      }
+    ],
+    "totalSize": 569457,
+    "totalGzipSize": 0,
+    "buildTime": 3348
+  }
+]
