@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
     "preview": "vite preview",
     "clean": "rm -rf dist"
   },
@@ -17,15 +16,9 @@
     "lucide-react": "^0.414.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.33.0",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
-    "eslint": "^9.33.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.20",
-    "globals": "^16.3.0",
     "typescript": "~5.8.3",
-    "typescript-eslint": "^8.39.1",
     "rolldown-vite": "^7.1.3"
   }
 }
