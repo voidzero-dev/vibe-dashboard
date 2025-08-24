@@ -107,6 +107,31 @@ The deployment process:
 
 ## 🔧 Development
 
+### Rolldown Version Testing
+
+The repository includes a tool for testing different rolldown-vite versions:
+
+```bash
+# List available versions
+pnpm rolldown:list
+
+# Switch to a specific version (by index)
+pnpm rolldown:use 2
+
+# Switch to a specific version (by version string)
+pnpm rolldown:use 7.1.2
+
+# Use experimental versions from pkg.pr.new
+pnpm rolldown:use pkg.pr.new/rolldown-rs/vite@1234
+```
+
+The tool automatically:
+- Updates the package.json with the new version
+- Installs dependencies
+- Rebuilds the application
+
+See [`tool/README.md`](tool/README.md) for detailed usage instructions.
+
 ### Adding New Metrics
 
 1. Add your data to the respective data arrays in `apps/dashboard/src/App.tsx`
