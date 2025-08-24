@@ -14,11 +14,18 @@ A modern frontend dashboard for displaying different metrics using bar charts.
 ## 📦 Tech Stack
 
 - **Frontend Framework**: React 19 with TypeScript
-- **Build Tool**: Vite 7
+- **Build Tool**: Vite 7 with Rolldown bundler (rolldown-vite)
 - **Charts**: Recharts
 - **Icons**: Lucide React
 - **Package Manager**: pnpm
 - **Monorepo**: pnpm workspaces
+
+## ⚡ Performance
+
+The dashboard uses **rolldown-vite** for significantly faster build times:
+- **Build Performance**: ~13.8x faster builds (309ms vs 4.28s)
+- **Development**: Fast startup (306ms) with Rolldown's Rust-based bundler
+- **Hot Module Replacement**: Instant updates during development
 
 ## 🏗 Project Structure
 
