@@ -9,11 +9,13 @@
  */
 
 const { execSync } = require('child_process');
-const { readFileSync, writeFileSync } = require('fs');
+const { readFileSync, writeFileSync, readdirSync, statSync, existsSync } = require('fs');
 const { join } = require('path');
 const https = require('https');
 
 const DASHBOARD_PACKAGE_PATH = join(process.cwd(), 'apps/dashboard/package.json');
+const DIST_PATH = join(process.cwd(), 'apps/dashboard/dist');
+const STATS_OUTPUT_PATH = join(process.cwd(), 'rolldown-version-stats.json');
 
 /**
  * Fetch the last 5 stable versions from npm registry
@@ -174,16 +176,74 @@ function installDependencies() {
 function buildApp() {
   try {
     console.log('🔨 Building application...');
+    const startTime = Date.now();
     execSync('pnpm build', { 
       stdio: 'inherit',
       cwd: process.cwd()
     });
-    console.log('✅ Build completed successfully');
-    return true;
+    const buildTime = Date.now() - startTime;
+    console.log(`✅ Build completed successfully in ${buildTime}ms`);
+    return { success: true, buildTime };
   } catch (error) {
     console.error('❌ Build failed:', error.message);
-    return false;
+    return { success: false, buildTime: null };
   }
+}
+
+/**
+ * Collect file statistics from the dist directory
+ */
+function collectDistStats(version, buildTime = null) {
+  const stats = {
+    version,
+    timestamp: new Date().toISOString(),
+    files: [],
+    totalSize: 0,
+    totalGzipSize: 0,
+    buildTime
+  };
+
+  if (!existsSync(DIST_PATH)) {
+    console.warn(`⚠️  Dist directory not found for version ${version}`);
+    return stats;
+  }
+
+  try {
+    // Get all files recursively
+    function getFilesRecursively(dir, baseDir = '') {
+      const files = [];
+      const items = readdirSync(dir);
+      
+      for (const item of items) {
+        const fullPath = join(dir, item);
+        const relativePath = join(baseDir, item);
+        const stat = statSync(fullPath);
+        
+        if (stat.isDirectory()) {
+          files.push(...getFilesRecursively(fullPath, relativePath));
+        } else {
+          files.push({
+            path: relativePath,
+            size: stat.size,
+            type: item.endsWith('.js') ? 'js' : 
+                  item.endsWith('.css') ? 'css' : 
+                  item.endsWith('.html') ? 'html' : 'other'
+          });
+        }
+      }
+      return files;
+    }
+
+    stats.files = getFilesRecursively(DIST_PATH);
+    stats.totalSize = stats.files.reduce((total, file) => total + file.size, 0);
+    
+    console.log(`📊 Collected stats for ${stats.files.length} files (${(stats.totalSize / 1024).toFixed(2)} KB total)`);
+    
+  } catch (error) {
+    console.warn(`⚠️  Error collecting stats for version ${version}:`, error.message);
+  }
+
+  return stats;
 }
 
 async function listVersions() {
@@ -234,11 +294,116 @@ async function listVersions() {
   }
 }
 
+/**
+ * Collect statistics for all available rolldown versions
+ */
+async function collectAllVersionStats() {
+  console.log('🚀 Starting comprehensive rolldown version analysis...\n');
+  
+  const allStats = [];
+  let successCount = 0;
+  let failureCount = 0;
+  
+  try {
+    // Fetch all available versions
+    console.log('🔍 Fetching all available versions...');
+    const stableVersions = await fetchStableVersions();
+    const latestNpmDate = await getLatestNpmVersionDate();
+    const futureVersions = await fetchFutureVersions(latestNpmDate);
+    const allVersions = [...stableVersions, ...futureVersions];
+    
+    console.log(`📦 Found ${allVersions.length} versions to analyze:`);
+    console.log(`  - ${stableVersions.length} stable versions`);
+    console.log(`  - ${futureVersions.length} future versions\n`);
+    
+    // Store original package.json for restoration
+    const originalPackageJson = readFileSync(DASHBOARD_PACKAGE_PATH, 'utf8');
+    
+    for (let i = 0; i < allVersions.length; i++) {
+      const version = allVersions[i];
+      const versionNumber = i + 1;
+      
+      console.log(`\n==================== VERSION ${versionNumber}/${allVersions.length} ====================`);
+      console.log(`🎯 Testing version: ${version}`);
+      
+      try {
+        // Update version
+        if (!updateRolldownVersion(version)) {
+          console.error(`❌ Failed to update package.json for version ${version}`);
+          failureCount++;
+          continue;
+        }
+        
+        // Install dependencies
+        if (!installDependencies()) {
+          console.error(`❌ Failed to install dependencies for version ${version}`);
+          failureCount++;
+          continue;
+        }
+        
+        // Build app
+        const buildResult = buildApp();
+        if (!buildResult.success) {
+          console.error(`❌ Build failed for version ${version}`);
+          failureCount++;
+          continue;
+        }
+        
+        // Collect stats
+        const stats = collectDistStats(version, buildResult.buildTime);
+        allStats.push(stats);
+        successCount++;
+        
+        console.log(`✅ Successfully analyzed version ${version}`);
+        
+      } catch (error) {
+        console.error(`❌ Unexpected error analyzing version ${version}:`, error.message);
+        failureCount++;
+      }
+    }
+    
+    // Restore original package.json
+    console.log('\n🔄 Restoring original package.json...');
+    writeFileSync(DASHBOARD_PACKAGE_PATH, originalPackageJson);
+    
+    // Save results
+    console.log(`\n💾 Saving results to ${STATS_OUTPUT_PATH}...`);
+    writeFileSync(STATS_OUTPUT_PATH, JSON.stringify(allStats, null, 2));
+    
+    console.log('\n==================== ANALYSIS COMPLETE ====================');
+    console.log(`📊 Analysis Summary:`);
+    console.log(`  - Total versions analyzed: ${allVersions.length}`);
+    console.log(`  - Successful builds: ${successCount}`);
+    console.log(`  - Failed builds: ${failureCount}`);
+    console.log(`  - Results saved to: ${STATS_OUTPUT_PATH}`);
+    
+    if (allStats.length > 0) {
+      const avgBuildTime = allStats
+        .filter(s => s.buildTime)
+        .reduce((sum, s) => sum + s.buildTime, 0) / allStats.filter(s => s.buildTime).length;
+      const avgTotalSize = allStats.reduce((sum, s) => sum + s.totalSize, 0) / allStats.length;
+      
+      console.log(`\n📈 Quick Stats:`);
+      console.log(`  - Average build time: ${Math.round(avgBuildTime)}ms`);
+      console.log(`  - Average bundle size: ${(avgTotalSize / 1024).toFixed(2)} KB`);
+    }
+    
+  } catch (error) {
+    console.error('❌ Fatal error during analysis:', error.message);
+    process.exit(1);
+  }
+}
+
 async function main() {
   const args = process.argv.slice(2);
   
   if (args.length === 0 || args[0] === '--list' || args[0] === '-l') {
     await listVersions();
+    return;
+  }
+  
+  if (args[0] === '--collect-stats' || args[0] === '--stats') {
+    await collectAllVersionStats();
     return;
   }
   
@@ -288,7 +453,8 @@ async function main() {
   }
   
   // Build app
-  if (!buildApp()) {
+  const buildResult = buildApp();
+  if (!buildResult.success) {
     process.exit(1);
   }
   
@@ -301,11 +467,13 @@ if (process.argv.includes('--help') || process.argv.includes('-h')) {
   console.log('Rolldown Version Override Tool\n');
   console.log('Usage:');
   console.log('  node override-rolldown.js --list        List available versions');
+  console.log('  node override-rolldown.js --stats       Collect stats for all versions');
   console.log('  node override-rolldown.js <index>       Use version by index (1-5)');
   console.log('  node override-rolldown.js <version>     Use specific version');
   console.log('  node override-rolldown.js <pkg.pr.new>  Use pkg.pr.new URL');
   console.log('\nExamples:');
   console.log('  node override-rolldown.js --list');
+  console.log('  node override-rolldown.js --stats');
   console.log('  node override-rolldown.js 2');
   console.log('  node override-rolldown.js 7.1.2');
   console.log('  node override-rolldown.js pkg.pr.new/rolldown-rs/vite@1234');

@@ -8,6 +8,7 @@ This tool allows you to easily test the vibe-dashboard with different rolldown-v
 - 🚀 **Future Versions**: Test with experimental versions from pkg.pr.new (when available)
 - 🔄 **Automatic Rebuild**: Automatically installs dependencies and rebuilds the app
 - 📋 **Easy Selection**: Use version numbers or indices for quick switching
+- 📊 **Comprehensive Analysis**: Collect build statistics across all versions
 
 ## Usage
 
@@ -41,6 +42,22 @@ pnpm rolldown:use 7.1.2
 node tool/override-rolldown.js 7.1.2
 ```
 
+### Collect Statistics for All Versions
+
+```bash
+# Analyze all available versions and collect build statistics
+pnpm rolldown:stats
+
+# Or directly with node
+node tool/override-rolldown.js --stats
+```
+
+This command will:
+- Test all available rolldown versions (stable + experimental)
+- Build the application with each version
+- Collect file statistics from the dist directory
+- Save comprehensive data to `rolldown-version-stats.json`
+
 ### Get Help
 
 ```bash
@@ -66,6 +83,35 @@ Future versions will be added as they become available through pkg.pr.new for te
 1. **Updates package.json**: Modifies `apps/dashboard/package.json` to use the specified rolldown-vite version
 2. **Installs dependencies**: Runs `pnpm install` to update the lockfile
 3. **Rebuilds the app**: Runs `pnpm build` to ensure everything works with the new version
+4. **Collects stats** (with --stats): Analyzes build output, file sizes, and build times
+
+## Stats Collection Output
+
+The `--stats` command generates a JSON file with the following structure:
+
+```json
+[
+  {
+    "version": "7.1.4",
+    "timestamp": "2025-08-24T15:23:00.139Z",
+    "files": [
+      {
+        "path": "assets/index-C_guGHi2.js",
+        "size": 563794,
+        "type": "js"
+      },
+      {
+        "path": "assets/index-DD-rq4eS.css", 
+        "size": 2812,
+        "type": "css"
+      }
+    ],
+    "totalSize": 568609,
+    "totalGzipSize": 0,
+    "buildTime": 3342
+  }
+]
+```
 
 ## Example Workflow
 
@@ -84,6 +130,9 @@ pnpm dev
 
 # Switch back to latest
 pnpm rolldown:use 7.1.4
+
+# Collect comprehensive statistics for all versions
+pnpm rolldown:stats
 ```
 
 ## Notes
@@ -92,3 +141,5 @@ pnpm rolldown:use 7.1.4
 - Always commit your changes before using this tool if you want to preserve the current version
 - The tool automatically runs `pnpm install` and `pnpm build` after version changes
 - Build failures will be reported if the new version has compatibility issues
+- Stats collection automatically restores the original package.json after analysis
+- The `rolldown-version-stats.json` file is gitignored to prevent accidental commits

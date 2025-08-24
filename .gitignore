@@ -62,3 +62,6 @@ Thumbs.db
 
 # Build tools
 .turbo
+
+# Rolldown analysis output
+rolldown-version-stats.json
