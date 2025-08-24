@@ -31,14 +31,10 @@ async function fetchStableVersions() {
           const versions = Object.keys(packageInfo.versions)
             .filter(v => !v.includes('-')) // Filter out pre-release versions
             .sort((a, b) => {
-              // Sort by version number (semver)
-              const parseVersion = (v) => v.split('.').map(num => parseInt(num, 10));
-              const [aMajor, aMinor, aPatch] = parseVersion(a);
-              const [bMajor, bMinor, bPatch] = parseVersion(b);
-              
-              if (aMajor !== bMajor) return bMajor - aMajor;
-              if (aMinor !== bMinor) return bMinor - aMinor;
-              return bPatch - aPatch;
+              // Sort by publication date (most recent first)
+              const dateA = new Date(packageInfo.time[a]);
+              const dateB = new Date(packageInfo.time[b]);
+              return dateB - dateA;
             })
             .slice(0, 5); // Get last 5 versions
           
@@ -75,7 +71,12 @@ async function fetchFutureVersions(lastNpmVersionDate) {
               const commitDate = new Date(commit.authoredDate);
               return commitDate > lastNpmVersionDate;
             })
-            .slice(0, 10) // Limit to 10 most recent future commits
+            .sort((a, b) => {
+              // Sort by authored date (most recent first)
+              const dateA = new Date(a.authoredDate);
+              const dateB = new Date(b.authoredDate);
+              return dateB - dateA;
+            })
             .map(commit => `pkg.pr.new/rolldown@${commit.abbreviatedOid}`);
           
           resolve(futureCommits);
