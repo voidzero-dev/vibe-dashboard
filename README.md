@@ -1,1 +1,107 @@
 # Vibe Dashboard
+
+A modern frontend dashboard for displaying different metrics using bar charts.
+
+## 🚀 Features
+
+- **Interactive Bar Charts**: Visualize metrics with responsive Recharts components
+- **Multiple Metrics**: Switch between Sales, User Activity, and Revenue data
+- **Modern UI**: Clean, professional dashboard design with smooth transitions
+- **Responsive Design**: Works across desktop and mobile devices
+- **TypeScript**: Full type safety throughout the application
+- **Monorepo Structure**: Organized with pnpm workspaces
+
+## 📦 Tech Stack
+
+- **Frontend Framework**: React 19 with TypeScript
+- **Build Tool**: Vite 7
+- **Charts**: Recharts
+- **Icons**: Lucide React
+- **Package Manager**: pnpm
+- **Monorepo**: pnpm workspaces
+
+## 🏗 Project Structure
+
+```
+vibe-dashboard/
+├── apps/
+│   └── dashboard/          # Main dashboard application
+│       ├── src/
+│       │   ├── App.tsx     # Main dashboard component
+│       │   ├── App.css     # Dashboard styles
+│       │   └── ...
+│       └── package.json
+├── packages/               # Shared packages (future)
+├── package.json           # Root package.json
+├── pnpm-workspace.yaml   # pnpm workspace configuration
+└── README.md
+```
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v20 or higher)
+- pnpm (v10 or higher)
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/Boshen/vibe-dashboard.git
+cd vibe-dashboard
+```
+
+2. Install dependencies:
+```bash
+pnpm install
+```
+
+3. Start the development server:
+```bash
+pnpm dev
+```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+### Available Scripts
+
+- `pnpm dev` - Start the development server
+- `pnpm build` - Build all applications for production
+- `pnpm lint` - Run linting across all packages
+- `pnpm test` - Run tests across all packages
+- `pnpm clean` - Clean build artifacts
+
+## 📊 Dashboard Features
+
+### Metrics Views
+
+1. **Sales**: Monthly sales data with trend visualization
+2. **User Activity**: Daily active/inactive users with stacked bars
+3. **Revenue**: Quarterly revenue breakdown
+
+### Interactive Elements
+
+- Click navigation buttons to switch between different metrics
+- Hover over chart elements for detailed tooltips
+- Responsive design adapts to different screen sizes
+
+## 🔧 Development
+
+### Adding New Metrics
+
+1. Add your data to the respective data arrays in `apps/dashboard/src/App.tsx`
+2. Update the metrics configuration with your new metric
+3. Customize the chart rendering logic if needed
+
+### Styling
+
+The dashboard uses modern CSS with:
+- CSS Grid for responsive layouts
+- Flexbox for component alignment
+- Custom CSS variables for consistent theming
+- Responsive breakpoints for mobile support
+
+## 📝 License
+
+MIT

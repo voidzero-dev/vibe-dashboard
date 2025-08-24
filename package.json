@@ -1,0 +1,21 @@
+{
+  "name": "vibe-dashboard",
+  "version": "0.1.0",
+  "description": "A frontend dashboard for displaying different metrics using bar charts",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --filter dashboard dev",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test",
+    "clean": "pnpm -r clean"
+  },
+  "keywords": ["dashboard", "charts", "metrics", "frontend"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "packageManager": "pnpm@10.15.0"
+}
