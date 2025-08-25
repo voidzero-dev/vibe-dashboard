@@ -12,13 +12,20 @@
     "build-deploy": "pnpm lint && pnpm build",
     "rolldown:list": "node tool/override-rolldown.js --list",
     "rolldown:use": "node tool/override-rolldown.js",
-    "rolldown:stats": "node tool/override-rolldown.js --stats"
+    "rolldown:stats": "node tool/override-rolldown.js --stats",
+    "vp": "vp"
   },
-  "keywords": ["dashboard", "charts", "metrics", "frontend"],
+  "keywords": [
+    "dashboard",
+    "charts",
+    "metrics",
+    "frontend"
+  ],
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.0.0",
+    "@voidzero-dev/global": "0.0.0-29f27bd710eb7aa75e16db0ba547db379543e148",
     "oxlint": "^1.12.0",
     "typescript": "^5.0.0"
   },
