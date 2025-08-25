@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell } from 'recharts'
-import { BarChart3, Clock, Package } from 'lucide-react'
+import { BarChart3, Clock, Package, Settings } from 'lucide-react'
 import './App.css'
 import rolldownStats from '../../../rolldown-version-stats.json'
 
@@ -10,36 +10,65 @@ const formatNumberWithCommas = (num: number): string => {
 }
 
 // Transform rolldown stats data for charts
-const buildTimeData = rolldownStats.map(stat => ({
-  name: `v${stat.version}`,
-  value: stat.buildTime
-}))
+// Group by version and strictExecutionOrder
+interface StatEntry {
+  version: string;
+  timestamp: string;
+  files: Array<{
+    path: string;
+    size: number;
+    type: string;
+  }>;
+  totalSize: number;
+  totalGzipSize: number;
+  buildTime: number;
+  strictExecutionOrder?: boolean;
+}
 
-// Calculate bundle size differences between consecutive versions
-const bundleSizeDiffData = rolldownStats.map((stat, index) => {
-  if (index === 0) {
-    // For the first version, show 0 difference or could show absolute value
-    return {
-      name: `v${stat.version}`,
-      value: 0,
-      previousSize: null,
-      currentSize: stat.totalSize,
-      isBaseline: true
-    }
+interface ConfigGroup {
+  normal?: StatEntry;
+  strict?: StatEntry;
+}
+
+const groupedStats: Record<string, ConfigGroup> = rolldownStats.reduce((acc: Record<string, ConfigGroup>, stat: StatEntry) => {
+  const key = stat.version;
+  if (!acc[key]) {
+    acc[key] = {};
   }
-  
-  const prevSize = rolldownStats[index - 1].totalSize
-  const currentSize = stat.totalSize
-  const diff = currentSize - prevSize
+  acc[key][stat.strictExecutionOrder ? 'strict' : 'normal'] = stat;
+  return acc;
+}, {});
+
+// Build time comparison data showing both configurations
+const buildTimeData = Object.entries(groupedStats).map(([version, configs]) => {
+  const data: any = { name: `v${version}` };
+  if (configs.normal) data.normal = configs.normal.buildTime;
+  if (configs.strict) data.strict = configs.strict.buildTime;
+  return data;
+});
+
+// Bundle size comparison data showing both configurations
+const bundleSizeData = Object.entries(groupedStats).map(([version, configs]) => {
+  const data: any = { name: `v${version}` };
+  if (configs.normal) data.normal = configs.normal.totalSize;
+  if (configs.strict) data.strict = configs.strict.totalSize;
+  return data;
+});
+
+// Calculate bundle size differences between normal and strict for each version
+const bundleSizeDiffData = Object.entries(groupedStats).map(([version, configs]) => {
+  const normalSize = configs.normal?.totalSize || 0;
+  const strictSize = configs.strict?.totalSize || 0;
+  const diff = strictSize - normalSize;
   
   return {
-    name: `v${stat.version}`,
+    name: `v${version}`,
     value: diff,
-    previousSize: prevSize,
-    currentSize: currentSize,
-    isBaseline: false
-  }
-})
+    normalSize,
+    strictSize,
+    hasBoth: !!(configs.normal && configs.strict)
+  };
+});
 
 function App() {
   const [selectedMetric, setSelectedMetric] = useState('bundleSize')
@@ -49,20 +78,21 @@ function App() {
     const data = props.payload
     if (!data) return [value, name]
     
-    if (data.isBaseline) {
-      return [`${formatNumberWithCommas(data.currentSize)} bytes (baseline)`, 'Bundle Size']
+    if (!data.hasBoth) {
+      return [`${formatNumberWithCommas(data.normalSize || data.strictSize)} bytes (only one config)`, 'Bundle Size']
     }
     
     const sign = value >= 0 ? '+' : ''
     const changeText = `${sign}${formatNumberWithCommas(value)} bytes`
-    const fromTo = `(${formatNumberWithCommas(data.previousSize)} → ${formatNumberWithCommas(data.currentSize)})`
+    const fromTo = `(normal: ${formatNumberWithCommas(data.normalSize)} → strict: ${formatNumberWithCommas(data.strictSize)})`
     
-    return [`${changeText} ${fromTo}`, 'Size Change']
+    return [`${changeText} ${fromTo}`, 'strictExecutionOrder Impact']
   }
 
   const metrics = [
-    { id: 'bundleSize', name: 'Bundle Size', icon: Package, data: bundleSizeDiffData, color: '#374151' },
-    { id: 'buildTime', name: 'Build Time', icon: Clock, data: buildTimeData, color: '#000000' },
+    { id: 'bundleSize', name: 'Bundle Size Comparison', icon: Package, data: bundleSizeData, color: '#374151' },
+    { id: 'buildTime', name: 'Build Time Comparison', icon: Clock, data: buildTimeData, color: '#000000' },
+    { id: 'strictDiff', name: 'strictExecutionOrder Impact', icon: Settings, data: bundleSizeDiffData, color: '#dc2626' },
   ]
 
   const currentMetric = metrics.find(m => m.id === selectedMetric) || metrics[0]
@@ -99,43 +129,8 @@ function App() {
         <div className="chart-container">
           <h2>{currentMetric.name}</h2>
           <ResponsiveContainer width="100%" height={400}>
-            {selectedMetric === 'bundleSize' ? (
-              <BarChart data={currentMetric.data}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                <XAxis 
-                  dataKey="name" 
-                  tick={{ fill: '#374151', fontSize: 12 }}
-                  axisLine={{ stroke: '#d1d5db' }}
-                  tickLine={{ stroke: '#d1d5db' }}
-                />
-                <YAxis 
-                  tick={{ fill: '#374151', fontSize: 12 }}
-                  axisLine={{ stroke: '#d1d5db' }}
-                  tickLine={{ stroke: '#d1d5db' }}
-                />
-                <Tooltip 
-                  formatter={bundleSizeDiffTooltipFormatter}
-                  contentStyle={{
-                    backgroundColor: 'white',
-                    border: '1px solid #d1d5db',
-                    borderRadius: '0.5rem',
-                    color: '#111827',
-                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
-                  }}
-                />
-                <Legend 
-                  wrapperStyle={{ color: '#374151' }}
-                />
-                <Bar dataKey="value" name="Bundle Size Change (bytes)">
-                  {currentMetric.data.map((entry: any, index: number) => (
-                    <Cell 
-                      key={`cell-${index}`}
-                      fill={entry.isBaseline ? '#6b7280' : (entry.value >= 0 ? '#dc2626' : '#16a34a')}
-                    />
-                  ))}
-                </Bar>
-              </BarChart>
-            ) : (
+            {selectedMetric === 'bundleSize' || selectedMetric === 'buildTime' ? (
+              // Comparison charts showing both normal and strict configurations
               <BarChart data={currentMetric.data}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
                 <XAxis 
@@ -162,16 +157,52 @@ function App() {
                   wrapperStyle={{ color: '#374151' }}
                 />
                 <Bar 
-                  dataKey="value" 
-                  fill="url(#buildTimeGradient)"
-                  name="Build Time (ms)"
+                  dataKey="normal" 
+                  fill="#6b7280"
+                  name={selectedMetric === 'buildTime' ? 'Build Time (ms) - Normal' : 'Bundle Size (bytes) - Normal'}
                 />
-                <defs>
-                  <linearGradient id="buildTimeGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#000000" stopOpacity={1}/>
-                    <stop offset="100%" stopColor="#374151" stopOpacity={0.8}/>
-                  </linearGradient>
-                </defs>
+                <Bar 
+                  dataKey="strict" 
+                  fill="#dc2626"
+                  name={selectedMetric === 'buildTime' ? 'Build Time (ms) - Strict' : 'Bundle Size (bytes) - Strict'}
+                />
+              </BarChart>
+            ) : (
+              // strictExecutionOrder impact chart
+              <BarChart data={currentMetric.data}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                <XAxis 
+                  dataKey="name" 
+                  tick={{ fill: '#374151', fontSize: 12 }}
+                  axisLine={{ stroke: '#d1d5db' }}
+                  tickLine={{ stroke: '#d1d5db' }}
+                />
+                <YAxis 
+                  tick={{ fill: '#374151', fontSize: 12 }}
+                  axisLine={{ stroke: '#d1d5db' }}
+                  tickLine={{ stroke: '#d1d5db' }}
+                />
+                <Tooltip 
+                  formatter={bundleSizeDiffTooltipFormatter}
+                  contentStyle={{
+                    backgroundColor: 'white',
+                    border: '1px solid #d1d5db',
+                    borderRadius: '0.5rem',
+                    color: '#111827',
+                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
+                  }}
+                />
+                <Legend 
+                  wrapperStyle={{ color: '#374151' }}
+                />
+                <Bar dataKey="value" name="Bundle Size Impact (bytes)">
+                  {currentMetric.data.map((entry: any, index: number) => (
+                    <Cell 
+                      key={`cell-${index}`}
+                      fill={!entry.hasBoth ? '#94a3b8' : (entry.value >= 0 ? '#dc2626' : '#16a34a')}
+                    />
+                  ))}
+                </Bar>
               </BarChart>
             )}
           </ResponsiveContainer>
@@ -179,24 +210,24 @@ function App() {
 
         <div className="stats-grid">
           <div className="stat-card">
-            <h3>Average Build Time</h3>
-            <p className="stat-value">{Math.round(buildTimeData.reduce((sum, item) => sum + item.value, 0) / buildTimeData.length)}ms</p>
-            <span className="stat-change positive">Across {buildTimeData.length} versions</span>
+            <h3>Average Build Time (Normal)</h3>
+            <p className="stat-value">{Math.round(buildTimeData.reduce((sum, item) => sum + (item.normal || 0), 0) / buildTimeData.filter(item => item.normal).length)}ms</p>
+            <span className="stat-change positive">strictExecutionOrder: false</span>
           </div>
           <div className="stat-card">
-            <h3>Latest Bundle Size</h3>
-            <p className="stat-value">{formatNumberWithCommas(rolldownStats[rolldownStats.length - 1]?.totalSize || 0)} bytes</p>
-            <span className="stat-change positive">v{rolldownStats[rolldownStats.length - 1]?.version}</span>
+            <h3>Average Build Time (Strict)</h3>
+            <p className="stat-value">{Math.round(buildTimeData.reduce((sum, item) => sum + (item.strict || 0), 0) / buildTimeData.filter(item => item.strict).length)}ms</p>
+            <span className="stat-change positive">strictExecutionOrder: true</span>
           </div>
           <div className="stat-card">
-            <h3>Bundle Size Range</h3>
-            <p className="stat-value">{Math.round((Math.max(...rolldownStats.map(s => s.totalSize)) - Math.min(...rolldownStats.map(s => s.totalSize))) / 1024)}KB</p>
-            <span className="stat-change positive">Size Variation</span>
+            <h3>Average Bundle Size Impact</h3>
+            <p className="stat-value">{Math.round(bundleSizeDiffData.filter(d => d.hasBoth).reduce((sum, d) => sum + d.value, 0) / bundleSizeDiffData.filter(d => d.hasBoth).length / 1024)}KB</p>
+            <span className="stat-change positive">Strict vs Normal</span>
           </div>
           <div className="stat-card">
-            <h3>Versions Tested</h3>
+            <h3>Configurations Tested</h3>
             <p className="stat-value">{rolldownStats.length}</p>
-            <span className="stat-change positive">{rolldownStats[0]?.version} - {rolldownStats[rolldownStats.length - 1]?.version}</span>
+            <span className="stat-change positive">{Object.keys(groupedStats).length} versions × 2 modes</span>
           </div>
         </div>
       </main>
