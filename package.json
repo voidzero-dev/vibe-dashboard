@@ -9,7 +9,10 @@
     "lint": "oxlint .",
     "test": "pnpm -r test",
     "clean": "pnpm -r clean",
-    "build-deploy": "pnpm lint && pnpm build"
+    "build-deploy": "pnpm lint && pnpm build",
+    "rolldown:list": "node tool/override-rolldown.js --list",
+    "rolldown:use": "node tool/override-rolldown.js",
+    "rolldown:stats": "node tool/override-rolldown.js --stats"
   },
   "keywords": ["dashboard", "charts", "metrics", "frontend"],
   "author": "",
