@@ -64,9 +64,9 @@ function App() {
         <div className="header-content">
           <div className="logo">
             <BarChart3 size={32} />
-            <h1>Vibe Dashboard</h1>
+            <h1>Rolldown-Vite dashboard</h1>
           </div>
-          <p>Real-time metrics and analytics</p>
+          <p>statistics collected from different Rolldown-Vite versions</p>
         </div>
       </header>
 
