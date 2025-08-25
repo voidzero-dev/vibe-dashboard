@@ -33,10 +33,10 @@ async function fetchStableVersions() {
           const versions = Object.keys(packageInfo.versions)
             .filter(v => !v.includes('-')) // Filter out pre-release versions
             .sort((a, b) => {
-              // Sort by publication date (most recent first)
+              // Sort by publication date (most recent last)
               const dateA = new Date(packageInfo.time[a]);
               const dateB = new Date(packageInfo.time[b]);
-              return dateB - dateA;
+              return dateA - dateB;
             })
             .slice(0, 5); // Get last 5 versions
           
