@@ -18,7 +18,7 @@ const DIST_PATH = join(process.cwd(), 'apps/dashboard/dist');
 const STATS_OUTPUT_PATH = join(process.cwd(), 'rolldown-version-stats.json');
 
 /**
- * Fetch the last 5 stable versions from npm registry
+ * Fetch the last 10 stable versions from npm registry
  */
 async function fetchStableVersions() {
   return new Promise((resolve, reject) => {
@@ -31,14 +31,13 @@ async function fetchStableVersions() {
         try {
           const packageInfo = JSON.parse(data);
           let versions = Object.keys(packageInfo.versions)
-            .filter(v => !v.includes('-')) // Filter out pre-release versions
             .sort((a, b) => {
               // Sort by publication date (most recent last)
               const dateA = new Date(packageInfo.time[a]);
               const dateB = new Date(packageInfo.time[b]);
               return dateA - dateB;
             });
-          versions = versions.slice(versions.length - 5, versions.length);
+          versions = versions.slice(versions.length - 10, versions.length);
 
           resolve(versions);
         } catch (error) {
@@ -268,7 +267,7 @@ async function listVersions() {
     // const futureVersions = await fetchFutureVersions(latestNpmDate);
     const futureVersions = []; // Commented out future versions functionality
 
-    console.log('\n🟢 Stable versions (last 5 from npm):');
+    console.log('\n🟢 Stable versions (last 10 from npm):');
     stableVersions.forEach((version, index) => {
       const current = getCurrentVersion() === `^${version}` || getCurrentVersion() === version;
       console.log(`  ${index + 1}. ${version} ${current ? '(current)' : ''}`);
@@ -476,7 +475,7 @@ if (process.argv.includes('--help') || process.argv.includes('-h')) {
   console.log('Usage:');
   console.log('  node override-rolldown.js --list        List available versions');
   console.log('  node override-rolldown.js --stats       Collect stats for all versions');
-  console.log('  node override-rolldown.js <index>       Use version by index (1-5)');
+  console.log('  node override-rolldown.js <index>       Use version by index (1-10)');
   console.log('  node override-rolldown.js <version>     Use specific version');
   console.log('  node override-rolldown.js <pkg.pr.new>  Use pkg.pr.new URL');
   console.log('\nExamples:');
