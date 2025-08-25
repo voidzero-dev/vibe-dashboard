@@ -51,12 +51,12 @@
   .header-subtitle {
     display: block;
   }
-  
+
   .header-content {
     justify-content: flex-start;
     gap: 2rem;
   }
-  
+
   .logo h1 {
     font-size: 1.75rem;
   }
@@ -65,9 +65,7 @@
 /* Navigation */
 .dashboard-nav {
   background: transparent;
-  border: 1px solid #e5e5e5;
   padding: 1.25rem 2rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   gap: 0.5rem;
   max-width: 1200px;
@@ -106,9 +104,9 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, 
-    transparent, 
-    rgba(255, 255, 255, 0.6), 
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
     transparent);
   transition: left 0.5s ease;
 }
@@ -134,9 +132,9 @@
 }
 
 .nav-button.active::before {
-  background: linear-gradient(90deg, 
-    transparent, 
-    rgba(255, 255, 255, 0.2), 
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
     transparent);
 }
 
@@ -244,15 +242,15 @@
     flex-direction: column;
     gap: 0.5rem;
   }
-  
+
   .dashboard-main {
     padding: 1rem;
   }
-  
+
   .chart-container {
     padding: 1rem;
   }
-  
+
   .stats-grid {
     grid-template-columns: 1fr;
   }
