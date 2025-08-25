@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'apps/dashboard/**'
+      - 'tool/override-rolldown.js'
 
 permissions:
   contents: write
