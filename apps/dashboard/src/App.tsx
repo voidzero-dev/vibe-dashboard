@@ -80,9 +80,9 @@ function App() {
   }
 
   const metrics = [
-    { id: 'buildTime', name: 'Build Time', icon: Clock, data: buildTimeData, color: '#8884d8' },
-    { id: 'bundleSize', name: 'Bundle Size', icon: Package, data: bundleSizeDiffData, color: '#82ca9d' },
-    { id: 'fileTypes', name: 'File Types', icon: FileText, data: fileTypeData, color: '#ffc658' },
+    { id: 'buildTime', name: 'Build Time', icon: Clock, data: buildTimeData, color: '#10b981' },
+    { id: 'bundleSize', name: 'Bundle Size', icon: Package, data: bundleSizeDiffData, color: '#34d399' },
+    { id: 'fileTypes', name: 'File Types', icon: FileText, data: fileTypeData, color: '#059669' },
   ]
 
   const currentMetric = metrics.find(m => m.id === selectedMetric) || metrics[0]
@@ -121,44 +121,108 @@ function App() {
           <ResponsiveContainer width="100%" height={400}>
             {selectedMetric === 'fileTypes' ? (
               <BarChart data={currentMetric.data}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Legend />
-                <Bar dataKey="js" fill="#f7df1e" name="JavaScript (KB)" />
-                <Bar dataKey="css" fill="#1572b6" name="CSS (KB)" />
-                <Bar dataKey="html" fill="#e34c26" name="HTML (KB)" />
-                <Bar dataKey="other" fill="#6b7280" name="Other (KB)" />
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(255, 255, 255, 0.1)" />
+                <XAxis 
+                  dataKey="name" 
+                  tick={{ fill: '#d1fae5', fontSize: 12 }}
+                  axisLine={{ stroke: 'rgba(255, 255, 255, 0.2)' }}
+                  tickLine={{ stroke: 'rgba(255, 255, 255, 0.2)' }}
+                />
+                <YAxis 
+                  tick={{ fill: '#d1fae5', fontSize: 12 }}
+                  axisLine={{ stroke: 'rgba(255, 255, 255, 0.2)' }}
+                  tickLine={{ stroke: 'rgba(255, 255, 255, 0.2)' }}
+                />
+                <Tooltip 
+                  contentStyle={{
+                    backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                    border: '1px solid rgba(16, 185, 129, 0.3)',
+                    borderRadius: '0.5rem',
+                    color: '#f8fafc',
+                    backdropFilter: 'blur(12px)'
+                  }}
+                />
+                <Legend 
+                  wrapperStyle={{ color: '#d1fae5' }}
+                />
+                <Bar dataKey="js" fill="#10b981" name="JavaScript (KB)" />
+                <Bar dataKey="css" fill="#34d399" name="CSS (KB)" />
+                <Bar dataKey="html" fill="#059669" name="HTML (KB)" />
+                <Bar dataKey="other" fill="#6ee7b7" name="Other (KB)" />
               </BarChart>
             ) : selectedMetric === 'bundleSize' ? (
               <BarChart data={currentMetric.data}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip formatter={bundleSizeDiffTooltipFormatter} />
-                <Legend />
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(255, 255, 255, 0.1)" />
+                <XAxis 
+                  dataKey="name" 
+                  tick={{ fill: '#d1fae5', fontSize: 12 }}
+                  axisLine={{ stroke: 'rgba(255, 255, 255, 0.2)' }}
+                  tickLine={{ stroke: 'rgba(255, 255, 255, 0.2)' }}
+                />
+                <YAxis 
+                  tick={{ fill: '#d1fae5', fontSize: 12 }}
+                  axisLine={{ stroke: 'rgba(255, 255, 255, 0.2)' }}
+                  tickLine={{ stroke: 'rgba(255, 255, 255, 0.2)' }}
+                />
+                <Tooltip 
+                  formatter={bundleSizeDiffTooltipFormatter}
+                  contentStyle={{
+                    backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                    border: '1px solid rgba(16, 185, 129, 0.3)',
+                    borderRadius: '0.5rem',
+                    color: '#f8fafc',
+                    backdropFilter: 'blur(12px)'
+                  }}
+                />
+                <Legend 
+                  wrapperStyle={{ color: '#d1fae5' }}
+                />
                 <Bar dataKey="value" name="Bundle Size Change (bytes)">
                   {currentMetric.data.map((entry: any, index: number) => (
                     <Cell 
                       key={`cell-${index}`}
-                      fill={entry.isBaseline ? '#94a3b8' : (entry.value >= 0 ? '#ef4444' : '#22c55e')}
+                      fill={entry.isBaseline ? '#6b7280' : (entry.value >= 0 ? '#f59e0b' : '#10b981')}
                     />
                   ))}
                 </Bar>
               </BarChart>
             ) : (
               <BarChart data={currentMetric.data}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Legend />
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(255, 255, 255, 0.1)" />
+                <XAxis 
+                  dataKey="name" 
+                  tick={{ fill: '#d1fae5', fontSize: 12 }}
+                  axisLine={{ stroke: 'rgba(255, 255, 255, 0.2)' }}
+                  tickLine={{ stroke: 'rgba(255, 255, 255, 0.2)' }}
+                />
+                <YAxis 
+                  tick={{ fill: '#d1fae5', fontSize: 12 }}
+                  axisLine={{ stroke: 'rgba(255, 255, 255, 0.2)' }}
+                  tickLine={{ stroke: 'rgba(255, 255, 255, 0.2)' }}
+                />
+                <Tooltip 
+                  contentStyle={{
+                    backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                    border: '1px solid rgba(16, 185, 129, 0.3)',
+                    borderRadius: '0.5rem',
+                    color: '#f8fafc',
+                    backdropFilter: 'blur(12px)'
+                  }}
+                />
+                <Legend 
+                  wrapperStyle={{ color: '#d1fae5' }}
+                />
                 <Bar 
                   dataKey="value" 
-                  fill={currentMetric.color} 
+                  fill="url(#buildTimeGradient)"
                   name="Build Time (ms)"
                 />
+                <defs>
+                  <linearGradient id="buildTimeGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#10b981" stopOpacity={1}/>
+                    <stop offset="100%" stopColor="#34d399" stopOpacity={0.8}/>
+                  </linearGradient>
+                </defs>
               </BarChart>
             )}
           </ResponsiveContainer>
