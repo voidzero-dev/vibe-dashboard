@@ -4,7 +4,7 @@ This tool allows you to easily test the vibe-dashboard with different rolldown-v
 
 ## Features
 
-- 🟢 **Stable Versions**: Test with the last 5 stable versions from npm
+- 🟢 **Stable Versions**: Test with the last 10 stable versions from npm
 - 🚀 **Future Versions**: Test with experimental versions from pkg.pr.new (when available)
 - 🔄 **Automatic Rebuild**: Automatically installs dependencies and rebuilds the app
 - 📋 **Easy Selection**: Use version numbers or indices for quick switching
