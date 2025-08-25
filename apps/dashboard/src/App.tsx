@@ -1,42 +1,46 @@
 import { useState } from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
-import { BarChart3, TrendingUp, Users, DollarSign } from 'lucide-react'
+import { BarChart3, Clock, Package, FileText } from 'lucide-react'
 import './App.css'
+import rolldownStats from '../../../rolldown-version-stats.json'
 
-// Sample data for different metrics
-const salesData = [
-  { name: 'Jan', value: 4000 },
-  { name: 'Feb', value: 3000 },
-  { name: 'Mar', value: 5000 },
-  { name: 'Apr', value: 4500 },
-  { name: 'May', value: 6000 },
-  { name: 'Jun', value: 5500 },
-]
+// Transform rolldown stats data for charts
+const buildTimeData = rolldownStats.map(stat => ({
+  name: `v${stat.version}`,
+  value: stat.buildTime
+}))
 
-const userActivityData = [
-  { name: 'Mon', active: 120, inactive: 80 },
-  { name: 'Tue', active: 150, inactive: 60 },
-  { name: 'Wed', active: 180, inactive: 40 },
-  { name: 'Thu', active: 200, inactive: 30 },
-  { name: 'Fri', active: 170, inactive: 50 },
-  { name: 'Sat', active: 90, inactive: 110 },
-  { name: 'Sun', active: 80, inactive: 120 },
-]
+const bundleSizeData = rolldownStats.map(stat => ({
+  name: `v${stat.version}`,
+  value: Math.round(stat.totalSize / 1024) // Convert to KB
+}))
 
-const revenueData = [
-  { name: 'Q1', revenue: 25000 },
-  { name: 'Q2', revenue: 32000 },
-  { name: 'Q3', revenue: 28000 },
-  { name: 'Q4', revenue: 35000 },
-]
+// Calculate file type breakdown from all versions
+const fileTypeStats = rolldownStats.reduce((acc, stat) => {
+  stat.files.forEach(file => {
+    if (!acc[file.type]) {
+      acc[file.type] = 0
+    }
+    acc[file.type] += file.size
+  })
+  return acc
+}, {} as Record<string, number>)
+
+const fileTypeData = Object.entries(fileTypeStats).map(([type, size]) => ({
+  name: type.toUpperCase(),
+  js: type === 'js' ? Math.round(size / 1024) : 0,
+  css: type === 'css' ? Math.round(size / 1024) : 0,
+  html: type === 'html' ? Math.round(size / 1024) : 0,
+  other: type === 'other' ? Math.round(size / 1024) : 0,
+})).filter(item => item.js > 0 || item.css > 0 || item.html > 0 || item.other > 0)
 
 function App() {
-  const [selectedMetric, setSelectedMetric] = useState('sales')
+  const [selectedMetric, setSelectedMetric] = useState('buildTime')
 
   const metrics = [
-    { id: 'sales', name: 'Sales', icon: TrendingUp, data: salesData, color: '#8884d8' },
-    { id: 'users', name: 'User Activity', icon: Users, data: userActivityData, color: '#82ca9d' },
-    { id: 'revenue', name: 'Revenue', icon: DollarSign, data: revenueData, color: '#ffc658' },
+    { id: 'buildTime', name: 'Build Time', icon: Clock, data: buildTimeData, color: '#8884d8' },
+    { id: 'bundleSize', name: 'Bundle Size', icon: Package, data: bundleSizeData, color: '#82ca9d' },
+    { id: 'fileTypes', name: 'File Types', icon: FileText, data: fileTypeData, color: '#ffc658' },
   ]
 
   const currentMetric = metrics.find(m => m.id === selectedMetric) || metrics[0]
@@ -73,15 +77,17 @@ function App() {
         <div className="chart-container">
           <h2>{currentMetric.name}</h2>
           <ResponsiveContainer width="100%" height={400}>
-            {selectedMetric === 'users' ? (
+            {selectedMetric === 'fileTypes' ? (
               <BarChart data={currentMetric.data}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" />
                 <YAxis />
                 <Tooltip />
                 <Legend />
-                <Bar dataKey="active" fill="#82ca9d" name="Active Users" />
-                <Bar dataKey="inactive" fill="#8884d8" name="Inactive Users" />
+                <Bar dataKey="js" fill="#f7df1e" name="JavaScript (KB)" />
+                <Bar dataKey="css" fill="#1572b6" name="CSS (KB)" />
+                <Bar dataKey="html" fill="#e34c26" name="HTML (KB)" />
+                <Bar dataKey="other" fill="#6b7280" name="Other (KB)" />
               </BarChart>
             ) : (
               <BarChart data={currentMetric.data}>
@@ -91,9 +97,9 @@ function App() {
                 <Tooltip />
                 <Legend />
                 <Bar 
-                  dataKey={selectedMetric === 'revenue' ? 'revenue' : 'value'} 
+                  dataKey="value" 
                   fill={currentMetric.color} 
-                  name={currentMetric.name}
+                  name={selectedMetric === 'buildTime' ? 'Build Time (ms)' : 'Bundle Size (KB)'}
                 />
               </BarChart>
             )}
@@ -102,24 +108,24 @@ function App() {
 
         <div className="stats-grid">
           <div className="stat-card">
-            <h3>Total Sales</h3>
-            <p className="stat-value">$124,500</p>
-            <span className="stat-change positive">+12.5%</span>
+            <h3>Average Build Time</h3>
+            <p className="stat-value">{Math.round(buildTimeData.reduce((sum, item) => sum + item.value, 0) / buildTimeData.length)}ms</p>
+            <span className="stat-change positive">Across {buildTimeData.length} versions</span>
           </div>
           <div className="stat-card">
-            <h3>Active Users</h3>
-            <p className="stat-value">1,245</p>
-            <span className="stat-change positive">+8.2%</span>
+            <h3>Latest Bundle Size</h3>
+            <p className="stat-value">{bundleSizeData[bundleSizeData.length - 1]?.value}KB</p>
+            <span className="stat-change positive">v{rolldownStats[rolldownStats.length - 1]?.version}</span>
           </div>
           <div className="stat-card">
-            <h3>Revenue</h3>
-            <p className="stat-value">$98,750</p>
-            <span className="stat-change negative">-3.1%</span>
+            <h3>Total File Types</h3>
+            <p className="stat-value">{fileTypeData.length}</p>
+            <span className="stat-change positive">JS, CSS, HTML, Other</span>
           </div>
           <div className="stat-card">
-            <h3>Conversion Rate</h3>
-            <p className="stat-value">3.2%</p>
-            <span className="stat-change positive">+0.8%</span>
+            <h3>Versions Tested</h3>
+            <p className="stat-value">{rolldownStats.length}</p>
+            <span className="stat-change positive">{rolldownStats[0]?.version} - {rolldownStats[rolldownStats.length - 1]?.version}</span>
           </div>
         </div>
       </main>
