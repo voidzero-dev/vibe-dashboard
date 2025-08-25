@@ -53,7 +53,9 @@ async function fetchStableVersions() {
 
 /**
  * Fetch future versions from pkg.pr.new API using authoredDate filtering
+ * Currently commented out due to issues with future versions
  */
+/*
 async function fetchFutureVersions(lastNpmVersionDate) {
   return new Promise((resolve, reject) => {
     const url = 'https://pkg.pr.new/api/repo/commits?owner=rolldown&repo=rolldown';
@@ -91,10 +93,13 @@ async function fetchFutureVersions(lastNpmVersionDate) {
     });
   });
 }
+*/
 
 /**
  * Get the publication date of the latest npm version
+ * Currently commented out as it's only used with future versions
  */
+/*
 async function getLatestNpmVersionDate() {
   return new Promise((resolve, reject) => {
     const url = 'https://registry.npmjs.org/rolldown-vite';
@@ -118,6 +123,7 @@ async function getLatestNpmVersionDate() {
     });
   });
 }
+*/
 
 function getCurrentVersion() {
   try {
@@ -254,12 +260,13 @@ async function listVersions() {
     const stableVersions = await fetchStableVersions();
     
     // Get latest npm version date for filtering future versions
-    console.log('📅 Getting latest npm version date...');
-    const latestNpmDate = await getLatestNpmVersionDate();
+    // console.log('📅 Getting latest npm version date...');
+    // const latestNpmDate = await getLatestNpmVersionDate();
     
     // Fetch future versions from pkg.pr.new
-    console.log('🚀 Fetching future versions from pkg.pr.new...');
-    const futureVersions = await fetchFutureVersions(latestNpmDate);
+    // console.log('🚀 Fetching future versions from pkg.pr.new...');
+    // const futureVersions = await fetchFutureVersions(latestNpmDate);
+    const futureVersions = []; // Commented out future versions functionality
     
     console.log('\n🟢 Stable versions (last 5 from npm):');
     stableVersions.forEach((version, index) => {
@@ -267,15 +274,16 @@ async function listVersions() {
       console.log(`  ${index + 1}. ${version} ${current ? '(current)' : ''}`);
     });
     
-    if (futureVersions.length > 0) {
-      console.log('\n🚀 Future versions (from pkg.pr.new):');
-      futureVersions.forEach((version, index) => {
-        console.log(`  ${stableVersions.length + index + 1}. ${version}`);
-      });
-    } else {
-      console.log('\n🚀 Future versions (from pkg.pr.new):');
-      console.log('  No future versions found (all commits are older than latest npm version).');
-    }
+    // Commenting out future versions display
+    // if (futureVersions.length > 0) {
+    //   console.log('\n🚀 Future versions (from pkg.pr.new):');
+    //   futureVersions.forEach((version, index) => {
+    //     console.log(`  ${stableVersions.length + index + 1}. ${version}`);
+    //   });
+    // } else {
+    //   console.log('\n🚀 Future versions (from pkg.pr.new):');
+    //   console.log('  No future versions found (all commits are older than latest npm version).');
+    // }
     
     console.log('\n💡 Usage: node override-rolldown.js <version-number-or-version-string>');
     console.log('Example: node override-rolldown.js 2  # Use second stable version');
@@ -307,13 +315,13 @@ async function collectAllVersionStats() {
     // Fetch all available versions
     console.log('🔍 Fetching all available versions...');
     const stableVersions = await fetchStableVersions();
-    const latestNpmDate = await getLatestNpmVersionDate();
-    const futureVersions = await fetchFutureVersions(latestNpmDate);
-    const allVersions = [...stableVersions, ...futureVersions];
+    // const latestNpmDate = await getLatestNpmVersionDate();
+    // const futureVersions = await fetchFutureVersions(latestNpmDate);
+    const allVersions = [...stableVersions];
     
     console.log(`📦 Found ${allVersions.length} versions to analyze:`);
     console.log(`  - ${stableVersions.length} stable versions`);
-    console.log(`  - ${futureVersions.length} future versions\n`);
+    // console.log(`  - ${futureVersions.length} future versions\n`);
     
     // Store original package.json for restoration
     const originalPackageJson = readFileSync(DASHBOARD_PACKAGE_PATH, 'utf8');
@@ -415,8 +423,9 @@ async function main() {
     
     try {
       const stableVersions = await fetchStableVersions();
-      const latestNpmDate = await getLatestNpmVersionDate();
-      const futureVersions = await fetchFutureVersions(latestNpmDate);
+      // const latestNpmDate = await getLatestNpmVersionDate();
+      // const futureVersions = await fetchFutureVersions(latestNpmDate);
+      const futureVersions = []; // Commented out future versions functionality
       
       const index = parseInt(input, 10) - 1;
       const allVersions = [...stableVersions, ...futureVersions];
