@@ -3,8 +3,8 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color: #213547;
-  background-color: #f8fafc;
+  color: #1e293b;
+  background: linear-gradient(135deg, #0c1618 0%, #134e4a 50%, #1f2937 100%);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -20,7 +20,8 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #f8fafc;
+  background: linear-gradient(135deg, #0c1618 0%, #134e4a 50%, #1f2937 100%);
+  background-attachment: fixed;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -46,17 +47,17 @@ button:hover {
 
 button:focus,
 button:focus-visible {
-  outline: 2px solid #3b82f6;
+  outline: 2px solid #10b981;
   outline-offset: 2px;
 }
 
 a {
   font-weight: 500;
-  color: #3b82f6;
+  color: #10b981;
   text-decoration: none;
 }
 
 a:hover {
-  color: #1d4ed8;
+  color: #059669;
   text-decoration: underline;
 }
