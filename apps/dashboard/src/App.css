@@ -51,12 +51,12 @@
   .header-subtitle {
     display: block;
   }
-  
+
   .header-content {
     justify-content: flex-start;
     gap: 2rem;
   }
-  
+
   .logo h1 {
     font-size: 1.75rem;
   }
@@ -64,57 +64,83 @@
 
 /* Navigation */
 .dashboard-nav {
-  background: white;
-  border: 1px solid #e5e5e5;
+  background: transparent;
   padding: 1.25rem 2rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
   max-width: 1200px;
   margin: 0 auto;
+  border-radius: 0.75rem;
+  margin-top: -0.5rem;
+  position: relative;
+  z-index: 10;
 }
-
-
 
 .nav-button {
   display: flex;
   align-items: center;
   gap: 0.625rem;
   padding: 1rem 2rem;
-  border: 1px solid #d1d5db;
-  background: white;
-  border-radius: 0.5rem;
+  border: 2px solid transparent;
+  background: transparent;
+  border-radius: 0.75rem;
   cursor: pointer;
   font-weight: 600;
   font-size: 0.95rem;
-  transition: all 0.2s ease;
-  color: #374151;
+  transition: all 0.3s ease;
+  color: #64748b;
   text-transform: capitalize;
   letter-spacing: -0.025em;
+  position: relative;
+  overflow: hidden;
+  min-width: 140px;
+  justify-content: center;
 }
 
-
+.nav-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent);
+  transition: left 0.5s ease;
+}
 
 .nav-button:hover {
-  background: #f9fafb;
-  border-color: #6b7280;
-  color: #111827;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: transparent;
+  border-color: #94a3b8;
+  color: #475569;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.nav-button:hover::before {
+  left: 100%;
 }
 
 .nav-button.active {
-  background: #000000;
+  background: transparent;
   border-color: #000000;
-  color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #000000;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
 }
 
 .nav-button.active::before {
-  background: linear-gradient(90deg, 
-    transparent, 
-    rgba(255, 255, 255, 0.2), 
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
     transparent);
+}
+
+.nav-button.active:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
 }
 
 /* Main Content */
@@ -216,15 +242,15 @@
     flex-direction: column;
     gap: 0.5rem;
   }
-  
+
   .dashboard-main {
     padding: 1rem;
   }
-  
+
   .chart-container {
     padding: 1rem;
   }
-  
+
   .stats-grid {
     grid-template-columns: 1fr;
   }

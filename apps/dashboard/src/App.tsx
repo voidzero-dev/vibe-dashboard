@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell } from 'recharts'
-import { BarChart3, Clock, Package, FileText } from 'lucide-react'
+import { BarChart3, Clock, Package } from 'lucide-react'
 import './App.css'
 import rolldownStats from '../../../rolldown-version-stats.json'
 
@@ -41,27 +41,8 @@ const bundleSizeDiffData = rolldownStats.map((stat, index) => {
   }
 })
 
-// Calculate file type breakdown from all versions
-const fileTypeStats = rolldownStats.reduce((acc, stat) => {
-  stat.files.forEach(file => {
-    if (!acc[file.type]) {
-      acc[file.type] = 0
-    }
-    acc[file.type] += file.size
-  })
-  return acc
-}, {} as Record<string, number>)
-
-const fileTypeData = Object.entries(fileTypeStats).map(([type, size]) => ({
-  name: type.toUpperCase(),
-  js: type === 'js' ? Math.round(size / 1024) : 0,
-  css: type === 'css' ? Math.round(size / 1024) : 0,
-  html: type === 'html' ? Math.round(size / 1024) : 0,
-  other: type === 'other' ? Math.round(size / 1024) : 0,
-})).filter(item => item.js > 0 || item.css > 0 || item.html > 0 || item.other > 0)
-
 function App() {
-  const [selectedMetric, setSelectedMetric] = useState('buildTime')
+  const [selectedMetric, setSelectedMetric] = useState('bundleSize')
 
   // Custom tooltip formatter for bundle size differences
   const bundleSizeDiffTooltipFormatter = (value: any, name: string, props: any) => {
@@ -80,9 +61,8 @@ function App() {
   }
 
   const metrics = [
-    { id: 'buildTime', name: 'Build Time', icon: Clock, data: buildTimeData, color: '#000000' },
     { id: 'bundleSize', name: 'Bundle Size', icon: Package, data: bundleSizeDiffData, color: '#374151' },
-    { id: 'fileTypes', name: 'File Types', icon: FileText, data: fileTypeData, color: '#6b7280' },
+    { id: 'buildTime', name: 'Build Time', icon: Clock, data: buildTimeData, color: '#000000' },
   ]
 
   const currentMetric = metrics.find(m => m.id === selectedMetric) || metrics[0]
@@ -119,38 +99,7 @@ function App() {
         <div className="chart-container">
           <h2>{currentMetric.name}</h2>
           <ResponsiveContainer width="100%" height={400}>
-            {selectedMetric === 'fileTypes' ? (
-              <BarChart data={currentMetric.data}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                <XAxis 
-                  dataKey="name" 
-                  tick={{ fill: '#374151', fontSize: 12 }}
-                  axisLine={{ stroke: '#d1d5db' }}
-                  tickLine={{ stroke: '#d1d5db' }}
-                />
-                <YAxis 
-                  tick={{ fill: '#374151', fontSize: 12 }}
-                  axisLine={{ stroke: '#d1d5db' }}
-                  tickLine={{ stroke: '#d1d5db' }}
-                />
-                <Tooltip 
-                  contentStyle={{
-                    backgroundColor: 'white',
-                    border: '1px solid #d1d5db',
-                    borderRadius: '0.5rem',
-                    color: '#111827',
-                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
-                  }}
-                />
-                <Legend 
-                  wrapperStyle={{ color: '#374151' }}
-                />
-                <Bar dataKey="js" fill="#000000" name="JavaScript (KB)" />
-                <Bar dataKey="css" fill="#374151" name="CSS (KB)" />
-                <Bar dataKey="html" fill="#6b7280" name="HTML (KB)" />
-                <Bar dataKey="other" fill="#9ca3af" name="Other (KB)" />
-              </BarChart>
-            ) : selectedMetric === 'bundleSize' ? (
+            {selectedMetric === 'bundleSize' ? (
               <BarChart data={currentMetric.data}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
                 <XAxis 
@@ -240,9 +189,9 @@ function App() {
             <span className="stat-change positive">v{rolldownStats[rolldownStats.length - 1]?.version}</span>
           </div>
           <div className="stat-card">
-            <h3>Total File Types</h3>
-            <p className="stat-value">{fileTypeData.length}</p>
-            <span className="stat-change positive">JS, CSS, HTML, Other</span>
+            <h3>Bundle Size Range</h3>
+            <p className="stat-value">{Math.round((Math.max(...rolldownStats.map(s => s.totalSize)) - Math.min(...rolldownStats.map(s => s.totalSize))) / 1024)}KB</p>
+            <span className="stat-change positive">Size Variation</span>
           </div>
           <div className="stat-card">
             <h3>Versions Tested</h3>
