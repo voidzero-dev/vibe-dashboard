@@ -6,6 +6,8 @@ on:
   pull_request:
     branches: [ main, develop ]
 
+permissions: {}
+
 jobs:
   test-lint-build:
     permissions:
