@@ -4,6 +4,11 @@ import { BarChart3, Clock, Package, FileText } from 'lucide-react'
 import './App.css'
 import rolldownStats from '../../../rolldown-version-stats.json'
 
+// Utility function to format numbers with commas
+const formatNumberWithCommas = (num: number): string => {
+  return num.toLocaleString()
+}
+
 // Transform rolldown stats data for charts
 const buildTimeData = rolldownStats.map(stat => ({
   name: `v${stat.version}`,
@@ -12,7 +17,7 @@ const buildTimeData = rolldownStats.map(stat => ({
 
 const bundleSizeData = rolldownStats.map(stat => ({
   name: `v${stat.version}`,
-  value: Math.round(stat.totalSize / 1024) // Convert to KB
+  value: stat.totalSize // Use actual bytes instead of KB
 }))
 
 // Calculate file type breakdown from all versions
@@ -36,6 +41,14 @@ const fileTypeData = Object.entries(fileTypeStats).map(([type, size]) => ({
 
 function App() {
   const [selectedMetric, setSelectedMetric] = useState('buildTime')
+
+  // Custom tooltip formatter for bundle size
+  const customTooltipFormatter = (value: any, name: string) => {
+    if (selectedMetric === 'bundleSize') {
+      return [formatNumberWithCommas(value), name]
+    }
+    return [value, name]
+  }
 
   const metrics = [
     { id: 'buildTime', name: 'Build Time', icon: Clock, data: buildTimeData, color: '#8884d8' },
@@ -94,12 +107,12 @@ function App() {
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" />
                 <YAxis />
-                <Tooltip />
+                <Tooltip formatter={selectedMetric === 'bundleSize' ? customTooltipFormatter : undefined} />
                 <Legend />
                 <Bar 
                   dataKey="value" 
                   fill={currentMetric.color} 
-                  name={selectedMetric === 'buildTime' ? 'Build Time (ms)' : 'Bundle Size (KB)'}
+                  name={selectedMetric === 'buildTime' ? 'Build Time (ms)' : 'Bundle Size (bytes)'}
                 />
               </BarChart>
             )}
@@ -114,7 +127,7 @@ function App() {
           </div>
           <div className="stat-card">
             <h3>Latest Bundle Size</h3>
-            <p className="stat-value">{bundleSizeData[bundleSizeData.length - 1]?.value}KB</p>
+            <p className="stat-value">{formatNumberWithCommas(bundleSizeData[bundleSizeData.length - 1]?.value || 0)} bytes</p>
             <span className="stat-change positive">v{rolldownStats[rolldownStats.length - 1]?.version}</span>
           </div>
           <div className="stat-card">
