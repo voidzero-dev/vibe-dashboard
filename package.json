@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "pnpm --filter dashboard dev",
-    "build": "pnpm -r build",
+    "build": "pnpm -r build", 
     "lint": "oxlint .",
     "test": "pnpm -r test",
     "clean": "pnpm -r clean",
@@ -13,7 +13,13 @@
     "rolldown:list": "node tool/override-rolldown.js --list",
     "rolldown:use": "node tool/override-rolldown.js",
     "rolldown:stats": "node tool/override-rolldown.js --stats",
-    "vp": "vp"
+    "vp": "vp",
+    "vp:simulate": "node tool/vp-simulator.js",
+    "vp:dev": "node tool/vp-simulator.js dev",
+    "vp:build": "node tool/vp-simulator.js build",
+    "vp:lint": "node tool/vp-simulator.js lint",
+    "vp:test": "node tool/vp-simulator.js test",
+    "vp:preview": "node tool/vp-simulator.js preview"
   },
   "keywords": [
     "dashboard",
