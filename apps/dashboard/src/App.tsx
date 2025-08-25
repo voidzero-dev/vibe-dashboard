@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell } from 'recharts'
 import { BarChart3, Clock, Package, FileText } from 'lucide-react'
 import './App.css'
 import rolldownStats from '../../../rolldown-version-stats.json'
@@ -15,10 +15,31 @@ const buildTimeData = rolldownStats.map(stat => ({
   value: stat.buildTime
 }))
 
-const bundleSizeData = rolldownStats.map(stat => ({
-  name: `v${stat.version}`,
-  value: stat.totalSize // Use actual bytes instead of KB
-}))
+// Calculate bundle size differences between consecutive versions
+const bundleSizeDiffData = rolldownStats.map((stat, index) => {
+  if (index === 0) {
+    // For the first version, show 0 difference or could show absolute value
+    return {
+      name: `v${stat.version}`,
+      value: 0,
+      previousSize: null,
+      currentSize: stat.totalSize,
+      isBaseline: true
+    }
+  }
+  
+  const prevSize = rolldownStats[index - 1].totalSize
+  const currentSize = stat.totalSize
+  const diff = currentSize - prevSize
+  
+  return {
+    name: `v${stat.version}`,
+    value: diff,
+    previousSize: prevSize,
+    currentSize: currentSize,
+    isBaseline: false
+  }
+})
 
 // Calculate file type breakdown from all versions
 const fileTypeStats = rolldownStats.reduce((acc, stat) => {
@@ -42,17 +63,25 @@ const fileTypeData = Object.entries(fileTypeStats).map(([type, size]) => ({
 function App() {
   const [selectedMetric, setSelectedMetric] = useState('buildTime')
 
-  // Custom tooltip formatter for bundle size
-  const customTooltipFormatter = (value: any, name: string) => {
-    if (selectedMetric === 'bundleSize') {
-      return [formatNumberWithCommas(value), name]
+  // Custom tooltip formatter for bundle size differences
+  const bundleSizeDiffTooltipFormatter = (value: any, name: string, props: any) => {
+    const data = props.payload
+    if (!data) return [value, name]
+    
+    if (data.isBaseline) {
+      return [`${formatNumberWithCommas(data.currentSize)} bytes (baseline)`, 'Bundle Size']
     }
-    return [value, name]
+    
+    const sign = value >= 0 ? '+' : ''
+    const changeText = `${sign}${formatNumberWithCommas(value)} bytes`
+    const fromTo = `(${formatNumberWithCommas(data.previousSize)} → ${formatNumberWithCommas(data.currentSize)})`
+    
+    return [`${changeText} ${fromTo}`, 'Size Change']
   }
 
   const metrics = [
     { id: 'buildTime', name: 'Build Time', icon: Clock, data: buildTimeData, color: '#8884d8' },
-    { id: 'bundleSize', name: 'Bundle Size', icon: Package, data: bundleSizeData, color: '#82ca9d' },
+    { id: 'bundleSize', name: 'Bundle Size', icon: Package, data: bundleSizeDiffData, color: '#82ca9d' },
     { id: 'fileTypes', name: 'File Types', icon: FileText, data: fileTypeData, color: '#ffc658' },
   ]
 
@@ -102,17 +131,33 @@ function App() {
                 <Bar dataKey="html" fill="#e34c26" name="HTML (KB)" />
                 <Bar dataKey="other" fill="#6b7280" name="Other (KB)" />
               </BarChart>
+            ) : selectedMetric === 'bundleSize' ? (
+              <BarChart data={currentMetric.data}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip formatter={bundleSizeDiffTooltipFormatter} />
+                <Legend />
+                <Bar dataKey="value" name="Bundle Size Change (bytes)">
+                  {currentMetric.data.map((entry: any, index: number) => (
+                    <Cell 
+                      key={`cell-${index}`}
+                      fill={entry.isBaseline ? '#94a3b8' : (entry.value >= 0 ? '#ef4444' : '#22c55e')}
+                    />
+                  ))}
+                </Bar>
+              </BarChart>
             ) : (
               <BarChart data={currentMetric.data}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" />
                 <YAxis />
-                <Tooltip formatter={selectedMetric === 'bundleSize' ? customTooltipFormatter : undefined} />
+                <Tooltip />
                 <Legend />
                 <Bar 
                   dataKey="value" 
                   fill={currentMetric.color} 
-                  name={selectedMetric === 'buildTime' ? 'Build Time (ms)' : 'Bundle Size (bytes)'}
+                  name="Build Time (ms)"
                 />
               </BarChart>
             )}
@@ -127,7 +172,7 @@ function App() {
           </div>
           <div className="stat-card">
             <h3>Latest Bundle Size</h3>
-            <p className="stat-value">{formatNumberWithCommas(bundleSizeData[bundleSizeData.length - 1]?.value || 0)} bytes</p>
+            <p className="stat-value">{formatNumberWithCommas(rolldownStats[rolldownStats.length - 1]?.totalSize || 0)} bytes</p>
             <span className="stat-change positive">v{rolldownStats[rolldownStats.length - 1]?.version}</span>
           </div>
           <div className="stat-card">
