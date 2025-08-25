@@ -8,16 +8,22 @@ on:
 
 jobs:
   test-lint-build:
+    permissions:
+      contents: read
+      packages: read
+
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node.js LTS
         uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
@@ -37,6 +43,8 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Lint code
         run: pnpm lint
