@@ -92,10 +92,10 @@ function App() {
       <header className="dashboard-header">
         <div className="header-content">
           <div className="logo">
-            <BarChart3 size={32} />
+            <BarChart3 size={28} />
             <h1>Rolldown-Vite dashboard</h1>
           </div>
-          <p>statistics collected from different Rolldown-Vite versions</p>
+          <p className="header-subtitle">Statistics collected from different Rolldown-Vite versions</p>
         </div>
       </header>
 
