@@ -1,0 +1,76 @@
+name: Update Rolldown Stats
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'apps/dashboard/**'
+
+permissions:
+  contents: write
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node.js LTS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run rolldown stats collection
+        run: pnpm rolldown:stats
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          if git diff --exit-code rolldown-version-stats.json; then
+            echo "No changes detected in rolldown-version-stats.json"
+            echo "changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "Changes detected in rolldown-version-stats.json"
+            echo "changes=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push changes
+        if: steps.git-check.outputs.changes == 'true'
+        run: |
+          git config --local user.email "boshen@gmail.com"
+          git config --local user.name "Boshen"
+          git add rolldown-version-stats.json
+          git commit -m "chore: update rolldown version stats"
+          git push origin main
+
+      - name: No changes to commit
+        if: steps.git-check.outputs.changes != 'true'
+        run: echo "No changes were detected in rolldown-version-stats.json, skipping commit."

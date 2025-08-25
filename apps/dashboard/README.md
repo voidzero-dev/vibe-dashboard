@@ -26,4 +26,7 @@ pnpm lint
 
 To customize the configuration, edit `.oxlintrc.json`. Oxlint supports most ESLint configuration options.
 
+## Rolldown Stats Integration
+
+This dashboard displays build statistics from different rolldown versions, automatically updated via CI when changes are made to the dashboard code.
 
