@@ -7,4 +7,11 @@ export default defineConfig({
   experimental: {
     enableNativePlugin: true,
   },
+  build: {
+    rolldownOptions: {
+      experimental: {
+        strictExecutionOrder: false
+      }
+    }
+  }
 })
