@@ -64,7 +64,7 @@
 
 /* Navigation */
 .dashboard-nav {
-  background: white;
+  background: transparent;
   border: 1px solid #e5e5e5;
   padding: 1.25rem 2rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -83,26 +83,66 @@
   align-items: center;
   gap: 0.625rem;
   padding: 1rem 2rem;
-  border: none;
+  border: 2px solid transparent;
   background: transparent;
+  border-radius: 0.75rem;
   cursor: pointer;
   font-weight: 600;
   font-size: 0.95rem;
-  transition: color 0.2s ease;
+  transition: all 0.3s ease;
   color: #64748b;
   text-transform: capitalize;
   letter-spacing: -0.025em;
+  position: relative;
+  overflow: hidden;
   min-width: 140px;
   justify-content: center;
 }
 
+.nav-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.6), 
+    transparent);
+  transition: left 0.5s ease;
+}
+
 .nav-button:hover {
+  background: transparent;
+  border-color: #94a3b8;
   color: #475569;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.nav-button:hover::before {
+  left: 100%;
 }
 
 .nav-button.active {
+  background: transparent;
+  border-color: #000000;
   color: #000000;
-  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+}
+
+.nav-button.active::before {
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.2), 
+    transparent);
+}
+
+.nav-button.active:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
 }
 
 /* Main Content */
