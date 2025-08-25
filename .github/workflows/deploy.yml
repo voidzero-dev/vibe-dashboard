@@ -23,20 +23,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Node.js and pnpm
+        uses: ./.github/actions/setup-node-pnpm
         with:
-          node-version: 'lts/*'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-
-      - name: Install dependencies
-        run: pnpm install
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          enable-cache: false
+          frozen-lockfile: false
 
       - name: Lint
         run: pnpm lint
