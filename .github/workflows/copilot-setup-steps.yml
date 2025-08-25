@@ -30,9 +30,6 @@ jobs:
 
       - name: Setup Node.js and pnpm
         uses: ./.github/actions/setup-node-pnpm
-        with:
-          enable-cache: false
-          frozen-lockfile: false
 
       - name: Run lint
         run: pnpm lint
