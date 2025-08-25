@@ -1,7 +1,7 @@
 /* Dashboard Layout */
 .dashboard {
   min-height: 100vh;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  background: linear-gradient(135deg, #0c1618 0%, #134e4a 50%, #1f2937 100%);
   background-attachment: fixed;
   color: #f8fafc;
 }
@@ -25,9 +25,9 @@
   right: 0;
   bottom: 0;
   background: linear-gradient(135deg, 
-    rgba(99, 102, 241, 0.1) 0%, 
-    rgba(139, 92, 246, 0.15) 50%, 
-    rgba(168, 85, 247, 0.1) 100%);
+    rgba(16, 185, 129, 0.1) 0%, 
+    rgba(5, 150, 105, 0.15) 50%, 
+    rgba(52, 211, 153, 0.1) 100%);
   z-index: -1;
 }
 
@@ -58,10 +58,10 @@
 
 .header-subtitle {
   margin: 0;
-  opacity: 0.7;
+  opacity: 0.8;
   font-size: 0.875rem;
   font-weight: 400;
-  color: #cbd5e1;
+  color: #d1fae5;
   display: none;
 }
 
@@ -82,9 +82,9 @@
 
 /* Navigation */
 .dashboard-nav {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   padding: 1rem 2rem;
   box-shadow: 0 8px 32px -8px rgba(0, 0, 0, 0.3);
   display: flex;
@@ -97,30 +97,49 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(8px);
-  border-radius: 0.75rem;
+  padding: 0.875rem 1.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
   cursor: pointer;
   font-weight: 500;
-  transition: all 0.3s ease;
-  color: #e2e8f0;
+  font-size: 0.95rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #e5e7eb;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.nav-button:hover::before {
+  left: 100%;
 }
 
 .nav-button:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(139, 92, 246, 0.5);
-  color: #f8fafc;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.2);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(16, 185, 129, 0.6);
+  color: #f3f4f6;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.25);
 }
 
 .nav-button.active {
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-  border-color: rgba(139, 92, 246, 0.8);
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border-color: rgba(16, 185, 129, 0.8);
   color: white;
-  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.4);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+  transform: translateY(-1px);
 }
 
 /* Main Content */
@@ -134,9 +153,9 @@
 }
 
 .chart-container {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -157,25 +176,25 @@
 }
 
 .stat-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   padding: 1.5rem;
   border-radius: 1rem;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  border-left: 4px solid #8b5cf6;
+  border-left: 4px solid #10b981;
   transition: all 0.3s ease;
 }
 
 .stat-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(139, 92, 246, 0.2);
-  border-left-color: #a855f7;
+  box-shadow: 0 12px 40px rgba(16, 185, 129, 0.2);
+  border-left-color: #34d399;
 }
 
 .stat-card h3 {
   margin: 0 0 0.5rem 0;
-  color: #cbd5e1;
+  color: #d1fae5;
   font-size: 0.875rem;
   font-weight: 500;
   text-transform: uppercase;
