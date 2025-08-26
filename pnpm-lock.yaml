@@ -12,8 +12,8 @@ importers:
         specifier: ^20.0.0
         version: 20.19.11
       '@voidzero-dev/global':
-        specifier: 0.0.0-29f27bd710eb7aa75e16db0ba547db379543e148
-        version: 0.0.0-29f27bd710eb7aa75e16db0ba547db379543e148(@types/node@20.19.11)(lightningcss@1.30.1)
+        specifier: 0.0.0-a63f002e4ec9ece3ef30e29346c1c1cee6ec433c
+        version: 0.0.0-a63f002e4ec9ece3ef30e29346c1c1cee6ec433c(@types/node@20.19.11)(lightningcss@1.30.1)
       oxlint:
         specifier: ^1.12.0
         version: 1.12.0
@@ -555,8 +555,8 @@ packages:
   '@vitest/utils@3.2.4':
     resolution: {integrity: sha512-fB2V0JFrQSMsCo9HiSq3Ezpdv4iYaXRG1Sx8edX3MwxfyNn83mKiGzOcH+Fkxt4MHxr3y42fQi1oeAInqgX2QA==}
 
-  '@voidzero-dev/global@0.0.0-29f27bd710eb7aa75e16db0ba547db379543e148':
-    resolution: {integrity: sha512-pt9jjw4AF3NqrWl3dglkxLk9micLx9VrtoFQYrB9es76USenCHStB9G1b583/G9Pgt1NH1a1ElSSKjzuuVhbLg==, tarball: https://npm.pkg.github.com/download/@voidzero-dev/global/0.0.0-29f27bd710eb7aa75e16db0ba547db379543e148/1f087d4d5c6ffeb26a1ef3e6581631517451a00e}
+  '@voidzero-dev/global@0.0.0-a63f002e4ec9ece3ef30e29346c1c1cee6ec433c':
+    resolution: {integrity: sha512-1uESR/7iob5f+UIiL57fO9TiY0fqRu7DMfjVmwob/bYNU/zX0Plbh/d9MCu61dbyFhIPxULJrHqzFq4LYKnGRA==, tarball: https://npm.pkg.github.com/download/@voidzero-dev/global/0.0.0-a63f002e4ec9ece3ef30e29346c1c1cee6ec433c/c757890d1df499f3194c2e172bfc9a6a52f4911c}
     engines: {node: '>=20.11.0'}
     hasBin: true
 
@@ -1396,7 +1396,7 @@ snapshots:
       loupe: 3.2.1
       tinyrainbow: 2.0.0
 
-  '@voidzero-dev/global@0.0.0-29f27bd710eb7aa75e16db0ba547db379543e148(@types/node@20.19.11)(lightningcss@1.30.1)':
+  '@voidzero-dev/global@0.0.0-a63f002e4ec9ece3ef30e29346c1c1cee6ec433c(@types/node@20.19.11)(lightningcss@1.30.1)':
     dependencies:
       oxlint: 1.12.0
       vite: 7.1.3(@types/node@20.19.11)(lightningcss@1.30.1)

@@ -25,7 +25,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.0.0",
-    "@voidzero-dev/global": "0.0.0-29f27bd710eb7aa75e16db0ba547db379543e148",
+    "@voidzero-dev/global": "0.0.0-a63f002e4ec9ece3ef30e29346c1c1cee6ec433c",
     "oxlint": "^1.12.0",
     "typescript": "^5.0.0"
   },
