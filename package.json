@@ -24,10 +24,10 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^20.0.0",
-    "@voidzero-dev/global": "0.0.0-a63f002e4ec9ece3ef30e29346c1c1cee6ec433c",
-    "oxlint": "^1.12.0",
-    "typescript": "^5.0.0"
+    "@types/node": "^20.19.11",
+    "@voidzero-dev/global": "0.0.0-bfeed6beed9d4aaedae025f63bd0e9c6d5ed0df1",
+    "oxlint": "^1.13.0",
+    "typescript": "^5.9.2"
   },
   "packageManager": "pnpm@10.15.0"
 }
