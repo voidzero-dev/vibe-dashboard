@@ -14,6 +14,7 @@ const { join } = require('path');
 const https = require('https');
 
 const DASHBOARD_PACKAGE_PATH = join(process.cwd(), 'apps/dashboard/package.json');
+const VITE_CONFIG_PATH = join(process.cwd(), 'apps/dashboard/vite.config.ts');
 const DIST_PATH = join(process.cwd(), 'apps/dashboard/dist');
 const STATS_OUTPUT_PATH = join(process.cwd(), 'rolldown-version-stats.json');
 
@@ -162,6 +163,41 @@ function updateRolldownVersion(version) {
   }
 }
 
+function updateStrictExecutionOrder(strictExecutionOrder) {
+  try {
+    console.log(`⚙️  Setting strictExecutionOrder to: ${strictExecutionOrder}`);
+    
+    // Read current vite.config.ts
+    const viteConfig = readFileSync(VITE_CONFIG_PATH, 'utf8');
+    
+    // Replace the strictExecutionOrder value
+    const updatedConfig = viteConfig.replace(
+      /strictExecutionOrder:\s*(true|false)/,
+      `strictExecutionOrder: ${strictExecutionOrder}`
+    );
+    
+    // Write back to vite.config.ts
+    writeFileSync(VITE_CONFIG_PATH, updatedConfig);
+    
+    console.log('✅ vite.config.ts updated successfully');
+    return true;
+  } catch (error) {
+    console.error('❌ Error updating vite.config.ts:', error.message);
+    return false;
+  }
+}
+
+function restoreViteConfig(originalConfig) {
+  try {
+    writeFileSync(VITE_CONFIG_PATH, originalConfig);
+    console.log('✅ vite.config.ts restored successfully');
+    return true;
+  } catch (error) {
+    console.error('❌ Error restoring vite.config.ts:', error.message);
+    return false;
+  }
+}
+
 function installDependencies() {
   try {
     console.log('📥 Installing dependencies...');
@@ -197,14 +233,15 @@ function buildApp() {
 /**
  * Collect file statistics from the dist directory
  */
-function collectDistStats(version, buildTime = null) {
+function collectDistStats(version, buildTime = null, strictExecutionOrder = false) {
   const stats = {
     version,
     timestamp: new Date().toISOString(),
     files: [],
     totalSize: 0,
     totalGzipSize: 0,
-    buildTime
+    buildTime,
+    strictExecutionOrder
   };
 
   if (!existsSync(DIST_PATH)) {
@@ -320,10 +357,12 @@ async function collectAllVersionStats() {
 
     console.log(`📦 Found ${allVersions.length} versions to analyze:`);
     console.log(`  - ${stableVersions.length} stable versions`);
+    console.log(`  - Each version will be tested with strictExecutionOrder: false and true (${allVersions.length * 2} total builds)`);
     // console.log(`  - ${futureVersions.length} future versions\n`);
 
-    // Store original package.json for restoration
+    // Store original package.json and vite.config.ts for restoration
     const originalPackageJson = readFileSync(DASHBOARD_PACKAGE_PATH, 'utf8');
+    const originalViteConfig = readFileSync(VITE_CONFIG_PATH, 'utf8');
 
     for (let i = 0; i < allVersions.length; i++) {
       const version = allVersions[i];
@@ -347,20 +386,32 @@ async function collectAllVersionStats() {
           continue;
         }
 
-        // Build app
-        const buildResult = buildApp();
-        if (!buildResult.success) {
-          console.error(`❌ Build failed for version ${version}`);
-          failureCount++;
-          continue;
+        // Test both strictExecutionOrder configurations
+        const configurations = [false, true];
+        
+        for (const strictExecutionOrder of configurations) {
+          console.log(`\n  📋 Testing strictExecutionOrder: ${strictExecutionOrder}`);
+          
+          // Update vite config with current strictExecutionOrder setting
+          if (!updateStrictExecutionOrder(strictExecutionOrder)) {
+            console.error(`❌ Failed to update vite.config.ts for strictExecutionOrder: ${strictExecutionOrder}`);
+            continue;
+          }
+
+          // Build app
+          const buildResult = buildApp();
+          if (!buildResult.success) {
+            console.error(`❌ Build failed for version ${version} with strictExecutionOrder: ${strictExecutionOrder}`);
+            continue;
+          }
+
+          // Collect stats
+          const stats = collectDistStats(version, buildResult.buildTime, strictExecutionOrder);
+          allStats.push(stats);
+          successCount++;
+
+          console.log(`  ✅ Successfully analyzed version ${version} with strictExecutionOrder: ${strictExecutionOrder}`);
         }
-
-        // Collect stats
-        const stats = collectDistStats(version, buildResult.buildTime);
-        allStats.push(stats);
-        successCount++;
-
-        console.log(`✅ Successfully analyzed version ${version}`);
 
       } catch (error) {
         console.error(`❌ Unexpected error analyzing version ${version}:`, error.message);
@@ -368,9 +419,10 @@ async function collectAllVersionStats() {
       }
     }
 
-    // Restore original package.json
-    console.log('\n🔄 Restoring original package.json...');
+    // Restore original files
+    console.log('\n🔄 Restoring original package.json and vite.config.ts...');
     writeFileSync(DASHBOARD_PACKAGE_PATH, originalPackageJson);
+    restoreViteConfig(originalViteConfig);
 
     // Save results
     console.log(`\n💾 Saving results to ${STATS_OUTPUT_PATH}...`);
@@ -379,6 +431,7 @@ async function collectAllVersionStats() {
     console.log('\n==================== ANALYSIS COMPLETE ====================');
     console.log(`📊 Analysis Summary:`);
     console.log(`  - Total versions analyzed: ${allVersions.length}`);
+    console.log(`  - Total configurations tested: ${allVersions.length * 2} (each version × 2 strictExecutionOrder settings)`);
     console.log(`  - Successful builds: ${successCount}`);
     console.log(`  - Failed builds: ${failureCount}`);
     console.log(`  - Results saved to: ${STATS_OUTPUT_PATH}`);
