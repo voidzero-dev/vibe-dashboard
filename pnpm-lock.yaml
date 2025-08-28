@@ -14,9 +14,6 @@ importers:
       '@voidzero-dev/global':
         specifier: 0.0.0-bfeed6beed9d4aaedae025f63bd0e9c6d5ed0df1
         version: 0.0.0-bfeed6beed9d4aaedae025f63bd0e9c6d5ed0df1(@types/node@20.19.11)(lightningcss@1.30.1)(oxlint-tsgolint@0.0.4)
-      oxlint:
-        specifier: ^1.13.0
-        version: 1.13.0(oxlint-tsgolint@0.0.4)
       typescript:
         specifier: ^5.9.2
         version: 5.9.2

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "pnpm --filter dashboard dev",
     "build": "pnpm -r build",
-    "lint": "oxlint .",
+    "lint": "vp lint",
     "test": "pnpm -r test",
     "clean": "pnpm -r clean",
     "build-deploy": "pnpm lint && pnpm build",
@@ -26,7 +26,6 @@
   "devDependencies": {
     "@types/node": "^20.19.11",
     "@voidzero-dev/global": "0.0.0-bfeed6beed9d4aaedae025f63bd0e9c6d5ed0df1",
-    "oxlint": "^1.13.0",
     "typescript": "^5.9.2"
   },
   "packageManager": "pnpm@10.15.0"
