@@ -4,3 +4,7 @@ packages:
 
 onlyBuiltDependencies:
   - esbuild
+
+catalog:
+    typescript: ^5.9.2
+
