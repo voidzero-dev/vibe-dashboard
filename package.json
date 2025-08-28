@@ -24,7 +24,6 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^20.19.11",
     "@voidzero-dev/global": "0.0.0-bfeed6beed9d4aaedae025f63bd0e9c6d5ed0df1"
   },
   "packageManager": "pnpm@10.15.0"
