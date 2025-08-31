@@ -8,10 +8,10 @@
  * - Future/experimental versions from pkg.pr.new
  */
 
-const { execSync } = require('child_process');
-const { readFileSync, writeFileSync, readdirSync, statSync, existsSync } = require('fs');
-const { join } = require('path');
-const https = require('https');
+import { execSync } from 'node:child_process';
+import { readFileSync, writeFileSync, readdirSync, statSync, existsSync } from 'node:fs';
+import { join } from 'node:path';
+import https from 'node:https';
 
 const DASHBOARD_PACKAGE_PATH = join(process.cwd(), 'apps/dashboard/package.json');
 const DIST_PATH = join(process.cwd(), 'apps/dashboard/dist');
