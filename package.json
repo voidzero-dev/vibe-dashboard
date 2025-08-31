@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "pnpm --filter dashboard dev",
     "build": "pnpm -r build",
-    "lint": "vp lint",
+    "lint": "vp lint --type-aware",
     "test": "pnpm -r test",
     "clean": "pnpm -r clean",
     "build-deploy": "pnpm lint && pnpm build",

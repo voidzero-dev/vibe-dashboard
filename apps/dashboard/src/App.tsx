@@ -27,11 +27,11 @@ const bundleSizeDiffData = rolldownStats.map((stat, index) => {
       isBaseline: true
     }
   }
-  
+
   const prevSize = rolldownStats[index - 1].totalSize
   const currentSize = stat.totalSize
   const diff = currentSize - prevSize
-  
+
   return {
     name: `v${stat.version}`,
     value: diff,
@@ -48,15 +48,15 @@ function App() {
   const bundleSizeDiffTooltipFormatter = (value: any, name: string, props: any) => {
     const data = props.payload
     if (!data) return [value, name]
-    
+
     if (data.isBaseline) {
       return [`${formatNumberWithCommas(data.currentSize)} bytes (baseline)`, 'Bundle Size']
     }
-    
+
     const sign = value >= 0 ? '+' : ''
     const changeText = `${sign}${formatNumberWithCommas(value)} bytes`
     const fromTo = `(${formatNumberWithCommas(data.previousSize)} → ${formatNumberWithCommas(data.currentSize)})`
-    
+
     return [`${changeText} ${fromTo}`, 'Size Change']
   }
 
@@ -86,7 +86,9 @@ function App() {
             <button
               key={metric.id}
               className={`nav-button ${selectedMetric === metric.id ? 'active' : ''}`}
-              onClick={() => setSelectedMetric(metric.id)}
+              onClick={() => {
+                setSelectedMetric(metric.id)
+              }}
             >
               <Icon size={20} />
               {metric.name}
@@ -102,18 +104,18 @@ function App() {
             {selectedMetric === 'bundleSize' ? (
               <BarChart data={currentMetric.data}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                <XAxis 
-                  dataKey="name" 
+                <XAxis
+                  dataKey="name"
                   tick={{ fill: '#374151', fontSize: 12 }}
                   axisLine={{ stroke: '#d1d5db' }}
                   tickLine={{ stroke: '#d1d5db' }}
                 />
-                <YAxis 
+                <YAxis
                   tick={{ fill: '#374151', fontSize: 12 }}
                   axisLine={{ stroke: '#d1d5db' }}
                   tickLine={{ stroke: '#d1d5db' }}
                 />
-                <Tooltip 
+                <Tooltip
                   formatter={bundleSizeDiffTooltipFormatter}
                   contentStyle={{
                     backgroundColor: 'white',
@@ -123,12 +125,12 @@ function App() {
                     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
                   }}
                 />
-                <Legend 
+                <Legend
                   wrapperStyle={{ color: '#374151' }}
                 />
                 <Bar dataKey="value" name="Bundle Size Change (bytes)">
                   {currentMetric.data.map((entry: any, index: number) => (
-                    <Cell 
+                    <Cell
                       key={`cell-${index}`}
                       fill={entry.isBaseline ? '#6b7280' : (entry.value >= 0 ? '#dc2626' : '#16a34a')}
                     />
@@ -138,18 +140,18 @@ function App() {
             ) : (
               <BarChart data={currentMetric.data}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                <XAxis 
-                  dataKey="name" 
+                <XAxis
+                  dataKey="name"
                   tick={{ fill: '#374151', fontSize: 12 }}
                   axisLine={{ stroke: '#d1d5db' }}
                   tickLine={{ stroke: '#d1d5db' }}
                 />
-                <YAxis 
+                <YAxis
                   tick={{ fill: '#374151', fontSize: 12 }}
                   axisLine={{ stroke: '#d1d5db' }}
                   tickLine={{ stroke: '#d1d5db' }}
                 />
-                <Tooltip 
+                <Tooltip
                   contentStyle={{
                     backgroundColor: 'white',
                     border: '1px solid #d1d5db',
@@ -158,11 +160,11 @@ function App() {
                     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
                   }}
                 />
-                <Legend 
+                <Legend
                   wrapperStyle={{ color: '#374151' }}
                 />
-                <Bar 
-                  dataKey="value" 
+                <Bar
+                  dataKey="value"
                   fill="url(#buildTimeGradient)"
                   name="Build Time (ms)"
                 />
