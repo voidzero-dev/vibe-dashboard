@@ -1,4 +1,4 @@
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LabelList } from 'recharts'
 import { Zap, Gauge } from 'lucide-react'
 import minificationData from '../../../minification-benchmarks-data.json'
 
@@ -151,7 +151,14 @@ function MinificationBenchmarks({ selectedMetric, setSelectedMetric }: Minificat
                       }}
                       formatter={(value: any) => [`${value}${unit}`, currentMetric.name]}
                     />
-                    <Bar dataKey="value" />
+                    <Bar dataKey="value">
+                      <LabelList 
+                        dataKey="value" 
+                        position="top" 
+                        formatter={(value: number) => `${value}${unit}`}
+                        style={{ fontSize: '12px', fill: '#374151' }}
+                      />
+                    </Bar>
                   </BarChart>
                 </ResponsiveContainer>
               </div>

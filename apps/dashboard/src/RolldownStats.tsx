@@ -1,4 +1,4 @@
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell } from 'recharts'
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell, LabelList } from 'recharts'
 import { Clock, Package } from 'lucide-react'
 import rolldownStats from '../../../rolldown-version-stats.json'
 
@@ -121,6 +121,15 @@ function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps
                   wrapperStyle={{ color: '#374151' }}
                 />
                 <Bar dataKey="value" name="Bundle Size Change (bytes)">
+                  <LabelList 
+                    dataKey="value" 
+                    position="top" 
+                    formatter={(value: number) => {
+                      if (value === 0) return 'baseline';
+                      return value >= 0 ? `+${formatNumberWithCommas(value)}` : formatNumberWithCommas(value);
+                    }}
+                    style={{ fontSize: '11px', fill: '#374151' }}
+                  />
                   {currentMetric.data.map((entry: any, index: number) => (
                     <Cell
                       key={`cell-${index}`}
@@ -159,7 +168,14 @@ function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps
                   dataKey="value"
                   fill="url(#buildTimeGradient)"
                   name="Build Time (ms)"
-                />
+                >
+                  <LabelList 
+                    dataKey="value" 
+                    position="top" 
+                    formatter={(value: number) => `${value}ms`}
+                    style={{ fontSize: '11px', fill: '#374151' }}
+                  />
+                </Bar>
                 <defs>
                   <linearGradient id="buildTimeGradient" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="0%" stopColor="#000000" stopOpacity={1}/>
