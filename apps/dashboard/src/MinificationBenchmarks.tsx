@@ -20,12 +20,13 @@ const getLibraryData = (library: string, metric: 'time' | 'compression') => {
     const minifierData = libraryData.minified?.[minifier]
     if (minifierData?.result?.data) {
       let value: number
+      let minzippedBytes = 0
       if (metric === 'time') {
         value = Math.round(minifierData.result.data.time || 0)
       } else {
         // compression ratio
         const originalSize = libraryData.size
-        const minzippedBytes = minifierData.result.data.minzippedBytes || 0
+        minzippedBytes = minifierData.result.data.minzippedBytes || 0
         value = Math.round(((originalSize - minzippedBytes) / originalSize) * 100 * 10) / 10
       }
       
@@ -36,6 +37,7 @@ const getLibraryData = (library: string, metric: 'time' | 'compression') => {
               minifier === 'esbuild' ? 'ESBuild' :
               minifier === 'terser' ? 'Terser' : minifier,
         value,
+        minzippedBytes: minzippedBytes || 0,
         fill: minifier === 'terser' ? '#8b5cf6' :
               minifier === 'esbuild' ? '#059669' :
               minifier === '@swc/core' ? '#0ea5e9' :
@@ -45,8 +47,8 @@ const getLibraryData = (library: string, metric: 'time' | 'compression') => {
     }
   })
   
-  // Sort data from smallest to largest
-  return data.sort((a, b) => a.value - b.value)
+  // Sort data: time from smallest to largest (fastest to slowest), compression from largest to smallest (best to worst)
+  return data.sort((a, b) => metric === 'time' ? a.value - b.value : b.value - a.value)
 }
 
 
@@ -138,14 +140,17 @@ function MinificationBenchmarks({ }: MinificationBenchmarksProps) {
                             color: '#111827',
                             boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
                           }}
-                          formatter={(value: any) => [`${value}%`, 'Compression Ratio']}
+                          formatter={(value: any, _name: any, props: any) => [
+                            `${value}% (${props.payload.minzippedBytes} bytes)`, 
+                            'Compression Ratio'
+                          ]}
                         />
                         <Bar dataKey="value">
                           <LabelList 
                             dataKey="value" 
                             position="top" 
                             formatter={(value: number) => `${value}%`}
-                            style={{ fontSize: '12px', fill: '#374151' }}
+                            style={{ fontSize: '10px', fill: '#374151' }}
                           />
                         </Bar>
                       </BarChart>
