@@ -124,6 +124,32 @@ async function getLatestNpmVersionDate() {
 }
 */
 
+/**
+ * Fetch npm publication dates for all versions
+ */
+async function fetchNpmPublicationDates() {
+  return new Promise((resolve, reject) => {
+    const url = 'https://registry.npmjs.org/rolldown-vite';
+
+    https.get(url, (res) => {
+      let data = '';
+      res.on('data', (chunk) => data += chunk);
+      res.on('end', () => {
+        try {
+          const packageInfo = JSON.parse(data);
+          const publicationDates = packageInfo.time;
+
+          resolve(publicationDates);
+        } catch (error) {
+          reject(new Error(`Failed to parse npm registry response for publication dates: ${error.message}`));
+        }
+      });
+    }).on('error', (error) => {
+      reject(new Error(`Failed to fetch npm publication dates: ${error.message}`));
+    });
+  });
+}
+
 function getCurrentVersion() {
   try {
     const packageJson = JSON.parse(readFileSync(DASHBOARD_PACKAGE_PATH, 'utf8'));
@@ -197,10 +223,11 @@ function buildApp() {
 /**
  * Collect file statistics from the dist directory
  */
-function collectDistStats(version, buildTime = null) {
+function collectDistStats(version, buildTime = null, publicationDate = null) {
   const stats = {
     version,
     timestamp: new Date().toISOString(),
+    publicationDate,
     files: [],
     totalSize: 0,
     totalGzipSize: 0,
@@ -321,6 +348,10 @@ async function collectAllVersionStats() {
     // const futureVersions = await fetchFutureVersions(latestNpmDate);
     const allVersions = [...stableVersions];
 
+    // Fetch npm publication dates
+    console.log('📅 Fetching npm publication dates...');
+    const npmPublicationDates = await fetchNpmPublicationDates();
+
     console.log(`📦 Found ${allVersions.length} versions to analyze:`);
     console.log(`  - ${stableVersions.length} stable versions`);
     // console.log(`  - ${futureVersions.length} future versions\n`);
@@ -359,7 +390,8 @@ async function collectAllVersionStats() {
         }
 
         // Collect stats
-        const stats = collectDistStats(version, buildResult.buildTime);
+        const publicationDate = npmPublicationDates[version] || null;
+        const stats = collectDistStats(version, buildResult.buildTime, publicationDate);
         allStats.push(stats);
         successCount++;
 

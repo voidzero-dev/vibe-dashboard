@@ -9,7 +9,9 @@
   },
   "toml": {
   },
-  "excludes": [],
+  "excludes": [
+    "pnpm-lock.yaml"
+  ],
   "plugins": [
     "https://plugins.dprint.dev/typescript-0.94.0.wasm",
     "https://plugins.dprint.dev/json-0.20.0.wasm",
