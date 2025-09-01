@@ -317,16 +317,16 @@
   border: 1px solid rgba(220, 38, 38, 0.2);
 }
 
-/* Library Charts Grid */
+/* Library Charts Grid - Combined Layout */
 .library-charts-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   margin-bottom: 2rem;
   padding: 0 2rem;
 }
 
-.library-chart-container {
+.library-chart-row {
   background: #ffffff;
   border: 1px solid #e5e7eb;
   border-radius: 0.75rem;
@@ -335,9 +335,33 @@
   transition: all 0.3s ease;
 }
 
-.library-chart-container:hover {
+.library-chart-row:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transform: translateY(-2px);
+}
+
+.library-charts-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.library-chart-container {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.chart-subtitle {
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #374151;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .library-title {
@@ -376,8 +400,12 @@
   }
 
   .library-charts-grid {
-    grid-template-columns: 1fr;
     padding: 0 1rem;
+    gap: 1rem;
+  }
+
+  .library-charts-columns {
+    grid-template-columns: 1fr;
     gap: 1rem;
   }
 

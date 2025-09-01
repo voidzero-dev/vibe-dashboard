@@ -1,13 +1,15 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LabelList } from 'recharts'
-import { Zap, Gauge } from 'lucide-react'
 import minificationData from '../../../minification-benchmarks-data.json'
 
 // Transform minification data for charts
 // Get popular minifiers for comparison
 const popularMinifiers = ['terser', 'esbuild', '@swc/core', 'uglify-js', 'oxc-minify']
 
-// Get library names from the data
-const libraries = Object.keys(minificationData)
+// Get library names from the data, sorted by size (largest first)
+const libraries = Object.entries(minificationData)
+  .map(([name, data]: [string, any]) => ({ name, size: data.size }))
+  .sort((a, b) => b.size - a.size)
+  .map(item => item.name)
 
 // Transform minification data for individual library charts
 const getLibraryData = (library: string, metric: 'time' | 'compression') => {
@@ -47,121 +49,109 @@ const getLibraryData = (library: string, metric: 'time' | 'compression') => {
   return data.sort((a, b) => a.value - b.value)
 }
 
-// Transform minification time data across libraries for popular minifiers (for overview stats)
-const minificationTimeData = Object.keys(minificationData).map(library => {
-  const libraryData = (minificationData as any)[library]
-  const result: any = { name: library }
-  
-  popularMinifiers.forEach(minifier => {
-    const minifierData = libraryData.minified?.[minifier]
-    if (minifierData?.result?.data?.time) {
-      result[minifier] = Math.round(minifierData.result.data.time)
-    }
-  })
-  
-  return result
-})
-
-// Transform minification size efficiency data (compression ratio)
-const minificationSizeData = Object.keys(minificationData).map(library => {
-  const libraryData = (minificationData as any)[library]
-  const originalSize = libraryData.size
-  const result: any = { name: library, originalSize }
-  
-  popularMinifiers.forEach(minifier => {
-    const minifierData = libraryData.minified?.[minifier]
-    if (minifierData?.result?.data?.minifiedBytes) {
-      const compressionRatio = ((originalSize - minifierData.result.data.minifiedBytes) / originalSize) * 100
-      result[minifier] = Math.round(compressionRatio * 10) / 10 // Round to 1 decimal
-    }
-  })
-  
-  return result
-})
 
 interface MinificationBenchmarksProps {
-  selectedMetric: string
-  setSelectedMetric: (metric: string) => void
+  // Remove selectedMetric and setSelectedMetric since we'll show both metrics together
 }
 
-function MinificationBenchmarks({ selectedMetric, setSelectedMetric }: MinificationBenchmarksProps) {
-  // Minification metrics
-  const minificationMetrics = [
-    { id: 'minTime', name: 'Minification Time', icon: Zap, data: minificationTimeData, color: '#059669' },
-    { id: 'compression', name: 'Compression Ratio', icon: Gauge, data: minificationSizeData, color: '#7c3aed' },
-  ]
-
-  const currentMetric = minificationMetrics.find(m => m.id === selectedMetric) || minificationMetrics[0]
-  const metricType = selectedMetric === 'minTime' ? 'time' : 'compression'
-  const unit = selectedMetric === 'minTime' ? 'ms' : '%'
-
+function MinificationBenchmarks({ }: MinificationBenchmarksProps) {
   return (
     <>
-      {/* Metric Navigation */}
-      <nav className="dashboard-nav">
-        {minificationMetrics.map((metric) => {
-          const Icon = metric.icon
-          return (
-            <button
-              key={metric.id}
-              className={`nav-button ${selectedMetric === metric.id ? 'active' : ''}`}
-              onClick={() => {
-                setSelectedMetric(metric.id)
-              }}
-            >
-              <Icon size={20} />
-              {metric.name}
-            </button>
-          )
-        })}
-      </nav>
-
       <main className="dashboard-main">
-        {/* Individual Charts for Each Library */}
+        {/* Combined Charts for Each Library - Time and Compression Side by Side */}
         <div className="library-charts-grid">
           {libraries.map(library => {
-            const libraryData = getLibraryData(library, metricType)
+            const timeData = getLibraryData(library, 'time')
+            const compressionData = getLibraryData(library, 'compression')
             
             return (
-              <div key={library} className="library-chart-container">
+              <div key={library} className="library-chart-row">
                 <h3 className="library-title">{library}</h3>
-                <ResponsiveContainer width="100%" height={300}>
-                  <BarChart data={libraryData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                    <XAxis
-                      dataKey="name"
-                      tick={{ fill: '#374151', fontSize: 11 }}
-                      axisLine={{ stroke: '#d1d5db' }}
-                      tickLine={{ stroke: '#d1d5db' }}
-                      angle={-45}
-                      textAnchor="end"
-                      height={60}
-                    />
-                    <YAxis
-                      tick={{ fill: '#374151', fontSize: 11 }}
-                      axisLine={{ stroke: '#d1d5db' }}
-                      tickLine={{ stroke: '#d1d5db' }}
-                    />
-                    <Tooltip
-                      contentStyle={{
-                        backgroundColor: 'white',
-                        border: '1px solid #d1d5db',
-                        borderRadius: '0.5rem',
-                        color: '#111827',
-                        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
-                      }}
-                      formatter={(value: any) => [`${value}${unit}`, currentMetric.name]}
-                    />
-                    <Bar dataKey="value">
-                      <LabelList 
-                        dataKey="value" 
-                        position="top" 
-                        formatter={(value: number) => `${value}${unit}`}
-                        style={{ fontSize: '12px', fill: '#374151' }}
-                      />
-                    </Bar>
-                  </BarChart>
-                </ResponsiveContainer>
+                <div className="library-charts-columns">
+                  {/* Left column - Minification Time */}
+                  <div className="library-chart-container">
+                    <h4 className="chart-subtitle">Minification Time</h4>
+                    <ResponsiveContainer width="100%" height={300}>
+                      <BarChart data={timeData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                        <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                        <XAxis
+                          dataKey="name"
+                          tick={{ fill: '#374151', fontSize: 11 }}
+                          axisLine={{ stroke: '#d1d5db' }}
+                          tickLine={{ stroke: '#d1d5db' }}
+                          angle={-45}
+                          textAnchor="end"
+                          height={60}
+                        />
+                        <YAxis
+                          tick={{ fill: '#374151', fontSize: 11 }}
+                          axisLine={{ stroke: '#d1d5db' }}
+                          tickLine={{ stroke: '#d1d5db' }}
+                        />
+                        <Tooltip
+                          contentStyle={{
+                            backgroundColor: 'white',
+                            border: '1px solid #d1d5db',
+                            borderRadius: '0.5rem',
+                            color: '#111827',
+                            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
+                          }}
+                          formatter={(value: any) => [`${value}ms`, 'Minification Time']}
+                        />
+                        <Bar dataKey="value">
+                          <LabelList 
+                            dataKey="value" 
+                            position="top" 
+                            formatter={(value: number) => `${value}ms`}
+                            style={{ fontSize: '12px', fill: '#374151' }}
+                          />
+                        </Bar>
+                      </BarChart>
+                    </ResponsiveContainer>
+                  </div>
+                  
+                  {/* Right column - Compression Ratio */}
+                  <div className="library-chart-container">
+                    <h4 className="chart-subtitle">Compression Ratio</h4>
+                    <ResponsiveContainer width="100%" height={300}>
+                      <BarChart data={compressionData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                        <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                        <XAxis
+                          dataKey="name"
+                          tick={{ fill: '#374151', fontSize: 11 }}
+                          axisLine={{ stroke: '#d1d5db' }}
+                          tickLine={{ stroke: '#d1d5db' }}
+                          angle={-45}
+                          textAnchor="end"
+                          height={60}
+                        />
+                        <YAxis
+                          tick={{ fill: '#374151', fontSize: 11 }}
+                          axisLine={{ stroke: '#d1d5db' }}
+                          tickLine={{ stroke: '#d1d5db' }}
+                        />
+                        <Tooltip
+                          contentStyle={{
+                            backgroundColor: 'white',
+                            border: '1px solid #d1d5db',
+                            borderRadius: '0.5rem',
+                            color: '#111827',
+                            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
+                          }}
+                          formatter={(value: any) => [`${value}%`, 'Compression Ratio']}
+                        />
+                        <Bar dataKey="value">
+                          <LabelList 
+                            dataKey="value" 
+                            position="top" 
+                            formatter={(value: number) => `${value}%`}
+                            style={{ fontSize: '12px', fill: '#374151' }}
+                          />
+                        </Bar>
+                      </BarChart>
+                    </ResponsiveContainer>
+                  </div>
+                </div>
               </div>
             )
           })}

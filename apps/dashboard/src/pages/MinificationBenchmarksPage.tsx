@@ -1,10 +1,7 @@
-import { useState } from 'react'
 import { BarChart3 } from 'lucide-react'
 import MinificationBenchmarks from '../MinificationBenchmarks'
 
 function MinificationBenchmarksPage() {
-  const [selectedMetric, setSelectedMetric] = useState('minTime')
-
   return (
     <div className="dashboard">
       <header className="dashboard-header">
@@ -19,10 +16,7 @@ function MinificationBenchmarksPage() {
         </div>
       </header>
 
-      <MinificationBenchmarks 
-        selectedMetric={selectedMetric} 
-        setSelectedMetric={setSelectedMetric} 
-      />
+      <MinificationBenchmarks />
     </div>
   )
 }
