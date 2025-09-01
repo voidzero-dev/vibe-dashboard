@@ -2,9 +2,7 @@ packages:
   - apps/*
   - packages/*
 
-onlyBuiltDependencies:
-  - esbuild
+verifyDepsBeforeRun: install
 
 catalog:
     typescript: ^5.9.2
-
