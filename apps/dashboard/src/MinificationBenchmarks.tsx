@@ -15,7 +15,7 @@ const libraries = Object.entries(minificationData)
 const getLibraryData = (library: string, metric: 'time' | 'compression') => {
   const libraryData = (minificationData as any)[library]
   const data: any[] = []
-  
+
   popularMinifiers.forEach(minifier => {
     const minifierData = libraryData.minified?.[minifier]
     if (minifierData?.result?.data) {
@@ -29,10 +29,10 @@ const getLibraryData = (library: string, metric: 'time' | 'compression') => {
         minzippedBytes = minifierData.result.data.minzippedBytes || 0
         value = Math.round(((originalSize - minzippedBytes) / originalSize) * 100 * 10) / 10
       }
-      
+
       data.push({
-        name: minifier === '@swc/core' ? 'SWC' : 
-              minifier === 'uglify-js' ? 'UglifyJS' : 
+        name: minifier === '@swc/core' ? 'SWC' :
+              minifier === 'uglify-js' ? 'UglifyJS' :
               minifier === 'oxc-minify' ? 'OXC' :
               minifier === 'esbuild' ? 'ESBuild' :
               minifier === 'terser' ? 'Terser' : minifier,
@@ -46,9 +46,9 @@ const getLibraryData = (library: string, metric: 'time' | 'compression') => {
       })
     }
   })
-  
+
   // Sort data: time from smallest to largest (fastest to slowest), compression from largest to smallest (best to worst)
-  return data.sort((a, b) => metric === 'time' ? a.value - b.value : b.value - a.value)
+  return data.sort((a, b) => metric === 'time' ? a.value - b.value : a.minzippedBytes - b.minzippedBytes)
 }
 
 
@@ -65,7 +65,7 @@ function MinificationBenchmarks({ }: MinificationBenchmarksProps) {
           {libraries.map(library => {
             const timeData = getLibraryData(library, 'time')
             const compressionData = getLibraryData(library, 'compression')
-            
+
             return (
               <div key={library} className="library-chart-row">
                 <h3 className="library-title">{library}</h3>
@@ -101,9 +101,9 @@ function MinificationBenchmarks({ }: MinificationBenchmarksProps) {
                           formatter={(value: any) => [`${value}ms`, 'Minification Time']}
                         />
                         <Bar dataKey="value">
-                          <LabelList 
-                            dataKey="value" 
-                            position="top" 
+                          <LabelList
+                            dataKey="value"
+                            position="top"
                             formatter={(value: number) => `${value}ms`}
                             style={{ fontSize: '12px', fill: '#374151' }}
                           />
@@ -111,7 +111,7 @@ function MinificationBenchmarks({ }: MinificationBenchmarksProps) {
                       </BarChart>
                     </ResponsiveContainer>
                   </div>
-                  
+
                   {/* Right column - Compression Ratio */}
                   <div className="library-chart-container">
                     <h4 className="chart-subtitle">Compression Ratio</h4>
@@ -141,14 +141,14 @@ function MinificationBenchmarks({ }: MinificationBenchmarksProps) {
                             boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
                           }}
                           formatter={(value: any, _name: any, props: any) => [
-                            `${value}% (${props.payload.minzippedBytes} bytes)`, 
+                            `${value}% (${props.payload.minzippedBytes} bytes)`,
                             'Compression Ratio'
                           ]}
                         />
                         <Bar dataKey="value">
-                          <LabelList 
-                            dataKey="value" 
-                            position="top" 
+                          <LabelList
+                            dataKey="value"
+                            position="top"
                             formatter={(value: number) => `${value}%`}
                             style={{ fontSize: '10px', fill: '#374151' }}
                           />
