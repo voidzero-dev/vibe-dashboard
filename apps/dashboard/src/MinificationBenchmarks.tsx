@@ -1,4 +1,4 @@
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 import { Zap, Gauge } from 'lucide-react'
 import minificationData from '../../../minification-benchmarks-data.json'
 
@@ -6,7 +6,47 @@ import minificationData from '../../../minification-benchmarks-data.json'
 // Get popular minifiers for comparison
 const popularMinifiers = ['terser', 'esbuild', '@swc/core', 'uglify-js', 'oxc-minify']
 
-// Transform minification time data across libraries for popular minifiers
+// Get library names from the data
+const libraries = Object.keys(minificationData)
+
+// Transform minification data for individual library charts
+const getLibraryData = (library: string, metric: 'time' | 'compression') => {
+  const libraryData = (minificationData as any)[library]
+  const data: any[] = []
+  
+  popularMinifiers.forEach(minifier => {
+    const minifierData = libraryData.minified?.[minifier]
+    if (minifierData?.result?.data) {
+      let value: number
+      if (metric === 'time') {
+        value = Math.round(minifierData.result.data.time || 0)
+      } else {
+        // compression ratio
+        const originalSize = libraryData.size
+        const minifiedBytes = minifierData.result.data.minifiedBytes || 0
+        value = Math.round(((originalSize - minifiedBytes) / originalSize) * 100 * 10) / 10
+      }
+      
+      data.push({
+        name: minifier === '@swc/core' ? 'SWC' : 
+              minifier === 'uglify-js' ? 'UglifyJS' : 
+              minifier === 'oxc-minify' ? 'OXC' :
+              minifier === 'esbuild' ? 'ESBuild' :
+              minifier === 'terser' ? 'Terser' : minifier,
+        value,
+        fill: minifier === 'terser' ? '#8b5cf6' :
+              minifier === 'esbuild' ? '#059669' :
+              minifier === '@swc/core' ? '#0ea5e9' :
+              minifier === 'uglify-js' ? '#dc2626' :
+              minifier === 'oxc-minify' ? '#f59e0b' : '#6b7280'
+      })
+    }
+  })
+  
+  return data
+}
+
+// Transform minification time data across libraries for popular minifiers (for overview stats)
 const minificationTimeData = Object.keys(minificationData).map(library => {
   const libraryData = (minificationData as any)[library]
   const result: any = { name: library }
@@ -51,6 +91,8 @@ function MinificationBenchmarks({ selectedMetric, setSelectedMetric }: Minificat
   ]
 
   const currentMetric = minificationMetrics.find(m => m.id === selectedMetric) || minificationMetrics[0]
+  const metricType = selectedMetric === 'minTime' ? 'time' : 'compression'
+  const unit = selectedMetric === 'minTime' ? 'ms' : '%'
 
   return (
     <>
@@ -74,40 +116,47 @@ function MinificationBenchmarks({ selectedMetric, setSelectedMetric }: Minificat
       </nav>
 
       <main className="dashboard-main">
-        <div className="chart-container">
-          <h2>{currentMetric.name}</h2>
-          <ResponsiveContainer width="100%" height={400}>
-            {/* Minification charts - multi-bar charts for comparing minifiers */}
-            <BarChart data={currentMetric.data}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-              <XAxis
-                dataKey="name"
-                tick={{ fill: '#374151', fontSize: 12 }}
-                axisLine={{ stroke: '#d1d5db' }}
-                tickLine={{ stroke: '#d1d5db' }}
-              />
-              <YAxis
-                tick={{ fill: '#374151', fontSize: 12 }}
-                axisLine={{ stroke: '#d1d5db' }}
-                tickLine={{ stroke: '#d1d5db' }}
-              />
-              <Tooltip
-                contentStyle={{
-                  backgroundColor: 'white',
-                  border: '1px solid #d1d5db',
-                  borderRadius: '0.5rem',
-                  color: '#111827',
-                  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
-                }}
-              />
-              <Legend wrapperStyle={{ color: '#374151' }} />
-              <Bar dataKey="terser" fill="#8b5cf6" name="Terser" />
-              <Bar dataKey="esbuild" fill="#059669" name="ESBuild" />
-              <Bar dataKey="@swc/core" fill="#0ea5e9" name="SWC" />
-              <Bar dataKey="uglify-js" fill="#dc2626" name="UglifyJS" />
-              <Bar dataKey="oxc-minify" fill="#f59e0b" name="OXC" />
-            </BarChart>
-          </ResponsiveContainer>
+        {/* Individual Charts for Each Library */}
+        <div className="library-charts-grid">
+          {libraries.map(library => {
+            const libraryData = getLibraryData(library, metricType)
+            
+            return (
+              <div key={library} className="library-chart-container">
+                <h3 className="library-title">{library}</h3>
+                <ResponsiveContainer width="100%" height={300}>
+                  <BarChart data={libraryData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                    <XAxis
+                      dataKey="name"
+                      tick={{ fill: '#374151', fontSize: 11 }}
+                      axisLine={{ stroke: '#d1d5db' }}
+                      tickLine={{ stroke: '#d1d5db' }}
+                      angle={-45}
+                      textAnchor="end"
+                      height={60}
+                    />
+                    <YAxis
+                      tick={{ fill: '#374151', fontSize: 11 }}
+                      axisLine={{ stroke: '#d1d5db' }}
+                      tickLine={{ stroke: '#d1d5db' }}
+                    />
+                    <Tooltip
+                      contentStyle={{
+                        backgroundColor: 'white',
+                        border: '1px solid #d1d5db',
+                        borderRadius: '0.5rem',
+                        color: '#111827',
+                        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
+                      }}
+                      formatter={(value: any) => [`${value}${unit}`, currentMetric.name]}
+                    />
+                    <Bar dataKey="value" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            )
+          })}
         </div>
 
         <div className="stats-grid">
