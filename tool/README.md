@@ -53,6 +53,7 @@ node tool/override-rolldown.js --stats
 ```
 
 This command will:
+
 - Test all available rolldown versions (stable + experimental)
 - Build the application with each version
 - Collect file statistics from the dist directory
@@ -69,13 +70,15 @@ node tool/override-rolldown.js --help
 The tool currently supports:
 
 ### Stable Versions (from npm)
+
 - 7.1.4 (latest)
 - 7.1.3
-- 7.1.2  
+- 7.1.2
 - 7.1.1
 - 7.1.0
 
 ### Future Versions (from pkg.pr.new)
+
 Future versions will be added as they become available through pkg.pr.new for testing experimental features.
 
 ## What It Does
@@ -101,7 +104,7 @@ The `--stats` command generates a JSON file with the following structure:
         "type": "js"
       },
       {
-        "path": "assets/index-DD-rq4eS.css", 
+        "path": "assets/index-DD-rq4eS.css",
         "size": 2812,
         "type": "css"
       }

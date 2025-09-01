@@ -23,6 +23,7 @@ A modern frontend dashboard for displaying different metrics using bar charts.
 ## ⚡ Performance
 
 The dashboard uses **rolldown-vite** for significantly faster build times and **oxlint** for ultra-fast linting:
+
 - **Build Performance**: ~13.8x faster builds (309ms vs 4.28s) with Rolldown
 - **Linting Performance**: Extremely fast linting (~2ms) with oxlint
 - **Development**: Fast startup (306ms) with Rolldown's Rust-based bundler
@@ -55,17 +56,20 @@ vibe-dashboard/
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/Boshen/vibe-dashboard.git
 cd vibe-dashboard
 ```
 
 2. Install dependencies:
+
 ```bash
 pnpm install
 ```
 
 3. Start the development server:
+
 ```bash
 pnpm dev
 ```
@@ -88,6 +92,7 @@ The dashboard is automatically deployed to GitHub Pages when changes are pushed 
 **Live Demo**: [https://boshen.github.io/vibe-dashboard/](https://boshen.github.io/vibe-dashboard/)
 
 The deployment process:
+
 1. Runs linting and builds the project
 2. Deploys the built assets to GitHub Pages
 3. The app is served with the correct base path `/vibe-dashboard/`
@@ -127,6 +132,7 @@ pnpm rolldown:use pkg.pr.new/rolldown-rs/vite@1234
 ```
 
 The tool automatically:
+
 - Updates the package.json with the new version
 - Installs dependencies
 - Rebuilds the application
@@ -142,6 +148,7 @@ See [`tool/README.md`](tool/README.md) for detailed usage instructions.
 ### Styling
 
 The dashboard uses modern CSS with:
+
 - CSS Grid for responsive layouts
 - Flexbox for component alignment
 - Custom CSS variables for consistent theming

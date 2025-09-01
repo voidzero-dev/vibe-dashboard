@@ -9,9 +9,9 @@
  */
 
 import { execSync } from 'node:child_process';
-import { readFileSync, writeFileSync, readdirSync, statSync, existsSync } from 'node:fs';
-import { join } from 'node:path';
+import { existsSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import https from 'node:https';
+import { join } from 'node:path';
 
 const DASHBOARD_PACKAGE_PATH = join(process.cwd(), 'apps/dashboard/package.json');
 const DIST_PATH = join(process.cwd(), 'apps/dashboard/dist');
@@ -167,7 +167,7 @@ function installDependencies() {
     console.log('📥 Installing dependencies...');
     execSync('pnpm install --no-frozen-lockfile', {
       stdio: 'inherit',
-      cwd: process.cwd()
+      cwd: process.cwd(),
     });
     console.log('✅ Dependencies installed successfully');
     return true;
@@ -183,7 +183,7 @@ function buildApp() {
     const startTime = Date.now();
     execSync('pnpm build', {
       stdio: 'inherit',
-      cwd: process.cwd()
+      cwd: process.cwd(),
     });
     const buildTime = Date.now() - startTime;
     console.log(`✅ Build completed successfully in ${buildTime}ms`);
@@ -204,7 +204,7 @@ function collectDistStats(version, buildTime = null) {
     files: [],
     totalSize: 0,
     totalGzipSize: 0,
-    buildTime
+    buildTime,
   };
 
   if (!existsSync(DIST_PATH)) {
@@ -229,9 +229,13 @@ function collectDistStats(version, buildTime = null) {
           files.push({
             path: relativePath,
             size: stat.size,
-            type: item.endsWith('.js') ? 'js' :
-                  item.endsWith('.css') ? 'css' :
-                  item.endsWith('.html') ? 'html' : 'other'
+            type: item.endsWith('.js')
+              ? 'js'
+              : item.endsWith('.css')
+              ? 'css'
+              : item.endsWith('.html')
+              ? 'html'
+              : 'other',
           });
         }
       }
@@ -242,7 +246,6 @@ function collectDistStats(version, buildTime = null) {
     stats.totalSize = stats.files.reduce((total, file) => total + file.size, 0);
 
     console.log(`📊 Collected stats for ${stats.files.length} files (${(stats.totalSize / 1024).toFixed(2)} KB total)`);
-
   } catch (error) {
     console.warn(`⚠️  Error collecting stats for version ${version}:`, error.message);
   }
@@ -361,7 +364,6 @@ async function collectAllVersionStats() {
         successCount++;
 
         console.log(`✅ Successfully analyzed version ${version}`);
-
       } catch (error) {
         console.error(`❌ Unexpected error analyzing version ${version}:`, error.message);
         failureCount++;
@@ -393,7 +395,6 @@ async function collectAllVersionStats() {
       console.log(`  - Average build time: ${Math.round(avgBuildTime)}ms`);
       console.log(`  - Average bundle size: ${(avgTotalSize / 1024).toFixed(2)} KB`);
     }
-
   } catch (error) {
     console.error('❌ Fatal error during analysis:', error.message);
     process.exit(1);

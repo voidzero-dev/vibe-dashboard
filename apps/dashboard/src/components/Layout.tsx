@@ -1,22 +1,22 @@
-import { Outlet, Link, useLocation } from 'react-router-dom'
-import { Package, Zap } from 'lucide-react'
+import { Package, Zap } from 'lucide-react';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 
 function Layout() {
-  const location = useLocation()
+  const location = useLocation();
 
   return (
     <>
       {/* Page Navigation */}
-      <nav className="page-nav">
+      <nav className='page-nav'>
         <Link
-          to="/"
+          to='/'
           className={`page-button ${location.pathname === '/' ? 'active' : ''}`}
         >
           <Package size={20} />
           Rolldown Stats
         </Link>
         <Link
-          to="/minification"
+          to='/minification'
           className={`page-button ${location.pathname === '/minification' ? 'active' : ''}`}
         >
           <Zap size={20} />
@@ -27,7 +27,7 @@ function Layout() {
       {/* Render the current route's component */}
       <Outlet />
     </>
-  )
+  );
 }
 
-export default Layout
+export default Layout;

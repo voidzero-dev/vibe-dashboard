@@ -1,4 +1,5 @@
 # Vibe Dashboard
+
 A modern frontend dashboard for displaying different metrics using bar charts. Built with React 19, TypeScript, Vite 7, and organized as a pnpm monorepo.
 
 **ALWAYS follow these instructions first. Only fallback to additional search and context gathering if the information provided here is incomplete or found to be in error.**
@@ -6,6 +7,7 @@ A modern frontend dashboard for displaying different metrics using bar charts. B
 ## Working Effectively
 
 ### Prerequisites and Installation
+
 - Install Node.js v20 or higher (verified working with v20.19.4)
 - Install pnpm globally: `npm install -g pnpm` (requires pnpm v10 or higher)
 - Bootstrap the repository:
@@ -15,6 +17,7 @@ A modern frontend dashboard for displaying different metrics using bar charts. B
   - **Timing**: Takes approximately 10 seconds. NEVER CANCEL. Set timeout to 60+ seconds.
 
 ### Build and Development
+
 - Build the project:
   ```bash
   pnpm build
@@ -39,6 +42,14 @@ A modern frontend dashboard for displaying different metrics using bar charts. B
   - Runs ESLint across all packages
   - **ALWAYS run before committing** to avoid CI failures
 
+- Format the code:
+  ```bash
+  pnpm fmt
+  ```
+  - **Timing**: Takes approximately 2 seconds
+  - Runs dprint across all files
+  - **ALWAYS run before committing** to avoid CI failures
+
 - Clean build artifacts:
   ```bash
   pnpm clean
@@ -54,6 +65,7 @@ A modern frontend dashboard for displaying different metrics using bar charts. B
   - Takes under 1 second
 
 ### Repository Structure
+
 ```
 vibe-dashboard/
 ├── .github/                # GitHub configuration
@@ -77,6 +89,7 @@ vibe-dashboard/
 ## Validation
 
 ### Manual Testing Scenarios
+
 **ALWAYS test these scenarios after making changes:**
 
 1. **Basic functionality**:
@@ -98,6 +111,7 @@ vibe-dashboard/
    - Check that positive/negative change indicators are color-coded correctly
 
 ### Build Validation
+
 - **ALWAYS run before committing**:
   ```bash
   pnpm lint && pnpm build
@@ -108,6 +122,7 @@ vibe-dashboard/
 ## Common Tasks
 
 ### Adding New Metrics
+
 1. Edit `apps/dashboard/src/App.tsx`
 2. Add data array (follow pattern of `salesData`, `userActivityData`, `revenueData`)
 3. Add metric object to `metrics` array with:
@@ -119,6 +134,7 @@ vibe-dashboard/
 4. Customize chart rendering in the JSX if needed (current supports single bars and stacked bars)
 
 ### Key Files and Their Purpose
+
 - `apps/dashboard/src/App.tsx` - **MOST IMPORTANT**: Contains all metrics data and chart logic
 - `apps/dashboard/src/App.css` - Responsive dashboard styles with CSS Grid and Flexbox
 - `package.json` (root) - Workspace scripts and shared dependencies
@@ -126,14 +142,16 @@ vibe-dashboard/
 - `pnpm-workspace.yaml` - Monorepo configuration
 
 ### Technology Stack
+
 - **Frontend**: React 19 with TypeScript
-- **Build Tool**: Vite 7 (fast development and production builds)  
+- **Build Tool**: Vite 7 (fast development and production builds)
 - **Charts**: Recharts library for responsive bar charts
 - **Icons**: Lucide React for UI icons
 - **Styling**: Pure CSS with CSS Grid, Flexbox, and CSS variables
 - **Package Management**: pnpm workspaces for monorepo structure
 
 ### Common Commands Reference
+
 ```bash
 # Development workflow
 pnpm install          # Install dependencies (~10s)
@@ -148,12 +166,14 @@ pnpm -r build                  # Build all packages recursively
 ```
 
 ### Troubleshooting
+
 - **Build fails**: Check TypeScript errors, run `pnpm lint` first
 - **Dev server won't start**: Ensure port 5173 is available
 - **Charts not rendering**: Verify Recharts data format matches expected structure
 - **Styles broken**: Check CSS imports in `App.tsx` and `main.tsx`
 
 ### Development Notes
+
 - Uses Vite's fast refresh for instant updates during development
 - TypeScript strict mode enabled for better code quality
 - ESLint configured with React and TypeScript rules

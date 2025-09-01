@@ -7,8 +7,8 @@ runs:
 
     - uses: actions/setup-node@v4
       with:
-        node-version: 'lts/*'
-        registry-url: 'https://registry.npmjs.org'
+        node-version: "lts/*"
+        registry-url: "https://registry.npmjs.org"
         # see pnpm cache setting below
       env:
         GITHUB_TOKEN: ${{ github.token }}

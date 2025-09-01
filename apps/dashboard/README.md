@@ -14,12 +14,14 @@ Currently, two official plugins are available:
 This project uses [oxlint](https://oxc.rs) for linting, which provides significantly faster performance than ESLint while maintaining compatibility with most ESLint rules.
 
 The configuration is in `.oxlintrc.json` and includes:
+
 - TypeScript plugin for TypeScript-specific rules
 - React plugin for React best practices
 - Unicorn plugin for additional code quality rules
 - OXC plugin for unique optimization rules
 
 To run linting:
+
 ```bash
 pnpm lint
 ```
@@ -29,4 +31,3 @@ To customize the configuration, edit `.oxlintrc.json`. Oxlint supports most ESLi
 ## Rolldown Stats Integration
 
 This dashboard displays build statistics from different rolldown versions, automatically updated via CI when changes are made to the dashboard code.
-

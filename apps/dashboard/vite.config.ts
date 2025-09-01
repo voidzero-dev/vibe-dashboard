@@ -1,4 +1,4 @@
-import { defineConfig } from 'rolldown-vite'
+import { defineConfig } from 'rolldown-vite';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -10,8 +10,8 @@ export default defineConfig({
   build: {
     rolldownOptions: {
       experimental: {
-        strictExecutionOrder: false
-      }
-    }
-  }
-})
+        strictExecutionOrder: false,
+      },
+    },
+  },
+});

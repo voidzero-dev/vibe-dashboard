@@ -13,6 +13,7 @@
     "rolldown:list": "node tool/override-rolldown.mjs --list",
     "rolldown:use": "node tool/override-rolldown.mjs",
     "rolldown:stats": "node tool/override-rolldown.mjs --stats",
+    "fmt": "dprint fmt",
     "vp": "vp"
   },
   "keywords": [
@@ -26,5 +27,8 @@
   "devDependencies": {
     "@voidzero-dev/global": "0.0.0-ec375d576832bc5c7ec2ab60473dce4b9211ba7c"
   },
-  "packageManager": "pnpm@10.15.0"
+  "packageManager": "pnpm@10.15.0",
+  "dependencies": {
+    "dprint": "^0.50.1"
+  }
 }
