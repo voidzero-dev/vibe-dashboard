@@ -60,5 +60,8 @@ Thumbs.db
 .tmp
 .temp
 
+# Screenshots
+*.png
+
 # Build tools
 .turbo

@@ -25,8 +25,8 @@ const getLibraryData = (library: string, metric: 'time' | 'compression') => {
       } else {
         // compression ratio
         const originalSize = libraryData.size
-        const minifiedBytes = minifierData.result.data.minifiedBytes || 0
-        value = Math.round(((originalSize - minifiedBytes) / originalSize) * 100 * 10) / 10
+        const minzippedBytes = minifierData.result.data.minzippedBytes || 0
+        value = Math.round(((originalSize - minzippedBytes) / originalSize) * 100 * 10) / 10
       }
       
       data.push({
