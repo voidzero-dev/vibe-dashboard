@@ -11,7 +11,7 @@ const formatNumberWithCommas = (num: number): string => {
 const buildTimeData = rolldownStats.map(stat => ({
   name: `v${stat.version}`,
   value: stat.buildTime
-}))
+})).sort((a, b) => a.value - b.value) // Sort from smallest to largest
 
 // Calculate bundle size differences between consecutive versions
 const bundleSizeDiffData = rolldownStats.map((stat, index) => {
@@ -37,7 +37,7 @@ const bundleSizeDiffData = rolldownStats.map((stat, index) => {
     currentSize: currentSize,
     isBaseline: false
   }
-})
+}).sort((a, b) => a.value - b.value) // Sort from smallest to largest
 
 interface RolldownStatsProps {
   selectedMetric: string

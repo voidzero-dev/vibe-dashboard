@@ -43,7 +43,8 @@ const getLibraryData = (library: string, metric: 'time' | 'compression') => {
     }
   })
   
-  return data
+  // Sort data from smallest to largest
+  return data.sort((a, b) => a.value - b.value)
 }
 
 // Transform minification time data across libraries for popular minifiers (for overview stats)
