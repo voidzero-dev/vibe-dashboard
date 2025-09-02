@@ -32,7 +32,7 @@ const buildTimeData = rolldownStats.map(stat => ({
   name: `v${stat.version}`,
   value: stat.buildTime,
   version: stat.version,
-  publicationDate: stat.publicationDate,
+  publicationDate: (stat as any).publicationDate,
 })).sort((a, b) => a.value - b.value); // Sort from smallest to largest
 
 // Calculate bundle size differences between consecutive versions
@@ -46,7 +46,7 @@ const bundleSizeDiffData = rolldownStats.map((stat, index) => {
       currentSize: stat.totalSize,
       isBaseline: true,
       version: stat.version,
-      publicationDate: stat.publicationDate,
+      publicationDate: (stat as any).publicationDate,
     };
   }
 
@@ -61,7 +61,7 @@ const bundleSizeDiffData = rolldownStats.map((stat, index) => {
     currentSize: currentSize,
     isBaseline: false,
     version: stat.version,
-    publicationDate: stat.publicationDate,
+    publicationDate: (stat as any).publicationDate,
   };
 }).sort((a, b) => a.value - b.value); // Sort from smallest to largest
 
