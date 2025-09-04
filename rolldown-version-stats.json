@@ -1,18 +1,18 @@
 [
   {
     "version": "7.1.0-beta.1",
-    "timestamp": "2025-09-04T01:23:51.113Z",
+    "timestamp": "2025-09-04T17:08:39.348Z",
     "publicationDate": "2025-08-05T07:08:32.084Z",
     "files": [
       {
-        "path": "assets/index-BhZKZBQ8.js",
-        "size": 646030,
-        "type": "js"
-      },
-      {
         "path": "assets/index-CQDoQ_TD.css",
         "size": 6240,
         "type": "css"
+      },
+      {
+        "path": "assets/index-XSVEXoaC.js",
+        "size": 646362,
+        "type": "js"
       },
       {
         "path": "index.html",
@@ -25,24 +25,24 @@
         "type": "other"
       }
     ],
-    "totalSize": 654282,
+    "totalSize": 654614,
     "totalGzipSize": 0,
-    "buildTime": 3354
+    "buildTime": 3137
   },
   {
     "version": "7.1.0-beta.2",
-    "timestamp": "2025-09-04T01:23:55.605Z",
+    "timestamp": "2025-09-04T17:08:43.459Z",
     "publicationDate": "2025-08-05T07:30:18.935Z",
     "files": [
       {
-        "path": "assets/index-BhZKZBQ8.js",
-        "size": 646030,
-        "type": "js"
-      },
-      {
         "path": "assets/index-CQDoQ_TD.css",
         "size": 6240,
         "type": "css"
+      },
+      {
+        "path": "assets/index-XSVEXoaC.js",
+        "size": 646362,
+        "type": "js"
       },
       {
         "path": "index.html",
@@ -55,24 +55,24 @@
         "type": "other"
       }
     ],
-    "totalSize": 654282,
+    "totalSize": 654614,
     "totalGzipSize": 0,
-    "buildTime": 3312
+    "buildTime": 3066
   },
   {
     "version": "7.1.0",
-    "timestamp": "2025-09-04T01:24:00.217Z",
+    "timestamp": "2025-09-04T17:08:47.650Z",
     "publicationDate": "2025-08-07T08:23:22.159Z",
     "files": [
       {
-        "path": "assets/index-BhZKZBQ8.js",
-        "size": 646030,
-        "type": "js"
-      },
-      {
         "path": "assets/index-CQDoQ_TD.css",
         "size": 6240,
         "type": "css"
+      },
+      {
+        "path": "assets/index-XSVEXoaC.js",
+        "size": 646362,
+        "type": "js"
       },
       {
         "path": "index.html",
@@ -85,24 +85,24 @@
         "type": "other"
       }
     ],
-    "totalSize": 654282,
+    "totalSize": 654614,
     "totalGzipSize": 0,
-    "buildTime": 3323
+    "buildTime": 3086
   },
   {
     "version": "7.1.1",
-    "timestamp": "2025-09-04T01:24:04.987Z",
+    "timestamp": "2025-09-04T17:08:52.234Z",
     "publicationDate": "2025-08-12T02:54:51.107Z",
     "files": [
       {
-        "path": "assets/index-BSsOuBQQ.js",
-        "size": 646017,
-        "type": "js"
-      },
-      {
         "path": "assets/index-CQDoQ_TD.css",
         "size": 6240,
         "type": "css"
+      },
+      {
+        "path": "assets/index-CYT5cSxt.js",
+        "size": 646337,
+        "type": "js"
       },
       {
         "path": "index.html",
@@ -115,24 +115,24 @@
         "type": "other"
       }
     ],
-    "totalSize": 654269,
+    "totalSize": 654589,
     "totalGzipSize": 0,
-    "buildTime": 3356
+    "buildTime": 3221
   },
   {
     "version": "7.1.2",
-    "timestamp": "2025-09-04T01:24:09.576Z",
+    "timestamp": "2025-09-04T17:08:56.483Z",
     "publicationDate": "2025-08-12T12:01:43.781Z",
     "files": [
       {
-        "path": "assets/index-BSsOuBQQ.js",
-        "size": 646017,
-        "type": "js"
-      },
-      {
         "path": "assets/index-CQDoQ_TD.css",
         "size": 6240,
         "type": "css"
+      },
+      {
+        "path": "assets/index-CYT5cSxt.js",
+        "size": 646337,
+        "type": "js"
       },
       {
         "path": "index.html",
@@ -145,18 +145,18 @@
         "type": "other"
       }
     ],
-    "totalSize": 654269,
+    "totalSize": 654589,
     "totalGzipSize": 0,
-    "buildTime": 3305
+    "buildTime": 3082
   },
   {
     "version": "7.1.3",
-    "timestamp": "2025-09-04T01:24:14.447Z",
+    "timestamp": "2025-09-04T17:09:00.701Z",
     "publicationDate": "2025-08-18T08:02:46.387Z",
     "files": [
       {
-        "path": "assets/index-BDz-SRmF.js",
-        "size": 645118,
+        "path": "assets/index-BP3c05KG.js",
+        "size": 645460,
         "type": "js"
       },
       {
@@ -175,18 +175,18 @@
         "type": "other"
       }
     ],
-    "totalSize": 653370,
+    "totalSize": 653712,
     "totalGzipSize": 0,
-    "buildTime": 3322
+    "buildTime": 3089
   },
   {
     "version": "7.1.4",
-    "timestamp": "2025-09-04T01:24:18.991Z",
+    "timestamp": "2025-09-04T17:09:05.075Z",
     "publicationDate": "2025-08-19T06:31:25.590Z",
     "files": [
       {
-        "path": "assets/index-BDz-SRmF.js",
-        "size": 645118,
+        "path": "assets/index-BP3c05KG.js",
+        "size": 645460,
         "type": "js"
       },
       {
@@ -205,24 +205,24 @@
         "type": "other"
       }
     ],
-    "totalSize": 653370,
+    "totalSize": 653712,
     "totalGzipSize": 0,
-    "buildTime": 3248
+    "buildTime": 3204
   },
   {
     "version": "7.1.5",
-    "timestamp": "2025-09-04T01:24:23.728Z",
+    "timestamp": "2025-09-04T17:09:09.541Z",
     "publicationDate": "2025-08-25T10:27:36.356Z",
     "files": [
-      {
-        "path": "assets/index-B5gWj5ma.js",
-        "size": 645195,
-        "type": "js"
-      },
       {
         "path": "assets/index-CQDoQ_TD.css",
         "size": 6240,
         "type": "css"
+      },
+      {
+        "path": "assets/index-DgitemxY.js",
+        "size": 645526,
+        "type": "js"
       },
       {
         "path": "index.html",
@@ -235,8 +235,8 @@
         "type": "other"
       }
     ],
-    "totalSize": 653447,
+    "totalSize": 653778,
     "totalGzipSize": 0,
-    "buildTime": 3306
+    "buildTime": 3235
   }
 ]
