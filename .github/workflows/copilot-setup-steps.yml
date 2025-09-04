@@ -31,6 +31,8 @@ jobs:
       - name: Setup Node.js and pnpm
         uses: ./.github/actions/setup-node-pnpm
 
+      - run: npm i @ast-grep/cli -g
+
       - name: Run lint
         run: pnpm lint
 

@@ -64,6 +64,8 @@ A modern frontend dashboard for displaying different metrics using bar charts. B
   - **Note**: Currently no tests are configured, command runs but executes nothing
   - Takes under 1 second
 
+- You run in an environment where `ast-grep` is available; whenever a search requires syntax-aware or structural matching, default to `ast-grep --lang rust -p '<pattern>'` (or set `--lang` appropriately) and avoid falling back to text-only tools like `rg` or `grep` unless I explicitly request a plain-text search.
+
 ### Repository Structure
 
 ```
