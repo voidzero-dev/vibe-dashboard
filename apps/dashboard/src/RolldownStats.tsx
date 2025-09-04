@@ -18,10 +18,21 @@ const formatNumberWithCommas = (num: number): string => {
   return num.toLocaleString();
 };
 
+// Utility function to format dates
+const formatDate = (dateString: string): string => {
+  return new Date(dateString).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
+};
+
 // Transform rolldown stats data for charts
 const buildTimeData = rolldownStats.map(stat => ({
   name: `v${stat.version}`,
   value: stat.buildTime,
+  version: stat.version,
+  publicationDate: (stat as any).publicationDate,
 })).sort((a, b) => a.value - b.value); // Sort from smallest to largest
 
 // Calculate bundle size differences between consecutive versions
@@ -34,6 +45,8 @@ const bundleSizeDiffData = rolldownStats.map((stat, index) => {
       previousSize: null,
       currentSize: stat.totalSize,
       isBaseline: true,
+      version: stat.version,
+      publicationDate: (stat as any).publicationDate,
     };
   }
 
@@ -47,6 +60,8 @@ const bundleSizeDiffData = rolldownStats.map((stat, index) => {
     previousSize: prevSize,
     currentSize: currentSize,
     isBaseline: false,
+    version: stat.version,
+    publicationDate: (stat as any).publicationDate,
   };
 }).sort((a, b) => a.value - b.value); // Sort from smallest to largest
 
@@ -61,15 +76,33 @@ function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps
     const data = props.payload;
     if (!data) return [value, name];
 
+    // Format publication date if available
+    const publicationDateText = data.publicationDate
+      ? ` | Published: ${formatDate(data.publicationDate)}`
+      : ' | Publication date unavailable';
+
     if (data.isBaseline) {
-      return [`${formatNumberWithCommas(data.currentSize)} bytes (baseline)`, 'Bundle Size'];
+      return [`${formatNumberWithCommas(data.currentSize)} bytes (baseline)${publicationDateText}`, 'Bundle Size'];
     }
 
     const sign = value >= 0 ? '+' : '';
     const changeText = `${sign}${formatNumberWithCommas(value)} bytes`;
     const fromTo = `(${formatNumberWithCommas(data.previousSize)} → ${formatNumberWithCommas(data.currentSize)})`;
 
-    return [`${changeText} ${fromTo}`, 'Size Change'];
+    return [`${changeText} ${fromTo}${publicationDateText}`, 'Size Change'];
+  };
+
+  // Custom tooltip formatter for build time
+  const buildTimeTooltipFormatter = (value: any, name: string, props: any) => {
+    const data = props.payload;
+    if (!data) return [value, name];
+
+    // Format publication date if available
+    const publicationDateText = data.publicationDate
+      ? ` | Published: ${formatDate(data.publicationDate)}`
+      : ' | Publication date unavailable';
+
+    return [`${value}ms${publicationDateText}`, 'Build Time'];
   };
 
   const rolldownMetrics = [
@@ -166,6 +199,7 @@ function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps
                     tickLine={{ stroke: '#d1d5db' }}
                   />
                   <Tooltip
+                    formatter={buildTimeTooltipFormatter}
                     contentStyle={{
                       backgroundColor: 'white',
                       border: '1px solid #d1d5db',
