@@ -11,7 +11,7 @@ function RolldownStatsPage() {
         <div className='header-content'>
           <div className='logo'>
             <BarChart3 size={28} />
-            <h1>Rolldown-Vite Dashboard</h1>
+            <h1>Rolldown Stats</h1>
           </div>
           <p className='header-subtitle'>
             Statistics collected from different Rolldown-Vite versions
