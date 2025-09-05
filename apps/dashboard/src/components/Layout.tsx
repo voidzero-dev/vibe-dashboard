@@ -1,4 +1,4 @@
-import { Package, Zap } from 'lucide-react';
+import { BarChart3, Package, Zap } from 'lucide-react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 
 function Layout() {
@@ -6,6 +6,14 @@ function Layout() {
 
   return (
     <>
+      {/* Rolldown-Vite Dashboard Banner */}
+      <div className='dashboard-banner'>
+        <div className='banner-content'>
+          <BarChart3 size={16} />
+          <span>Rolldown-Vite Dashboard</span>
+        </div>
+      </div>
+
       {/* Page Navigation */}
       <nav className='page-nav'>
         <Link
