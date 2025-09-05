@@ -4,7 +4,7 @@
   font-weight: 400;
 
   color: #1e293b;
-  background: linear-gradient(135deg, #0c1618 0%, #134e4a 50%, #1f2937 100%);
+  background: #f8fafc;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -20,8 +20,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: linear-gradient(135deg, #0c1618 0%, #134e4a 50%, #1f2937 100%);
-  background-attachment: fixed;
+  background: #f8fafc;
 }
 
 h1, h2, h3, h4, h5, h6 {
