@@ -169,7 +169,8 @@ function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps
                     <LabelList
                       dataKey='value'
                       position='top'
-                      formatter={(value: number) => {
+                      formatter={(label: React.ReactNode) => {
+                        const value = typeof label === 'number' ? label : Number(label) || 0;
                         if (value === 0) return 'baseline';
                         return value >= 0 ? `+${formatNumberWithCommas(value)}` : formatNumberWithCommas(value);
                       }}
@@ -219,7 +220,7 @@ function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps
                     <LabelList
                       dataKey='value'
                       position='top'
-                      formatter={(value: number) => `${value}ms`}
+                      formatter={(label: React.ReactNode) => `${label}ms`}
                       style={{ fontSize: '11px', fill: '#374151' }}
                     />
                   </Bar>

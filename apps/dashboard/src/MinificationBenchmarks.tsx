@@ -115,7 +115,7 @@ function MinificationBenchmarks({}: MinificationBenchmarksProps) {
                           <LabelList
                             dataKey='value'
                             position='top'
-                            formatter={(value: number) => `${value}ms`}
+                            formatter={(label: React.ReactNode) => `${label}ms`}
                             style={{ fontSize: '12px', fill: '#374151' }}
                           />
                         </Bar>
@@ -160,7 +160,7 @@ function MinificationBenchmarks({}: MinificationBenchmarksProps) {
                           <LabelList
                             dataKey='value'
                             position='top'
-                            formatter={(value: number) => `${value}%`}
+                            formatter={(label: React.ReactNode) => `${label}%`}
                             style={{ fontSize: '10px', fill: '#374151' }}
                           />
                         </Bar>
