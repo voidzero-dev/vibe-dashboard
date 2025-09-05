@@ -1,7 +1,7 @@
 [
   {
     "version": "7.1.0-beta.1",
-    "timestamp": "2025-09-04T17:08:39.348Z",
+    "timestamp": "2025-09-05T05:23:21.436Z",
     "publicationDate": "2025-08-05T07:08:32.084Z",
     "files": [
       {
@@ -10,8 +10,8 @@
         "type": "css"
       },
       {
-        "path": "assets/index-XSVEXoaC.js",
-        "size": 646362,
+        "path": "assets/index-CrRSZkvd.js",
+        "size": 646411,
         "type": "js"
       },
       {
@@ -25,13 +25,13 @@
         "type": "other"
       }
     ],
-    "totalSize": 654614,
+    "totalSize": 654663,
     "totalGzipSize": 0,
-    "buildTime": 3137
+    "buildTime": 3416
   },
   {
     "version": "7.1.0-beta.2",
-    "timestamp": "2025-09-04T17:08:43.459Z",
+    "timestamp": "2025-09-05T05:23:25.723Z",
     "publicationDate": "2025-08-05T07:30:18.935Z",
     "files": [
       {
@@ -40,8 +40,8 @@
         "type": "css"
       },
       {
-        "path": "assets/index-XSVEXoaC.js",
-        "size": 646362,
+        "path": "assets/index-CrRSZkvd.js",
+        "size": 646411,
         "type": "js"
       },
       {
@@ -55,13 +55,13 @@
         "type": "other"
       }
     ],
-    "totalSize": 654614,
+    "totalSize": 654663,
     "totalGzipSize": 0,
-    "buildTime": 3066
+    "buildTime": 3038
   },
   {
     "version": "7.1.0",
-    "timestamp": "2025-09-04T17:08:47.650Z",
+    "timestamp": "2025-09-05T05:23:29.932Z",
     "publicationDate": "2025-08-07T08:23:22.159Z",
     "files": [
       {
@@ -70,8 +70,8 @@
         "type": "css"
       },
       {
-        "path": "assets/index-XSVEXoaC.js",
-        "size": 646362,
+        "path": "assets/index-CrRSZkvd.js",
+        "size": 646411,
         "type": "js"
       },
       {
@@ -85,13 +85,13 @@
         "type": "other"
       }
     ],
-    "totalSize": 654614,
+    "totalSize": 654663,
     "totalGzipSize": 0,
-    "buildTime": 3086
+    "buildTime": 3042
   },
   {
     "version": "7.1.1",
-    "timestamp": "2025-09-04T17:08:52.234Z",
+    "timestamp": "2025-09-05T05:23:34.471Z",
     "publicationDate": "2025-08-12T02:54:51.107Z",
     "files": [
       {
@@ -100,8 +100,8 @@
         "type": "css"
       },
       {
-        "path": "assets/index-CYT5cSxt.js",
-        "size": 646337,
+        "path": "assets/index-D1R4GuH6.js",
+        "size": 646386,
         "type": "js"
       },
       {
@@ -115,13 +115,13 @@
         "type": "other"
       }
     ],
-    "totalSize": 654589,
+    "totalSize": 654638,
     "totalGzipSize": 0,
-    "buildTime": 3221
+    "buildTime": 3146
   },
   {
     "version": "7.1.2",
-    "timestamp": "2025-09-04T17:08:56.483Z",
+    "timestamp": "2025-09-05T05:23:38.541Z",
     "publicationDate": "2025-08-12T12:01:43.781Z",
     "files": [
       {
@@ -130,8 +130,8 @@
         "type": "css"
       },
       {
-        "path": "assets/index-CYT5cSxt.js",
-        "size": 646337,
+        "path": "assets/index-D1R4GuH6.js",
+        "size": 646386,
         "type": "js"
       },
       {
@@ -145,18 +145,18 @@
         "type": "other"
       }
     ],
-    "totalSize": 654589,
+    "totalSize": 654638,
     "totalGzipSize": 0,
-    "buildTime": 3082
+    "buildTime": 3013
   },
   {
     "version": "7.1.3",
-    "timestamp": "2025-09-04T17:09:00.701Z",
+    "timestamp": "2025-09-05T05:23:42.773Z",
     "publicationDate": "2025-08-18T08:02:46.387Z",
     "files": [
       {
-        "path": "assets/index-BP3c05KG.js",
-        "size": 645460,
+        "path": "assets/index-BRP_wIsW.js",
+        "size": 645509,
         "type": "js"
       },
       {
@@ -175,18 +175,18 @@
         "type": "other"
       }
     ],
-    "totalSize": 653712,
+    "totalSize": 653761,
     "totalGzipSize": 0,
-    "buildTime": 3089
+    "buildTime": 3005
   },
   {
     "version": "7.1.4",
-    "timestamp": "2025-09-04T17:09:05.075Z",
+    "timestamp": "2025-09-05T05:23:46.872Z",
     "publicationDate": "2025-08-19T06:31:25.590Z",
     "files": [
       {
-        "path": "assets/index-BP3c05KG.js",
-        "size": 645460,
+        "path": "assets/index-BRP_wIsW.js",
+        "size": 645509,
         "type": "js"
       },
       {
@@ -205,13 +205,13 @@
         "type": "other"
       }
     ],
-    "totalSize": 653712,
+    "totalSize": 653761,
     "totalGzipSize": 0,
-    "buildTime": 3204
+    "buildTime": 3020
   },
   {
     "version": "7.1.5",
-    "timestamp": "2025-09-04T17:09:09.541Z",
+    "timestamp": "2025-09-05T05:23:50.976Z",
     "publicationDate": "2025-08-25T10:27:36.356Z",
     "files": [
       {
@@ -220,8 +220,8 @@
         "type": "css"
       },
       {
-        "path": "assets/index-DgitemxY.js",
-        "size": 645526,
+        "path": "assets/index-CiC_iZh4.js",
+        "size": 645575,
         "type": "js"
       },
       {
@@ -235,8 +235,8 @@
         "type": "other"
       }
     ],
-    "totalSize": 653778,
+    "totalSize": 653827,
     "totalGzipSize": 0,
-    "buildTime": 3235
+    "buildTime": 3034
   }
 ]
