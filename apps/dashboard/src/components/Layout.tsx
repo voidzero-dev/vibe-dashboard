@@ -1,4 +1,4 @@
-import { BarChart3, Package, Zap } from 'lucide-react';
+import { BarChart3, Download, Package, Zap } from 'lucide-react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 
 function Layout() {
@@ -29,6 +29,13 @@ function Layout() {
         >
           <Zap size={20} />
           Minification Benchmarks
+        </Link>
+        <Link
+          to='/npm-downloads'
+          className={`page-button ${location.pathname === '/npm-downloads' ? 'active' : ''}`}
+        >
+          <Download size={20} />
+          NPM Downloads
         </Link>
       </nav>
 
