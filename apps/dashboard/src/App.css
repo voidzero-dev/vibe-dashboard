@@ -339,11 +339,18 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   transition: all 0.2s ease;
   text-align: center;
+  cursor: pointer;
 }
 
 .npm-download-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border-color: #3b82f6;
+}
+
+.npm-download-card:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
 }
 
 .package-name {

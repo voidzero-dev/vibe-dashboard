@@ -14,6 +14,11 @@ const packages = [
 ];
 
 function NpmDownloads({}: NpmDownloadsProps) {
+  const handleCardClick = (packageName: string) => {
+    const npmUrl = `https://www.npmjs.com/package/${packageName}`;
+    window.open(npmUrl, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <>
       <main className='dashboard-main'>
@@ -22,7 +27,19 @@ function NpmDownloads({}: NpmDownloadsProps) {
           
           <div className='npm-downloads-grid'>
             {packages.map((packageName) => (
-              <div key={packageName} className='npm-download-card'>
+              <div 
+                key={packageName} 
+                className='npm-download-card'
+                onClick={() => handleCardClick(packageName)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    handleCardClick(packageName);
+                  }
+                }}
+              >
                 <h3 className='package-name'>{packageName}</h3>
                 <div className='download-badge'>
                   <img
