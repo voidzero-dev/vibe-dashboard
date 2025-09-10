@@ -323,46 +323,88 @@
   border-bottom: 2px solid #e2e8f0;
 }
 
-/* NPM Downloads Grid */
-.npm-downloads-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
+/* NPM Downloads Table */
+.npm-downloads-table-container {
   margin-bottom: 2rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.npm-download-card {
+.npm-downloads-table {
+  width: 100%;
+  border-collapse: collapse;
   background: white;
-  border: 1px solid #e2e8f0;
-  padding: 1.5rem;
-  border-radius: 0.75rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  transition: all 0.2s ease;
+}
+
+.npm-downloads-table thead {
+  background: #f8fafc;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.npm-downloads-table th {
+  padding: 1rem 1.5rem;
+  text-align: left;
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.npm-downloads-table th:first-child {
+  width: 40%;
+}
+
+.npm-downloads-table th:last-child {
+  width: 60%;
   text-align: center;
+}
+
+.npm-download-row {
+  border-bottom: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
   cursor: pointer;
 }
 
-.npm-download-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  border-color: #3b82f6;
+.npm-download-row:hover {
+  background: #f8fafc;
+  transform: scale(1.01);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.npm-download-card:focus {
+.npm-download-row:focus {
   outline: 2px solid #3b82f6;
-  outline-offset: 2px;
+  outline-offset: -2px;
+  background: #f8fafc;
+}
+
+.npm-download-row:last-child {
+  border-bottom: none;
+}
+
+.package-name-cell {
+  padding: 1.5rem;
+  vertical-align: middle;
+}
+
+.download-badge-cell {
+  padding: 1.5rem;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .package-name {
-  margin: 0 0 1rem 0;
   color: #1e293b;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 600;
   font-family: 'Courier New', Courier, monospace;
-  background: #f8fafc;
-  padding: 0.5rem 1rem;
+  background: #f1f5f9;
+  padding: 0.5rem 0.75rem;
   border-radius: 0.375rem;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #cbd5e1;
+  display: inline-block;
 }
 
 .download-badge {
@@ -400,9 +442,32 @@
     grid-template-columns: 1fr;
   }
 
-  .npm-downloads-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+  .npm-downloads-table-container {
+    margin-bottom: 1rem;
+  }
+
+  .npm-downloads-table th,
+  .npm-downloads-table td {
+    padding: 0.75rem;
+  }
+
+  .npm-downloads-table th {
+    font-size: 0.75rem;
+  }
+
+  .npm-downloads-table th:first-child,
+  .npm-downloads-table th:last-child {
+    width: auto;
+  }
+
+  .package-name {
+    font-size: 0.875rem;
+    padding: 0.375rem 0.5rem;
+  }
+
+  .download-badge img {
+    max-width: 100%;
+    height: auto;
   }
 
   .library-charts-grid {

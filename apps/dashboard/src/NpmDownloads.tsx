@@ -25,31 +25,45 @@ function NpmDownloads({}: NpmDownloadsProps) {
         <div className='chart-container'>
           <h2>NPM Weekly Downloads</h2>
           
-          <div className='npm-downloads-grid'>
-            {packages.map((packageName) => (
-              <div 
-                key={packageName} 
-                className='npm-download-card'
-                onClick={() => handleCardClick(packageName)}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    handleCardClick(packageName);
-                  }
-                }}
-              >
-                <h3 className='package-name'>{packageName}</h3>
-                <div className='download-badge'>
-                  <img
-                    src={`https://img.shields.io/npm/dw/${packageName}?label=npm`}
-                    alt={`Weekly downloads for ${packageName}`}
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            ))}
+          <div className='npm-downloads-table-container'>
+            <table className='npm-downloads-table'>
+              <thead>
+                <tr>
+                  <th>Package Name</th>
+                  <th>Weekly Downloads</th>
+                </tr>
+              </thead>
+              <tbody>
+                {packages.map((packageName) => (
+                  <tr 
+                    key={packageName} 
+                    className='npm-download-row'
+                    onClick={() => handleCardClick(packageName)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        handleCardClick(packageName);
+                      }
+                    }}
+                  >
+                    <td className='package-name-cell'>
+                      <span className='package-name'>{packageName}</span>
+                    </td>
+                    <td className='download-badge-cell'>
+                      <div className='download-badge'>
+                        <img
+                          src={`https://img.shields.io/npm/dw/${packageName}?label=npm`}
+                          alt={`Weekly downloads for ${packageName}`}
+                          loading="lazy"
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
 
