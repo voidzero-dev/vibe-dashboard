@@ -121,10 +121,10 @@ function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps
           return (
             <button
               key={metric.id}
-              className={`flex items-center gap-2 px-5 py-3 border border-slate-300 bg-white rounded-lg cursor-pointer font-medium text-sm transition-all duration-200 text-slate-600 tracking-tight min-w-30 justify-center ${
+              className={`flex items-center gap-2 px-5 py-3 border rounded-lg cursor-pointer font-medium text-sm transition-all duration-200 tracking-tight min-w-30 justify-center ${
                 selectedMetric === metric.id 
                   ? 'bg-slate-600 border-slate-600 text-white hover:bg-slate-800 hover:border-slate-800' 
-                  : 'hover:bg-slate-100 hover:border-slate-400 hover:text-slate-800'
+                  : 'bg-white border-slate-300 text-slate-600 hover:bg-slate-100 hover:border-slate-400 hover:text-slate-800'
               }`}
               onClick={() => {
                 setSelectedMetric(metric.id);
