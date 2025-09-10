@@ -6,15 +6,14 @@
   "scripts": {
     "dev": "pnpm --filter dashboard dev",
     "build": "pnpm -r build",
-    "lint": "vp lint --type-aware",
+    "lint": "vite lint --type-aware",
     "test": "pnpm -r test",
     "clean": "pnpm -r clean",
     "build-deploy": "pnpm lint && pnpm build",
     "rolldown:list": "node tool/override-rolldown.mjs --list",
     "rolldown:use": "node tool/override-rolldown.mjs",
     "rolldown:stats": "node tool/override-rolldown.mjs --stats",
-    "fmt": "dprint fmt",
-    "vp": "vp"
+    "fmt": "dprint fmt"
   },
   "keywords": [
     "dashboard",
@@ -25,7 +24,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@voidzero-dev/global": "0.0.0-ec375d576832bc5c7ec2ab60473dce4b9211ba7c"
+    "@voidzero-dev/vite-plus": "0.0.0-3dbee758ddf99f8d6f4a2f2fb657ce9eb19bdee2"
   },
   "packageManager": "pnpm@10.15.1",
   "dependencies": {
