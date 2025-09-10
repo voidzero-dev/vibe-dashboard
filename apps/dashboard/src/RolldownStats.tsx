@@ -11,6 +11,7 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
+import * as semver from 'semver';
 import rolldownStats from '../../../rolldown-version-stats.json';
 
 // Utility function to format numbers with commas
@@ -33,10 +34,13 @@ const buildTimeData = rolldownStats.map(stat => ({
   value: stat.buildTime,
   version: stat.version,
   publicationDate: (stat as any).publicationDate,
-})).sort((a, b) => a.value - b.value); // Sort from smallest to largest
+})).sort((a, b) => semver.compare(a.version, b.version)); // Sort by semantic version
 
 // Calculate bundle size differences between consecutive versions
-const bundleSizeDiffData = rolldownStats.map((stat, index) => {
+// First, sort the rolldown stats by semver order
+const sortedRolldownStats = [...rolldownStats].sort((a, b) => semver.compare(a.version, b.version));
+
+const bundleSizeDiffData = sortedRolldownStats.map((stat, index) => {
   if (index === 0) {
     // For the first version, show 0 difference or could show absolute value
     return {
@@ -50,7 +54,7 @@ const bundleSizeDiffData = rolldownStats.map((stat, index) => {
     };
   }
 
-  const prevSize = rolldownStats[index - 1].totalSize;
+  const prevSize = sortedRolldownStats[index - 1].totalSize;
   const currentSize = stat.totalSize;
   const diff = currentSize - prevSize;
 
@@ -63,7 +67,7 @@ const bundleSizeDiffData = rolldownStats.map((stat, index) => {
     version: stat.version,
     publicationDate: (stat as any).publicationDate,
   };
-}).sort((a, b) => a.value - b.value); // Sort from smallest to largest
+}); // Already sorted by semver order, no need to sort again
 
 interface RolldownStatsProps {
   selectedMetric: string;
