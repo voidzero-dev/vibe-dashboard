@@ -1,3 +1,6 @@
+@import "tailwindcss";
+
+/* Custom base styles */
 :root {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   line-height: 1.5;
@@ -28,35 +31,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
-button {
-  border-radius: 0.5rem;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #f9f9f9;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-button:hover {
-  background-color: #e5e7eb;
-}
-
-button:focus,
-button:focus-visible {
-  outline: 2px solid #10b981;
-  outline-offset: 2px;
-}
-
-a {
-  font-weight: 500;
-  color: #10b981;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #059669;
-  text-decoration: underline;
+/* Remove default styles */
+#root {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
 }
