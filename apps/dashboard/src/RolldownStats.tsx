@@ -115,13 +115,17 @@ function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps
   return (
     <>
       {/* Metric Navigation */}
-      <nav className='dashboard-nav'>
+      <nav className='bg-slate-50 border-b border-slate-200 px-8 py-4 flex gap-2 max-w-6xl mx-auto'>
         {rolldownMetrics.map((metric) => {
           const Icon = metric.icon;
           return (
             <button
               key={metric.id}
-              className={`nav-button ${selectedMetric === metric.id ? 'active' : ''}`}
+              className={`flex items-center gap-2 px-5 py-3 border border-slate-300 bg-white rounded-lg cursor-pointer font-medium text-sm transition-all duration-200 text-slate-600 tracking-tight min-w-[120px] justify-center ${
+                selectedMetric === metric.id 
+                  ? 'bg-slate-600 border-slate-600 text-white hover:bg-slate-700 hover:border-slate-700' 
+                  : 'hover:bg-slate-100 hover:border-slate-400 hover:text-slate-700'
+              }`}
               onClick={() => {
                 setSelectedMetric(metric.id);
               }}
@@ -133,9 +137,9 @@ function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps
         })}
       </nav>
 
-      <main className='dashboard-main'>
-        <div className='chart-container'>
-          <h2>{currentMetric.name}</h2>
+      <main className='max-w-6xl mx-auto px-8 py-8 flex flex-col gap-8'>
+        <div className='bg-white border border-slate-200 px-8 py-8 rounded-xl shadow-sm'>
+          <h2 className='mb-6 text-slate-800 text-3xl font-bold tracking-tight'>{currentMetric.name}</h2>
           <ResponsiveContainer width='100%' height={400}>
             {selectedMetric === 'bundleSize'
               ? (
@@ -235,35 +239,41 @@ function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps
           </ResponsiveContainer>
         </div>
 
-        <div className='stats-grid'>
-          <div className='stat-card'>
-            <h3>Average Build Time</h3>
-            <p className='stat-value'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+          <div className='bg-white border border-slate-200 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
+            <h3 className='mb-3 text-slate-500 text-sm font-semibold uppercase tracking-wider'>Average Build Time</h3>
+            <p className='mb-3 text-slate-800 text-4xl font-bold tracking-tight leading-none'>
               {Math.round(buildTimeData.reduce((sum, item) => sum + item.value, 0) / buildTimeData.length)}ms
             </p>
-            <span className='stat-change positive'>Across {buildTimeData.length} versions</span>
+            <span className='text-emerald-600 bg-emerald-50 border border-emerald-200 text-sm font-semibold px-3 py-1.5 rounded-lg inline-flex items-center gap-1'>
+              Across {buildTimeData.length} versions
+            </span>
           </div>
-          <div className='stat-card'>
-            <h3>Latest Bundle Size</h3>
-            <p className='stat-value'>
+          <div className='bg-white border border-slate-200 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
+            <h3 className='mb-3 text-slate-500 text-sm font-semibold uppercase tracking-wider'>Latest Bundle Size</h3>
+            <p className='mb-3 text-slate-800 text-4xl font-bold tracking-tight leading-none'>
               {formatNumberWithCommas(rolldownStats[rolldownStats.length - 1]?.totalSize || 0)} bytes
             </p>
-            <span className='stat-change positive'>v{rolldownStats[rolldownStats.length - 1]?.version}</span>
+            <span className='text-emerald-600 bg-emerald-50 border border-emerald-200 text-sm font-semibold px-3 py-1.5 rounded-lg inline-flex items-center gap-1'>
+              v{rolldownStats[rolldownStats.length - 1]?.version}
+            </span>
           </div>
-          <div className='stat-card'>
-            <h3>Bundle Size Range</h3>
-            <p className='stat-value'>
+          <div className='bg-white border border-slate-200 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
+            <h3 className='mb-3 text-slate-500 text-sm font-semibold uppercase tracking-wider'>Bundle Size Range</h3>
+            <p className='mb-3 text-slate-800 text-4xl font-bold tracking-tight leading-none'>
               {Math.round(
                 (Math.max(...rolldownStats.map(s => s.totalSize)) - Math.min(...rolldownStats.map(s => s.totalSize))) /
                   1024,
               )}KB
             </p>
-            <span className='stat-change positive'>Size Variation</span>
+            <span className='text-emerald-600 bg-emerald-50 border border-emerald-200 text-sm font-semibold px-3 py-1.5 rounded-lg inline-flex items-center gap-1'>
+              Size Variation
+            </span>
           </div>
-          <div className='stat-card'>
-            <h3>Versions Tested</h3>
-            <p className='stat-value'>{rolldownStats.length}</p>
-            <span className='stat-change positive'>
+          <div className='bg-white border border-slate-200 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
+            <h3 className='mb-3 text-slate-500 text-sm font-semibold uppercase tracking-wider'>Versions Tested</h3>
+            <p className='mb-3 text-slate-800 text-4xl font-bold tracking-tight leading-none'>{rolldownStats.length}</p>
+            <span className='text-emerald-600 bg-emerald-50 border border-emerald-200 text-sm font-semibold px-3 py-1.5 rounded-lg inline-flex items-center gap-1'>
               {rolldownStats[0]?.version} - {rolldownStats[rolldownStats.length - 1]?.version}
             </span>
           </div>

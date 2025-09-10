@@ -21,16 +21,16 @@ function NpmDownloads({}: NpmDownloadsProps) {
 
   return (
     <>
-      <main className='dashboard-main'>
-        <div className='chart-container'>
-          <h2>NPM Weekly Downloads</h2>
+      <main className='max-w-6xl mx-auto px-8 py-8 flex flex-col gap-8'>
+        <div className='bg-white border border-slate-200 px-8 py-8 rounded-xl shadow-sm'>
+          <h2 className='mb-6 text-slate-800 text-3xl font-bold tracking-tight'>NPM Weekly Downloads</h2>
           
-          <div className='npm-downloads-list-container'>
-            <ul className='npm-downloads-list'>
+          <div className='mx-auto mb-8 rounded-lg border border-slate-200 bg-white shadow-sm max-w-lg w-fit'>
+            <ul className='list-none p-0 m-0'>
               {packages.map((packageName) => (
                 <li 
                   key={packageName} 
-                  className='npm-download-item'
+                  className='flex items-center justify-between px-4 py-2 border-b border-slate-200 last:border-b-0 transition-all duration-200 cursor-pointer gap-3 min-w-fit hover:bg-slate-50 focus:outline-2 focus:outline-blue-500 focus:-outline-offset-2 focus:bg-slate-50'
                   onClick={() => handleCardClick(packageName)}
                   role="button"
                   tabIndex={0}
@@ -41,9 +41,9 @@ function NpmDownloads({}: NpmDownloadsProps) {
                     }
                   }}
                 >
-                  <span className='package-name'>{packageName}</span>
+                  <span className='font-mono text-sm font-medium text-gray-700 bg-slate-100 px-2 py-1 rounded border border-slate-300 min-w-fit whitespace-nowrap'>{packageName}</span>
                   <img
-                    className='download-badge'
+                    className='h-5 max-h-5 flex-shrink-0'
                     src={`https://img.shields.io/npm/dw/${packageName}?label=npm`}
                     alt={`Weekly downloads for ${packageName}`}
                     loading="lazy"
@@ -54,26 +54,26 @@ function NpmDownloads({}: NpmDownloadsProps) {
           </div>
         </div>
 
-        <div className='stats-grid'>
-          <div className='stat-card'>
-            <h3>Total Packages</h3>
-            <p className='stat-value'>{packages.length}</p>
-            <span className='stat-change positive'>NPM Packages</span>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+          <div className='bg-white border border-slate-200 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
+            <h3 className='mb-3 text-slate-500 text-sm font-semibold uppercase tracking-wider'>Total Packages</h3>
+            <p className='mb-3 text-slate-800 text-4xl font-bold tracking-tight leading-none'>{packages.length}</p>
+            <span className='text-emerald-600 bg-emerald-50 border border-emerald-200 text-sm font-semibold px-3 py-1.5 rounded-lg inline-flex items-center gap-1'>NPM Packages</span>
           </div>
-          <div className='stat-card'>
-            <h3>Registry</h3>
-            <p className='stat-value'>NPM</p>
-            <span className='stat-change positive'>Public Registry</span>
+          <div className='bg-white border border-slate-200 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
+            <h3 className='mb-3 text-slate-500 text-sm font-semibold uppercase tracking-wider'>Registry</h3>
+            <p className='mb-3 text-slate-800 text-4xl font-bold tracking-tight leading-none'>NPM</p>
+            <span className='text-emerald-600 bg-emerald-50 border border-emerald-200 text-sm font-semibold px-3 py-1.5 rounded-lg inline-flex items-center gap-1'>Public Registry</span>
           </div>
-          <div className='stat-card'>
-            <h3>Update Frequency</h3>
-            <p className='stat-value'>Weekly</p>
-            <span className='stat-change positive'>Auto Updated</span>
+          <div className='bg-white border border-slate-200 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
+            <h3 className='mb-3 text-slate-500 text-sm font-semibold uppercase tracking-wider'>Update Frequency</h3>
+            <p className='mb-3 text-slate-800 text-4xl font-bold tracking-tight leading-none'>Weekly</p>
+            <span className='text-emerald-600 bg-emerald-50 border border-emerald-200 text-sm font-semibold px-3 py-1.5 rounded-lg inline-flex items-center gap-1'>Auto Updated</span>
           </div>
-          <div className='stat-card'>
-            <h3>Data Source</h3>
-            <p className='stat-value'>Shields.io</p>
-            <span className='stat-change positive'>Live Data</span>
+          <div className='bg-white border border-slate-200 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
+            <h3 className='mb-3 text-slate-500 text-sm font-semibold uppercase tracking-wider'>Data Source</h3>
+            <p className='mb-3 text-slate-800 text-4xl font-bold tracking-tight leading-none'>Shields.io</p>
+            <span className='text-emerald-600 bg-emerald-50 border border-emerald-200 text-sm font-semibold px-3 py-1.5 rounded-lg inline-flex items-center gap-1'>Live Data</span>
           </div>
         </div>
       </main>

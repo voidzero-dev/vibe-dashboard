@@ -70,20 +70,20 @@ interface MinificationBenchmarksProps {
 function MinificationBenchmarks({}: MinificationBenchmarksProps) {
   return (
     <>
-      <main className='dashboard-main'>
+      <main className='max-w-6xl mx-auto px-8 py-8 flex flex-col gap-8'>
         {/* Combined Charts for Each Library - Time and Compression Side by Side */}
-        <div className='library-charts-grid'>
+        <div className='flex flex-col gap-8 mb-8 px-8'>
           {libraries.map(library => {
             const timeData = getLibraryData(library, 'time');
             const compressionData = getLibraryData(library, 'compression');
 
             return (
-              <div key={library} className='library-chart-row'>
-                <h3 className='library-title'>{library}</h3>
-                <div className='library-charts-columns'>
+              <div key={library} className='bg-white border border-gray-200 rounded-xl px-6 py-6 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-0.5'>
+                <h3 className='mb-4 text-xl font-bold text-slate-800 capitalize text-center pb-2 border-b-2 border-slate-200'>{library}</h3>
+                <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 mt-4'>
                   {/* Left column - Minification Time */}
-                  <div className='library-chart-container'>
-                    <h4 className='chart-subtitle'>Minification Time</h4>
+                  <div className='bg-gray-50 border border-gray-200 rounded-lg p-4'>
+                    <h4 className='mb-4 text-base font-medium text-gray-700 text-center pb-2 border-b border-gray-200'>Minification Time</h4>
                     <ResponsiveContainer width='100%' height={300}>
                       <BarChart data={timeData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
                         <CartesianGrid strokeDasharray='3 3' stroke='#e5e7eb' />
@@ -124,8 +124,8 @@ function MinificationBenchmarks({}: MinificationBenchmarksProps) {
                   </div>
 
                   {/* Right column - Compression Ratio */}
-                  <div className='library-chart-container'>
-                    <h4 className='chart-subtitle'>Compression Ratio</h4>
+                  <div className='bg-gray-50 border border-gray-200 rounded-lg p-4'>
+                    <h4 className='mb-4 text-base font-medium text-gray-700 text-center pb-2 border-b border-gray-200'>Compression Ratio</h4>
                     <ResponsiveContainer width='100%' height={300}>
                       <BarChart data={compressionData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
                         <CartesianGrid strokeDasharray='3 3' stroke='#e5e7eb' />
@@ -173,27 +173,27 @@ function MinificationBenchmarks({}: MinificationBenchmarksProps) {
           })}
         </div>
 
-        <div className='stats-grid'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
           {/* Minification statistics */}
-          <div className='stat-card'>
-            <h3>Libraries Tested</h3>
-            <p className='stat-value'>{Object.keys(minificationData).length}</p>
-            <span className='stat-change positive'>JavaScript Libraries</span>
+          <div className='bg-white border border-slate-200 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
+            <h3 className='mb-3 text-slate-500 text-sm font-semibold uppercase tracking-wider'>Libraries Tested</h3>
+            <p className='mb-3 text-slate-800 text-4xl font-bold tracking-tight leading-none'>{Object.keys(minificationData).length}</p>
+            <span className='text-emerald-600 bg-emerald-50 border border-emerald-200 text-sm font-semibold px-3 py-1.5 rounded-lg inline-flex items-center gap-1'>JavaScript Libraries</span>
           </div>
-          <div className='stat-card'>
-            <h3>Minifiers Compared</h3>
-            <p className='stat-value'>{popularMinifiers.length}</p>
-            <span className='stat-change positive'>Popular Tools</span>
+          <div className='bg-white border border-slate-200 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
+            <h3 className='mb-3 text-slate-500 text-sm font-semibold uppercase tracking-wider'>Minifiers Compared</h3>
+            <p className='mb-3 text-slate-800 text-4xl font-bold tracking-tight leading-none'>{popularMinifiers.length}</p>
+            <span className='text-emerald-600 bg-emerald-50 border border-emerald-200 text-sm font-semibold px-3 py-1.5 rounded-lg inline-flex items-center gap-1'>Popular Tools</span>
           </div>
-          <div className='stat-card'>
-            <h3>Fastest Minifier</h3>
-            <p className='stat-value'>OXC</p>
-            <span className='stat-change positive'>Rust-based</span>
+          <div className='bg-white border border-slate-200 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
+            <h3 className='mb-3 text-slate-500 text-sm font-semibold uppercase tracking-wider'>Fastest Minifier</h3>
+            <p className='mb-3 text-slate-800 text-4xl font-bold tracking-tight leading-none'>OXC</p>
+            <span className='text-emerald-600 bg-emerald-50 border border-emerald-200 text-sm font-semibold px-3 py-1.5 rounded-lg inline-flex items-center gap-1'>Rust-based</span>
           </div>
-          <div className='stat-card'>
-            <h3>Best Compression</h3>
-            <p className='stat-value'>UglifyJS</p>
-            <span className='stat-change positive'>Traditional Leader</span>
+          <div className='bg-white border border-slate-200 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
+            <h3 className='mb-3 text-slate-500 text-sm font-semibold uppercase tracking-wider'>Best Compression</h3>
+            <p className='mb-3 text-slate-800 text-4xl font-bold tracking-tight leading-none'>UglifyJS</p>
+            <span className='text-emerald-600 bg-emerald-50 border border-emerald-200 text-sm font-semibold px-3 py-1.5 rounded-lg inline-flex items-center gap-1'>Traditional Leader</span>
           </div>
         </div>
       </main>
