@@ -24,7 +24,8 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@voidzero-dev/vite-plus": "0.0.0-3dbee758ddf99f8d6f4a2f2fb657ce9eb19bdee2"
+    "@voidzero-dev/vite-plus": "0.0.0-820fab0b60cc8859c8507bb046024f9f8e13b423",
+    "oxlint-tsgolint": "^0.2.0"
   },
   "packageManager": "pnpm@10.15.1",
   "dependencies": {
