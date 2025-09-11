@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "test": "vitest --browser --run"
   },
   "dependencies": {
     "lucide-react": "^0.542.0",
@@ -19,12 +20,19 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.13",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
     "@types/react-router-dom": "^5.3.3",
     "@types/semver": "^7.7.1",
+    "@vitest/browser": "^3.2.4",
+    "@vitest/ui": "^3.2.4",
+    "happy-dom": "^18.0.1",
+    "playwright": "^1.55.0",
     "rolldown-vite": "7.1.5",
     "tailwindcss": "^4.1.13",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "vitest": "^3.2.4"
   }
 }

@@ -5,7 +5,7 @@ function RolldownStatsPage() {
   const [selectedMetric, setSelectedMetric] = useState('bundleSize');
 
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className='min-h-screen bg-white text-black'>
       <RolldownStats
         selectedMetric={selectedMetric}
         setSelectedMetric={setSelectedMetric}
