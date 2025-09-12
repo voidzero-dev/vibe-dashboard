@@ -1,9 +1,8 @@
 import { FileDown, Gauge, Timer, Zap } from 'lucide-react';
 import minificationData from '../../../../minification-benchmarks-data.json';
 import { PageContainer } from '../components/layout/PageContainer';
-import { PageHeader } from '../components/shared/PageHeader';
-import { Badge } from '../components/ui/Badge';
-import { Card } from '../components/ui/Card';
+import { PageHeader } from '@vibe/shared';
+import { Badge, Card } from '@vibe/ui';
 import MinificationBenchmarks from '../MinificationBenchmarks';
 
 function MinificationBenchmarksPage() {

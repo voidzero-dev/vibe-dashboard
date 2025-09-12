@@ -1,7 +1,6 @@
 import { Package } from 'lucide-react';
 import rolldownStats from '../../../../../rolldown-version-stats.json';
-import { Badge } from '../ui/Badge';
-import { Card } from '../ui/Card';
+import { Badge, Card } from '@vibe/ui';
 
 export function RecentUpdatesCard() {
   return (

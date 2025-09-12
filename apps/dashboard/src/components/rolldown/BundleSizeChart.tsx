@@ -1,7 +1,7 @@
 import { Bar, BarChart, CartesianGrid, Cell, LabelList, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import * as semver from 'semver';
 import rolldownStats from '../../../../../rolldown-version-stats.json';
-import { bundleSizeDiffTooltipFormatter, formatNumberWithCommas } from '../../utils/rolldown-formatters';
+import { bundleSizeDiffTooltipFormatter, formatNumberWithCommas } from '@vibe/utils';
 
 const sortedRolldownStats = [...rolldownStats].sort((a, b) => semver.compare(a.version, b.version));
 

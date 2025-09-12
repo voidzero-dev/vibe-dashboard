@@ -1,7 +1,7 @@
 import { TrendingDown, TrendingUp } from 'lucide-react';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Card } from '../ui/Card';
+import { Card } from '@vibe/ui';
 
 interface StatCardProps {
   title: string;

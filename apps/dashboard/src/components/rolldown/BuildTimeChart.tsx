@@ -1,7 +1,7 @@
 import { Bar, BarChart, CartesianGrid, LabelList, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import * as semver from 'semver';
 import rolldownStats from '../../../../../rolldown-version-stats.json';
-import { buildTimeTooltipFormatter } from '../../utils/rolldown-formatters';
+import { buildTimeTooltipFormatter } from '@vibe/utils';
 
 const buildTimeData = rolldownStats.map(stat => ({
   name: `v${stat.version}`,

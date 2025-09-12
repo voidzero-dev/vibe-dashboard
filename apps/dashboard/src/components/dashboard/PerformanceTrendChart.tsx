@@ -2,8 +2,7 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import rolldownStats from '../../../../../rolldown-version-stats.json';
-import { Button } from '../ui/Button';
-import { Card } from '../ui/Card';
+import { Button, Card } from '@vibe/ui';
 
 const performanceTrend = rolldownStats.slice(-7).map(stat => ({
   version: `v${stat.version}`,

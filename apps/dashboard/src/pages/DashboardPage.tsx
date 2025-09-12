@@ -4,7 +4,7 @@ import { RecentUpdatesCard } from '../components/dashboard/RecentUpdatesCard';
 import { StatsGrid } from '../components/dashboard/StatsGrid';
 import { PageContainer } from '../components/layout/PageContainer';
 
-import { PageHeader } from '../components/shared/PageHeader';
+import { PageHeader } from '@vibe/shared';
 
 function DashboardPage() {
   return (

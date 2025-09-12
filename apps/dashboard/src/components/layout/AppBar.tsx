@@ -1,5 +1,5 @@
 import { Bell, Search, User } from 'lucide-react';
-import { Button } from '../ui/Button';
+import { Button } from '@vibe/ui';
 
 interface AppBarProps {
   title?: string;

@@ -1,7 +1,6 @@
 import { Activity } from 'lucide-react';
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
-import { Badge } from '../ui/Badge';
-import { Card } from '../ui/Card';
+import { Badge, Card } from '@vibe/ui';
 
 const recentActivityData = [
   { date: 'Mon', commits: 12, issues: 5, prs: 3 },

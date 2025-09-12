@@ -11,6 +11,9 @@
     "test": "vite test"
   },
   "dependencies": {
+    "@vibe/ui": "workspace:*",
+    "@vibe/utils": "workspace:*",
+    "@vibe/shared": "workspace:*",
     "lucide-react": "^0.542.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",

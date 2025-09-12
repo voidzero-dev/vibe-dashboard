@@ -1,6 +1,6 @@
 import { LibraryBenchmarkCard } from './components/minification/LibraryBenchmarkCard';
 import { MinificationStats } from './components/minification/MinificationStats';
-import { libraries } from './utils/minification-data';
+import { libraries } from '@vibe/utils';
 
 function MinificationBenchmarks() {
   return (

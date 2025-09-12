@@ -2,9 +2,8 @@ import { BarChart3, Clock, Package, TrendingUp } from 'lucide-react';
 import { useState } from 'react';
 import rolldownStatsData from '../../../../rolldown-version-stats.json';
 import { PageContainer } from '../components/layout/PageContainer';
-import { PageHeader } from '../components/shared/PageHeader';
-import { Badge } from '../components/ui/Badge';
-import { Card } from '../components/ui/Card';
+import { PageHeader } from '@vibe/shared';
+import { Badge, Card } from '@vibe/ui';
 import RolldownStats from '../RolldownStats';
 
 function RolldownStatsPage() {
