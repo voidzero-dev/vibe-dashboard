@@ -3,7 +3,8 @@ name: Update Rolldown Stats
 on:
   workflow_dispatch:
   push:
-    branches: [main]
+    branches:
+      - main
     paths:
       - "apps/dashboard/**"
       - "tool/override-rolldown.mjs"
