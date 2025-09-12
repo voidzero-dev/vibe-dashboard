@@ -26,6 +26,9 @@ jobs:
       - name: Lint code
         run: pnpm lint
 
+      - name: Install Playwright browsers
+        run: pnpx playwright install chromium
+
       - name: Run tests
         run: pnpm test
 

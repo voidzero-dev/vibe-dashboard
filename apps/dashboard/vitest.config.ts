@@ -1,15 +1,19 @@
 import tailwindcss from '@tailwindcss/vite';
-import { defineConfig } from 'vitest/config';
+import { defineProject } from 'vitest/config';
 
-export default defineConfig({
+export default defineProject({
   plugins: [tailwindcss()],
   base: '/vibe-dashboard/',
   test: {
     browser: {
       enabled: true,
-      name: 'chromium',
       provider: 'playwright',
       headless: true,
+      instances: [
+        {
+          browser: 'chromium',
+        },
+      ],
     },
     globals: true,
     environment: 'happy-dom',

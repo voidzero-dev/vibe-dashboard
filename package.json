@@ -5,11 +5,11 @@
   "private": true,
   "scripts": {
     "dev": "pnpm --filter dashboard dev",
-    "build": "pnpm -r build",
+    "build": "vite run @vibe/dashboard#build",
     "lint": "vite lint --type-aware",
-    "test": "pnpm -r test",
+    "test": "vite test",
     "clean": "pnpm -r clean",
-    "build-deploy": "pnpm lint && pnpm build",
+    "build-deploy": "vite run lint && vite run build",
     "rolldown:list": "node tool/override-rolldown.mjs --list",
     "rolldown:use": "node tool/override-rolldown.mjs",
     "rolldown:stats": "node tool/override-rolldown.mjs --stats",
@@ -24,8 +24,9 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@voidzero-dev/vite-plus": "0.0.0-ccbbbea5f9c675fd9a268ddbb5aa1b1606e14cfa",
-    "oxlint-tsgolint": "^0.2.0"
+    "@voidzero-dev/vite-plus": "latest",
+    "oxlint-tsgolint": "^0.2.0",
+    "vitest": "^3.2.4"
   },
   "packageManager": "pnpm@10.15.1",
   "dependencies": {
