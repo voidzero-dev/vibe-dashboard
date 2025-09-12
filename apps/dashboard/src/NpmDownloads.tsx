@@ -15,7 +15,6 @@ const packages = [
 ];
 
 function NpmDownloads() {
-
   return (
     <>
       <main className='max-w-6xl mx-auto px-8 py-8 flex flex-col gap-8'>

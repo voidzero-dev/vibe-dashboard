@@ -1,7 +1,7 @@
+import { buildTimeTooltipFormatter } from '@vibe/utils';
 import { Bar, BarChart, CartesianGrid, LabelList, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import * as semver from 'semver';
 import rolldownStats from '../../../../../rolldown-version-stats.json';
-import { buildTimeTooltipFormatter } from '@vibe/utils';
 
 const buildTimeData = rolldownStats.map(stat => ({
   name: `v${stat.version}`,
@@ -17,14 +17,14 @@ export function BuildTimeChart() {
         <CartesianGrid strokeDasharray='3 3' className='stroke-slate-200 dark:stroke-slate-700' />
         <XAxis
           dataKey='name'
-          tick={{ fill: '#6b7280', fontSize: 12 }}
-          axisLine={{ stroke: '#e5e7eb' }}
-          tickLine={{ stroke: '#e5e7eb' }}
+          tick={{ fill: '#94a3b8', fontSize: 12 }}
+          axisLine={{ stroke: '#475569' }}
+          tickLine={{ stroke: '#475569' }}
         />
         <YAxis
-          tick={{ fill: '#6b7280', fontSize: 12 }}
-          axisLine={{ stroke: '#e5e7eb' }}
-          tickLine={{ stroke: '#e5e7eb' }}
+          tick={{ fill: '#94a3b8', fontSize: 12 }}
+          axisLine={{ stroke: '#475569' }}
+          tickLine={{ stroke: '#475569' }}
         />
         <Tooltip
           formatter={buildTimeTooltipFormatter}
@@ -36,9 +36,10 @@ export function BuildTimeChart() {
             color: 'var(--tooltip-text)',
           }}
           labelStyle={{ color: 'var(--tooltip-text)' }}
+          itemStyle={{ color: 'var(--tooltip-text)' }}
         />
         <Legend
-          wrapperStyle={{ color: '#6b7280' }}
+          wrapperStyle={{ color: '#94a3b8' }}
         />
         <Bar
           dataKey='value'
@@ -49,7 +50,7 @@ export function BuildTimeChart() {
             dataKey='value'
             position='top'
             formatter={(label: React.ReactNode) => `${label}ms`}
-            style={{ fontSize: '11px', fill: '#6b7280' }}
+            style={{ fontSize: '11px', fill: '#94a3b8' }}
           />
         </Bar>
       </BarChart>

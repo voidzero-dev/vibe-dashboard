@@ -209,7 +209,7 @@ function buildApp() {
     const startTime = Date.now();
     execSync('./node_modules/rolldown-vite/bin/vite.js build', {
       stdio: 'inherit',
-      cwd: join(process.cwd(), 'apps/dashboard')
+      cwd: join(process.cwd(), 'apps/dashboard'),
     });
     const buildTime = Date.now() - startTime;
     console.log(`✅ Build completed successfully in ${buildTime}ms`);

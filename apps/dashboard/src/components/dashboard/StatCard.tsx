@@ -1,7 +1,7 @@
+import { Card } from '@vibe/ui';
 import { TrendingDown, TrendingUp } from 'lucide-react';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Card } from '@vibe/ui';
 
 interface StatCardProps {
   title: string;
@@ -18,7 +18,7 @@ export function StatCard({ title, value, change, changeLabel, icon, trend, linkT
     <div className='group relative'>
       <div className='flex items-start justify-between'>
         <div className='flex-1'>
-          <p className='text-sm font-medium text-slate-600 dark:text-slate-400'>{title}</p>
+          <p className='text-sm font-medium text-slate-600 dark:text-slate-300'>{title}</p>
           <p className='mt-2 text-3xl font-bold text-slate-900 dark:text-white'>{value}</p>
           {change !== undefined && (
             <div className='mt-2 flex items-center gap-2'>
@@ -33,7 +33,7 @@ export function StatCard({ title, value, change, changeLabel, icon, trend, linkT
                 {change > 0 ? '+' : ''}
                 {change}%
               </span>
-              {changeLabel && <span className='text-sm text-slate-500 dark:text-slate-400'>{changeLabel}</span>}
+              {changeLabel && <span className='text-sm text-slate-500 dark:text-slate-300'>{changeLabel}</span>}
             </div>
           )}
         </div>

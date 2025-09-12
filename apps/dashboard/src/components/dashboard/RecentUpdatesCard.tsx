@@ -1,6 +1,6 @@
+import { Badge, Card } from '@vibe/ui';
 import { Package } from 'lucide-react';
 import rolldownStats from '../../../../../rolldown-version-stats.json';
-import { Badge, Card } from '@vibe/ui';
 
 export function RecentUpdatesCard() {
   return (
@@ -19,7 +19,7 @@ export function RecentUpdatesCard() {
                 <p className='font-medium text-slate-900 dark:text-white'>
                   Version {stat.version} Released
                 </p>
-                <p className='text-sm text-slate-500 dark:text-slate-400'>
+                <p className='text-sm text-slate-500 dark:text-slate-300'>
                   Bundle size: {Math.round(stat.totalSize / 1024)} KB • Build time: {stat.buildTime}ms
                 </p>
               </div>

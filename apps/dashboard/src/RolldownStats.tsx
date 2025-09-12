@@ -1,5 +1,5 @@
-import { BundleSizeChart } from './components/rolldown/BundleSizeChart';
 import { BuildTimeChart } from './components/rolldown/BuildTimeChart';
+import { BundleSizeChart } from './components/rolldown/BundleSizeChart';
 import { MetricNavigation } from './components/rolldown/MetricNavigation';
 import { StatsCards } from './components/rolldown/StatsCards';
 
@@ -9,7 +9,6 @@ interface RolldownStatsProps {
 }
 
 function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps) {
-
   return (
     <>
       <MetricNavigation selectedMetric={selectedMetric} setSelectedMetric={setSelectedMetric} />

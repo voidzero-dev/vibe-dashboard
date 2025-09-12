@@ -87,7 +87,7 @@ export function Sidebar() {
             {!collapsed && (
               <div>
                 <h1 className='font-bold text-slate-900 dark:text-white'>Vibe</h1>
-                <p className='text-xs text-slate-500 dark:text-slate-400'>Dashboard</p>
+                <p className='text-xs text-slate-500 dark:text-slate-300'>Dashboard</p>
               </div>
             )}
           </div>
@@ -97,7 +97,7 @@ export function Sidebar() {
           >
             <ChevronLeft
               size={18}
-              className={`text-slate-600 dark:text-slate-400 transition-transform ${collapsed ? 'rotate-180' : ''}`}
+              className={`text-slate-600 dark:text-slate-300 transition-transform ${collapsed ? 'rotate-180' : ''}`}
             />
           </button>
         </div>

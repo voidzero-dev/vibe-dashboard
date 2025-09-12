@@ -1,5 +1,5 @@
-import rolldownStats from '../../../../../rolldown-version-stats.json';
 import { formatNumberWithCommas } from '@vibe/utils';
+import rolldownStats from '../../../../../rolldown-version-stats.json';
 
 const buildTimeData = rolldownStats.map(stat => stat.buildTime);
 

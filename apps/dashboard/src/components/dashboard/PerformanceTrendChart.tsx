@@ -1,8 +1,8 @@
+import { Button, Card } from '@vibe/ui';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import rolldownStats from '../../../../../rolldown-version-stats.json';
-import { Button, Card } from '@vibe/ui';
 
 const performanceTrend = rolldownStats.slice(-7).map(stat => ({
   version: `v${stat.version}`,
@@ -47,7 +47,10 @@ export function PerformanceTrendChart() {
               backgroundColor: 'var(--tooltip-bg)',
               border: '1px solid var(--tooltip-border)',
               borderRadius: '8px',
+              color: 'var(--tooltip-text)',
             }}
+            labelStyle={{ color: 'var(--tooltip-text)' }}
+            itemStyle={{ color: 'var(--tooltip-text)' }}
           />
           <Line
             yAxisId='left'

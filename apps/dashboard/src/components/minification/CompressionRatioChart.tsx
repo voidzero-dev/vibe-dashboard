@@ -11,17 +11,17 @@ export function CompressionRatioChart({ data }: CompressionRatioChartProps) {
         <CartesianGrid strokeDasharray='3 3' className='stroke-slate-200 dark:stroke-slate-700' />
         <XAxis
           dataKey='name'
-          tick={{ fill: '#6b7280', fontSize: 11 }}
-          axisLine={{ stroke: '#e5e7eb' }}
-          tickLine={{ stroke: '#e5e7eb' }}
+          tick={{ fill: '#94a3b8', fontSize: 11 }}
+          axisLine={{ stroke: '#475569' }}
+          tickLine={{ stroke: '#475569' }}
           angle={-45}
           textAnchor='end'
           height={60}
         />
         <YAxis
-          tick={{ fill: '#6b7280', fontSize: 11 }}
-          axisLine={{ stroke: '#e5e7eb' }}
-          tickLine={{ stroke: '#e5e7eb' }}
+          tick={{ fill: '#94a3b8', fontSize: 11 }}
+          axisLine={{ stroke: '#475569' }}
+          tickLine={{ stroke: '#475569' }}
         />
         <Tooltip
           contentStyle={{
@@ -32,6 +32,7 @@ export function CompressionRatioChart({ data }: CompressionRatioChartProps) {
             color: 'var(--tooltip-text)',
           }}
           labelStyle={{ color: 'var(--tooltip-text)' }}
+          itemStyle={{ color: 'var(--tooltip-text)' }}
           formatter={(value: any, _name: any, props: any) => [
             `${value}% (${props.payload.minzippedBytes} bytes)`,
             'Compression Ratio',
@@ -42,7 +43,7 @@ export function CompressionRatioChart({ data }: CompressionRatioChartProps) {
             dataKey='value'
             position='top'
             formatter={(label: React.ReactNode) => `${label}%`}
-            style={{ fontSize: '10px', fill: '#6b7280' }}
+            style={{ fontSize: '10px', fill: '#94a3b8' }}
           />
         </Bar>
       </BarChart>

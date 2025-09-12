@@ -1,6 +1,6 @@
+import { Badge, Card } from '@vibe/ui';
 import { Activity } from 'lucide-react';
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
-import { Badge, Card } from '@vibe/ui';
 
 const recentActivityData = [
   { date: 'Mon', commits: 12, issues: 5, prs: 3 },
@@ -41,7 +41,10 @@ export function RecentActivityChart() {
               backgroundColor: 'var(--tooltip-bg)',
               border: '1px solid var(--tooltip-border)',
               borderRadius: '8px',
+              color: 'var(--tooltip-text)',
             }}
+            labelStyle={{ color: 'var(--tooltip-text)' }}
+            itemStyle={{ color: 'var(--tooltip-text)' }}
           />
           <Area
             type='monotone'

@@ -11,17 +11,17 @@ export function MinificationTimeChart({ data }: MinificationTimeChartProps) {
         <CartesianGrid strokeDasharray='3 3' className='stroke-slate-200 dark:stroke-slate-700' />
         <XAxis
           dataKey='name'
-          tick={{ fill: '#6b7280', fontSize: 11 }}
-          axisLine={{ stroke: '#e5e7eb' }}
-          tickLine={{ stroke: '#e5e7eb' }}
+          tick={{ fill: '#94a3b8', fontSize: 11 }}
+          axisLine={{ stroke: '#475569' }}
+          tickLine={{ stroke: '#475569' }}
           angle={-45}
           textAnchor='end'
           height={60}
         />
         <YAxis
-          tick={{ fill: '#6b7280', fontSize: 11 }}
-          axisLine={{ stroke: '#e5e7eb' }}
-          tickLine={{ stroke: '#e5e7eb' }}
+          tick={{ fill: '#94a3b8', fontSize: 11 }}
+          axisLine={{ stroke: '#475569' }}
+          tickLine={{ stroke: '#475569' }}
         />
         <Tooltip
           contentStyle={{
@@ -32,6 +32,7 @@ export function MinificationTimeChart({ data }: MinificationTimeChartProps) {
             color: 'var(--tooltip-text)',
           }}
           labelStyle={{ color: 'var(--tooltip-text)' }}
+          itemStyle={{ color: 'var(--tooltip-text)' }}
           formatter={(value: any) => [`${value}ms`, 'Minification Time']}
         />
         <Bar dataKey='value' fill='#60a5fa'>
@@ -39,7 +40,7 @@ export function MinificationTimeChart({ data }: MinificationTimeChartProps) {
             dataKey='value'
             position='top'
             formatter={(label: React.ReactNode) => `${label}ms`}
-            style={{ fontSize: '12px', fill: '#6b7280' }}
+            style={{ fontSize: '12px', fill: '#94a3b8' }}
           />
         </Bar>
       </BarChart>

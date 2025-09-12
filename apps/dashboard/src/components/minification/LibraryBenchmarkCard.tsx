@@ -1,6 +1,6 @@
+import { getLibraryData } from '../../utils/minification-data';
 import { CompressionRatioChart } from './CompressionRatioChart';
 import { MinificationTimeChart } from './MinificationTimeChart';
-import { getLibraryData } from '../../utils/minification-data';
 
 interface LibraryBenchmarkCardProps {
   library: string;

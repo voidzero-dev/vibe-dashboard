@@ -1,7 +1,18 @@
-import { Bar, BarChart, CartesianGrid, Cell, LabelList, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import { bundleSizeDiffTooltipFormatter, formatNumberWithCommas } from '@vibe/utils';
+import {
+  Bar,
+  BarChart,
+  CartesianGrid,
+  Cell,
+  LabelList,
+  Legend,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from 'recharts';
 import * as semver from 'semver';
 import rolldownStats from '../../../../../rolldown-version-stats.json';
-import { bundleSizeDiffTooltipFormatter, formatNumberWithCommas } from '@vibe/utils';
 
 const sortedRolldownStats = [...rolldownStats].sort((a, b) => semver.compare(a.version, b.version));
 
@@ -40,14 +51,14 @@ export function BundleSizeChart() {
         <CartesianGrid strokeDasharray='3 3' className='stroke-slate-200 dark:stroke-slate-700' />
         <XAxis
           dataKey='name'
-          tick={{ fill: '#6b7280', fontSize: 12 }}
-          axisLine={{ stroke: '#e5e7eb' }}
-          tickLine={{ stroke: '#e5e7eb' }}
+          tick={{ fill: '#94a3b8', fontSize: 12 }}
+          axisLine={{ stroke: '#475569' }}
+          tickLine={{ stroke: '#475569' }}
         />
         <YAxis
-          tick={{ fill: '#6b7280', fontSize: 12 }}
-          axisLine={{ stroke: '#e5e7eb' }}
-          tickLine={{ stroke: '#e5e7eb' }}
+          tick={{ fill: '#94a3b8', fontSize: 12 }}
+          axisLine={{ stroke: '#475569' }}
+          tickLine={{ stroke: '#475569' }}
         />
         <Tooltip
           formatter={bundleSizeDiffTooltipFormatter}
@@ -59,9 +70,10 @@ export function BundleSizeChart() {
             color: 'var(--tooltip-text)',
           }}
           labelStyle={{ color: 'var(--tooltip-text)' }}
+          itemStyle={{ color: 'var(--tooltip-text)' }}
         />
         <Legend
-          wrapperStyle={{ color: '#6b7280' }}
+          wrapperStyle={{ color: '#94a3b8' }}
         />
         <Bar dataKey='value' name='Bundle Size Change (bytes)'>
           <LabelList
@@ -72,12 +84,12 @@ export function BundleSizeChart() {
               if (value === 0) return 'baseline';
               return value >= 0 ? `+${formatNumberWithCommas(value)}` : formatNumberWithCommas(value);
             }}
-            style={{ fontSize: '11px', fill: '#6b7280' }}
+            style={{ fontSize: '11px', fill: '#94a3b8' }}
           />
           {bundleSizeDiffData.map((entry: any, index: number) => (
             <Cell
               key={`cell-${index}`}
-              fill={entry.isBaseline ? '#6b7280' : (entry.value >= 0 ? '#dc2626' : '#16a34a')}
+              fill={entry.isBaseline ? '#94a3b8' : (entry.value >= 0 ? '#dc2626' : '#16a34a')}
             />
           ))}
         </Bar>

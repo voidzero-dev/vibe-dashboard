@@ -1,5 +1,5 @@
-import { Bell, Search, User } from 'lucide-react';
 import { Button } from '@vibe/ui';
+import { Bell, Search, User } from 'lucide-react';
 
 interface AppBarProps {
   title?: string;
@@ -18,7 +18,7 @@ export function AppBar({ title, subtitle }: AppBarProps) {
             </h2>
           )}
           {subtitle && (
-            <p className='text-sm text-slate-500 dark:text-slate-400'>
+            <p className='text-sm text-slate-500 dark:text-slate-300'>
               {subtitle}
             </p>
           )}
@@ -29,7 +29,10 @@ export function AppBar({ title, subtitle }: AppBarProps) {
           {/* Search */}
           <div className='hidden md:flex items-center'>
             <div className='relative'>
-              <Search size={18} className='absolute left-3 top-1/2 -translate-y-1/2 text-slate-400' />
+              <Search
+                size={18}
+                className='absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500'
+              />
               <input
                 type='text'
                 placeholder='Search...'
@@ -55,7 +58,7 @@ export function AppBar({ title, subtitle }: AppBarProps) {
           <div className='flex items-center gap-3 pl-3 border-l border-slate-200 dark:border-slate-700'>
             <div className='hidden sm:block text-right'>
               <p className='text-sm font-medium text-slate-900 dark:text-white'>Admin User</p>
-              <p className='text-xs text-slate-500 dark:text-slate-400'>admin@vibe.dev</p>
+              <p className='text-xs text-slate-500 dark:text-slate-300'>admin@vibe.dev</p>
             </div>
             <button className='w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center'>
               <User size={18} className='text-white' />
