@@ -23,6 +23,12 @@
 html.dark {
   --tooltip-bg: #1e293b;
   --tooltip-border: #475569;
+  --tooltip-text: #f1f5f9;
+}
+
+/* Light mode tooltip text */
+:root {
+  --tooltip-text: #1e293b;
 }
 
 * {

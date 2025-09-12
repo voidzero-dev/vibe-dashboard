@@ -111,7 +111,7 @@ function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps
 
   const rolldownMetrics = [
     { id: 'bundleSize', name: 'Bundle Size', icon: Package, data: bundleSizeDiffData, color: '#374151' },
-  { id: 'buildTime', name: 'Build Time', icon: Clock, data: buildTimeData, color: '#2563eb' },
+    { id: 'buildTime', name: 'Build Time', icon: Clock, data: buildTimeData, color: '#2563eb' },
   ];
 
   const currentMetric = rolldownMetrics.find(m => m.id === selectedMetric) || rolldownMetrics[0];
@@ -143,7 +143,9 @@ function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps
 
       <main className='max-w-6xl mx-auto px-8 py-8 flex flex-col gap-8'>
         <div className='bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-8 py-8 rounded-xl shadow-sm'>
-          <h2 className='mb-6 text-slate-800 text-3xl font-bold tracking-tight'>{currentMetric.name}</h2>
+          <h2 className='mb-6 text-slate-800 dark:text-slate-100 text-3xl font-bold tracking-tight'>
+            {currentMetric.name}
+          </h2>
           <ResponsiveContainer width='100%' height={400}>
             {selectedMetric === 'bundleSize'
               ? (
@@ -151,14 +153,14 @@ function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps
                   <CartesianGrid strokeDasharray='3 3' className='stroke-slate-200 dark:stroke-slate-700' />
                   <XAxis
                     dataKey='name'
-                    tick={{ fill: 'currentColor', fontSize: 12 }}
-                    axisLine={{ stroke: 'currentColor', opacity: 0.2 }}
-                    tickLine={{ stroke: 'currentColor', opacity: 0.2 }}
+                    tick={{ fill: '#6b7280', fontSize: 12 }}
+                    axisLine={{ stroke: '#e5e7eb' }}
+                    tickLine={{ stroke: '#e5e7eb' }}
                   />
                   <YAxis
-                    tick={{ fill: 'currentColor', fontSize: 12 }}
-                    axisLine={{ stroke: 'currentColor', opacity: 0.2 }}
-                    tickLine={{ stroke: 'currentColor', opacity: 0.2 }}
+                    tick={{ fill: '#6b7280', fontSize: 12 }}
+                    axisLine={{ stroke: '#e5e7eb' }}
+                    tickLine={{ stroke: '#e5e7eb' }}
                   />
                   <Tooltip
                     formatter={bundleSizeDiffTooltipFormatter}
@@ -167,10 +169,12 @@ function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps
                       border: '1px solid var(--tooltip-border)',
                       borderRadius: '0.5rem',
                       boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                      color: 'var(--tooltip-text)',
                     }}
+                    labelStyle={{ color: 'var(--tooltip-text)' }}
                   />
                   <Legend
-                    wrapperStyle={{ color: '#374151' }}
+                    wrapperStyle={{ color: '#6b7280' }}
                   />
                   <Bar dataKey='value' name='Bundle Size Change (bytes)'>
                     <LabelList
@@ -181,7 +185,7 @@ function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps
                         if (value === 0) return 'baseline';
                         return value >= 0 ? `+${formatNumberWithCommas(value)}` : formatNumberWithCommas(value);
                       }}
-                      style={{ fontSize: '11px', fill: 'currentColor' }}
+                      style={{ fontSize: '11px', fill: '#6b7280' }}
                     />
                     {currentMetric.data.map((entry: any, index: number) => (
                       <Cell
@@ -197,14 +201,14 @@ function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps
                   <CartesianGrid strokeDasharray='3 3' className='stroke-slate-200 dark:stroke-slate-700' />
                   <XAxis
                     dataKey='name'
-                    tick={{ fill: 'currentColor', fontSize: 12 }}
-                    axisLine={{ stroke: 'currentColor', opacity: 0.2 }}
-                    tickLine={{ stroke: 'currentColor', opacity: 0.2 }}
+                    tick={{ fill: '#6b7280', fontSize: 12 }}
+                    axisLine={{ stroke: '#e5e7eb' }}
+                    tickLine={{ stroke: '#e5e7eb' }}
                   />
                   <YAxis
-                    tick={{ fill: 'currentColor', fontSize: 12 }}
-                    axisLine={{ stroke: 'currentColor', opacity: 0.2 }}
-                    tickLine={{ stroke: 'currentColor', opacity: 0.2 }}
+                    tick={{ fill: '#6b7280', fontSize: 12 }}
+                    axisLine={{ stroke: '#e5e7eb' }}
+                    tickLine={{ stroke: '#e5e7eb' }}
                   />
                   <Tooltip
                     formatter={buildTimeTooltipFormatter}
@@ -213,29 +217,25 @@ function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps
                       border: '1px solid var(--tooltip-border)',
                       borderRadius: '0.5rem',
                       boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                      color: 'var(--tooltip-text)',
                     }}
+                    labelStyle={{ color: 'var(--tooltip-text)' }}
                   />
                   <Legend
-                    wrapperStyle={{ color: '#374151' }}
+                    wrapperStyle={{ color: '#6b7280' }}
                   />
                   <Bar
                     dataKey='value'
-                    fill='url(#buildTimeGradient)'
+                    fill='#60a5fa'
                     name='Build Time (ms)'
                   >
                     <LabelList
                       dataKey='value'
                       position='top'
                       formatter={(label: React.ReactNode) => `${label}ms`}
-                      style={{ fontSize: '11px', fill: 'currentColor' }}
+                      style={{ fontSize: '11px', fill: '#6b7280' }}
                     />
                   </Bar>
-                  <defs>
-                    <linearGradient id='buildTimeGradient' x1='0' y1='0' x2='0' y2='1'>
-                      <stop offset='0%' stopColor='#2563eb' stopOpacity={1} />
-                      <stop offset='100%' stopColor='#3b82f6' stopOpacity={0.8} />
-                    </linearGradient>
-                  </defs>
                 </BarChart>
               )}
           </ResponsiveContainer>
@@ -243,7 +243,9 @@ function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps
 
         <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6'>
           <div className='bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
-            <h3 className='mb-3 text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-widest'>Average Build Time</h3>
+            <h3 className='mb-3 text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-widest'>
+              Average Build Time
+            </h3>
             <p className='mb-3 text-4xl font-bold text-slate-800 dark:text-slate-100 tracking-tight leading-tight'>
               {Math.round(buildTimeData.reduce((sum, item) => sum + item.value, 0) / buildTimeData.length)}ms
             </p>
@@ -252,7 +254,9 @@ function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps
             </span>
           </div>
           <div className='bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
-            <h3 className='mb-3 text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-widest'>Latest Bundle Size</h3>
+            <h3 className='mb-3 text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-widest'>
+              Latest Bundle Size
+            </h3>
             <p className='mb-3 text-4xl font-bold text-slate-800 dark:text-slate-100 tracking-tight leading-tight'>
               {formatNumberWithCommas(rolldownStats[rolldownStats.length - 1]?.totalSize || 0)} bytes
             </p>
@@ -261,7 +265,9 @@ function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps
             </span>
           </div>
           <div className='bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
-            <h3 className='mb-3 text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-widest'>Bundle Size Range</h3>
+            <h3 className='mb-3 text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-widest'>
+              Bundle Size Range
+            </h3>
             <p className='mb-3 text-4xl font-bold text-slate-800 dark:text-slate-100 tracking-tight leading-tight'>
               {Math.round(
                 (Math.max(...rolldownStats.map(s => s.totalSize)) - Math.min(...rolldownStats.map(s => s.totalSize))) /
@@ -273,7 +279,9 @@ function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps
             </span>
           </div>
           <div className='bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
-            <h3 className='mb-3 text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-widest'>Versions Tested</h3>
+            <h3 className='mb-3 text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-widest'>
+              Versions Tested
+            </h3>
             <p className='mb-3 text-4xl font-bold text-slate-800 dark:text-slate-100 tracking-tight leading-tight'>
               {rolldownStats.length}
             </p>

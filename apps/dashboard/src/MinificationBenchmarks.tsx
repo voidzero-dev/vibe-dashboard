@@ -45,16 +45,16 @@ const getLibraryData = (library: string, metric: 'time' | 'compression') => {
         value,
         minzippedBytes: minzippedBytes || 0,
         fill: minifier === 'terser'
-          ? '#8b5cf6'
+          ? '#a78bfa'
           : minifier === 'esbuild'
-          ? '#059669'
+          ? '#10b981'
           : minifier === '@swc/core'
-          ? '#0ea5e9'
+          ? '#38bdf8'
           : minifier === 'uglify-js'
-          ? '#dc2626'
+          ? '#f87171'
           : minifier === 'oxc-minify'
-          ? '#f59e0b'
-          : '#6b7280',
+          ? '#fbbf24'
+          : '#9ca3af',
       });
     }
   });
@@ -82,13 +82,13 @@ function MinificationBenchmarks({}: MinificationBenchmarksProps) {
                 key={library}
                 className='bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl px-6 py-6 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-0.5'
               >
-                <h3 className='mb-4 text-xl font-bold text-slate-800 capitalize text-center pb-2 border-b-2 border-slate-200'>
+                <h3 className='mb-4 text-xl font-bold text-slate-800 dark:text-slate-100 capitalize text-center pb-2 border-b-2 border-slate-200 dark:border-slate-700'>
                   {library}
                 </h3>
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 mt-4'>
                   {/* Left column - Minification Time */}
-                  <div className='bg-slate-50 border border-gray-200 rounded-lg p-4'>
-                    <h4 className='mb-4 text-base font-medium text-gray-700 text-center pb-2 border-b border-gray-200'>
+                  <div className='bg-slate-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-700 rounded-lg p-4'>
+                    <h4 className='mb-4 text-base font-medium text-gray-700 dark:text-gray-300 text-center pb-2 border-b border-gray-200 dark:border-gray-700'>
                       Minification Time
                     </h4>
                     <ResponsiveContainer width='100%' height={300}>
@@ -96,17 +96,17 @@ function MinificationBenchmarks({}: MinificationBenchmarksProps) {
                         <CartesianGrid strokeDasharray='3 3' className='stroke-slate-200 dark:stroke-slate-700' />
                         <XAxis
                           dataKey='name'
-                          tick={{ fill: 'currentColor', fontSize: 11 }}
-                          axisLine={{ stroke: 'currentColor', opacity: 0.2 }}
-                          tickLine={{ stroke: 'currentColor', opacity: 0.2 }}
+                          tick={{ fill: '#6b7280', fontSize: 11 }}
+                          axisLine={{ stroke: '#e5e7eb' }}
+                          tickLine={{ stroke: '#e5e7eb' }}
                           angle={-45}
                           textAnchor='end'
                           height={60}
                         />
                         <YAxis
-                          tick={{ fill: 'currentColor', fontSize: 11 }}
-                          axisLine={{ stroke: 'currentColor', opacity: 0.2 }}
-                          tickLine={{ stroke: 'currentColor', opacity: 0.2 }}
+                          tick={{ fill: '#6b7280', fontSize: 11 }}
+                          axisLine={{ stroke: '#e5e7eb' }}
+                          tickLine={{ stroke: '#e5e7eb' }}
                         />
                         <Tooltip
                           contentStyle={{
@@ -114,15 +114,17 @@ function MinificationBenchmarks({}: MinificationBenchmarksProps) {
                             border: '1px solid var(--tooltip-border)',
                             borderRadius: '0.5rem',
                             boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                            color: 'var(--tooltip-text)',
                           }}
+                          labelStyle={{ color: 'var(--tooltip-text)' }}
                           formatter={(value: any) => [`${value}ms`, 'Minification Time']}
                         />
-                        <Bar dataKey='value'>
+                        <Bar dataKey='value' fill='#60a5fa'>
                           <LabelList
                             dataKey='value'
                             position='top'
                             formatter={(label: React.ReactNode) => `${label}ms`}
-                            style={{ fontSize: '12px', fill: 'currentColor' }}
+                            style={{ fontSize: '12px', fill: '#6b7280' }}
                           />
                         </Bar>
                       </BarChart>
@@ -130,8 +132,8 @@ function MinificationBenchmarks({}: MinificationBenchmarksProps) {
                   </div>
 
                   {/* Right column - Compression Ratio */}
-                  <div className='bg-slate-50 border border-gray-200 rounded-lg p-4'>
-                    <h4 className='mb-4 text-base font-medium text-gray-700 text-center pb-2 border-b border-gray-200'>
+                  <div className='bg-slate-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-700 rounded-lg p-4'>
+                    <h4 className='mb-4 text-base font-medium text-gray-700 dark:text-gray-300 text-center pb-2 border-b border-gray-200 dark:border-gray-700'>
                       Compression Ratio
                     </h4>
                     <ResponsiveContainer width='100%' height={300}>
@@ -139,17 +141,17 @@ function MinificationBenchmarks({}: MinificationBenchmarksProps) {
                         <CartesianGrid strokeDasharray='3 3' className='stroke-slate-200 dark:stroke-slate-700' />
                         <XAxis
                           dataKey='name'
-                          tick={{ fill: 'currentColor', fontSize: 11 }}
-                          axisLine={{ stroke: 'currentColor', opacity: 0.2 }}
-                          tickLine={{ stroke: 'currentColor', opacity: 0.2 }}
+                          tick={{ fill: '#6b7280', fontSize: 11 }}
+                          axisLine={{ stroke: '#e5e7eb' }}
+                          tickLine={{ stroke: '#e5e7eb' }}
                           angle={-45}
                           textAnchor='end'
                           height={60}
                         />
                         <YAxis
-                          tick={{ fill: 'currentColor', fontSize: 11 }}
-                          axisLine={{ stroke: 'currentColor', opacity: 0.2 }}
-                          tickLine={{ stroke: 'currentColor', opacity: 0.2 }}
+                          tick={{ fill: '#6b7280', fontSize: 11 }}
+                          axisLine={{ stroke: '#e5e7eb' }}
+                          tickLine={{ stroke: '#e5e7eb' }}
                         />
                         <Tooltip
                           contentStyle={{
@@ -157,18 +159,20 @@ function MinificationBenchmarks({}: MinificationBenchmarksProps) {
                             border: '1px solid var(--tooltip-border)',
                             borderRadius: '0.5rem',
                             boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                            color: 'var(--tooltip-text)',
                           }}
+                          labelStyle={{ color: 'var(--tooltip-text)' }}
                           formatter={(value: any, _name: any, props: any) => [
                             `${value}% (${props.payload.minzippedBytes} bytes)`,
                             'Compression Ratio',
                           ]}
                         />
-                        <Bar dataKey='value'>
+                        <Bar dataKey='value' fill='#4ade80'>
                           <LabelList
                             dataKey='value'
                             position='top'
                             formatter={(label: React.ReactNode) => `${label}%`}
-                            style={{ fontSize: '10px', fill: 'currentColor' }}
+                            style={{ fontSize: '10px', fill: '#6b7280' }}
                           />
                         </Bar>
                       </BarChart>
@@ -183,7 +187,9 @@ function MinificationBenchmarks({}: MinificationBenchmarksProps) {
         <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6'>
           {/* Minification statistics */}
           <div className='bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
-            <h3 className='mb-3 text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-widest'>Libraries Tested</h3>
+            <h3 className='mb-3 text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-widest'>
+              Libraries Tested
+            </h3>
             <p className='mb-3 text-4xl font-bold text-slate-800 dark:text-slate-100 tracking-tight leading-tight'>
               {Object.keys(minificationData).length}
             </p>
@@ -192,7 +198,9 @@ function MinificationBenchmarks({}: MinificationBenchmarksProps) {
             </span>
           </div>
           <div className='bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
-            <h3 className='mb-3 text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-widest'>Minifiers Compared</h3>
+            <h3 className='mb-3 text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-widest'>
+              Minifiers Compared
+            </h3>
             <p className='mb-3 text-4xl font-bold text-slate-800 dark:text-slate-100 tracking-tight leading-tight'>
               {popularMinifiers.length}
             </p>
@@ -201,15 +209,23 @@ function MinificationBenchmarks({}: MinificationBenchmarksProps) {
             </span>
           </div>
           <div className='bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
-            <h3 className='mb-3 text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-widest'>Fastest Minifier</h3>
-            <p className='mb-3 text-4xl font-bold text-slate-800 dark:text-slate-100 tracking-tight leading-tight'>OXC</p>
+            <h3 className='mb-3 text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-widest'>
+              Fastest Minifier
+            </h3>
+            <p className='mb-3 text-4xl font-bold text-slate-800 dark:text-slate-100 tracking-tight leading-tight'>
+              OXC
+            </p>
             <span className='text-sm font-semibold px-3 py-1.5 rounded-lg inline-flex items-center gap-1 text-emerald-700 bg-emerald-100 bg-opacity-100 border border-emerald-200 border-opacity-200'>
               Rust-based
             </span>
           </div>
           <div className='bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
-            <h3 className='mb-3 text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-widest'>Best Compression</h3>
-            <p className='mb-3 text-4xl font-bold text-slate-800 dark:text-slate-100 tracking-tight leading-tight'>UglifyJS</p>
+            <h3 className='mb-3 text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-widest'>
+              Best Compression
+            </h3>
+            <p className='mb-3 text-4xl font-bold text-slate-800 dark:text-slate-100 tracking-tight leading-tight'>
+              UglifyJS
+            </p>
             <span className='text-sm font-semibold px-3 py-1.5 rounded-lg inline-flex items-center gap-1 text-emerald-700 bg-emerald-100 bg-opacity-100 border border-emerald-200 border-opacity-200'>
               Traditional Leader
             </span>
