@@ -1,6 +1,7 @@
 import { FileDown, Gauge, Timer, Zap } from 'lucide-react';
 import minificationData from '../../../../minification-benchmarks-data.json';
 import { PageContainer } from '../components/layout/PageContainer';
+import { PageHeader } from '../components/shared/PageHeader';
 import { Badge } from '../components/ui/Badge';
 import { Card } from '../components/ui/Card';
 import MinificationBenchmarks from '../MinificationBenchmarks';
@@ -12,23 +13,16 @@ function MinificationBenchmarksPage() {
 
   return (
     <PageContainer>
-      {/* Page Header */}
-      <div className='mb-8'>
-        <div className='flex items-center justify-between'>
-          <div>
-            <h1 className='text-3xl font-bold text-slate-900 dark:text-white flex items-center gap-3'>
-              <Zap className='text-amber-600 dark:text-amber-400' />
-              Minification Benchmarks
-            </h1>
-            <p className='mt-2 text-slate-600 dark:text-slate-400'>
-              Performance comparison of JavaScript minification tools
-            </p>
-          </div>
+      <PageHeader
+        icon={<Zap className='text-amber-600 dark:text-amber-400' />}
+        title='Minification Benchmarks'
+        subtitle='Performance comparison of JavaScript minification tools'
+        action={
           <Badge variant='warning' size='md'>
             {totalLibraries} Libraries Tested
           </Badge>
-        </div>
-      </div>
+        }
+      />
 
       {/* Quick Stats */}
       <div className='grid grid-cols-1 md:grid-cols-4 gap-4 mb-8'>

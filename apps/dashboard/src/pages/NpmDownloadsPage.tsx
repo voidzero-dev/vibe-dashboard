@@ -1,5 +1,6 @@
 import { Calendar, Download, Package, TrendingUp } from 'lucide-react';
 import { PageContainer } from '../components/layout/PageContainer';
+import { PageHeader } from '../components/shared/PageHeader';
 import { Badge } from '../components/ui/Badge';
 import { Card } from '../components/ui/Card';
 import NpmDownloads from '../NpmDownloads';
@@ -7,23 +8,16 @@ import NpmDownloads from '../NpmDownloads';
 function NpmDownloadsPage() {
   return (
     <PageContainer>
-      {/* Page Header */}
-      <div className='mb-8'>
-        <div className='flex items-center justify-between'>
-          <div>
-            <h1 className='text-3xl font-bold text-slate-900 dark:text-white flex items-center gap-3'>
-              <Download className='text-green-600 dark:text-green-400' />
-              NPM Downloads
-            </h1>
-            <p className='mt-2 text-slate-600 dark:text-slate-400'>
-              Weekly download statistics for key packages
-            </p>
-          </div>
+      <PageHeader
+        icon={<Download className='text-green-600 dark:text-green-400' />}
+        title='NPM Downloads'
+        subtitle='Weekly download statistics for key packages'
+        action={
           <Badge variant='success' size='md'>
             Live Data
           </Badge>
-        </div>
-      </div>
+        }
+      />
 
       {/* Quick Stats */}
       <div className='grid grid-cols-1 md:grid-cols-4 gap-4 mb-8'>

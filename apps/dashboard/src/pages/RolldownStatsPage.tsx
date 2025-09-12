@@ -2,6 +2,7 @@ import { BarChart3, Clock, Package, TrendingUp } from 'lucide-react';
 import { useState } from 'react';
 import rolldownStatsData from '../../../../rolldown-version-stats.json';
 import { PageContainer } from '../components/layout/PageContainer';
+import { PageHeader } from '../components/shared/PageHeader';
 import { Badge } from '../components/ui/Badge';
 import { Card } from '../components/ui/Card';
 import RolldownStats from '../RolldownStats';
@@ -12,23 +13,16 @@ function RolldownStatsPage() {
 
   return (
     <PageContainer>
-      {/* Page Header */}
-      <div className='mb-8'>
-        <div className='flex items-center justify-between'>
-          <div>
-            <h1 className='text-3xl font-bold text-slate-900 dark:text-white flex items-center gap-3'>
-              <Package className='text-blue-600 dark:text-blue-400' />
-              Rolldown Stats
-            </h1>
-            <p className='mt-2 text-slate-600 dark:text-slate-400'>
-              Track bundle size and build performance across versions
-            </p>
-          </div>
+      <PageHeader
+        icon={<Package className='text-blue-600 dark:text-blue-400' />}
+        title='Rolldown Stats'
+        subtitle='Track bundle size and build performance across versions'
+        action={
           <Badge variant='info' size='md'>
             Latest: v{latestVersion.version}
           </Badge>
-        </div>
-      </div>
+        }
+      />
 
       {/* Quick Stats */}
       <div className='grid grid-cols-1 md:grid-cols-3 gap-4 mb-8'>
