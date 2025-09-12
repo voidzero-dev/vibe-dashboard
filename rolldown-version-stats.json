@@ -1,17 +1,17 @@
 [
   {
     "version": "7.1.0",
-    "timestamp": "2025-09-11T16:24:14.765Z",
+    "timestamp": "2025-09-12T03:28:24.395Z",
     "publicationDate": "2025-08-07T08:23:22.159Z",
     "files": [
       {
-        "path": "assets/index-BTr1u12a.js",
-        "size": 682925,
+        "path": "assets/index-G20UiF_Q.js",
+        "size": 691189,
         "type": "js"
       },
       {
-        "path": "assets/index-DWYTT27h.css",
-        "size": 16049,
+        "path": "assets/index-V4eh0N7C.css",
+        "size": 15411,
         "type": "css"
       },
       {
@@ -25,24 +25,24 @@
         "type": "other"
       }
     ],
-    "totalSize": 700986,
+    "totalSize": 708612,
     "totalGzipSize": 0,
-    "buildTime": 4749
+    "buildTime": 10465
   },
   {
     "version": "7.1.1",
-    "timestamp": "2025-09-11T16:24:21.324Z",
+    "timestamp": "2025-09-12T03:28:34.811Z",
     "publicationDate": "2025-08-12T02:54:51.107Z",
     "files": [
       {
-        "path": "assets/index-DWYTT27h.css",
-        "size": 16049,
-        "type": "css"
+        "path": "assets/index-G20UiF_Q.js",
+        "size": 691189,
+        "type": "js"
       },
       {
-        "path": "assets/index-KwvSgOzX.js",
-        "size": 682931,
-        "type": "js"
+        "path": "assets/index-V4eh0N7C.css",
+        "size": 15411,
+        "type": "css"
       },
       {
         "path": "index.html",
@@ -55,24 +55,24 @@
         "type": "other"
       }
     ],
-    "totalSize": 700992,
+    "totalSize": 708612,
     "totalGzipSize": 0,
-    "buildTime": 4946
+    "buildTime": 8714
   },
   {
     "version": "7.1.2",
-    "timestamp": "2025-09-11T16:24:27.360Z",
+    "timestamp": "2025-09-12T03:28:45.005Z",
     "publicationDate": "2025-08-12T12:01:43.781Z",
     "files": [
       {
-        "path": "assets/index-DWYTT27h.css",
-        "size": 16049,
-        "type": "css"
+        "path": "assets/index-G20UiF_Q.js",
+        "size": 691189,
+        "type": "js"
       },
       {
-        "path": "assets/index-KwvSgOzX.js",
-        "size": 682931,
-        "type": "js"
+        "path": "assets/index-V4eh0N7C.css",
+        "size": 15411,
+        "type": "css"
       },
       {
         "path": "index.html",
@@ -85,24 +85,24 @@
         "type": "other"
       }
     ],
-    "totalSize": 700992,
+    "totalSize": 708612,
     "totalGzipSize": 0,
-    "buildTime": 4594
+    "buildTime": 8797
   },
   {
     "version": "7.1.3",
-    "timestamp": "2025-09-11T16:24:33.461Z",
+    "timestamp": "2025-09-12T03:28:55.158Z",
     "publicationDate": "2025-08-18T08:02:46.387Z",
     "files": [
       {
-        "path": "assets/index-DWYTT27h.css",
-        "size": 16049,
-        "type": "css"
+        "path": "assets/index-G20UiF_Q.js",
+        "size": 691189,
+        "type": "js"
       },
       {
-        "path": "assets/index-QJ81CHym.js",
-        "size": 682009,
-        "type": "js"
+        "path": "assets/index-V4eh0N7C.css",
+        "size": 15411,
+        "type": "css"
       },
       {
         "path": "index.html",
@@ -115,24 +115,24 @@
         "type": "other"
       }
     ],
-    "totalSize": 700070,
+    "totalSize": 708612,
     "totalGzipSize": 0,
-    "buildTime": 4659
+    "buildTime": 8710
   },
   {
     "version": "7.1.4",
-    "timestamp": "2025-09-11T16:24:39.583Z",
+    "timestamp": "2025-09-12T03:29:05.249Z",
     "publicationDate": "2025-08-19T06:31:25.590Z",
     "files": [
       {
-        "path": "assets/index-DWYTT27h.css",
-        "size": 16049,
-        "type": "css"
+        "path": "assets/index-G20UiF_Q.js",
+        "size": 691189,
+        "type": "js"
       },
       {
-        "path": "assets/index-QJ81CHym.js",
-        "size": 682009,
-        "type": "js"
+        "path": "assets/index-V4eh0N7C.css",
+        "size": 15411,
+        "type": "css"
       },
       {
         "path": "index.html",
@@ -145,24 +145,24 @@
         "type": "other"
       }
     ],
-    "totalSize": 700070,
+    "totalSize": 708612,
     "totalGzipSize": 0,
-    "buildTime": 4547
+    "buildTime": 8652
   },
   {
     "version": "7.1.5",
-    "timestamp": "2025-09-11T16:24:45.566Z",
+    "timestamp": "2025-09-12T03:29:15.351Z",
     "publicationDate": "2025-08-25T10:27:36.356Z",
     "files": [
       {
-        "path": "assets/index-DWYTT27h.css",
-        "size": 16049,
-        "type": "css"
+        "path": "assets/index-G20UiF_Q.js",
+        "size": 691189,
+        "type": "js"
       },
       {
-        "path": "assets/index-TZGEObDR.js",
-        "size": 682100,
-        "type": "js"
+        "path": "assets/index-V4eh0N7C.css",
+        "size": 15411,
+        "type": "css"
       },
       {
         "path": "index.html",
@@ -175,24 +175,24 @@
         "type": "other"
       }
     ],
-    "totalSize": 700161,
+    "totalSize": 708612,
     "totalGzipSize": 0,
-    "buildTime": 4541
+    "buildTime": 8689
   },
   {
     "version": "7.1.6",
-    "timestamp": "2025-09-11T16:24:53.637Z",
+    "timestamp": "2025-09-12T03:29:25.912Z",
     "publicationDate": "2025-09-08T03:35:35.425Z",
     "files": [
       {
-        "path": "assets/index-DWYTT27h.css",
-        "size": 16049,
-        "type": "css"
+        "path": "assets/index-G20UiF_Q.js",
+        "size": 691189,
+        "type": "js"
       },
       {
-        "path": "assets/index-bTfen2VM.js",
-        "size": 681702,
-        "type": "js"
+        "path": "assets/index-V4eh0N7C.css",
+        "size": 15411,
+        "type": "css"
       },
       {
         "path": "index.html",
@@ -205,24 +205,24 @@
         "type": "other"
       }
     ],
-    "totalSize": 699763,
+    "totalSize": 708612,
     "totalGzipSize": 0,
-    "buildTime": 4499
+    "buildTime": 8662
   },
   {
     "version": "7.1.7",
-    "timestamp": "2025-09-11T16:24:59.592Z",
+    "timestamp": "2025-09-12T03:29:35.952Z",
     "publicationDate": "2025-09-08T07:51:32.978Z",
     "files": [
       {
-        "path": "assets/index-DWYTT27h.css",
-        "size": 16049,
-        "type": "css"
+        "path": "assets/index-G20UiF_Q.js",
+        "size": 691189,
+        "type": "js"
       },
       {
-        "path": "assets/index-bTfen2VM.js",
-        "size": 681702,
-        "type": "js"
+        "path": "assets/index-V4eh0N7C.css",
+        "size": 15411,
+        "type": "css"
       },
       {
         "path": "index.html",
@@ -235,24 +235,24 @@
         "type": "other"
       }
     ],
-    "totalSize": 699763,
+    "totalSize": 708612,
     "totalGzipSize": 0,
-    "buildTime": 4516
+    "buildTime": 8684
   },
   {
     "version": "7.1.8",
-    "timestamp": "2025-09-11T16:25:05.658Z",
+    "timestamp": "2025-09-12T03:29:45.974Z",
     "publicationDate": "2025-09-08T13:39:34.123Z",
     "files": [
       {
-        "path": "assets/index-DWYTT27h.css",
-        "size": 16049,
-        "type": "css"
+        "path": "assets/index-G20UiF_Q.js",
+        "size": 691189,
+        "type": "js"
       },
       {
-        "path": "assets/index-fPy4B50u.js",
-        "size": 677411,
-        "type": "js"
+        "path": "assets/index-V4eh0N7C.css",
+        "size": 15411,
+        "type": "css"
       },
       {
         "path": "index.html",
@@ -265,23 +265,23 @@
         "type": "other"
       }
     ],
-    "totalSize": 695472,
+    "totalSize": 708612,
     "totalGzipSize": 0,
-    "buildTime": 4564
+    "buildTime": 8582
   },
   {
     "version": "7.1.9",
-    "timestamp": "2025-09-11T16:25:11.706Z",
+    "timestamp": "2025-09-12T03:29:56.082Z",
     "publicationDate": "2025-09-11T02:09:45.877Z",
     "files": [
       {
-        "path": "assets/index-BtSO-V-l.js",
-        "size": 677304,
+        "path": "assets/index-G20UiF_Q.js",
+        "size": 691189,
         "type": "js"
       },
       {
-        "path": "assets/index-DWYTT27h.css",
-        "size": 16049,
+        "path": "assets/index-V4eh0N7C.css",
+        "size": 15411,
         "type": "css"
       },
       {
@@ -295,8 +295,8 @@
         "type": "other"
       }
     ],
-    "totalSize": 695365,
+    "totalSize": 708612,
     "totalGzipSize": 0,
-    "buildTime": 4509
+    "buildTime": 8683
   }
 ]
