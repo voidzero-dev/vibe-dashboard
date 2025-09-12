@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "A frontend dashboard for displaying different metrics using bar charts",
   "private": true,
+  "packageManager": "pnpm@10.15.1",
   "scripts": {
     "dev": "pnpm --filter dashboard dev",
     "build": "vite run @vibe/dashboard#build",
@@ -15,21 +16,10 @@
     "rolldown:stats": "node tool/override-rolldown.mjs --stats",
     "fmt": "dprint fmt"
   },
-  "keywords": [
-    "dashboard",
-    "charts",
-    "metrics",
-    "frontend"
-  ],
-  "author": "",
-  "license": "MIT",
   "devDependencies": {
     "@voidzero-dev/vite-plus": "latest",
     "oxlint-tsgolint": "^0.2.0",
-    "vitest": "^3.2.4"
-  },
-  "packageManager": "pnpm@10.15.1",
-  "dependencies": {
+    "vitest": "^3.2.4",
     "dprint": "^0.50.1"
   }
 }
