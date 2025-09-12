@@ -22,15 +22,15 @@ function NpmDownloads({}: NpmDownloadsProps) {
   return (
     <>
       <main className='max-w-6xl mx-auto px-8 py-8 flex flex-col gap-8'>
-        <div className='bg-white border border-slate-200 px-8 py-8 rounded-xl shadow-sm'>
-          <h2 className='mb-6 text-slate-800 text-3xl font-bold tracking-tight'>NPM Weekly Downloads</h2>
+        <div className='bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-8 py-8 rounded-xl shadow-sm'>
+          <h2 className='mb-6 text-slate-800 dark:text-slate-100 text-3xl font-bold tracking-tight'>NPM Weekly Downloads</h2>
 
-          <div className='mx-auto mb-8 rounded-lg border border-slate-200 bg-white shadow-sm max-w-lg w-fit'>
+          <div className='mx-auto mb-8 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-sm max-w-lg w-fit'>
             <ul className='list-none p-0 m-0'>
               {packages.map((packageName) => (
                 <li
                   key={packageName}
-                  className='flex items-center justify-between px-4 py-2 border-b border-slate-200 transition-all duration-200 cursor-pointer gap-3 min-w-fit hover:bg-slate-50 focus:outline-2 focus:outline-blue-500 focus:outline-offset-[-2px] focus:bg-slate-50 last:border-b-0'
+                  className='flex items-center justify-between px-4 py-2 border-b border-slate-200 dark:border-slate-700 transition-all duration-200 cursor-pointer gap-3 min-w-fit hover:bg-slate-50 dark:hover:bg-slate-700 focus:outline-2 focus:outline-blue-500 focus:outline-offset-[-2px] focus:bg-slate-50 dark:focus:bg-slate-700 last:border-b-0'
                   onClick={() => handleCardClick(packageName)}
                   role='button'
                   tabIndex={0}
@@ -41,7 +41,7 @@ function NpmDownloads({}: NpmDownloadsProps) {
                     }
                   }}
                 >
-                  <span className='font-mono text-sm font-medium text-gray-700 bg-slate-100 px-2 py-1 rounded border border-slate-300 min-w-fit whitespace-nowrap'>
+                  <span className='font-mono text-sm font-medium text-gray-700 dark:text-gray-300 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded border border-slate-300 dark:border-slate-600 min-w-fit whitespace-nowrap'>
                     {packageName}
                   </span>
                   <img
@@ -57,30 +57,30 @@ function NpmDownloads({}: NpmDownloadsProps) {
         </div>
 
         <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6'>
-          <div className='bg-white border border-slate-200 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
-            <h3 className='mb-3 text-slate-500 text-sm font-semibold uppercase tracking-widest'>Total Packages</h3>
-            <p className='mb-3 text-4xl font-bold text-slate-800 tracking-tight leading-tight'>{packages.length}</p>
+          <div className='bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
+            <h3 className='mb-3 text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-widest'>Total Packages</h3>
+            <p className='mb-3 text-4xl font-bold text-slate-800 dark:text-slate-100 tracking-tight leading-tight'>{packages.length}</p>
             <span className='text-sm font-semibold px-3 py-1.5 rounded-lg inline-flex items-center gap-1 text-emerald-700 bg-emerald-100 bg-opacity-100 border border-emerald-200 border-opacity-200'>
               NPM Packages
             </span>
           </div>
-          <div className='bg-white border border-slate-200 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
-            <h3 className='mb-3 text-slate-500 text-sm font-semibold uppercase tracking-widest'>Registry</h3>
-            <p className='mb-3 text-4xl font-bold text-slate-800 tracking-tight leading-tight'>NPM</p>
+          <div className='bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
+            <h3 className='mb-3 text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-widest'>Registry</h3>
+            <p className='mb-3 text-4xl font-bold text-slate-800 dark:text-slate-100 tracking-tight leading-tight'>NPM</p>
             <span className='text-sm font-semibold px-3 py-1.5 rounded-lg inline-flex items-center gap-1 text-emerald-700 bg-emerald-100 bg-opacity-100 border border-emerald-200 border-opacity-200'>
               Public Registry
             </span>
           </div>
-          <div className='bg-white border border-slate-200 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
-            <h3 className='mb-3 text-slate-500 text-sm font-semibold uppercase tracking-widest'>Update Frequency</h3>
-            <p className='mb-3 text-4xl font-bold text-slate-800 tracking-tight leading-tight'>Weekly</p>
+          <div className='bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
+            <h3 className='mb-3 text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-widest'>Update Frequency</h3>
+            <p className='mb-3 text-4xl font-bold text-slate-800 dark:text-slate-100 tracking-tight leading-tight'>Weekly</p>
             <span className='text-sm font-semibold px-3 py-1.5 rounded-lg inline-flex items-center gap-1 text-emerald-700 bg-emerald-100 bg-opacity-100 border border-emerald-200 border-opacity-200'>
               Auto Updated
             </span>
           </div>
-          <div className='bg-white border border-slate-200 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
-            <h3 className='mb-3 text-slate-500 text-sm font-semibold uppercase tracking-widest'>Data Source</h3>
-            <p className='mb-3 text-4xl font-bold text-slate-800 tracking-tight leading-tight'>Shields.io</p>
+          <div className='bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
+            <h3 className='mb-3 text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-widest'>Data Source</h3>
+            <p className='mb-3 text-4xl font-bold text-slate-800 dark:text-slate-100 tracking-tight leading-tight'>Shields.io</p>
             <span className='text-sm font-semibold px-3 py-1.5 rounded-lg inline-flex items-center gap-1 text-emerald-700 bg-emerald-100 bg-opacity-100 border border-emerald-200 border-opacity-200'>
               Live Data
             </span>

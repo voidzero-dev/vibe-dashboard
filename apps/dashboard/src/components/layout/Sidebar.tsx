@@ -1,7 +1,6 @@
-import { BarChart3, ChevronLeft, Download, Home, Menu, Moon, Package, Sun, X, Zap } from 'lucide-react';
+import { BarChart3, ChevronLeft, Download, Home, Menu, Package, X, Zap } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { Button } from '../ui/Button';
 
 interface NavItem {
   path: string;
@@ -38,28 +37,13 @@ export function Sidebar() {
   const location = useLocation();
   const [collapsed, setCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
-
+  // Auto-detect dark mode from system preferences
   useEffect(() => {
-    const isDark = localStorage.getItem('theme') === 'dark' || 
-      (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    setDarkMode(isDark);
+    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     if (isDark) {
       document.documentElement.classList.add('dark');
     }
   }, []);
-
-  const toggleDarkMode = () => {
-    const newDarkMode = !darkMode;
-    setDarkMode(newDarkMode);
-    if (newDarkMode) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
-  };
 
   const isActive = (path: string) => {
     if (path === '/' && location.pathname === '/') return true;
@@ -153,18 +137,7 @@ export function Sidebar() {
           </ul>
         </nav>
 
-        {/* Bottom Actions */}
-        <div className="p-3 border-t border-slate-200 dark:border-slate-700">
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={toggleDarkMode}
-            className={`w-full ${collapsed ? 'justify-center' : ''}`}
-            icon={darkMode ? <Sun size={18} /> : <Moon size={18} />}
-          >
-            {!collapsed && (darkMode ? 'Light Mode' : 'Dark Mode')}
-          </Button>
-        </div>
+        {/* Bottom area - can be used for other actions in future */}
       </aside>
     </>
   );

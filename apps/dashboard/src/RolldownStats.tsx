@@ -119,7 +119,7 @@ function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps
   return (
     <>
       {/* Metric Navigation */}
-      <nav className='bg-slate-50 border-b border-slate-200 px-8 py-4 flex gap-2 max-w-6xl mx-auto'>
+      <nav className='bg-slate-50 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 px-8 py-4 flex gap-2 max-w-6xl mx-auto'>
         {rolldownMetrics.map((metric) => {
           const Icon = metric.icon;
           return (
@@ -128,7 +128,7 @@ function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps
               className={`flex items-center gap-2 px-5 py-3 border rounded-lg cursor-pointer font-medium text-sm transition-all duration-200 tracking-tight min-w-30 justify-center ${
                 selectedMetric === metric.id
                   ? 'bg-slate-600 border-slate-600 text-white hover:bg-slate-800 hover:border-slate-800'
-                  : 'bg-white border-slate-300 text-slate-600 hover:bg-slate-100 hover:border-slate-400 hover:text-slate-800'
+                  : 'bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-800 dark:hover:text-slate-100'
               }`}
               onClick={() => {
                 setSelectedMetric(metric.id);
@@ -142,31 +142,30 @@ function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps
       </nav>
 
       <main className='max-w-6xl mx-auto px-8 py-8 flex flex-col gap-8'>
-        <div className='bg-white border border-slate-200 px-8 py-8 rounded-xl shadow-sm'>
+        <div className='bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-8 py-8 rounded-xl shadow-sm'>
           <h2 className='mb-6 text-slate-800 text-3xl font-bold tracking-tight'>{currentMetric.name}</h2>
           <ResponsiveContainer width='100%' height={400}>
             {selectedMetric === 'bundleSize'
               ? (
                 <BarChart data={currentMetric.data}>
-                  <CartesianGrid strokeDasharray='3 3' stroke='#e5e7eb' />
+                  <CartesianGrid strokeDasharray='3 3' className='stroke-slate-200 dark:stroke-slate-700' />
                   <XAxis
                     dataKey='name'
-                    tick={{ fill: '#374151', fontSize: 12 }}
-                    axisLine={{ stroke: '#d1d5db' }}
-                    tickLine={{ stroke: '#d1d5db' }}
+                    tick={{ fill: 'currentColor', fontSize: 12 }}
+                    axisLine={{ stroke: 'currentColor', opacity: 0.2 }}
+                    tickLine={{ stroke: 'currentColor', opacity: 0.2 }}
                   />
                   <YAxis
-                    tick={{ fill: '#374151', fontSize: 12 }}
-                    axisLine={{ stroke: '#d1d5db' }}
-                    tickLine={{ stroke: '#d1d5db' }}
+                    tick={{ fill: 'currentColor', fontSize: 12 }}
+                    axisLine={{ stroke: 'currentColor', opacity: 0.2 }}
+                    tickLine={{ stroke: 'currentColor', opacity: 0.2 }}
                   />
                   <Tooltip
                     formatter={bundleSizeDiffTooltipFormatter}
                     contentStyle={{
-                      backgroundColor: 'white',
-                      border: '1px solid #d1d5db',
+                      backgroundColor: 'var(--tooltip-bg)',
+                      border: '1px solid var(--tooltip-border)',
                       borderRadius: '0.5rem',
-                      color: '#111827',
                       boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
                     }}
                   />
@@ -182,7 +181,7 @@ function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps
                         if (value === 0) return 'baseline';
                         return value >= 0 ? `+${formatNumberWithCommas(value)}` : formatNumberWithCommas(value);
                       }}
-                      style={{ fontSize: '11px', fill: '#374151' }}
+                      style={{ fontSize: '11px', fill: 'currentColor' }}
                     />
                     {currentMetric.data.map((entry: any, index: number) => (
                       <Cell
@@ -195,25 +194,24 @@ function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps
               )
               : (
                 <BarChart data={currentMetric.data}>
-                  <CartesianGrid strokeDasharray='3 3' stroke='#e5e7eb' />
+                  <CartesianGrid strokeDasharray='3 3' className='stroke-slate-200 dark:stroke-slate-700' />
                   <XAxis
                     dataKey='name'
-                    tick={{ fill: '#374151', fontSize: 12 }}
-                    axisLine={{ stroke: '#d1d5db' }}
-                    tickLine={{ stroke: '#d1d5db' }}
+                    tick={{ fill: 'currentColor', fontSize: 12 }}
+                    axisLine={{ stroke: 'currentColor', opacity: 0.2 }}
+                    tickLine={{ stroke: 'currentColor', opacity: 0.2 }}
                   />
                   <YAxis
-                    tick={{ fill: '#374151', fontSize: 12 }}
-                    axisLine={{ stroke: '#d1d5db' }}
-                    tickLine={{ stroke: '#d1d5db' }}
+                    tick={{ fill: 'currentColor', fontSize: 12 }}
+                    axisLine={{ stroke: 'currentColor', opacity: 0.2 }}
+                    tickLine={{ stroke: 'currentColor', opacity: 0.2 }}
                   />
                   <Tooltip
                     formatter={buildTimeTooltipFormatter}
                     contentStyle={{
-                      backgroundColor: 'white',
-                      border: '1px solid #d1d5db',
+                      backgroundColor: 'var(--tooltip-bg)',
+                      border: '1px solid var(--tooltip-border)',
                       borderRadius: '0.5rem',
-                      color: '#111827',
                       boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
                     }}
                   />
@@ -229,7 +227,7 @@ function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps
                       dataKey='value'
                       position='top'
                       formatter={(label: React.ReactNode) => `${label}ms`}
-                      style={{ fontSize: '11px', fill: '#374151' }}
+                      style={{ fontSize: '11px', fill: 'currentColor' }}
                     />
                   </Bar>
                   <defs>
@@ -244,27 +242,27 @@ function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps
         </div>
 
         <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6'>
-          <div className='bg-white border border-slate-200 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
-            <h3 className='mb-3 text-slate-500 text-sm font-semibold uppercase tracking-widest'>Average Build Time</h3>
-            <p className='mb-3 text-4xl font-bold text-slate-800 tracking-tight leading-tight'>
+          <div className='bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
+            <h3 className='mb-3 text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-widest'>Average Build Time</h3>
+            <p className='mb-3 text-4xl font-bold text-slate-800 dark:text-slate-100 tracking-tight leading-tight'>
               {Math.round(buildTimeData.reduce((sum, item) => sum + item.value, 0) / buildTimeData.length)}ms
             </p>
             <span className='text-sm font-semibold px-3 py-1.5 rounded-lg inline-flex items-center gap-1 text-emerald-700 bg-emerald-100 bg-opacity-100 border border-emerald-200 border-opacity-200'>
               Across {buildTimeData.length} versions
             </span>
           </div>
-          <div className='bg-white border border-slate-200 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
-            <h3 className='mb-3 text-slate-500 text-sm font-semibold uppercase tracking-widest'>Latest Bundle Size</h3>
-            <p className='mb-3 text-4xl font-bold text-slate-800 tracking-tight leading-tight'>
+          <div className='bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
+            <h3 className='mb-3 text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-widest'>Latest Bundle Size</h3>
+            <p className='mb-3 text-4xl font-bold text-slate-800 dark:text-slate-100 tracking-tight leading-tight'>
               {formatNumberWithCommas(rolldownStats[rolldownStats.length - 1]?.totalSize || 0)} bytes
             </p>
             <span className='text-sm font-semibold px-3 py-1.5 rounded-lg inline-flex items-center gap-1 text-emerald-700 bg-emerald-100 bg-opacity-100 border border-emerald-200 border-opacity-200'>
               v{rolldownStats[rolldownStats.length - 1]?.version}
             </span>
           </div>
-          <div className='bg-white border border-slate-200 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
-            <h3 className='mb-3 text-slate-500 text-sm font-semibold uppercase tracking-widest'>Bundle Size Range</h3>
-            <p className='mb-3 text-4xl font-bold text-slate-800 tracking-tight leading-tight'>
+          <div className='bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
+            <h3 className='mb-3 text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-widest'>Bundle Size Range</h3>
+            <p className='mb-3 text-4xl font-bold text-slate-800 dark:text-slate-100 tracking-tight leading-tight'>
               {Math.round(
                 (Math.max(...rolldownStats.map(s => s.totalSize)) - Math.min(...rolldownStats.map(s => s.totalSize))) /
                   1024,
@@ -274,9 +272,9 @@ function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps
               Size Variation
             </span>
           </div>
-          <div className='bg-white border border-slate-200 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
-            <h3 className='mb-3 text-slate-500 text-sm font-semibold uppercase tracking-widest'>Versions Tested</h3>
-            <p className='mb-3 text-4xl font-bold text-slate-800 tracking-tight leading-tight'>
+          <div className='bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-7 py-7 rounded-xl shadow-sm border-l-4 border-l-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md'>
+            <h3 className='mb-3 text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-widest'>Versions Tested</h3>
+            <p className='mb-3 text-4xl font-bold text-slate-800 dark:text-slate-100 tracking-tight leading-tight'>
               {rolldownStats.length}
             </p>
             <span className='text-sm font-semibold px-3 py-1.5 rounded-lg inline-flex items-center gap-1 text-emerald-700 bg-emerald-100 bg-opacity-100 border border-emerald-200 border-opacity-200'>
