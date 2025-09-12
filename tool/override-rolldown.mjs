@@ -207,9 +207,9 @@ function buildApp() {
   try {
     console.log('🔨 Building application...');
     const startTime = Date.now();
-    execSync('pnpm build', {
+    execSync('./node_modules/rolldown-vite/bin/vite.js build', {
       stdio: 'inherit',
-      cwd: process.cwd(),
+      cwd: join(process.cwd(), 'apps/dashboard')
     });
     const buildTime = Date.now() - startTime;
     console.log(`✅ Build completed successfully in ${buildTime}ms`);

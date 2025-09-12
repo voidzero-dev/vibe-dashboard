@@ -22,7 +22,7 @@ jobs:
         uses: ./.github/actions/setup-node-pnpm
 
       - name: Run rolldown stats collection
-        run: pnpm rolldown:stats
+        run: pnpm run generate
 
       - name: Check for changes
         id: git-check

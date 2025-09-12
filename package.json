@@ -5,16 +5,13 @@
   "private": true,
   "packageManager": "pnpm@10.15.1",
   "scripts": {
+    "ready": "vite run lint && vite test && vite run build",
     "dev": "pnpm --filter dashboard dev",
     "build": "vite run @vibe/dashboard#build",
     "lint": "vite lint --type-aware",
     "test": "vite test",
-    "clean": "pnpm -r clean",
-    "build-deploy": "vite run lint && vite run build",
-    "rolldown:list": "node tool/override-rolldown.mjs --list",
-    "rolldown:use": "node tool/override-rolldown.mjs",
-    "rolldown:stats": "node tool/override-rolldown.mjs --stats",
-    "fmt": "dprint fmt"
+    "fmt": "vite fmt .",
+    "generate": "node tool/override-rolldown.mjs --stats"
   },
   "devDependencies": {
     "@voidzero-dev/vite-plus": "latest",
