@@ -1,6 +1,6 @@
 import { CardGrid } from '@vibe/ui';
 import { Clock, Download, Package, Zap } from 'lucide-react';
-import minificationData from '../../../../../minification-benchmarks-data.json';
+import minificationData from '../../../../../data/minification-benchmarks-data.json';
 import rolldownStats from '../../../../../rolldown-version-stats.json';
 import { StatCard } from './StatCard';
 

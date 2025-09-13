@@ -1,4 +1,4 @@
-import minificationData from '../../../../../minification-benchmarks-data.json';
+import minificationData from '../../../../../data/minification-benchmarks-data.json';
 import { popularMinifiers } from '../../utils/minification-data';
 
 export function MinificationStats() {

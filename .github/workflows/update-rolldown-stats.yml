@@ -5,9 +5,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - "apps/dashboard/**"
-      - "tool/override-rolldown.mjs"
 
 permissions:
   contents: write

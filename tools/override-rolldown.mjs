@@ -15,7 +15,7 @@ import { join } from 'node:path';
 
 const DASHBOARD_PACKAGE_PATH = join(process.cwd(), 'apps/dashboard/package.json');
 const DIST_PATH = join(process.cwd(), 'apps/dashboard/dist');
-const STATS_OUTPUT_PATH = join(process.cwd(), 'rolldown-version-stats.json');
+const STATS_OUTPUT_PATH = join(process.cwd(), 'data/rolldown-version-stats.json');
 
 /**
  * Fetch the last 10 stable versions from npm registry

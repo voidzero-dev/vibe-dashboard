@@ -1,7 +1,7 @@
 import { PageHeader } from '@vibe/shared';
 import { Badge, Card } from '@vibe/ui';
 import { FileDown, Gauge, Timer, Zap } from 'lucide-react';
-import minificationData from '../../../../minification-benchmarks-data.json';
+import minificationData from '../../../../data/minification-benchmarks-data.json';
 import { PageContainer } from '../components/layout/PageContainer';
 import MinificationBenchmarks from '../MinificationBenchmarks';
 

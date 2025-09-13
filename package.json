@@ -12,7 +12,7 @@
     "lint": "vite lint --type-aware",
     "test": "vite test",
     "fmt": "vite fmt .",
-    "generate": "node tool/override-rolldown.mjs --stats"
+    "generate": "node tools/override-rolldown.mjs --stats"
   },
   "devDependencies": {
     "@voidzero-dev/vite-plus": "latest",

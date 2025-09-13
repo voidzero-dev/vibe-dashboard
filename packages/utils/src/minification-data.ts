@@ -1,4 +1,4 @@
-import minificationData from '../../../minification-benchmarks-data.json';
+import minificationData from '../../../data/minification-benchmarks-data.json';
 
 export const popularMinifiers = ['terser', 'esbuild', '@swc/core', 'uglify-js', 'oxc-minify'];
 
