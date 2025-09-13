@@ -7,6 +7,7 @@ const DashboardPage = lazy(() => import('./pages/DashboardPage'));
 const MinificationBenchmarksPage = lazy(() => import('./pages/MinificationBenchmarksPage'));
 const NpmDownloadsPage = lazy(() => import('./pages/NpmDownloadsPage'));
 const RolldownStatsPage = lazy(() => import('./pages/RolldownStatsPage'));
+const DependentsPage = lazy(() => import('./pages/DependentsPage'));
 
 // Loading component for Suspense fallback
 const PageLoader = () => (
@@ -48,6 +49,14 @@ function App() {
           element={
             <Suspense fallback={<PageLoader />}>
               <NpmDownloadsPage />
+            </Suspense>
+          }
+        />
+        <Route
+          path='dependents'
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <DependentsPage />
             </Suspense>
           }
         />

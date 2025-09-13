@@ -1,4 +1,4 @@
-import { BarChart3, ChevronLeft, Download, Home, Menu, Package, X, Zap } from 'lucide-react';
+import { BarChart3, ChevronLeft, Download, GitBranch, Home, Menu, Package, X, Zap } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -30,6 +30,11 @@ const navItems: NavItem[] = [
     path: '/npm-downloads',
     label: 'NPM Downloads',
     icon: <Download size={20} />,
+  },
+  {
+    path: '/dependents',
+    label: 'GitHub Dependents',
+    icon: <GitBranch size={20} />,
   },
 ];
 
