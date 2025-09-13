@@ -1,0 +1,86 @@
+{
+  "oxc-project/oxc": {
+    "oxc": [
+      {
+        "url": "https://github.com/rolldown/rolldown",
+        "stars": 11925
+      },
+      {
+        "url": "https://github.com/Floorp-Projects/Floorp",
+        "stars": 7635
+      },
+      {
+        "url": "https://github.com/hashintel/hash",
+        "stars": 1333
+      },
+      {
+        "url": "https://github.com/fosslife/devtools-x",
+        "stars": 1293
+      },
+      {
+        "url": "https://github.com/piercefreeman/mountaineer",
+        "stars": 866
+      },
+      {
+        "url": "https://github.com/codemod/codemod",
+        "stars": 808
+      },
+      {
+        "url": "https://github.com/azat-io/todoctor",
+        "stars": 480
+      },
+      {
+        "url": "https://github.com/kermanx/jsshaker",
+        "stars": 373
+      },
+      {
+        "url": "https://github.com/Anber/wyw-in-js",
+        "stars": 298
+      },
+      {
+        "url": "https://github.com/rari-build/rari",
+        "stars": 259
+      },
+      {
+        "url": "https://github.com/elide-dev/elide",
+        "stars": 244
+      },
+      {
+        "url": "https://github.com/oramasearch/oramacore",
+        "stars": 193
+      },
+      {
+        "url": "https://github.com/oxc-project/oxc-node",
+        "stars": 151
+      },
+      {
+        "url": "https://github.com/DonIsaac/oxbuild",
+        "stars": 99
+      },
+      {
+        "url": "https://github.com/oxc-project/bench-javascript-parser-written-in-rust",
+        "stars": 91
+      },
+      {
+        "url": "https://github.com/bitcoinresearchkit/brk",
+        "stars": 77
+      },
+      {
+        "url": "https://github.com/lukewilson2002/oxc",
+        "stars": 43
+      },
+      {
+        "url": "https://github.com/DonIsaac/keyhunter",
+        "stars": 35
+      },
+      {
+        "url": "https://github.com/kermanx/js_to_oxc",
+        "stars": 34
+      },
+      {
+        "url": "https://github.com/bitkey-oss/oxjest",
+        "stars": 23
+      }
+    ]
+  }
+}

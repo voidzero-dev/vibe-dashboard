@@ -15,8 +15,9 @@
   },
   "devDependencies": {
     "@voidzero-dev/vite-plus": "latest",
+    "dprint": "^0.50.1",
     "oxlint-tsgolint": "^0.2.0",
-    "vitest": "^3.2.4",
-    "dprint": "^0.50.1"
+    "top-github-dependents-by-stars": "^0.0.2",
+    "vitest": "^3.2.4"
   }
 }

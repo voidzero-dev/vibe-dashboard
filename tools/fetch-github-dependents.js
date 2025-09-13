@@ -1,0 +1,93 @@
+#!/usr/bin/env node
+
+import { getDependents } from 'top-github-dependents-by-stars';
+import fs from 'fs/promises';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+// Hardcoded repositories and their packages
+const repositories = {
+  'oxc-project/oxc': ['oxc'],  // Using 'oxc' as the main package
+  // Add more repos and packages here later
+};
+
+async function fetchDependents() {
+  console.log('Fetching top GitHub dependents...');
+
+  // Check for GitHub token
+  const token = process.env.GHTOPDEP_TOKEN || process.env.GITHUB_TOKEN;
+  if (!token) {
+    console.error('❌ Error: GitHub token is required');
+    console.error('Please set GHTOPDEP_TOKEN or GITHUB_TOKEN environment variable');
+    process.exit(1);
+  }
+
+  const allDependents = {};
+
+  // Process each repository and its packages
+  for (const [repoPath, packages] of Object.entries(repositories)) {
+    console.log(`\n📦 Processing repository: ${repoPath}`);
+    allDependents[repoPath] = {};
+
+    for (const pkg of packages) {
+      console.log(`  → Fetching dependents for package: ${pkg}`);
+
+      try {
+        // Fetch top 20 dependents using the API
+        const result = await getDependents(repoPath, {
+          type: 'repositories',
+          rows: 20,
+          minStars: 0,
+          packageName: pkg,
+          token: token
+        });
+
+        // Transform to our format
+        const dependents = result.repositories.map(repo => ({
+          url: repo.url,
+          stars: repo.stars
+        }));
+
+        allDependents[repoPath][pkg] = dependents;
+
+        console.log(`  ✅ Found ${dependents.length} dependents for ${pkg}`);
+
+        // Show top 5 for this package
+        if (dependents.length > 0) {
+          console.log(`  Top 5 dependents:`);
+          dependents.slice(0, 5).forEach((dep, i) => {
+            console.log(`    ${i + 1}. ${dep.url} - ⭐ ${dep.stars}`);
+          });
+        }
+      } catch (error) {
+        console.error(`  ❌ Error fetching dependents for ${pkg}:`, error.message);
+        allDependents[repoPath][pkg] = [];
+      }
+    }
+  }
+
+  // Save all results to a single JSON file
+  const outputPath = path.join(__dirname, '..', 'data', 'dependents.json');
+
+  // Ensure data directory exists
+  await fs.mkdir(path.join(__dirname, '..', 'data'), { recursive: true });
+
+  // Save to JSON file with pretty formatting
+  await fs.writeFile(outputPath, JSON.stringify(allDependents, null, 2));
+
+  console.log(`\n✅ Successfully saved all dependents to ${outputPath}`);
+
+  // Summary
+  const totalPackages = Object.values(repositories).flat().length;
+  console.log(`\n📊 Summary:`);
+  console.log(`  - Repositories processed: ${Object.keys(repositories).length}`);
+  console.log(`  - Packages processed: ${totalPackages}`);
+}
+
+// Run the script
+fetchDependents().catch(error => {
+  console.error('Fatal error:', error);
+  process.exit(1);
+});
