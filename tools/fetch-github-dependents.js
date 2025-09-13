@@ -13,7 +13,15 @@ const repositories = {
     'oxlint': 'repositories',
     'oxc-parser': 'packages'
   },
-  // Add more repos and packages here later
+  'oxc-project/oxc-resolver': {
+    'oxc-resolver': 'packages'
+  },
+  'rolldown/rolldown': {
+    'rolldown': 'repositories'
+  },
+  'rolldown/tsdown': {
+    'tsdown': 'repositories'
+  },
 };
 
 async function fetchDependents() {

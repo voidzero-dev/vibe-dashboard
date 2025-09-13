@@ -164,5 +164,257 @@
         "stars": 44
       }
     ]
+  },
+  "oxc-project/oxc-resolver": {
+    "oxc-resolver": [
+      {
+        "url": "https://github.com/webpro-nl/knip",
+        "stars": 8941
+      },
+      {
+        "url": "https://github.com/rolldown/tsdown",
+        "stars": 2371
+      },
+      {
+        "url": "https://github.com/vue-macros/vue-macros",
+        "stars": 1939
+      },
+      {
+        "url": "https://github.com/swc-project/swc-node",
+        "stars": 1935
+      },
+      {
+        "url": "https://github.com/microsoft/rnx-kit",
+        "stars": 1661
+      },
+      {
+        "url": "https://github.com/import-js/eslint-import-resolver-typescript",
+        "stars": 802
+      },
+      {
+        "url": "https://github.com/unjs/unenv",
+        "stars": 686
+      },
+      {
+        "url": "https://github.com/un-ts/eslint-plugin-import-x",
+        "stars": 593
+      },
+      {
+        "url": "https://github.com/llm-tools/embedJs",
+        "stars": 555
+      },
+      {
+        "url": "https://github.com/bunup/bunup",
+        "stars": 270
+      },
+      {
+        "url": "https://github.com/thepassle/eslint-plugin-barrel-files",
+        "stars": 161
+      },
+      {
+        "url": "https://github.com/thepassle/eslint-plugin-barrel-files",
+        "stars": 161
+      },
+      {
+        "url": "https://github.com/gadget-inc/wds",
+        "stars": 114
+      },
+      {
+        "url": "https://github.com/thepassle/module-graph",
+        "stars": 51
+      },
+      {
+        "url": "https://github.com/unplugin/unplugin-oxc",
+        "stars": 33
+      },
+      {
+        "url": "https://github.com/oblador/react-native-oxc",
+        "stars": 32
+      },
+      {
+        "url": "https://github.com/9romise/eslint-import-resolver-oxc",
+        "stars": 31
+      },
+      {
+        "url": "https://github.com/JiangWeixian/vite-plugin-barrel",
+        "stars": 23
+      },
+      {
+        "url": "https://github.com/sxzz/dts-resolver",
+        "stars": 8
+      },
+      {
+        "url": "https://github.com/dalisoft/airlight",
+        "stars": 7
+      }
+    ]
+  },
+  "rolldown/rolldown": {
+    "rolldown": [
+      {
+        "url": "https://github.com/angular/angular",
+        "stars": 98764
+      },
+      {
+        "url": "https://github.com/vitejs/vite",
+        "stars": 75223
+      },
+      {
+        "url": "https://github.com/remix-run/react-router",
+        "stars": 55470
+      },
+      {
+        "url": "https://github.com/slidevjs/slidev",
+        "stars": 39976
+      },
+      {
+        "url": "https://github.com/colinhacks/zod",
+        "stars": 39951
+      },
+      {
+        "url": "https://github.com/DIYgod/RSSHub",
+        "stars": 38709
+      },
+      {
+        "url": "https://github.com/makeplane/plane",
+        "stars": 38705
+      },
+      {
+        "url": "https://github.com/trpc/trpc",
+        "stars": 38449
+      },
+      {
+        "url": "https://github.com/menloresearch/jan",
+        "stars": 37789
+      },
+      {
+        "url": "https://github.com/halo-dev/halo",
+        "stars": 36889
+      },
+      {
+        "url": "https://github.com/date-fns/date-fns",
+        "stars": 36106
+      },
+      {
+        "url": "https://github.com/outline/outline",
+        "stars": 35002
+      },
+      {
+        "url": "https://github.com/RSSNext/Folo",
+        "stars": 33868
+      },
+      {
+        "url": "https://github.com/CherryHQ/cherry-studio",
+        "stars": 32956
+      },
+      {
+        "url": "https://github.com/directus/directus",
+        "stars": 32297
+      },
+      {
+        "url": "https://github.com/paperless-ngx/paperless-ngx",
+        "stars": 31952
+      },
+      {
+        "url": "https://github.com/TriliumNext/Trilium",
+        "stars": 31116
+      },
+      {
+        "url": "https://github.com/immerjs/immer",
+        "stars": 28592
+      },
+      {
+        "url": "https://github.com/th-ch/youtube-music",
+        "stars": 27862
+      },
+      {
+        "url": "https://github.com/angular/angular-cli",
+        "stars": 27001
+      }
+    ]
+  },
+  "rolldown/tsdown": {
+    "tsdown": [
+      {
+        "url": "https://github.com/vitejs/vite",
+        "stars": 75246
+      },
+      {
+        "url": "https://github.com/slidevjs/slidev",
+        "stars": 40001
+      },
+      {
+        "url": "https://github.com/colinhacks/zod",
+        "stars": 39958
+      },
+      {
+        "url": "https://github.com/DIYgod/RSSHub",
+        "stars": 38723
+      },
+      {
+        "url": "https://github.com/makeplane/plane",
+        "stars": 38720
+      },
+      {
+        "url": "https://github.com/trpc/trpc",
+        "stars": 38454
+      },
+      {
+        "url": "https://github.com/halo-dev/halo",
+        "stars": 36898
+      },
+      {
+        "url": "https://github.com/date-fns/date-fns",
+        "stars": 36109
+      },
+      {
+        "url": "https://github.com/RSSNext/Folo",
+        "stars": 33899
+      },
+      {
+        "url": "https://github.com/CherryHQ/cherry-studio",
+        "stars": 32977
+      },
+      {
+        "url": "https://github.com/directus/directus",
+        "stars": 32301
+      },
+      {
+        "url": "https://github.com/GitbookIO/gitbook",
+        "stars": 28265
+      },
+      {
+        "url": "https://github.com/vueuse/vueuse",
+        "stars": 21624
+      },
+      {
+        "url": "https://github.com/karakeep-app/karakeep",
+        "stars": 19684
+      },
+      {
+        "url": "https://github.com/eggjs/egg",
+        "stars": 18975
+      },
+      {
+        "url": "https://github.com/activepieces/activepieces",
+        "stars": 17860
+      },
+      {
+        "url": "https://github.com/oxc-project/oxc",
+        "stars": 16321
+      },
+      {
+        "url": "https://github.com/moeru-ai/airi",
+        "stars": 13687
+      },
+      {
+        "url": "https://github.com/rolldown/rolldown",
+        "stars": 11928
+      },
+      {
+        "url": "https://github.com/supermemoryai/supermemory",
+        "stars": 10898
+      }
+    ]
   }
 }
