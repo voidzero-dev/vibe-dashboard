@@ -24,8 +24,8 @@ importers:
         specifier: ^0.2.0
         version: 0.2.0
       top-github-dependents-by-stars:
-        specifier: ^0.0.2
-        version: 0.0.2
+        specifier: ^0.0.3
+        version: 0.0.3
       vitest:
         specifier: ^3.2.4
         version: 3.2.4(@types/node@20.19.13)(@vitest/browser@3.2.4)(@vitest/ui@3.2.4)(happy-dom@18.0.1)(jiti@2.5.1)(lightningcss@1.30.1)
@@ -1876,8 +1876,8 @@ packages:
     resolution: {integrity: sha512-t2T/WLB2WRgZ9EpE4jgPJ9w+i66UZfDc8wHh0xrwiRNN+UwH98GIJkTeZqX9rg0i0ptwzqW+uYeIF0T4F8LR7A==}
     engines: {node: '>=14.0.0'}
 
-  top-github-dependents-by-stars@0.0.2:
-    resolution: {integrity: sha512-43YRolzo3aS6yDoaU3FGxIEuVha+ez+CG5rYVtN78uVr53G3g+HtLb/MymqrEwn8dYcK+pW2sxUN1nC4c0w1Pw==}
+  top-github-dependents-by-stars@0.0.3:
+    resolution: {integrity: sha512-FXzs9xq5qPOzKB9lmEXz9UvbuH1mRtPCxz8s6Oiwe/tukxozCivrCkdoTHXovKVoU3FlmWI91Yw+TTMX0Mgy5w==}
     hasBin: true
 
   totalist@3.0.1:
@@ -3501,7 +3501,7 @@ snapshots:
 
   tinyspy@4.0.3: {}
 
-  top-github-dependents-by-stars@0.0.2:
+  top-github-dependents-by-stars@0.0.3:
     dependencies:
       '@octokit/rest': 22.0.0
       axios: 1.12.1

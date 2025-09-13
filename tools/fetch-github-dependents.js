@@ -7,9 +7,12 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// Hardcoded repositories and their packages
+// Hardcoded repositories and their packages with dependent types
 const repositories = {
-  'oxc-project/oxc': ['oxc'],  // Using 'oxc' as the main package
+  'oxc-project/oxc': {
+    'oxlint': 'repositories',
+    'oxc-parser': 'packages'
+  },
   // Add more repos and packages here later
 };
 
@@ -27,17 +30,17 @@ async function fetchDependents() {
   const allDependents = {};
 
   // Process each repository and its packages
-  for (const [repoPath, packages] of Object.entries(repositories)) {
+  for (const [repoPath, packagesConfig] of Object.entries(repositories)) {
     console.log(`\n📦 Processing repository: ${repoPath}`);
     allDependents[repoPath] = {};
 
-    for (const pkg of packages) {
-      console.log(`  → Fetching dependents for package: ${pkg}`);
+    for (const [pkg, dependentType] of Object.entries(packagesConfig)) {
+      console.log(`  → Fetching dependents for package: ${pkg} (type: ${dependentType})`);
 
       try {
-        // Fetch top 20 dependents using the API
+        // Fetch top 20 dependents using the API with configured type
         const result = await getDependents(repoPath, {
-          type: 'repositories',
+          type: dependentType,
           rows: 20,
           minStars: 0,
           packageName: pkg,
@@ -80,7 +83,7 @@ async function fetchDependents() {
   console.log(`\n✅ Successfully saved all dependents to ${outputPath}`);
 
   // Summary
-  const totalPackages = Object.values(repositories).flat().length;
+  const totalPackages = Object.values(repositories).reduce((sum, packages) => sum + Object.keys(packages).length, 0);
   console.log(`\n📊 Summary:`);
   console.log(`  - Repositories processed: ${Object.keys(repositories).length}`);
   console.log(`  - Packages processed: ${totalPackages}`);
