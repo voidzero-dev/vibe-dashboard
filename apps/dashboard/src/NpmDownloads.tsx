@@ -4,6 +4,7 @@ import { PackageDownloadsList } from './components/npm/PackageDownloadsList';
 // List of npm packages to display download counts for
 const packages = [
   'vite',
+  'vitest',
   'rolldown-vite',
   'rolldown',
   'tsdown',
@@ -17,10 +18,10 @@ const packages = [
 function NpmDownloads() {
   return (
     <>
-      <main className='max-w-6xl mx-auto px-8 py-8 flex flex-col gap-8'>
-        <div className='bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-8 py-8 rounded-xl shadow-sm'>
+      <main className='max-w-7xl mx-auto px-8 py-8 flex flex-col gap-8'>
+        <div>
           <h2 className='mb-6 text-slate-800 dark:text-slate-100 text-3xl font-bold tracking-tight'>
-            NPM Weekly Downloads
+            NPM Package Statistics
           </h2>
 
           <PackageDownloadsList packages={packages} />
