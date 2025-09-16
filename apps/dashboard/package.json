@@ -14,7 +14,7 @@
     "@vibe/ui": "workspace:*",
     "@vibe/utils": "workspace:*",
     "@vibe/shared": "workspace:*",
-    "lucide-react": "^0.542.0",
+    "lucide-react": "^0.544.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.8.2",
@@ -33,7 +33,7 @@
     "@vitest/ui": "^3.2.4",
     "happy-dom": "^18.0.1",
     "playwright": "^1.55.0",
-    "rolldown-vite": "7.1.5",
+    "rolldown-vite": "7.1.10",
     "tailwindcss": "^4.1.13",
     "typescript": "catalog:"
   }
