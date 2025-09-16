@@ -38,11 +38,13 @@ async function fetchDependents() {
   const allDependents = {};
 
   // Process each repository and its packages
+  const allFetches = [];
+
   for (const [repoPath, packagesConfig] of Object.entries(repositories)) {
     console.log(`\n📦 Processing repository: ${repoPath}`);
     allDependents[repoPath] = {};
 
-    for (const [pkg, dependentType] of Object.entries(packagesConfig)) {
+    const packageFetches = Object.entries(packagesConfig).map(async ([pkg, dependentType]) => {
       console.log(`  → Fetching dependents for package: ${pkg} (type: ${dependentType})`);
 
       try {
@@ -76,8 +78,12 @@ async function fetchDependents() {
         console.error(`  ❌ Error fetching dependents for ${pkg}:`, error.message);
         allDependents[repoPath][pkg] = [];
       }
-    }
+    });
+
+    allFetches.push(...packageFetches);
   }
+
+  await Promise.all(allFetches);
 
   // Save all results to a single JSON file
   const outputPath = path.join(__dirname, '..', 'data', 'dependents.json');

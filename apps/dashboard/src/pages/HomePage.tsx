@@ -4,6 +4,32 @@ import { ArrowRight, BarChart3, GitBranch, Package, Sparkles, Zap } from 'lucide
 import { Link } from 'react-router-dom';
 import { PageContainer } from '../components/layout/PageContainer';
 
+const getColorClasses = (color: string) => {
+  const colors: Record<string, { bg: string; icon: string; hover: string }> = {
+    blue: {
+      bg: 'bg-blue-50 dark:bg-blue-900/20',
+      icon: 'text-blue-600 dark:text-blue-400',
+      hover: 'hover:border-blue-300 dark:hover:border-blue-700',
+    },
+    amber: {
+      bg: 'bg-amber-50 dark:bg-amber-900/20',
+      icon: 'text-amber-600 dark:text-amber-400',
+      hover: 'hover:border-amber-300 dark:hover:border-amber-700',
+    },
+    green: {
+      bg: 'bg-green-50 dark:bg-green-900/20',
+      icon: 'text-green-600 dark:text-green-400',
+      hover: 'hover:border-green-300 dark:hover:border-green-700',
+    },
+    purple: {
+      bg: 'bg-purple-50 dark:bg-purple-900/20',
+      icon: 'text-purple-600 dark:text-purple-400',
+      hover: 'hover:border-purple-300 dark:hover:border-purple-700',
+    },
+  };
+  return colors[color] || colors.blue;
+};
+
 function HomePage() {
   const features = [
     {
@@ -35,32 +61,6 @@ function HomePage() {
       color: 'purple',
     },
   ];
-
-  const getColorClasses = (color: string) => {
-    const colors: Record<string, { bg: string; icon: string; hover: string }> = {
-      blue: {
-        bg: 'bg-blue-50 dark:bg-blue-900/20',
-        icon: 'text-blue-600 dark:text-blue-400',
-        hover: 'hover:border-blue-300 dark:hover:border-blue-700',
-      },
-      amber: {
-        bg: 'bg-amber-50 dark:bg-amber-900/20',
-        icon: 'text-amber-600 dark:text-amber-400',
-        hover: 'hover:border-amber-300 dark:hover:border-amber-700',
-      },
-      green: {
-        bg: 'bg-green-50 dark:bg-green-900/20',
-        icon: 'text-green-600 dark:text-green-400',
-        hover: 'hover:border-green-300 dark:hover:border-green-700',
-      },
-      purple: {
-        bg: 'bg-purple-50 dark:bg-purple-900/20',
-        icon: 'text-purple-600 dark:text-purple-400',
-        hover: 'hover:border-purple-300 dark:hover:border-purple-700',
-      },
-    };
-    return colors[color] || colors.blue;
-  };
 
   return (
     <PageContainer>

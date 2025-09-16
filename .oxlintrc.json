@@ -6,8 +6,9 @@
     "react"
   ],
   "categories": {
-    "correctness": "warn",
-    "suspicious": "warn"
+    "correctness": "deny",
+    "suspicious": "warn",
+    "perf": "deny"
   },
   "rules": {
     "react/react-in-jsx-scope": "off"

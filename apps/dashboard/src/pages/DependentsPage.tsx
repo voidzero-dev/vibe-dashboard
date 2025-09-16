@@ -143,7 +143,7 @@ function DependentsPage() {
                     const repoName = dep.url.replace('https://github.com/', '');
                     return (
                       <tr
-                        key={index}
+                        key={dep.url}
                         className='border-b border-slate-100 dark:border-slate-800 transition-colors duration-150 bg-white dark:bg-slate-950 hover:bg-blue-50 dark:hover:bg-blue-950/40'
                       >
                         <td className='py-2 px-2 text-slate-500 dark:text-slate-400'>
