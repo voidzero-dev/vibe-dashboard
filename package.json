@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "A frontend dashboard for displaying different metrics using bar charts",
   "private": true,
-  "packageManager": "pnpm@10.15.1",
+  "packageManager": "pnpm@10.16.1",
   "type": "module",
   "scripts": {
     "ready": "vite run lint && vite test && vite run build",
@@ -16,14 +16,14 @@
   },
   "devDependencies": {
     "@voidzero-dev/vite-plus": "latest",
-    "dprint": "^0.50.1",
+    "dprint": "^0.50.2",
     "oxlint-tsgolint": "^0.2.0",
-    "top-github-dependents-by-stars": "^0.0.4",
+    "top-github-dependents-by-stars": "^1.0.3",
     "vitest": "^3.2.4"
   },
   "pnpm": {
     "overrides": {
-      "vite": "npm:rolldown-vite@7.1.9"
+      "vite": "npm:rolldown-vite@7.1.10"
     },
     "onlyBuiltDependencies": [
       "@tailwindcss/oxide",

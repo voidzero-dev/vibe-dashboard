@@ -6,3 +6,16 @@ verifyDepsBeforeRun: install
 
 catalog:
   typescript: ^5.9.2
+
+minimumReleaseAge: 1440
+
+minimumReleaseAgeExclude:
+  - oxfmt
+  - oxlint
+  - oxlint-tsgolint
+  - rolldown
+  - rolldown-vite
+  - tsdown
+  - vite
+  - vitepress
+  - vitest
