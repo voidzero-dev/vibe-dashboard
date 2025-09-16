@@ -12,7 +12,7 @@ import {
   YAxis,
 } from 'recharts';
 import * as semver from 'semver';
-import rolldownStats from '../../../../../rolldown-version-stats.json';
+import rolldownStats from '../../../../../data/rolldown-version-stats.json';
 
 const sortedRolldownStats = [...rolldownStats].sort((a, b) => semver.compare(a.version, b.version));
 

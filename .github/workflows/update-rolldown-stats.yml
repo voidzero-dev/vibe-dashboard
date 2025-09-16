@@ -26,7 +26,7 @@ jobs:
       - name: Check for changes
         id: git-check
         run: |
-          if git diff --exit-code rolldown-version-stats.json; then
+          if git diff --exit-code data/rolldown-version-stats.json; then
             echo "No changes detected in rolldown-version-stats.json"
             echo "changes=false" >> $GITHUB_OUTPUT
           else
@@ -46,3 +46,4 @@ jobs:
       - name: No changes to commit
         if: steps.git-check.outputs.changes != 'true'
         run: echo "No changes were detected in rolldown-version-stats.json, skipping commit."
+        run: pnpm run generate

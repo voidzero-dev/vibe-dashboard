@@ -2,7 +2,7 @@ import { PageHeader } from '@vibe/shared';
 import { Badge, Card } from '@vibe/ui';
 import { BarChart3, Clock, Package, TrendingUp } from 'lucide-react';
 import { useState } from 'react';
-import rolldownStatsData from '../../../../rolldown-version-stats.json';
+import rolldownStatsData from '../../../../data/rolldown-version-stats.json';
 import { PageContainer } from '../components/layout/PageContainer';
 import RolldownStats from '../RolldownStats';
 
