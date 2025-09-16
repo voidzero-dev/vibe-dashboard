@@ -48,13 +48,13 @@ export function StatsGrid() {
         linkTo='/minification'
       />
       <StatCard
-        title='NPM Downloads'
-        value='24.5K'
+        title='NPM Packages'
+        value='10'
         change={12}
-        changeLabel='this week'
+        changeLabel='tracked'
         icon={<Download className='w-6 h-6 text-green-600 dark:text-green-400' />}
         trend='up'
-        linkTo='/npm-downloads'
+        linkTo='/npm-packages'
       />
     </CardGrid>
   );

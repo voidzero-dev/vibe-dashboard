@@ -5,7 +5,7 @@ import Layout from './components/Layout';
 // Lazy load all page components for code-splitting
 const DashboardPage = lazy(() => import('./pages/DashboardPage'));
 const MinificationBenchmarksPage = lazy(() => import('./pages/MinificationBenchmarksPage'));
-const NpmDownloadsPage = lazy(() => import('./pages/NpmDownloadsPage'));
+const NpmPackagesPage = lazy(() => import('./pages/NpmPackagesPage'));
 const RolldownStatsPage = lazy(() => import('./pages/RolldownStatsPage'));
 const DependentsPage = lazy(() => import('./pages/DependentsPage'));
 
@@ -45,10 +45,10 @@ function App() {
           }
         />
         <Route
-          path='npm-downloads'
+          path='npm-packages'
           element={
             <Suspense fallback={<PageLoader />}>
-              <NpmDownloadsPage />
+              <NpmPackagesPage />
             </Suspense>
           }
         />

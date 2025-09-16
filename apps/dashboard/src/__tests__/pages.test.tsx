@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it } from 'vitest';
 import App from '../App';
 import MinificationBenchmarksPage from '../pages/MinificationBenchmarksPage';
-import NpmDownloadsPage from '../pages/NpmDownloadsPage';
+import NpmPackagesPage from '../pages/NpmPackagesPage';
 import RolldownStatsPage from '../pages/RolldownStatsPage';
 
 describe('Pages rendering tests', () => {
@@ -34,17 +34,17 @@ describe('Pages rendering tests', () => {
     expect(container).toBeTruthy();
   });
 
-  it('should render NpmDownloadsPage without errors', () => {
+  it('should render NpmPackagesPage without errors', () => {
     const { container } = render(
       <MemoryRouter>
-        <NpmDownloadsPage />
+        <NpmPackagesPage />
       </MemoryRouter>,
     );
     expect(container).toBeTruthy();
   });
 
   it('should render all routes without errors', () => {
-    const routes = ['/', '/minification', '/npm-downloads'];
+    const routes = ['/', '/minification', '/npm-packages'];
 
     routes.forEach(route => {
       const { container } = render(

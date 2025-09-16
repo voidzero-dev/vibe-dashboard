@@ -27,8 +27,8 @@ const navItems: NavItem[] = [
     badge: 'Benchmarks',
   },
   {
-    path: '/npm-downloads',
-    label: 'NPM Downloads',
+    path: '/npm-packages',
+    label: 'NPM Packages',
     icon: <Download size={20} />,
   },
   {
