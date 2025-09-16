@@ -39,7 +39,7 @@ jobs:
         run: |
           git config --local user.email "1430279+Boshen@users.noreply.github.com"
           git config --local user.name "Boshen"
-          git add rolldown-version-stats.json
+          git add data/rolldown-version-stats.json
           git commit -m "chore: update rolldown version stats"
           git push origin main
 
