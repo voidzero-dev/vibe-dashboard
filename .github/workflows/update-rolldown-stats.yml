@@ -45,5 +45,4 @@ jobs:
 
       - name: No changes to commit
         if: steps.git-check.outputs.changes != 'true'
-        run: echo "No changes were detected in rolldown-version-stats.json, skipping commit."
         run: pnpm run generate
