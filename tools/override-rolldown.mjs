@@ -3,9 +3,8 @@
 /**
  * Rolldown Version Override Tool
  *
- * This tool allows testing the vibe-dashboard with different rolldown-vite versions:
- * - Last 5 stable versions from npm
- * - Future/experimental versions from pkg.pr.new
+ * This tool allows testing the vibe-dashboard with different rolldown-vite versions
+ * from npm registry.
  */
 
 import { execSync } from 'node:child_process';
@@ -51,80 +50,6 @@ async function fetchStableVersions() {
 }
 
 /**
- * Fetch future versions from pkg.pr.new API using authoredDate filtering
- * Currently commented out due to issues with future versions
- */
-/*
-async function fetchFutureVersions(lastNpmVersionDate) {
-  return new Promise((resolve, reject) => {
-    const url = 'https://pkg.pr.new/api/repo/commits?owner=rolldown&repo=rolldown';
-
-    https.get(url, (res) => {
-      let data = '';
-      res.on('data', (chunk) => data += chunk);
-      res.on('end', () => {
-        try {
-          const response = JSON.parse(data);
-
-          // Extract commits from the nested structure
-          const commits = response.target?.history?.nodes || [];
-
-          const futureCommits = commits
-            .filter(commit => {
-              const commitDate = new Date(commit.authoredDate);
-              return commitDate > lastNpmVersionDate;
-            })
-            .sort((a, b) => {
-              // Sort by authored date (most recent first)
-              const dateA = new Date(a.authoredDate);
-              const dateB = new Date(b.authoredDate);
-              return dateB - dateA;
-            })
-            .map(commit => `pkg.pr.new/rolldown@${commit.abbreviatedOid}`);
-
-          resolve(futureCommits);
-        } catch (error) {
-          reject(new Error(`Failed to parse pkg.pr.new API response: ${error.message}`));
-        }
-      });
-    }).on('error', (error) => {
-      reject(new Error(`Failed to fetch from pkg.pr.new API: ${error.message}`));
-    });
-  });
-}
-*/
-
-/**
- * Get the publication date of the latest npm version
- * Currently commented out as it's only used with future versions
- */
-/*
-async function getLatestNpmVersionDate() {
-  return new Promise((resolve, reject) => {
-    const url = 'https://registry.npmjs.org/rolldown-vite';
-
-    https.get(url, (res) => {
-      let data = '';
-      res.on('data', (chunk) => data += chunk);
-      res.on('end', () => {
-        try {
-          const packageInfo = JSON.parse(data);
-          const latestVersion = packageInfo['dist-tags'].latest;
-          const publishDate = new Date(packageInfo.time[latestVersion]);
-
-          resolve(publishDate);
-        } catch (error) {
-          reject(new Error(`Failed to get latest npm version date: ${error.message}`));
-        }
-      });
-    }).on('error', (error) => {
-      reject(new Error(`Failed to fetch npm version date: ${error.message}`));
-    });
-  });
-}
-*/
-
-/**
  * Fetch npm publication dates for all versions
  */
 async function fetchNpmPublicationDates() {
@@ -160,10 +85,6 @@ function getCurrentVersion() {
   }
 }
 
-function isPkgPrNewUrl(version) {
-  return version.includes('pkg.pr.new') || version.startsWith('https://pkg.pr.new');
-}
-
 function updateRolldownVersion(version) {
   try {
     console.log(`📦 Updating rolldown-vite to version: ${version}`);
@@ -177,9 +98,6 @@ function updateRolldownVersion(version) {
     // Write back to package.json
     writeFileSync(DASHBOARD_PACKAGE_PATH, JSON.stringify(packageJson, null, 2) + '\n');
 
-    if (isPkgPrNewUrl(version)) {
-      console.log('🚀 Using experimental version from pkg.pr.new');
-    }
     console.log('✅ Package.json updated successfully');
     return true;
   } catch (error) {
@@ -230,7 +148,6 @@ function collectDistStats(version, buildTime = null, publicationDate = null) {
     publicationDate,
     files: [],
     totalSize: 0,
-    totalGzipSize: 0,
     buildTime,
   };
 
@@ -288,45 +205,23 @@ async function listVersions() {
     console.log('🔍 Fetching stable versions from npm...');
     const stableVersions = await fetchStableVersions();
 
-    // Get latest npm version date for filtering future versions
-    // console.log('📅 Getting latest npm version date...');
-    // const latestNpmDate = await getLatestNpmVersionDate();
-
-    // Fetch future versions from pkg.pr.new
-    // console.log('🚀 Fetching future versions from pkg.pr.new...');
-    // const futureVersions = await fetchFutureVersions(latestNpmDate);
-    const futureVersions = []; // Commented out future versions functionality
-
     console.log('\n🟢 Stable versions (last 10 from npm):');
     stableVersions.forEach((version, index) => {
       const current = getCurrentVersion() === `^${version}` || getCurrentVersion() === version;
       console.log(`  ${index + 1}. ${version} ${current ? '(current)' : ''}`);
     });
 
-    // Commenting out future versions display
-    // if (futureVersions.length > 0) {
-    //   console.log('\n🚀 Future versions (from pkg.pr.new):');
-    //   futureVersions.forEach((version, index) => {
-    //     console.log(`  ${stableVersions.length + index + 1}. ${version}`);
-    //   });
-    // } else {
-    //   console.log('\n🚀 Future versions (from pkg.pr.new):');
-    //   console.log('  No future versions found (all commits are older than latest npm version).');
-    // }
-
     console.log('\n💡 Usage: node override-rolldown.js <version-number-or-version-string>');
     console.log('Example: node override-rolldown.js 2  # Use second stable version');
     console.log('Example: node override-rolldown.js 7.1.2  # Use specific version');
-    console.log('Example: node override-rolldown.js pkg.pr.new/rolldown-rs/rolldown@1234567  # Use pkg.pr.new URL');
 
-    return { stableVersions, futureVersions };
+    return { stableVersions };
   } catch (error) {
     console.error('❌ Error fetching versions:', error.message);
     console.log('\n🔄 Falling back to manual version entry...');
     console.log('💡 Usage: node override-rolldown.js <version-string>');
     console.log('Example: node override-rolldown.js 7.1.2');
-    console.log('Example: node override-rolldown.js pkg.pr.new/rolldown-rs/rolldown@1234567');
-    return { stableVersions: [], futureVersions: [] };
+    return { stableVersions: [] };
   }
 }
 
@@ -344,26 +239,21 @@ async function collectAllVersionStats() {
     // Fetch all available versions
     console.log('🔍 Fetching all available versions...');
     const stableVersions = await fetchStableVersions();
-    // const latestNpmDate = await getLatestNpmVersionDate();
-    // const futureVersions = await fetchFutureVersions(latestNpmDate);
-    const allVersions = [...stableVersions];
 
     // Fetch npm publication dates
     console.log('📅 Fetching npm publication dates...');
     const npmPublicationDates = await fetchNpmPublicationDates();
 
-    console.log(`📦 Found ${allVersions.length} versions to analyze:`);
-    console.log(`  - ${stableVersions.length} stable versions`);
-    // console.log(`  - ${futureVersions.length} future versions\n`);
+    console.log(`📦 Found ${stableVersions.length} versions to analyze`);
 
     // Store original package.json for restoration
     const originalPackageJson = readFileSync(DASHBOARD_PACKAGE_PATH, 'utf8');
 
-    for (let i = 0; i < allVersions.length; i++) {
-      const version = allVersions[i];
+    for (let i = 0; i < stableVersions.length; i++) {
+      const version = stableVersions[i];
       const versionNumber = i + 1;
 
-      console.log(`\n==================== VERSION ${versionNumber}/${allVersions.length} ====================`);
+      console.log(`\n==================== VERSION ${versionNumber}/${stableVersions.length} ====================`);
       console.log(`🎯 Testing version: ${version}`);
 
       try {
@@ -412,7 +302,7 @@ async function collectAllVersionStats() {
 
     console.log('\n==================== ANALYSIS COMPLETE ====================');
     console.log(`📊 Analysis Summary:`);
-    console.log(`  - Total versions analyzed: ${allVersions.length}`);
+    console.log(`  - Total versions analyzed: ${stableVersions.length}`);
     console.log(`  - Successful builds: ${successCount}`);
     console.log(`  - Failed builds: ${failureCount}`);
     console.log(`  - Results saved to: ${STATS_OUTPUT_PATH}`);
@@ -455,17 +345,13 @@ async function main() {
 
     try {
       const stableVersions = await fetchStableVersions();
-      // const latestNpmDate = await getLatestNpmVersionDate();
-      // const futureVersions = await fetchFutureVersions(latestNpmDate);
-      const futureVersions = []; // Commented out future versions functionality
 
       const index = parseInt(input, 10) - 1;
-      const allVersions = [...stableVersions, ...futureVersions];
 
-      if (index >= 0 && index < allVersions.length) {
-        targetVersion = allVersions[index];
+      if (index >= 0 && index < stableVersions.length) {
+        targetVersion = stableVersions[index];
       } else {
-        console.error(`❌ Invalid version index. Use 1-${allVersions.length}`);
+        console.error(`❌ Invalid version index. Use 1-${stableVersions.length}`);
         await listVersions();
         process.exit(1);
       }
@@ -508,15 +394,13 @@ if (process.argv.includes('--help') || process.argv.includes('-h')) {
   console.log('Usage:');
   console.log('  node override-rolldown.js --list        List available versions');
   console.log('  node override-rolldown.js --stats       Collect stats for all versions');
-  console.log('  node override-rolldown.js <index>       Use version by index (1-10)');
+  console.log('  node override-rolldown.js <index>       Use version by index');
   console.log('  node override-rolldown.js <version>     Use specific version');
-  console.log('  node override-rolldown.js <pkg.pr.new>  Use pkg.pr.new URL');
   console.log('\nExamples:');
   console.log('  node override-rolldown.js --list');
   console.log('  node override-rolldown.js --stats');
   console.log('  node override-rolldown.js 2');
   console.log('  node override-rolldown.js 7.1.2');
-  console.log('  node override-rolldown.js pkg.pr.new/rolldown-rs/vite@1234');
   process.exit(0);
 }
 
