@@ -12,7 +12,7 @@ interface NavItem {
 const navItems: NavItem[] = [
   {
     path: '/',
-    label: 'Dashboard',
+    label: 'Home',
     icon: <Home size={20} />,
   },
   {
@@ -24,7 +24,6 @@ const navItems: NavItem[] = [
     path: '/minification',
     label: 'Minification',
     icon: <Zap size={20} />,
-    badge: 'Benchmarks',
   },
   {
     path: '/npm-packages',

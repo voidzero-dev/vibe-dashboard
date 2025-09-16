@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
 
 // Lazy load all page components for code-splitting
-const DashboardPage = lazy(() => import('./pages/DashboardPage'));
+const HomePage = lazy(() => import('./pages/HomePage'));
 const MinificationBenchmarksPage = lazy(() => import('./pages/MinificationBenchmarksPage'));
 const NpmPackagesPage = lazy(() => import('./pages/NpmPackagesPage'));
 const RolldownStatsPage = lazy(() => import('./pages/RolldownStatsPage'));
@@ -24,7 +24,7 @@ function App() {
           index
           element={
             <Suspense fallback={<PageLoader />}>
-              <DashboardPage />
+              <HomePage />
             </Suspense>
           }
         />
