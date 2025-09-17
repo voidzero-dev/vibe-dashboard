@@ -23,17 +23,10 @@ jobs:
       - name: Setup Node.js and pnpm
         uses: ./.github/actions/setup-node-pnpm
 
-      - name: Lint code
-        run: pnpm lint
-
       - name: Install Playwright browsers
         run: pnpx playwright install chromium
 
-      - name: Run tests
-        run: pnpm test
-
-      - name: Build project
-        run: pnpm build
+      - run: pnpm ready
 
       - name: Check build artifacts
         run: |
