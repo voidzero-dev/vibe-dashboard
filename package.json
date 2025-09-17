@@ -11,7 +11,7 @@
     "build": "vite run @vibe/dashboard#build",
     "lint": "vite lint --type-aware",
     "test": "vite test",
-    "fmt": "vite fmt .",
+    "fmt": "vite fmt",
     "generate": "node tools/override-rolldown.mjs --stats"
   },
   "devDependencies": {

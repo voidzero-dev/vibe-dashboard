@@ -19,3 +19,4 @@ minimumReleaseAgeExclude:
   - vite
   - vitepress
   - vitest
+  - '@voidzero-dev/vite-plus'
