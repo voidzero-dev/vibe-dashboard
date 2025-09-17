@@ -9,6 +9,7 @@ runs:
       with:
         node-version: "lts/*"
         registry-url: "https://registry.npmjs.org"
+        package-manager-cache: false
         # see pnpm cache setting below
       env:
         GITHUB_TOKEN: ${{ github.token }}
