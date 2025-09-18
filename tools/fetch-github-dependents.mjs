@@ -57,26 +57,37 @@ async function fetchDependents() {
           token: token
         });
 
-        // Transform to our format
-        const dependents = result.repositories.map(repo => ({
+        // Transform to our format - save both top and latest dependents
+        const topDependents = (result.repositories || []).map(repo => ({
           url: repo.url,
           stars: repo.stars
         }));
 
-        allDependents[repoPath][pkg] = dependents;
+        const latestDependents = (result.latestDependents || []).map(repo => ({
+          url: repo.url,
+          stars: repo.stars
+        }));
 
-        console.log(`  ✅ Found ${dependents.length} dependents for ${pkg}`);
+        allDependents[repoPath][pkg] = {
+          topDependents,
+          latestDependents
+        };
+
+        console.log(`  ✅ Found ${topDependents.length} top + ${latestDependents.length} latest dependents for ${pkg}`);
 
         // Show top 5 for this package
-        if (dependents.length > 0) {
-          console.log(`  Top 5 dependents:`);
-          dependents.slice(0, 5).forEach((dep, i) => {
+        if (topDependents.length > 0) {
+          console.log(`  Top 5 dependents by stars:`);
+          topDependents.slice(0, 5).forEach((dep, i) => {
             console.log(`    ${i + 1}. ${dep.url} - ⭐ ${dep.stars}`);
           });
         }
       } catch (error) {
         console.error(`  ❌ Error fetching dependents for ${pkg}:`, error.message);
-        allDependents[repoPath][pkg] = [];
+        allDependents[repoPath][pkg] = {
+          topDependents: [],
+          latestDependents: []
+        };
       }
     });
 
