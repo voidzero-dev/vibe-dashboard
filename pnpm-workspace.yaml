@@ -10,13 +10,15 @@ catalog:
 minimumReleaseAge: 1440
 
 minimumReleaseAgeExclude:
+  - '@voidzero-dev/vite-plus'
   - oxfmt
   - oxlint
   - oxlint-tsgolint
   - rolldown
   - rolldown-vite
+  - top-github-dependents-by-stars
   - tsdown
   - vite
   - vitepress
   - vitest
-  - '@voidzero-dev/vite-plus'
+  - vitest

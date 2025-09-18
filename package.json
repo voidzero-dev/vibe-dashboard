@@ -18,7 +18,7 @@
     "@voidzero-dev/vite-plus": "latest",
     "dprint": "^0.50.2",
     "oxlint-tsgolint": "^0.2.0",
-    "top-github-dependents-by-stars": "^1.0.3",
+    "top-github-dependents-by-stars": "^1.0.4",
     "vitest": "^3.2.4"
   },
   "pnpm": {
