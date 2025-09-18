@@ -19,7 +19,7 @@ importers:
     devDependencies:
       '@voidzero-dev/vite-plus':
         specifier: latest
-        version: 0.0.0-2f860ae35f0a4cdb69671c625d3878e97d99c658(@types/node@20.19.13)(@vitest/browser@3.2.4)(@vitest/ui@3.2.4)(esbuild@0.25.9)(happy-dom@18.0.1)(jiti@2.5.1)
+        version: 0.0.0-315e2d8e601e344752f9658b9cb7c3a81a0945f6(@types/node@20.19.13)(@vitest/browser@3.2.4)(@vitest/ui@3.2.4)(esbuild@0.25.9)(happy-dom@18.0.1)(jiti@2.5.1)
       dprint:
         specifier: ^0.50.2
         version: 0.50.2
@@ -1041,8 +1041,8 @@ packages:
   '@vitest/utils@3.2.4':
     resolution: {integrity: sha512-fB2V0JFrQSMsCo9HiSq3Ezpdv4iYaXRG1Sx8edX3MwxfyNn83mKiGzOcH+Fkxt4MHxr3y42fQi1oeAInqgX2QA==}
 
-  '@voidzero-dev/vite-plus@0.0.0-2f860ae35f0a4cdb69671c625d3878e97d99c658':
-    resolution: {integrity: sha512-RVPzT6QinEC1YxN75T4ABBUCojN8hdBtFD1HU7reo0cQNPntMfgYOWGXuXDwfboge2Eai0pIRUYUJQuCyi5u7A==, tarball: https://npm.pkg.github.com/download/@voidzero-dev/vite-plus/0.0.0-2f860ae35f0a4cdb69671c625d3878e97d99c658/03650dcbe53f36b3a12dcfbd000cd511047a3516}
+  '@voidzero-dev/vite-plus@0.0.0-315e2d8e601e344752f9658b9cb7c3a81a0945f6':
+    resolution: {integrity: sha512-VKxIlpL8OI1KjWsX/770ltmuz1WJi46JFaIi6AVMqK1Tpf40MmVJaSO2zmKtR65MbZzbiM9qB0PdaSrLLHWQPA==, tarball: https://npm.pkg.github.com/download/@voidzero-dev/vite-plus/0.0.0-315e2d8e601e344752f9658b9cb7c3a81a0945f6/e83b8224b42d2ca06642a9d50d2125ff32901112}
     engines: {node: '>=20.11.0'}
     hasBin: true
 
@@ -2640,7 +2640,7 @@ snapshots:
       loupe: 3.2.1
       tinyrainbow: 2.0.0
 
-  '@voidzero-dev/vite-plus@0.0.0-2f860ae35f0a4cdb69671c625d3878e97d99c658(@types/node@20.19.13)(@vitest/browser@3.2.4)(@vitest/ui@3.2.4)(esbuild@0.25.9)(happy-dom@18.0.1)(jiti@2.5.1)':
+  '@voidzero-dev/vite-plus@0.0.0-315e2d8e601e344752f9658b9cb7c3a81a0945f6(@types/node@20.19.13)(@vitest/browser@3.2.4)(@vitest/ui@3.2.4)(esbuild@0.25.9)(happy-dom@18.0.1)(jiti@2.5.1)':
     dependencies:
       oxfmt: 0.2.0
       oxlint: 1.16.0(oxlint-tsgolint@0.2.0)
