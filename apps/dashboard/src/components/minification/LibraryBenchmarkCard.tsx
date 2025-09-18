@@ -1,4 +1,4 @@
-import { getLibraryData } from '../../utils/minification-data';
+import { getLibraryData } from '@vibe/utils';
 import { CompressionRatioChart } from './CompressionRatioChart';
 import { MinificationTimeChart } from './MinificationTimeChart';
 

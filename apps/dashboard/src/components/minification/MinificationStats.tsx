@@ -1,5 +1,5 @@
 import minificationData from '../../../../../data/minification-benchmarks-data.json';
-import { popularMinifiers } from '../../utils/minification-data';
+import { popularMinifiers } from '@vibe/utils';
 
 export function MinificationStats() {
   return (
