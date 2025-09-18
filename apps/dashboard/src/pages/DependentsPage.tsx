@@ -1,6 +1,6 @@
 import { PageHeader } from '@vibe/shared';
-import { Badge, Card, CardGrid } from '@vibe/ui';
-import { GitBranch, Star, Package, Users, ExternalLink, Clock, TrendingUp } from 'lucide-react';
+import { Card } from '@vibe/ui';
+import { GitBranch, ExternalLink, Clock, TrendingUp, Star } from 'lucide-react';
 import { useState } from 'react';
 import dependentsData from '../../../../data/dependents.json';
 import { PageContainer } from '../components/layout/PageContainer';
@@ -57,110 +57,47 @@ function DependentsPage() {
     });
   });
 
-  // Calculate stats based on current view mode
-  const totalRepos = Object.keys(data).length;
-  const totalPackages = allPackages.length;
-
-  const currentDependents = viewMode === 'top' ? 'topDependents' : 'latestDependents';
-  const totalDependents = allPackages.reduce((sum, pkg) => sum + pkg[currentDependents].length, 0);
-
-  // Get top dependent across all packages for current view
-  const allDependents: Array<Dependent & { package: string; repo: string }> = [];
-  allPackages.forEach(({ repo, package: pkg, topDependents, latestDependents }) => {
-    const deps = viewMode === 'top' ? topDependents : latestDependents;
-    deps.forEach(dep => {
-      allDependents.push({ ...dep, package: pkg, repo });
-    });
-  });
-  const topDependent = allDependents.sort((a, b) => b.stars - a.stars)[0];
+  // No stats calculation needed since we removed the cards
 
   return (
     <PageContainer>
       <PageHeader
         icon={<GitBranch className='text-purple-600 dark:text-purple-400' />}
         title='GitHub Dependents'
-        subtitle={viewMode === 'top' ? 'Top repositories by stars that depend on our projects' : 'Most recent repositories that depend on our projects'}
-        action={
-          <div className='flex items-center gap-4'>
-            <div className='flex rounded-lg bg-slate-100 dark:bg-slate-800 p-1'>
-              <button
-                onClick={() => setViewMode('top')}
-                className={`px-3 py-1 rounded-md text-sm font-medium transition-all ${
-                  viewMode === 'top'
-                    ? 'bg-white dark:bg-slate-700 text-purple-600 dark:text-purple-400 shadow-sm'
-                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
-                }`}
-              >
-                <span className='flex items-center gap-1'>
-                  <TrendingUp className='w-3.5 h-3.5' />
-                  Top by Stars
-                </span>
-              </button>
-              <button
-                onClick={() => setViewMode('latest')}
-                className={`px-3 py-1 rounded-md text-sm font-medium transition-all ${
-                  viewMode === 'latest'
-                    ? 'bg-white dark:bg-slate-700 text-purple-600 dark:text-purple-400 shadow-sm'
-                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
-                }`}
-              >
-                <span className='flex items-center gap-1'>
-                  <Clock className='w-3.5 h-3.5' />
-                  Most Recent
-                </span>
-              </button>
-            </div>
-            <Badge variant='info' size='md'>
-              {totalDependents} {viewMode === 'top' ? 'Top' : 'Latest'} Dependents
-            </Badge>
-          </div>
-        }
+        subtitle='Repositories and packages that depend on our projects'
       />
 
-      {/* Stats Cards */}
-      <CardGrid className='grid-cols-1 md:grid-cols-4 mb-8'>
-        <Card className='bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 border-purple-200 dark:border-purple-800'>
-          <div className='flex items-center justify-between'>
-            <div>
-              <p className='text-sm font-medium text-purple-600 dark:text-purple-300'>Repositories</p>
-              <p className='text-2xl font-bold text-purple-900 dark:text-white'>{totalRepos}</p>
-            </div>
-            <GitBranch className='w-8 h-8 text-purple-500' />
-          </div>
-        </Card>
-
-        <Card className='bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 border-blue-200 dark:border-blue-800'>
-          <div className='flex items-center justify-between'>
-            <div>
-              <p className='text-sm font-medium text-blue-600 dark:text-blue-300'>Packages</p>
-              <p className='text-2xl font-bold text-blue-900 dark:text-white'>{totalPackages}</p>
-            </div>
-            <Package className='w-8 h-8 text-blue-500' />
-          </div>
-        </Card>
-
-        <Card className='bg-gradient-to-br from-amber-50 to-amber-100 dark:from-amber-900/20 dark:to-amber-800/20 border-amber-200 dark:border-amber-800'>
-          <div className='flex items-center justify-between'>
-            <div>
-              <p className='text-sm font-medium text-amber-600 dark:text-amber-300'>Top Stars</p>
-              <p className='text-2xl font-bold text-amber-900 dark:text-white'>
-                {topDependent ? topDependent.stars.toLocaleString() : '0'}
-              </p>
-            </div>
-            <Star className='w-8 h-8 text-amber-500' />
-          </div>
-        </Card>
-
-        <Card className='bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 border-green-200 dark:border-green-800'>
-          <div className='flex items-center justify-between'>
-            <div>
-              <p className='text-sm font-medium text-green-600 dark:text-green-300'>Total Dependents</p>
-              <p className='text-2xl font-bold text-green-900 dark:text-white'>{totalDependents}</p>
-            </div>
-            <Users className='w-8 h-8 text-green-500' />
-          </div>
-        </Card>
-      </CardGrid>
+      {/* Tab Switcher */}
+      <div className='mb-8 flex justify-center'>
+        <div className='flex rounded-lg bg-slate-100 dark:bg-slate-800 p-1.5 shadow-sm'>
+          <button
+            onClick={() => setViewMode('top')}
+            className={`px-6 py-3 rounded-md text-base font-semibold transition-all ${
+              viewMode === 'top'
+                ? 'bg-white dark:bg-slate-700 text-purple-600 dark:text-purple-400 shadow-md'
+                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
+            }`}
+          >
+            <span className='flex items-center gap-2'>
+              <TrendingUp className='w-5 h-5' />
+              Top by Stars
+            </span>
+          </button>
+          <button
+            onClick={() => setViewMode('latest')}
+            className={`px-6 py-3 rounded-md text-base font-semibold transition-all ${
+              viewMode === 'latest'
+                ? 'bg-white dark:bg-slate-700 text-purple-600 dark:text-purple-400 shadow-md'
+                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'
+            }`}
+          >
+            <span className='flex items-center gap-2'>
+              <Clock className='w-5 h-5' />
+              Most Recent
+            </span>
+          </button>
+        </div>
+      </div>
 
       {/* All Packages in 2 Column Grid */}
       <div className='grid grid-cols-1 lg:grid-cols-2 gap-6'>
@@ -170,7 +107,7 @@ function DependentsPage() {
           <Card key={`${repo}/${pkg}`} className='p-6'>
             <div className='mb-4 flex items-center justify-between'>
               <div className='flex items-center gap-2'>
-                <Package className='w-4 h-4' />
+                <GitBranch className='w-4 h-4' />
                 <span className='text-sm text-slate-600 dark:text-slate-400'>{repo}</span>
               </div>
               <h3 className='text-lg font-semibold'>
