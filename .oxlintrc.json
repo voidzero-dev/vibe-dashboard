@@ -3,7 +3,8 @@
     "unicorn",
     "typescript",
     "oxc",
-    "react"
+    "react",
+    "./plugins/debugger.js"
   ],
   "categories": {
     "correctness": "deny",
@@ -11,7 +12,8 @@
     "perf": "deny"
   },
   "rules": {
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "vibe/no-debugger": "error"
   },
   "settings": {
     "jsx-a11y": {
