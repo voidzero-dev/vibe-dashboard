@@ -29,7 +29,7 @@ jobs:
         uses: ./.github/actions/setup-node-pnpm
 
       - name: Install Playwright browsers
-        run: pnpx playwright install chromium
+        run: pnpx playwright install chromium chromium-headless-shell
 
       - run: pnpm ready
 
