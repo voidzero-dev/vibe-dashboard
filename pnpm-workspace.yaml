@@ -7,10 +7,14 @@ verifyDepsBeforeRun: install
 catalog:
   typescript: ^5.9.2
 
+catalogMode: prefer
+
 minimumReleaseAge: 1440
 
 minimumReleaseAgeExclude:
-  - '@voidzero-dev/vite-plus'
+  - '@voidzero-dev/*'
+  - '@oxlint/*'
+  - '@vitejs/*'
   - oxfmt
   - oxlint
   - oxlint-tsgolint
@@ -22,3 +26,5 @@ minimumReleaseAgeExclude:
   - vitepress
   - vitest
   - vitest
+  - playwright
+  - playwright-core
