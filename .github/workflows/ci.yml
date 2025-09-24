@@ -33,7 +33,11 @@ jobs:
       - name: Install Playwright browsers
         run: pnpx playwright install chromium chromium-headless-shell
 
-      - run: pnpm ready
+      - name: Run ready script twice
+        run: |
+          pnpm ready
+          # should hit cache here
+          pnpm ready
 
       - name: Check build artifacts
         run: |
