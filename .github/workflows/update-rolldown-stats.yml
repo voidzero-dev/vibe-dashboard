@@ -6,11 +6,14 @@ on:
     branches:
       - main
 
-permissions:
-  contents: write
+permissions: {}
 
 jobs:
   update-stats:
+    permissions:
+      contents: write
+      packages: read
+
     runs-on: ubuntu-latest
 
     steps:
