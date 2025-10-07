@@ -3,7 +3,9 @@
     "unicorn",
     "typescript",
     "oxc",
-    "react",
+    "react"
+  ],
+  "jsPlugins": [
     "./plugins/debugger.js"
   ],
   "categories": {
