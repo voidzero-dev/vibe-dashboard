@@ -19,7 +19,7 @@ importers:
     devDependencies:
       '@voidzero-dev/vite-plus':
         specifier: latest
-        version: 0.0.0-c73b740b0e7ea642e09b42764afee982856c6d4d(@types/node@20.19.19)(@vitest/browser@3.2.4)(@vitest/ui@3.2.4)(axios@1.12.2)(esbuild@0.25.11)(happy-dom@18.0.1)(jiti@2.6.1)(postcss@8.5.6)(typescript@5.9.3)
+        version: 0.0.0-84fbc43d1750eeab1a79fd487746a513ecb38e66(@types/node@20.19.19)(@vitest/browser@3.2.4)(@vitest/ui@3.2.4)(axios@1.12.2)(esbuild@0.25.11)(happy-dom@18.0.1)(jiti@2.6.1)(postcss@8.5.6)(typescript@5.9.3)
       dprint:
         specifier: ^0.50.2
         version: 0.50.2
@@ -163,8 +163,8 @@ packages:
     resolution: {integrity: sha512-cjQ7ZlQ0Mv3b47hABuTevyTuYN4i+loJKGeV9flcCgIK37cCXRh+L1bd3iBHlynerhQ7BhCkn2BPbQUL+rGqFg==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/generator@7.28.3':
-    resolution: {integrity: sha512-3lSpxGgvnmZznmBkCRnVREPUFJv2wrv9iAoFDvADJc0ypmdOxdUtcLeBgBJ6zE0PMeTKnxeQzyk0xTBq4Ep7zw==}
+  '@babel/generator@7.28.5':
+    resolution: {integrity: sha512-3EwLFhZ38J4VyIP6WNtt2kUdW9dokXA9Cr4IVIFHuCpZ3H8/YFOl5JjZHisrn1fATPBmKKqXzDFvh9fUwHz6CQ==}
     engines: {node: '>=6.9.0'}
 
   '@babel/helper-string-parser@7.27.1':
@@ -175,8 +175,12 @@ packages:
     resolution: {integrity: sha512-D2hP9eA+Sqx1kBZgzxZh0y1trbuU+JoDkiEwqhQ36nodYqJwyEIhPSdMNd7lOm/4io72luTPWH20Yda0xOuUow==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/parser@7.28.4':
-    resolution: {integrity: sha512-yZbBqeM6TkpP9du/I2pUZnJsRMGGvOuIrhjzC1AwHwW+6he4mni6Bp/m8ijn0iOuZuPI2BfkCoSRunpyjnrQKg==}
+  '@babel/helper-validator-identifier@7.28.5':
+    resolution: {integrity: sha512-qSs4ifwzKJSV39ucNjsvc6WVHs6b7S03sOh2OcHF9UHfVPqWWALUsNUVzhSBiItjRZoLHx7nIarVjqKVusUZ1Q==}
+    engines: {node: '>=6.9.0'}
+
+  '@babel/parser@7.28.5':
+    resolution: {integrity: sha512-KKBU1VGYR7ORr3At5HAtUQ+TV3SzRCXmA/8OdDZiLDBIZxVyzXuztPjfLd3BV1PRAQGCMWWSHYhL0F8d5uHBDQ==}
     engines: {node: '>=6.0.0'}
     hasBin: true
 
@@ -184,8 +188,8 @@ packages:
     resolution: {integrity: sha512-Q/N6JNWvIvPnLDvjlE1OUBLPQHH6l3CltCEsHIujp45zQUSSh8K+gHnaEX45yAT1nyngnINhvWtzN+Nb9D8RAQ==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/types@7.28.4':
-    resolution: {integrity: sha512-bkFqkLhh3pMBUQQkpVgWDWq/lqzc2678eUyDlTBhRqhCHFguYYGM0Efga7tYk4TogG/3x0EEl66/OQ+WGbWB/Q==}
+  '@babel/types@7.28.5':
+    resolution: {integrity: sha512-qQ5m48eI/MFLQ5PxQj4PFaprjyCTLI37ElWMmNs0K8Lk3dVeOdNpB3ks8jc7yM5CDmVC73eMVk/trk3fgmrUpA==}
     engines: {node: '>=6.9.0'}
 
   '@colors/colors@1.5.0':
@@ -1227,8 +1231,8 @@ packages:
   '@vitest/utils@3.2.4':
     resolution: {integrity: sha512-fB2V0JFrQSMsCo9HiSq3Ezpdv4iYaXRG1Sx8edX3MwxfyNn83mKiGzOcH+Fkxt4MHxr3y42fQi1oeAInqgX2QA==}
 
-  '@voidzero-dev/vite-plus@0.0.0-c73b740b0e7ea642e09b42764afee982856c6d4d':
-    resolution: {integrity: sha512-CZWeXd7mN3WDCJm8vC75Zqo8uS6sSJ64zYQ5ADob53dTsFH3L1Islf0sgLF1R/wwNXDcDlWx1LHUFr4oftDyvw==, tarball: https://npm.pkg.github.com/download/@voidzero-dev/vite-plus/0.0.0-c73b740b0e7ea642e09b42764afee982856c6d4d/45ab9d389e55e6f5cb42e053f983769a97eb70e8}
+  '@voidzero-dev/vite-plus@0.0.0-84fbc43d1750eeab1a79fd487746a513ecb38e66':
+    resolution: {integrity: sha512-WXwovv1hZZEgbnrFAtSw/zNzxDo5OIU/YJfIzoQcnrQvhBYeVyO/PWkmwsIhwD2tFZGlT5BlJJA73mv0Flusqw==, tarball: https://npm.pkg.github.com/download/@voidzero-dev/vite-plus/0.0.0-84fbc43d1750eeab1a79fd487746a513ecb38e66/7fe4e1639414d91ee914a28a7fe8e92e4802eead}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
 
@@ -1920,6 +1924,9 @@ packages:
   magic-string@0.30.19:
     resolution: {integrity: sha512-2N21sPY9Ws53PZvsEpVtNuSW+ScYbQdp4b9qUaL+9QkHUrGFKo56Lg9Emg5s9V/qrtNBmiR01sYhUOwu3H+VOw==}
 
+  magic-string@0.30.21:
+    resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
+
   mark.js@8.11.1:
     resolution: {integrity: sha512-1I+1qpDt4idfgLQG+BNWmrqku+7/2bi5nLf4YwF8y8zXvmfiTBY3PV3ZibfrjBueCByROpuBjLLFCajqkgYoLQ==}
 
@@ -2316,8 +2323,8 @@ packages:
     resolution: {integrity: sha512-ay3d+LW/S6yppKoTz3Bq4mG0xrS5bFwfWEBmQfbC7lt5wmtk+Obq0TxVuA9eYRirBTQb1K3eEpBRHMQEo0WyVw==}
     engines: {node: '>=16'}
 
-  tabbable@6.2.0:
-    resolution: {integrity: sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==}
+  tabbable@6.3.0:
+    resolution: {integrity: sha512-EIHvdY5bPLuWForiR/AN2Bxngzpuwn1is4asboytXtpTgsArc+WmSJKVLlhdh71u7jFcryDqB2A8lQvj78MkyQ==}
 
   tailwindcss@4.1.14:
     resolution: {integrity: sha512-b7pCxjGO98LnxVkKjaZSDeNuljC4ueKUddjENJOADtubtdo8llTaJy7HwBMeLNSSo2N5QIAgklslK1+Ir8r6CA==}
@@ -2580,10 +2587,10 @@ snapshots:
       js-tokens: 4.0.0
       picocolors: 1.1.1
 
-  '@babel/generator@7.28.3':
+  '@babel/generator@7.28.5':
     dependencies:
-      '@babel/parser': 7.28.4
-      '@babel/types': 7.28.4
+      '@babel/parser': 7.28.5
+      '@babel/types': 7.28.5
       '@jridgewell/gen-mapping': 0.3.13
       '@jridgewell/trace-mapping': 0.3.31
       jsesc: 3.1.0
@@ -2592,16 +2599,18 @@ snapshots:
 
   '@babel/helper-validator-identifier@7.27.1': {}
 
-  '@babel/parser@7.28.4':
+  '@babel/helper-validator-identifier@7.28.5': {}
+
+  '@babel/parser@7.28.5':
     dependencies:
-      '@babel/types': 7.28.4
+      '@babel/types': 7.28.5
 
   '@babel/runtime@7.28.4': {}
 
-  '@babel/types@7.28.4':
+  '@babel/types@7.28.5':
     dependencies:
       '@babel/helper-string-parser': 7.27.1
-      '@babel/helper-validator-identifier': 7.27.1
+      '@babel/helper-validator-identifier': 7.28.5
 
   '@colors/colors@1.5.0':
     optional: true
@@ -3301,6 +3310,26 @@ snapshots:
       vite: rolldown-vite@7.1.17(@types/node@20.19.19)(esbuild@0.25.11)(jiti@2.6.1)
       vue: 3.5.22(typescript@5.9.3)
 
+  '@vitest/browser@3.2.4(playwright@1.56.0)(rolldown-vite@7.1.17(@types/node@20.19.19)(esbuild@0.25.11)(jiti@2.6.1))(vitest@3.2.4)':
+    dependencies:
+      '@testing-library/dom': 10.4.1
+      '@testing-library/user-event': 14.6.1(@testing-library/dom@10.4.1)
+      '@vitest/mocker': 3.2.4(rolldown-vite@7.1.17(@types/node@20.19.19)(esbuild@0.25.11)(jiti@2.6.1))
+      '@vitest/utils': 3.2.4
+      magic-string: 0.30.19
+      sirv: 3.0.2
+      tinyrainbow: 2.0.0
+      vitest: 3.2.4(@types/node@20.19.19)(@vitest/browser@3.2.4)(@vitest/ui@3.2.4)(esbuild@0.25.11)(happy-dom@18.0.1)(jiti@2.6.1)
+      ws: 8.18.3
+    optionalDependencies:
+      playwright: 1.56.0
+    transitivePeerDependencies:
+      - bufferutil
+      - msw
+      - utf-8-validate
+      - vite
+    optional: true
+
   '@vitest/browser@3.2.4(playwright@1.56.0)(vite@7.1.9(@types/node@20.19.19)(jiti@2.6.1)(lightningcss@1.30.2))(vitest@3.2.4)':
     dependencies:
       '@testing-library/dom': 10.4.1
@@ -3332,7 +3361,7 @@ snapshots:
     dependencies:
       '@vitest/spy': 3.2.4
       estree-walker: 3.0.3
-      magic-string: 0.30.19
+      magic-string: 0.30.21
     optionalDependencies:
       vite: rolldown-vite@7.1.17(@types/node@20.19.19)(esbuild@0.25.11)(jiti@2.6.1)
 
@@ -3340,7 +3369,7 @@ snapshots:
     dependencies:
       '@vitest/spy': 3.2.4
       estree-walker: 3.0.3
-      magic-string: 0.30.19
+      magic-string: 0.30.21
     optionalDependencies:
       vite: 7.1.9(@types/node@20.19.19)(jiti@2.6.1)(lightningcss@1.30.2)
 
@@ -3357,7 +3386,7 @@ snapshots:
   '@vitest/snapshot@3.2.4':
     dependencies:
       '@vitest/pretty-format': 3.2.4
-      magic-string: 0.30.19
+      magic-string: 0.30.21
       pathe: 2.0.3
 
   '@vitest/spy@3.2.4':
@@ -3381,7 +3410,7 @@ snapshots:
       loupe: 3.2.1
       tinyrainbow: 2.0.0
 
-  '@voidzero-dev/vite-plus@0.0.0-c73b740b0e7ea642e09b42764afee982856c6d4d(@types/node@20.19.19)(@vitest/browser@3.2.4)(@vitest/ui@3.2.4)(axios@1.12.2)(esbuild@0.25.11)(happy-dom@18.0.1)(jiti@2.6.1)(postcss@8.5.6)(typescript@5.9.3)':
+  '@voidzero-dev/vite-plus@0.0.0-84fbc43d1750eeab1a79fd487746a513ecb38e66(@types/node@20.19.19)(@vitest/browser@3.2.4)(@vitest/ui@3.2.4)(axios@1.12.2)(esbuild@0.25.11)(happy-dom@18.0.1)(jiti@2.6.1)(postcss@8.5.6)(typescript@5.9.3)':
     dependencies:
       oxfmt: 0.2.0
       oxlint: 1.24.0(oxlint-tsgolint@0.2.1)
@@ -3436,7 +3465,7 @@ snapshots:
 
   '@vue/compiler-core@3.5.22':
     dependencies:
-      '@babel/parser': 7.28.4
+      '@babel/parser': 7.28.5
       '@vue/shared': 3.5.22
       entities: 4.5.0
       estree-walker: 2.0.2
@@ -3449,13 +3478,13 @@ snapshots:
 
   '@vue/compiler-sfc@3.5.22':
     dependencies:
-      '@babel/parser': 7.28.4
+      '@babel/parser': 7.28.5
       '@vue/compiler-core': 3.5.22
       '@vue/compiler-dom': 3.5.22
       '@vue/compiler-ssr': 3.5.22
       '@vue/shared': 3.5.22
       estree-walker: 2.0.2
-      magic-string: 0.30.19
+      magic-string: 0.30.21
       postcss: 8.5.6
       source-map-js: 1.2.1
 
@@ -3542,7 +3571,7 @@ snapshots:
 
   ast-kit@2.1.3:
     dependencies:
-      '@babel/parser': 7.28.4
+      '@babel/parser': 7.28.5
       pathe: 2.0.3
 
   asynckit@0.4.0: {}
@@ -3846,7 +3875,7 @@ snapshots:
 
   focus-trap@7.6.5:
     dependencies:
-      tabbable: 6.2.0
+      tabbable: 6.3.0
 
   follow-redirects@1.15.11: {}
 
@@ -4064,6 +4093,10 @@ snapshots:
   lz-string@1.5.0: {}
 
   magic-string@0.30.19:
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.5.5
+
+  magic-string@0.30.21:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
 
@@ -4302,15 +4335,15 @@ snapshots:
 
   rolldown-plugin-dts@0.16.12(rolldown@1.0.0-beta.44)(typescript@5.9.3):
     dependencies:
-      '@babel/generator': 7.28.3
-      '@babel/parser': 7.28.4
-      '@babel/types': 7.28.4
+      '@babel/generator': 7.28.5
+      '@babel/parser': 7.28.5
+      '@babel/types': 7.28.5
       ast-kit: 2.1.3
       birpc: 2.6.1
       debug: 4.4.3
       dts-resolver: 2.1.2
       get-tsconfig: 4.13.0
-      magic-string: 0.30.19
+      magic-string: 0.30.21
       rolldown: 1.0.0-beta.44
     optionalDependencies:
       typescript: 5.9.3
@@ -4477,7 +4510,7 @@ snapshots:
     dependencies:
       copy-anything: 4.0.5
 
-  tabbable@6.2.0: {}
+  tabbable@6.3.0: {}
 
   tailwindcss@4.1.14: {}
 
@@ -4716,7 +4749,7 @@ snapshots:
       chai: 5.3.3
       debug: 4.4.3
       expect-type: 1.2.2
-      magic-string: 0.30.19
+      magic-string: 0.30.21
       pathe: 2.0.3
       picomatch: 4.0.3
       std-env: 3.10.0
@@ -4730,7 +4763,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 20.19.19
-      '@vitest/browser': 3.2.4(playwright@1.56.0)(vite@7.1.9(@types/node@20.19.19)(jiti@2.6.1)(lightningcss@1.30.2))(vitest@3.2.4)
+      '@vitest/browser': 3.2.4(playwright@1.56.0)(rolldown-vite@7.1.17(@types/node@20.19.19)(esbuild@0.25.11)(jiti@2.6.1))(vitest@3.2.4)
       '@vitest/ui': 3.2.4(vitest@3.2.4)
       happy-dom: 18.0.1
     transitivePeerDependencies:
