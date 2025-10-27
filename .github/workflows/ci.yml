@@ -10,6 +10,7 @@ permissions: {}
 
 jobs:
   test-lint-build:
+    timeout-minutes: 5
     permissions:
       contents: read
       packages: read
