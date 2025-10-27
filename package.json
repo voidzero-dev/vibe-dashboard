@@ -19,7 +19,7 @@
     "dprint": "^0.50.2",
     "oxlint-tsgolint": "^0.3.0",
     "top-github-dependents-by-stars": "^1.0.4",
-    "vitest": "^4.0.0"
+    "vitest": "^4.0.3"
   },
   "pnpm": {
     "overrides": {
