@@ -39,7 +39,7 @@ export function MinificationTimeChart({ data }: MinificationTimeChartProps) {
           <LabelList
             dataKey='value'
             position='top'
-            formatter={(label: string) => `${label}ms`}
+            formatter={(label) => `${label}ms`}
             style={{ fontSize: '12px', fill: '#94a3b8' }}
           />
         </Bar>
