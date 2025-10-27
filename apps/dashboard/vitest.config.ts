@@ -1,5 +1,6 @@
 import tailwindcss from '@tailwindcss/vite';
 import { defineProject } from 'vitest/config';
+import { playwright } from '@vitest/browser-playwright'
 
 export default defineProject({
   plugins: [tailwindcss()],
@@ -7,7 +8,7 @@ export default defineProject({
   test: {
     browser: {
       enabled: true,
-      provider: 'playwright',
+      provider: playwright(),
       headless: true,
       instances: [
         {

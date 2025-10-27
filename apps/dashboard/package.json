@@ -11,9 +11,9 @@
     "test": "vite test"
   },
   "dependencies": {
+    "@vibe/shared": "workspace:*",
     "@vibe/ui": "workspace:*",
     "@vibe/utils": "workspace:*",
-    "@vibe/shared": "workspace:*",
     "lucide-react": "^0.548.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
@@ -29,8 +29,9 @@
     "@types/react-dom": "^19.1.7",
     "@types/react-router-dom": "^5.3.3",
     "@types/semver": "^7.7.1",
-    "@vitest/browser": "^4.0.0",
-    "@vitest/ui": "^4.0.0",
+    "@vitest/browser": "^4.0.3",
+    "@vitest/browser-playwright": "^4.0.3",
+    "@vitest/ui": "^4.0.3",
     "happy-dom": "^20.0.0",
     "playwright": "^1.55.0",
     "rolldown-vite": "^7.1.10",
