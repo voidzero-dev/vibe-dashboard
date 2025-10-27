@@ -16,7 +16,5 @@ export default defineProject({
         },
       ],
     },
-    globals: true,
-    environment: 'happy-dom',
   },
 });

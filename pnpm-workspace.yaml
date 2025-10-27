@@ -27,3 +27,4 @@ minimumReleaseAgeExclude:
   - 'vite'
   - 'vitepress'
   - 'vitest'
+  - '@vitest/*'
