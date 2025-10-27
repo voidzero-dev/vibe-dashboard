@@ -49,7 +49,7 @@ export function BuildTimeChart() {
           <LabelList
             dataKey='value'
             position='top'
-            formatter={(label) => `${label}ms`}
+            formatter={(label) => `${label as number}ms`}
             style={{ fontSize: '11px', fill: '#94a3b8' }}
           />
         </Bar>
