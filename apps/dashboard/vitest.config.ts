@@ -1,10 +1,10 @@
-import tailwindcss from '@tailwindcss/vite';
-import { defineProject } from 'vitest/config';
-import { playwright } from '@vitest/browser-playwright'
+import tailwindcss from "@tailwindcss/vite";
+import { defineProject } from "vitest/config";
+import { playwright } from "@vitest/browser-playwright";
 
 export default defineProject({
   plugins: [tailwindcss()],
-  base: '/vibe-dashboard/',
+  base: "/vibe-dashboard/",
   test: {
     browser: {
       enabled: true,
@@ -12,7 +12,7 @@ export default defineProject({
       headless: true,
       instances: [
         {
-          browser: 'chromium',
+          browser: "chromium",
         },
       ],
     },

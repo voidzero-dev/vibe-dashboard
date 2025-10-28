@@ -1,10 +1,10 @@
-import tailwindcss from '@tailwindcss/vite';
-import { defineConfig } from 'rolldown-vite';
+import tailwindcss from "@tailwindcss/vite";
+import { defineConfig } from "rolldown-vite";
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [tailwindcss()],
-  base: '/vibe-dashboard/',
+  base: "/vibe-dashboard/",
   experimental: {
     enableNativePlugin: true,
   },

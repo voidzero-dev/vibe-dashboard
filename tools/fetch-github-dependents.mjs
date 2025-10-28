@@ -1,37 +1,37 @@
 #!/usr/bin/env node
 
-import { getDependents } from 'top-github-dependents-by-stars';
-import fs from 'fs/promises';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import { getDependents } from "top-github-dependents-by-stars";
+import fs from "fs/promises";
+import path from "path";
+import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Hardcoded repositories and their packages with dependent types
 const repositories = {
-  'oxc-project/oxc': {
-    'oxlint': 'repositories',
-    'oxc-parser': 'packages'
+  "oxc-project/oxc": {
+    oxlint: "repositories",
+    "oxc-parser": "packages",
   },
-  'oxc-project/oxc-resolver': {
-    'oxc-resolver': 'packages'
+  "oxc-project/oxc-resolver": {
+    "oxc-resolver": "packages",
   },
-  'rolldown/rolldown': {
-    'rolldown': 'repositories'
+  "rolldown/rolldown": {
+    rolldown: "repositories",
   },
-  'rolldown/tsdown': {
-    'tsdown': 'repositories'
+  "rolldown/tsdown": {
+    tsdown: "repositories",
   },
 };
 
 async function fetchDependents() {
-  console.log('Fetching top GitHub dependents...');
+  console.log("Fetching top GitHub dependents...");
 
   // Check for GitHub token
   const token = process.env.GHTOPDEP_TOKEN || process.env.GITHUB_TOKEN;
   if (!token) {
-    console.error('❌ Error: GitHub token is required');
-    console.error('Please set GHTOPDEP_TOKEN or GITHUB_TOKEN environment variable');
+    console.error("❌ Error: GitHub token is required");
+    console.error("Please set GHTOPDEP_TOKEN or GITHUB_TOKEN environment variable");
     process.exit(1);
   }
 
@@ -54,23 +54,23 @@ async function fetchDependents() {
           rows: 20,
           minStars: 0,
           packageName: pkg,
-          token: token
+          token: token,
         });
 
         // Transform to our format - save both top and latest dependents
-        const topDependents = (result.repositories || []).map(repo => ({
+        const topDependents = (result.repositories || []).map((repo) => ({
           url: repo.url,
-          stars: repo.stars
+          stars: repo.stars,
         }));
 
-        const latestDependents = (result.latestDependents || []).map(repo => ({
+        const latestDependents = (result.latestDependents || []).map((repo) => ({
           url: repo.url,
-          stars: repo.stars
+          stars: repo.stars,
         }));
 
         allDependents[repoPath][pkg] = {
           topDependents,
-          latestDependents
+          latestDependents,
         };
 
         console.log(`  ✅ Found ${topDependents.length} top + ${latestDependents.length} latest dependents for ${pkg}`);
@@ -86,7 +86,7 @@ async function fetchDependents() {
         console.error(`  ❌ Error fetching dependents for ${pkg}:`, error.message);
         allDependents[repoPath][pkg] = {
           topDependents: [],
-          latestDependents: []
+          latestDependents: [],
         };
       }
     });
@@ -97,10 +97,10 @@ async function fetchDependents() {
   await Promise.all(allFetches);
 
   // Save all results to a single JSON file
-  const outputPath = path.join(__dirname, '..', 'data', 'dependents.json');
+  const outputPath = path.join(__dirname, "..", "data", "dependents.json");
 
   // Ensure data directory exists
-  await fs.mkdir(path.join(__dirname, '..', 'data'), { recursive: true });
+  await fs.mkdir(path.join(__dirname, "..", "data"), { recursive: true });
 
   // Save to JSON file with pretty formatting
   await fs.writeFile(outputPath, JSON.stringify(allDependents, null, 2));
@@ -115,7 +115,7 @@ async function fetchDependents() {
 }
 
 // Run the script
-fetchDependents().catch(error => {
-  console.error('Fatal error:', error);
+fetchDependents().catch((error) => {
+  console.error("Fatal error:", error);
   process.exit(1);
 });

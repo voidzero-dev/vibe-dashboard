@@ -1,4 +1,4 @@
-import { Bar, BarChart, CartesianGrid, LabelList, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import { Bar, BarChart, CartesianGrid, LabelList, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
 interface CompressionRatioChartProps {
   data: any[];
@@ -6,44 +6,44 @@ interface CompressionRatioChartProps {
 
 export function CompressionRatioChart({ data }: CompressionRatioChartProps) {
   return (
-    <ResponsiveContainer width='100%' height={300}>
+    <ResponsiveContainer width="100%" height={300}>
       <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-        <CartesianGrid strokeDasharray='3 3' className='stroke-slate-200 dark:stroke-slate-700' />
+        <CartesianGrid strokeDasharray="3 3" className="stroke-slate-200 dark:stroke-slate-700" />
         <XAxis
-          dataKey='name'
-          tick={{ fill: '#94a3b8', fontSize: 11 }}
-          axisLine={{ stroke: '#475569' }}
-          tickLine={{ stroke: '#475569' }}
+          dataKey="name"
+          tick={{ fill: "#94a3b8", fontSize: 11 }}
+          axisLine={{ stroke: "#475569" }}
+          tickLine={{ stroke: "#475569" }}
           angle={-45}
-          textAnchor='end'
+          textAnchor="end"
           height={60}
         />
         <YAxis
-          tick={{ fill: '#94a3b8', fontSize: 11 }}
-          axisLine={{ stroke: '#475569' }}
-          tickLine={{ stroke: '#475569' }}
+          tick={{ fill: "#94a3b8", fontSize: 11 }}
+          axisLine={{ stroke: "#475569" }}
+          tickLine={{ stroke: "#475569" }}
         />
         <Tooltip
           contentStyle={{
-            backgroundColor: 'var(--tooltip-bg)',
-            border: '1px solid var(--tooltip-border)',
-            borderRadius: '0.5rem',
-            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-            color: 'var(--tooltip-text)',
+            backgroundColor: "var(--tooltip-bg)",
+            border: "1px solid var(--tooltip-border)",
+            borderRadius: "0.5rem",
+            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+            color: "var(--tooltip-text)",
           }}
-          labelStyle={{ color: 'var(--tooltip-text)' }}
-          itemStyle={{ color: 'var(--tooltip-text)' }}
+          labelStyle={{ color: "var(--tooltip-text)" }}
+          itemStyle={{ color: "var(--tooltip-text)" }}
           formatter={(value: any, _name: any, props: any) => [
             `${value}% (${props.payload.minzippedBytes} bytes)`,
-            'Compression Ratio',
+            "Compression Ratio",
           ]}
         />
-        <Bar dataKey='value' fill='#4ade80'>
+        <Bar dataKey="value" fill="#4ade80">
           <LabelList
-            dataKey='value'
-            position='top'
+            dataKey="value"
+            position="top"
             formatter={(label) => `${label as number}%`}
-            style={{ fontSize: '10px', fill: '#94a3b8' }}
+            style={{ fontSize: "10px", fill: "#94a3b8" }}
           />
         </Bar>
       </BarChart>

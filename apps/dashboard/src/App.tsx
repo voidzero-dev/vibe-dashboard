@@ -1,25 +1,25 @@
-import { lazy, Suspense } from 'react';
-import { Route, Routes } from 'react-router-dom';
-import Layout from './components/Layout';
+import { lazy, Suspense } from "react";
+import { Route, Routes } from "react-router-dom";
+import Layout from "./components/Layout";
 
 // Lazy load all page components for code-splitting
-const HomePage = lazy(() => import('./pages/HomePage'));
-const MinificationBenchmarksPage = lazy(() => import('./pages/MinificationBenchmarksPage'));
-const NpmPackagesPage = lazy(() => import('./pages/NpmPackagesPage'));
-const RolldownStatsPage = lazy(() => import('./pages/RolldownStatsPage'));
-const DependentsPage = lazy(() => import('./pages/DependentsPage'));
+const HomePage = lazy(() => import("./pages/HomePage"));
+const MinificationBenchmarksPage = lazy(() => import("./pages/MinificationBenchmarksPage"));
+const NpmPackagesPage = lazy(() => import("./pages/NpmPackagesPage"));
+const RolldownStatsPage = lazy(() => import("./pages/RolldownStatsPage"));
+const DependentsPage = lazy(() => import("./pages/DependentsPage"));
 
 // Loading component for Suspense fallback
 const PageLoader = () => (
-  <div className='flex items-center justify-center min-h-[400px]'>
-    <div className='text-gray-500 dark:text-gray-400'>Loading...</div>
+  <div className="flex items-center justify-center min-h-[400px]">
+    <div className="text-gray-500 dark:text-gray-400">Loading...</div>
   </div>
 );
 
 function App() {
   return (
     <Routes>
-      <Route path='/' element={<Layout />}>
+      <Route path="/" element={<Layout />}>
         <Route
           index
           element={
@@ -29,7 +29,7 @@ function App() {
           }
         />
         <Route
-          path='rolldown-stats'
+          path="rolldown-stats"
           element={
             <Suspense fallback={<PageLoader />}>
               <RolldownStatsPage />
@@ -37,7 +37,7 @@ function App() {
           }
         />
         <Route
-          path='minification'
+          path="minification"
           element={
             <Suspense fallback={<PageLoader />}>
               <MinificationBenchmarksPage />
@@ -45,7 +45,7 @@ function App() {
           }
         />
         <Route
-          path='npm-packages'
+          path="npm-packages"
           element={
             <Suspense fallback={<PageLoader />}>
               <NpmPackagesPage />
@@ -53,7 +53,7 @@ function App() {
           }
         />
         <Route
-          path='dependents'
+          path="dependents"
           element={
             <Suspense fallback={<PageLoader />}>
               <DependentsPage />

@@ -1,22 +1,22 @@
-import { render } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
-import { describe, expect, it } from 'vitest';
-import App from '../App';
-import MinificationBenchmarksPage from '../pages/MinificationBenchmarksPage';
-import NpmPackagesPage from '../pages/NpmPackagesPage';
-import RolldownStatsPage from '../pages/RolldownStatsPage';
+import { render } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
+import { describe, expect, it } from "vitest";
+import App from "../App";
+import MinificationBenchmarksPage from "../pages/MinificationBenchmarksPage";
+import NpmPackagesPage from "../pages/NpmPackagesPage";
+import RolldownStatsPage from "../pages/RolldownStatsPage";
 
-describe('Pages rendering tests', () => {
-  it('should render App component without errors', () => {
+describe("Pages rendering tests", () => {
+  it("should render App component without errors", () => {
     const { container } = render(
-      <MemoryRouter initialEntries={['/']}>
+      <MemoryRouter initialEntries={["/"]}>
         <App />
       </MemoryRouter>,
     );
     expect(container).toBeTruthy();
   });
 
-  it('should render RolldownStatsPage without errors', () => {
+  it("should render RolldownStatsPage without errors", () => {
     const { container } = render(
       <MemoryRouter>
         <RolldownStatsPage />
@@ -25,7 +25,7 @@ describe('Pages rendering tests', () => {
     expect(container).toBeTruthy();
   });
 
-  it('should render MinificationBenchmarksPage without errors', () => {
+  it("should render MinificationBenchmarksPage without errors", () => {
     const { container } = render(
       <MemoryRouter>
         <MinificationBenchmarksPage />
@@ -34,7 +34,7 @@ describe('Pages rendering tests', () => {
     expect(container).toBeTruthy();
   });
 
-  it('should render NpmPackagesPage without errors', () => {
+  it("should render NpmPackagesPage without errors", () => {
     const { container } = render(
       <MemoryRouter>
         <NpmPackagesPage />
@@ -43,10 +43,10 @@ describe('Pages rendering tests', () => {
     expect(container).toBeTruthy();
   });
 
-  it('should render all routes without errors', () => {
-    const routes = ['/', '/minification', '/npm-packages'];
+  it("should render all routes without errors", () => {
+    const routes = ["/", "/minification", "/npm-packages"];
 
-    routes.forEach(route => {
+    routes.forEach((route) => {
       const { container } = render(
         <MemoryRouter initialEntries={[route]}>
           <App />

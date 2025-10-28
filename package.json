@@ -6,7 +6,7 @@
   "packageManager": "pnpm@10.19.0",
   "type": "module",
   "scripts": {
-    "ready": "vite run lint && vite test && vite run build",
+    "ready": "vite fmt && vite run lint && vite test && vite run build",
     "dev": "pnpm --filter dashboard dev",
     "build": "vite run @vibe/dashboard#build",
     "lint": "vite lint --type-aware",
