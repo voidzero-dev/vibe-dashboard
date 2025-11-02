@@ -14,7 +14,7 @@
     "@vibe/shared": "workspace:*",
     "@vibe/ui": "workspace:*",
     "@vibe/utils": "workspace:*",
-    "lucide-react": "^0.548.0",
+    "lucide-react": "^0.552.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.8.2",
