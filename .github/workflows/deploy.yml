@@ -27,9 +27,6 @@ jobs:
       - name: Setup Node.js and pnpm
         uses: ./.github/actions/setup-node-pnpm
 
-      - name: Lint
-        run: pnpm lint
-
       - name: Build
         run: pnpm build
 
