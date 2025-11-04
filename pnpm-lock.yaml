@@ -17,15 +17,15 @@ importers:
 
   .:
     devDependencies:
+      '@typescript-eslint/scope-manager':
+        specifier: ^8.46.2
+        version: 8.46.2
       '@voidzero-dev/vite-plus':
         specifier: latest
         version: 0.0.0-4bb4defd258050b251057f663414d43752d9ecb0(@arethetypeswrong/core@0.18.2)(@types/node@20.19.17)(axios@1.13.1)(esbuild@0.25.12)(happy-dom@20.0.8)(jiti@2.6.1)(postcss@8.5.6)(publint@0.3.15)(typescript@5.9.2)(unplugin-lightningcss@0.4.3)(unplugin-unused@0.5.5)(unrun@0.2.1)
       dprint:
         specifier: ^0.50.2
         version: 0.50.2
-      oxlint-tsgolint:
-        specifier: ^0.4.0
-        version: 0.4.0
       playwright:
         specifier: ^1.56.1
         version: 1.56.1
@@ -1121,6 +1121,18 @@ packages:
   '@types/whatwg-mimetype@3.0.2':
     resolution: {integrity: sha512-c2AKvDT8ToxLIOUlN51gTiHXflsfIFisS4pO7pDPoKouJCESkhZnEy623gwP9laCy5lnLDAw1vAzu2vM2YLOrA==}
 
+  '@typescript-eslint/scope-manager@8.46.2':
+    resolution: {integrity: sha512-LF4b/NmGvdWEHD2H4MsHD8ny6JpiVNDzrSZr3CsckEgCbAGZbYM4Cqxvi9L+WqDMT+51Ozy7lt2M+d0JLEuBqA==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@typescript-eslint/types@8.46.2':
+    resolution: {integrity: sha512-lNCWCbq7rpg7qDsQrd3D6NyWYu+gkTENkG5IKYhUIcxSb59SQC/hEQ+MrG4sTgBVghTonNWq42bA/d4yYumldQ==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@typescript-eslint/visitor-keys@8.46.2':
+    resolution: {integrity: sha512-tUFMXI4gxzzMXt4xpGJEsBsTox0XbNQ1y94EwlD/CuZwFcQP79xfQqMhau9HsRc/J0cAPA/HZt1dZPtGn9V/7w==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
   '@ungap/structured-clone@1.3.0':
     resolution: {integrity: sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==}
 
@@ -1587,6 +1599,10 @@ packages:
   escape-string-regexp@5.0.0:
     resolution: {integrity: sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==}
     engines: {node: '>=12'}
+
+  eslint-visitor-keys@4.2.1:
+    resolution: {integrity: sha512-Uhdk5sfqcee/9H/rCOJikYz67o0a2Tw2hGRPOG2Y1R2dg7brRe1uG0yaNQDHu+TO/uQPF/5eCapvYSmHUjt7JQ==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   estree-walker@2.0.2:
     resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
@@ -3283,6 +3299,18 @@ snapshots:
   '@types/whatwg-mimetype@3.0.2':
     optional: true
 
+  '@typescript-eslint/scope-manager@8.46.2':
+    dependencies:
+      '@typescript-eslint/types': 8.46.2
+      '@typescript-eslint/visitor-keys': 8.46.2
+
+  '@typescript-eslint/types@8.46.2': {}
+
+  '@typescript-eslint/visitor-keys@8.46.2':
+    dependencies:
+      '@typescript-eslint/types': 8.46.2
+      eslint-visitor-keys: 4.2.1
+
   '@ungap/structured-clone@1.3.0': {}
 
   '@vitejs/plugin-vue@6.0.1(rolldown-vite@7.1.20(@types/node@20.19.17)(esbuild@0.25.12)(jiti@2.6.1))(vue@3.5.22(typescript@5.9.2))':
@@ -3832,6 +3860,8 @@ snapshots:
 
   escape-string-regexp@5.0.0:
     optional: true
+
+  eslint-visitor-keys@4.2.1: {}
 
   estree-walker@2.0.2: {}
 
