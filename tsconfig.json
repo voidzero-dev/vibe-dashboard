@@ -21,9 +21,8 @@
     "noFallthroughCasesInSwitch": true,
 
     /* Path mapping for monorepo */
-    "baseUrl": ".",
     "paths": {
-      "@vibe/*": ["packages/*/src"]
+      "@vibe/*": ["./packages/*/src"]
     }
   },
   "include": ["apps/*/src", "packages/*/src"],
