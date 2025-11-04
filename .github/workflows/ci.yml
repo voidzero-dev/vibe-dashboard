@@ -32,7 +32,11 @@ jobs:
       - name: Install Playwright browsers
         run: pnpm exec playwright install chromium
 
-      - run: pnpm ready
+      - name: Check ready
+        run: |
+          pnpm ready
+          # run again to check cache hits
+          pnpm ready
 
       - name: Check build artifacts
         run: |
