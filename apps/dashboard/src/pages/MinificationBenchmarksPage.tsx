@@ -38,7 +38,7 @@ function MinificationBenchmarksPage() {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-medium text-green-600 dark:text-green-300">Fastest</p>
-              <p className="text-2xl font-bold text-green-900 dark:text-white">ESBuild</p>
+              <p className="text-2xl font-bold text-green-900 dark:text-white">OXC</p>
             </div>
             <Timer className="w-8 h-8 text-green-500" />
           </div>
