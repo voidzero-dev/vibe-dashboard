@@ -15,12 +15,12 @@
     "generate": "node tools/override-rolldown.mjs --stats"
   },
   "devDependencies": {
-    "@typescript-eslint/scope-manager": "^8.46.2",
+    "@typescript-eslint/scope-manager": "^8.46.3",
     "@voidzero-dev/vite-plus": "latest",
     "dprint": "^0.50.2",
     "playwright": "^1.56.1",
     "top-github-dependents-by-stars": "^1.0.4",
-    "vitest": "^4.0.6"
+    "vitest": "^4.0.8"
   },
   "pnpm": {
     "overrides": {
