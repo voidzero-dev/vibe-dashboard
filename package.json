@@ -15,7 +15,7 @@
     "generate": "node tools/override-rolldown.mjs --stats"
   },
   "devDependencies": {
-    "@typescript-eslint/scope-manager": "^8.46.3",
+    "@typescript-eslint/scope-manager": "^8.46.4",
     "@voidzero-dev/vite-plus": "latest",
     "dprint": "^0.50.2",
     "playwright": "^1.56.1",
