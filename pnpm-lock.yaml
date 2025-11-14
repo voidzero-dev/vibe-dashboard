@@ -22,7 +22,7 @@ importers:
         version: 8.46.4
       '@voidzero-dev/vite-plus':
         specifier: latest
-        version: 0.0.0-9bafab1070e44ce16ac4e7640de5e7e4783076d6(@arethetypeswrong/core@0.18.2)(@edge-runtime/vm@5.0.0)(@types/debug@4.1.12)(@types/node@20.19.17)(axios@1.13.2)(esbuild@0.25.12)(happy-dom@20.0.8)(jiti@2.6.1)(jsdom@27.1.0)(less@4.4.2)(markdown-it-mathjax3@4.3.2)(oxc-minify@0.96.0)(postcss@8.5.6)(publint@0.3.15)(sass-embedded@1.93.3)(sass@1.93.3)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(typescript@5.9.2)(unplugin-lightningcss@0.4.3)(unplugin-unused@0.5.5)(unrun@0.2.1)(yaml@2.8.1)
+        version: 0.0.0-5c3a1aef54f8524db0e0df0016888b268f1c79b0(@arethetypeswrong/core@0.18.2)(@edge-runtime/vm@5.0.0)(@types/debug@4.1.12)(@types/node@20.19.17)(axios@1.13.2)(esbuild@0.25.12)(happy-dom@20.0.8)(jiti@2.6.1)(jsdom@27.1.0)(less@4.4.2)(markdown-it-mathjax3@4.3.2)(oxc-minify@0.96.0)(postcss@8.5.6)(publint@0.3.15)(sass-embedded@1.93.3)(sass@1.93.3)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(typescript@5.9.2)(unplugin-lightningcss@0.4.3)(unplugin-unused@0.5.5)(unrun@0.2.1)(yaml@2.8.1)
       dprint:
         specifier: ^0.50.2
         version: 0.50.2
@@ -212,8 +212,8 @@ packages:
   '@braidai/lang@1.1.2':
     resolution: {integrity: sha512-qBcknbBufNHlui137Hft8xauQMTZDKdophmLFv05r2eNmdIv/MlPuP4TdUknHG68UdWLgVZwgxVe735HzJNIwA==}
 
-  '@bufbuild/protobuf@2.10.0':
-    resolution: {integrity: sha512-fdRs9PSrBF7QUntpZpq6BTw58fhgGJojgg39m9oFOJGZT+nip9b0so5cYY1oWl5pvemDLr0cPPsH46vwThEbpQ==}
+  '@bufbuild/protobuf@2.10.1':
+    resolution: {integrity: sha512-ckS3+vyJb5qGpEYv/s1OebUHDi/xSNtfgw1wqKZo7MR9F2z+qXr0q5XagafAG/9O0QPVIUfST0smluYSTpYFkg==}
 
   '@colors/colors@1.5.0':
     resolution: {integrity: sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==}
@@ -243,8 +243,8 @@ packages:
     peerDependencies:
       '@csstools/css-tokenizer': ^3.0.4
 
-  '@csstools/css-syntax-patches-for-csstree@1.0.15':
-    resolution: {integrity: sha512-q0p6zkVq2lJnmzZVPR33doA51G7YOja+FBvRdp5ISIthL0MtFCgYHHhR563z9WFGxcOn0WfjSkPDJ5Qig3H3Sw==}
+  '@csstools/css-syntax-patches-for-csstree@1.0.16':
+    resolution: {integrity: sha512-2SpS4/UaWQaGpBINyG5ZuCHnUDeVByOhvbkARwfmnfxDvTaj80yOI1cD8Tw93ICV5Fx4fnyDKWQZI1CDtcWyUg==}
     engines: {node: '>=18'}
 
   '@csstools/css-tokenizer@3.0.4':
@@ -1579,8 +1579,8 @@ packages:
   '@vitest/utils@4.0.8':
     resolution: {integrity: sha512-pdk2phO5NDvEFfUTxcTP8RFYjVj/kfLSPIN5ebP2Mu9kcIMeAQTbknqcFEyBcC4z2pJlJI9aS5UQjcYfhmKAow==}
 
-  '@voidzero-dev/vite-plus@0.0.0-9bafab1070e44ce16ac4e7640de5e7e4783076d6':
-    resolution: {integrity: sha512-QPm/8tqND57TeuEMDfDnDKIZhmxM1Kyuvk8zGNDA7DucZxGJL5T5IhtWLEwPy50WEFri8UecH4YjKUHW11HxDQ==, tarball: https://npm.pkg.github.com/download/@voidzero-dev/vite-plus/0.0.0-9bafab1070e44ce16ac4e7640de5e7e4783076d6/7fabdb6e7e59b52e58c93332be6ef2541877e8df}
+  '@voidzero-dev/vite-plus@0.0.0-5c3a1aef54f8524db0e0df0016888b268f1c79b0':
+    resolution: {integrity: sha512-eJdIIudCxNshQYj2Yt8l6VlCVW+3m1FsY2MpRaXFMto/w8vlmGhmk/uBn6vwuJZTvYxB58fYVhKofqw7pxcNDQ==, tarball: https://npm.pkg.github.com/download/@voidzero-dev/vite-plus/0.0.0-5c3a1aef54f8524db0e0df0016888b268f1c79b0/e00dfe364200971f4885b5a3ce58d2e20d2154dd}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
     peerDependencies:
@@ -3554,7 +3554,7 @@ snapshots:
 
   '@braidai/lang@1.1.2': {}
 
-  '@bufbuild/protobuf@2.10.0': {}
+  '@bufbuild/protobuf@2.10.1': {}
 
   '@colors/colors@1.5.0':
     optional: true
@@ -3577,7 +3577,7 @@ snapshots:
     dependencies:
       '@csstools/css-tokenizer': 3.0.4
 
-  '@csstools/css-syntax-patches-for-csstree@1.0.15': {}
+  '@csstools/css-syntax-patches-for-csstree@1.0.16': {}
 
   '@csstools/css-tokenizer@3.0.4': {}
 
@@ -4587,7 +4587,7 @@ snapshots:
       '@vitest/pretty-format': 4.0.8
       tinyrainbow: 3.0.3
 
-  '@voidzero-dev/vite-plus@0.0.0-9bafab1070e44ce16ac4e7640de5e7e4783076d6(@arethetypeswrong/core@0.18.2)(@edge-runtime/vm@5.0.0)(@types/debug@4.1.12)(@types/node@20.19.17)(axios@1.13.2)(esbuild@0.25.12)(happy-dom@20.0.8)(jiti@2.6.1)(jsdom@27.1.0)(less@4.4.2)(markdown-it-mathjax3@4.3.2)(oxc-minify@0.96.0)(postcss@8.5.6)(publint@0.3.15)(sass-embedded@1.93.3)(sass@1.93.3)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(typescript@5.9.2)(unplugin-lightningcss@0.4.3)(unplugin-unused@0.5.5)(unrun@0.2.1)(yaml@2.8.1)':
+  '@voidzero-dev/vite-plus@0.0.0-5c3a1aef54f8524db0e0df0016888b268f1c79b0(@arethetypeswrong/core@0.18.2)(@edge-runtime/vm@5.0.0)(@types/debug@4.1.12)(@types/node@20.19.17)(axios@1.13.2)(esbuild@0.25.12)(happy-dom@20.0.8)(jiti@2.6.1)(jsdom@27.1.0)(less@4.4.2)(markdown-it-mathjax3@4.3.2)(oxc-minify@0.96.0)(postcss@8.5.6)(publint@0.3.15)(sass-embedded@1.93.3)(sass@1.93.3)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(typescript@5.9.2)(unplugin-lightningcss@0.4.3)(unplugin-unused@0.5.5)(unrun@0.2.1)(yaml@2.8.1)':
     dependencies:
       '@arethetypeswrong/core': 0.18.2
       '@docsearch/css': 4.3.2
@@ -4971,7 +4971,7 @@ snapshots:
   cssstyle@5.3.3:
     dependencies:
       '@asamuzakjp/css-color': 4.0.5
-      '@csstools/css-syntax-patches-for-csstree': 1.0.15
+      '@csstools/css-syntax-patches-for-csstree': 1.0.16
       css-tree: 3.1.0
 
   csstype@3.1.3: {}
@@ -6072,7 +6072,7 @@ snapshots:
 
   sass-embedded@1.93.3:
     dependencies:
-      '@bufbuild/protobuf': 2.10.0
+      '@bufbuild/protobuf': 2.10.1
       buffer-builder: 0.2.0
       colorjs.io: 0.5.2
       immutable: 5.1.4
