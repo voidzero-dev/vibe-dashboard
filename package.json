@@ -24,7 +24,7 @@
   },
   "pnpm": {
     "overrides": {
-      "vite": "npm:rolldown-vite@7.2.2"
+      "vite": "npm:rolldown-vite@7.2.4"
     },
     "onlyBuiltDependencies": [
       "@tailwindcss/oxide",
