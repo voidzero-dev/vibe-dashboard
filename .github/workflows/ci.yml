@@ -10,7 +10,7 @@ permissions: {}
 
 jobs:
   ci:
-    timeout-minutes: 5
+    timeout-minutes: 15
     permissions:
       contents: read
       packages: read
@@ -49,7 +49,7 @@ jobs:
           fi
 
   global:
-    timeout-minutes: 5
+    timeout-minutes: 15
     permissions:
       contents: read
       packages: read
@@ -81,4 +81,4 @@ jobs:
 
       - run: vite fmt -c .oxfmtrc.jsonc --check
 
-      - run: vite lint -c oxlintrc.json
+      - run: vite lint -c .oxlintrc.json
