@@ -10,7 +10,7 @@ permissions: {}
 
 jobs:
   ci:
-    timeout-minutes: 5
+    timeout-minutes: 15
     permissions:
       contents: read
       packages: read
@@ -32,6 +32,11 @@ jobs:
       - name: Install Playwright browsers
         run: pnpm exec playwright install chromium
 
+
+      - name: Check Linux rolldown
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          node -e "console.log(require('./node_modules/@voidzero-dev/vite-plus/dist/rolldown/shared/rolldown-binding.linux-x64-gnu.node'))"
       - name: Check ready
         run: |
           pnpm ready
@@ -49,7 +54,7 @@ jobs:
           fi
 
   global:
-    timeout-minutes: 5
+    timeout-minutes: 15
     permissions:
       contents: read
       packages: read
@@ -81,4 +86,4 @@ jobs:
 
       - run: vite fmt -c .oxfmtrc.jsonc --check
 
-      - run: vite lint -c oxlintrc.json
+      - run: vite lint -c .oxlintrc.json
