@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "A frontend dashboard for displaying different metrics using bar charts",
   "private": true,
-  "packageManager": "pnpm@10.20.0",
+  "packageManager": "pnpm@10.22.0",
   "type": "module",
   "scripts": {
     "ready": "vite fmt && vite run lint && vite test && vite run build",
