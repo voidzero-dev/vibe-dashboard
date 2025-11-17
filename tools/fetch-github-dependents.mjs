@@ -9,18 +9,19 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Hardcoded repositories and their packages with dependent types
 const repositories = {
-  "oxc-project/oxc": {
-    oxlint: "repositories",
-    "oxc-parser": "packages",
-  },
-  "oxc-project/oxc-resolver": {
-    "oxc-resolver": "packages",
-  },
   "rolldown/rolldown": {
     rolldown: "repositories",
   },
   "rolldown/tsdown": {
     tsdown: "repositories",
+  },
+  "oxc-project/oxc": {
+    oxlint: "repositories",
+    oxfmt: "repositories",
+    "oxc-parser": "packages",
+  },
+  "oxc-project/oxc-resolver": {
+    "oxc-resolver": "packages",
   },
 };
 
