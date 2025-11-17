@@ -84,6 +84,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - run: vite --version
       - run: vite fmt -c .oxfmtrc.jsonc --check
 
       - run: vite lint -c .oxlintrc.json
