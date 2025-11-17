@@ -9,7 +9,7 @@
     "ready": "vite fmt && vite run lint && vite test && vite run build",
     "dev": "pnpm --filter dashboard dev",
     "build": "vite run @vibe/dashboard#build",
-    "lint": "vite lint --type-aware",
+    "lint": "vite lint --type-aware --threads 4",
     "test": "vite test",
     "fmt": "vite fmt",
     "generate": "node tools/override-rolldown.mjs --stats"

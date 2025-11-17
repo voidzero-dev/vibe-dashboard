@@ -22,7 +22,7 @@ importers:
         version: 8.46.4
       '@voidzero-dev/vite-plus':
         specifier: latest
-        version: 0.0.0-dc31af48278cec4f43d9c10a09c7b752b8dc9b0e(@arethetypeswrong/core@0.18.2)(@edge-runtime/vm@5.0.0)(@types/debug@4.1.12)(@types/node@24.10.1)(@vitest/browser-playwright@4.0.9)(@vitest/browser-preview@4.0.9)(@vitest/browser-webdriverio@4.0.9)(@vitest/ui@4.0.9)(axios@1.13.2)(esbuild@0.25.12)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.2.0)(less@4.4.2)(markdown-it-mathjax3@4.3.2)(oxc-minify@0.97.0)(postcss@8.5.6)(publint@0.3.15)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(typescript@5.9.3)(unplugin-lightningcss@0.4.3)(unplugin-unused@0.5.6)(unrun@0.2.9)(yaml@2.8.1)
+        version: 0.0.0-e7dc0e910d440ff0a1fdfab6bd0e66d4ef03b0d4(@arethetypeswrong/core@0.18.2)(@edge-runtime/vm@5.0.0)(@types/debug@4.1.12)(@types/node@24.10.1)(@vitest/browser-playwright@4.0.9)(@vitest/browser-preview@4.0.9)(@vitest/browser-webdriverio@4.0.9)(@vitest/ui@4.0.9)(axios@1.13.2)(esbuild@0.25.12)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.2.0)(less@4.4.2)(markdown-it-mathjax3@4.3.2)(oxc-minify@0.97.0)(postcss@8.5.6)(publint@0.3.15)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(typescript@5.9.3)(unplugin-lightningcss@0.4.3)(unplugin-unused@0.5.6)(unrun@0.2.9)(vite@7.2.2(@types/node@24.10.1)(jiti@2.6.1)(less@4.4.2)(lightningcss@1.30.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1))(yaml@2.8.1)
       dprint:
         specifier: ^0.50.2
         version: 0.50.2
@@ -1559,8 +1559,8 @@ packages:
   '@vitest/utils@4.0.9':
     resolution: {integrity: sha512-cEol6ygTzY4rUPvNZM19sDf7zGa35IYTm9wfzkHoT/f5jX10IOY7QleWSOh5T0e3I3WVozwK5Asom79qW8DiuQ==}
 
-  '@voidzero-dev/vite-plus@0.0.0-dc31af48278cec4f43d9c10a09c7b752b8dc9b0e':
-    resolution: {integrity: sha512-NsKQHptN4xa+u5/le9v8Zu93QqqGCky/O8APaMOgABC7vCIASDAZ3FH6leErhxPVCDSaidjh80Wfde8P7SfJJw==, tarball: https://npm.pkg.github.com/download/@voidzero-dev/vite-plus/0.0.0-dc31af48278cec4f43d9c10a09c7b752b8dc9b0e/88e608875920e18fb34aa68a199ab1aeb1d24256}
+  '@voidzero-dev/vite-plus@0.0.0-e7dc0e910d440ff0a1fdfab6bd0e66d4ef03b0d4':
+    resolution: {integrity: sha512-3xurP3mkEzRqS3nXEFDrCDS+DCCFmueBoyvaG9CT+B05uZmS9YDljFpBRNfMPhoxWsVlp6WD9o1RcMQ8p8GJoQ==, tarball: https://npm.pkg.github.com/download/@voidzero-dev/vite-plus/0.0.0-e7dc0e910d440ff0a1fdfab6bd0e66d4ef03b0d4/ab3c10ad92214550d86a17b7f2969b91a0bcdd22}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
     peerDependencies:
@@ -4954,24 +4954,11 @@ snapshots:
 
   '@ungap/structured-clone@1.3.0': {}
 
-  '@vitejs/plugin-vue@6.0.1(rolldown-vite@7.2.4(@types/node@24.10.1)(esbuild@0.25.12)(jiti@2.6.1)(less@4.4.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1))(vue@3.5.24(typescript@5.9.3))':
+  '@vitejs/plugin-vue@6.0.1(vite@7.2.2(@types/node@24.10.1)(jiti@2.6.1)(less@4.4.2)(lightningcss@1.30.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1))(vue@3.5.24(typescript@5.9.3))':
     dependencies:
       '@rolldown/pluginutils': 1.0.0-beta.29
-      vite: rolldown-vite@7.2.4(@types/node@24.10.1)(esbuild@0.25.12)(jiti@2.6.1)(less@4.4.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1)
+      vite: 7.2.2(@types/node@24.10.1)(jiti@2.6.1)(less@4.4.2)(lightningcss@1.30.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1)
       vue: 3.5.24(typescript@5.9.3)
-
-  '@vitest/browser-playwright@4.0.9(playwright@1.56.1)(rolldown-vite@7.2.4(@types/node@24.10.1)(esbuild@0.25.12)(jiti@2.6.1)(less@4.4.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1))(vitest@4.0.9)':
-    dependencies:
-      '@vitest/browser': 4.0.9(rolldown-vite@7.2.4(@types/node@24.10.1)(esbuild@0.25.12)(jiti@2.6.1)(less@4.4.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1))(vitest@4.0.9)
-      '@vitest/mocker': 4.0.9(rolldown-vite@7.2.4(@types/node@24.10.1)(esbuild@0.25.12)(jiti@2.6.1)(less@4.4.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1))
-      playwright: 1.56.1
-      tinyrainbow: 3.0.3
-      vitest: 4.0.9(@edge-runtime/vm@5.0.0)(@types/debug@4.1.12)(@types/node@24.10.1)(@vitest/browser-playwright@4.0.9)(@vitest/browser-preview@4.0.9)(@vitest/browser-webdriverio@4.0.9)(@vitest/ui@4.0.9)(esbuild@0.25.12)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.2.0)(less@4.4.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1)
-    transitivePeerDependencies:
-      - bufferutil
-      - msw
-      - utf-8-validate
-      - vite
 
   '@vitest/browser-playwright@4.0.9(playwright@1.56.1)(vite@7.2.2(@types/node@24.10.1)(jiti@2.6.1)(less@4.4.2)(lightningcss@1.30.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1))(vitest@4.0.9)':
     dependencies:
@@ -4979,18 +4966,6 @@ snapshots:
       '@vitest/mocker': 4.0.9(vite@7.2.2(@types/node@24.10.1)(jiti@2.6.1)(less@4.4.2)(lightningcss@1.30.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1))
       playwright: 1.56.1
       tinyrainbow: 3.0.3
-      vitest: 4.0.9(@edge-runtime/vm@5.0.0)(@types/debug@4.1.12)(@types/node@24.10.1)(@vitest/browser-playwright@4.0.9)(@vitest/browser-preview@4.0.9)(@vitest/browser-webdriverio@4.0.9)(@vitest/ui@4.0.9)(esbuild@0.25.12)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.2.0)(less@4.4.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1)
-    transitivePeerDependencies:
-      - bufferutil
-      - msw
-      - utf-8-validate
-      - vite
-
-  '@vitest/browser-preview@4.0.9(rolldown-vite@7.2.4(@types/node@24.10.1)(esbuild@0.25.12)(jiti@2.6.1)(less@4.4.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1))(vitest@4.0.9)':
-    dependencies:
-      '@testing-library/dom': 10.4.1
-      '@testing-library/user-event': 14.6.1(@testing-library/dom@10.4.1)
-      '@vitest/browser': 4.0.9(rolldown-vite@7.2.4(@types/node@24.10.1)(esbuild@0.25.12)(jiti@2.6.1)(less@4.4.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1))(vitest@4.0.9)
       vitest: 4.0.9(@edge-runtime/vm@5.0.0)(@types/debug@4.1.12)(@types/node@24.10.1)(@vitest/browser-playwright@4.0.9)(@vitest/browser-preview@4.0.9)(@vitest/browser-webdriverio@4.0.9)(@vitest/ui@4.0.9)(esbuild@0.25.12)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.2.0)(less@4.4.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1)
     transitivePeerDependencies:
       - bufferutil
@@ -5009,42 +4984,12 @@ snapshots:
       - msw
       - utf-8-validate
       - vite
-    optional: true
-
-  '@vitest/browser-webdriverio@4.0.9(rolldown-vite@7.2.4(@types/node@24.10.1)(esbuild@0.25.12)(jiti@2.6.1)(less@4.4.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1))(vitest@4.0.9)(webdriverio@9.20.0)':
-    dependencies:
-      '@vitest/browser': 4.0.9(rolldown-vite@7.2.4(@types/node@24.10.1)(esbuild@0.25.12)(jiti@2.6.1)(less@4.4.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1))(vitest@4.0.9)
-      vitest: 4.0.9(@edge-runtime/vm@5.0.0)(@types/debug@4.1.12)(@types/node@24.10.1)(@vitest/browser-playwright@4.0.9)(@vitest/browser-preview@4.0.9)(@vitest/browser-webdriverio@4.0.9)(@vitest/ui@4.0.9)(esbuild@0.25.12)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.2.0)(less@4.4.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1)
-      webdriverio: 9.20.0
-    transitivePeerDependencies:
-      - bufferutil
-      - msw
-      - utf-8-validate
-      - vite
 
   '@vitest/browser-webdriverio@4.0.9(vite@7.2.2(@types/node@24.10.1)(jiti@2.6.1)(less@4.4.2)(lightningcss@1.30.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1))(vitest@4.0.9)(webdriverio@9.20.0)':
     dependencies:
       '@vitest/browser': 4.0.9(vite@7.2.2(@types/node@24.10.1)(jiti@2.6.1)(less@4.4.2)(lightningcss@1.30.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1))(vitest@4.0.9)
       vitest: 4.0.9(@edge-runtime/vm@5.0.0)(@types/debug@4.1.12)(@types/node@24.10.1)(@vitest/browser-playwright@4.0.9)(@vitest/browser-preview@4.0.9)(@vitest/browser-webdriverio@4.0.9)(@vitest/ui@4.0.9)(esbuild@0.25.12)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.2.0)(less@4.4.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1)
       webdriverio: 9.20.0
-    transitivePeerDependencies:
-      - bufferutil
-      - msw
-      - utf-8-validate
-      - vite
-    optional: true
-
-  '@vitest/browser@4.0.9(rolldown-vite@7.2.4(@types/node@24.10.1)(esbuild@0.25.12)(jiti@2.6.1)(less@4.4.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1))(vitest@4.0.9)':
-    dependencies:
-      '@vitest/mocker': 4.0.9(rolldown-vite@7.2.4(@types/node@24.10.1)(esbuild@0.25.12)(jiti@2.6.1)(less@4.4.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1))
-      '@vitest/utils': 4.0.9
-      magic-string: 0.30.21
-      pixelmatch: 7.1.0
-      pngjs: 7.0.0
-      sirv: 3.0.2
-      tinyrainbow: 3.0.3
-      vitest: 4.0.9(@edge-runtime/vm@5.0.0)(@types/debug@4.1.12)(@types/node@24.10.1)(@vitest/browser-playwright@4.0.9)(@vitest/browser-preview@4.0.9)(@vitest/browser-webdriverio@4.0.9)(@vitest/ui@4.0.9)(esbuild@0.25.12)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.2.0)(less@4.4.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1)
-      ws: 8.18.3
     transitivePeerDependencies:
       - bufferutil
       - msw
@@ -5126,7 +5071,7 @@ snapshots:
       '@vitest/pretty-format': 4.0.9
       tinyrainbow: 3.0.3
 
-  '@voidzero-dev/vite-plus@0.0.0-dc31af48278cec4f43d9c10a09c7b752b8dc9b0e(@arethetypeswrong/core@0.18.2)(@edge-runtime/vm@5.0.0)(@types/debug@4.1.12)(@types/node@24.10.1)(@vitest/browser-playwright@4.0.9)(@vitest/browser-preview@4.0.9)(@vitest/browser-webdriverio@4.0.9)(@vitest/ui@4.0.9)(axios@1.13.2)(esbuild@0.25.12)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.2.0)(less@4.4.2)(markdown-it-mathjax3@4.3.2)(oxc-minify@0.97.0)(postcss@8.5.6)(publint@0.3.15)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(typescript@5.9.3)(unplugin-lightningcss@0.4.3)(unplugin-unused@0.5.6)(unrun@0.2.9)(yaml@2.8.1)':
+  '@voidzero-dev/vite-plus@0.0.0-e7dc0e910d440ff0a1fdfab6bd0e66d4ef03b0d4(@arethetypeswrong/core@0.18.2)(@edge-runtime/vm@5.0.0)(@types/debug@4.1.12)(@types/node@24.10.1)(@vitest/browser-playwright@4.0.9)(@vitest/browser-preview@4.0.9)(@vitest/browser-webdriverio@4.0.9)(@vitest/ui@4.0.9)(axios@1.13.2)(esbuild@0.25.12)(happy-dom@20.0.10)(jiti@2.6.1)(jsdom@27.2.0)(less@4.4.2)(markdown-it-mathjax3@4.3.2)(oxc-minify@0.97.0)(postcss@8.5.6)(publint@0.3.15)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(typescript@5.9.3)(unplugin-lightningcss@0.4.3)(unplugin-unused@0.5.6)(unrun@0.2.9)(vite@7.2.2(@types/node@24.10.1)(jiti@2.6.1)(less@4.4.2)(lightningcss@1.30.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1))(yaml@2.8.1)':
     dependencies:
       '@arethetypeswrong/core': 0.18.2
       '@docsearch/css': 4.3.2
@@ -5140,12 +5085,12 @@ snapshots:
       '@types/debug': 4.1.12
       '@types/markdown-it': 14.1.2
       '@types/node': 24.10.1
-      '@vitejs/plugin-vue': 6.0.1(rolldown-vite@7.2.4(@types/node@24.10.1)(esbuild@0.25.12)(jiti@2.6.1)(less@4.4.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1))(vue@3.5.24(typescript@5.9.3))
-      '@vitest/browser-playwright': 4.0.9(playwright@1.56.1)(rolldown-vite@7.2.4(@types/node@24.10.1)(esbuild@0.25.12)(jiti@2.6.1)(less@4.4.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1))(vitest@4.0.9)
-      '@vitest/browser-preview': 4.0.9(rolldown-vite@7.2.4(@types/node@24.10.1)(esbuild@0.25.12)(jiti@2.6.1)(less@4.4.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1))(vitest@4.0.9)
-      '@vitest/browser-webdriverio': 4.0.9(rolldown-vite@7.2.4(@types/node@24.10.1)(esbuild@0.25.12)(jiti@2.6.1)(less@4.4.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1))(vitest@4.0.9)(webdriverio@9.20.0)
+      '@vitejs/plugin-vue': 6.0.1(vite@7.2.2(@types/node@24.10.1)(jiti@2.6.1)(less@4.4.2)(lightningcss@1.30.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1))(vue@3.5.24(typescript@5.9.3))
+      '@vitest/browser-playwright': 4.0.9(playwright@1.56.1)(vite@7.2.2(@types/node@24.10.1)(jiti@2.6.1)(less@4.4.2)(lightningcss@1.30.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1))(vitest@4.0.9)
+      '@vitest/browser-preview': 4.0.9(vite@7.2.2(@types/node@24.10.1)(jiti@2.6.1)(less@4.4.2)(lightningcss@1.30.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1))(vitest@4.0.9)
+      '@vitest/browser-webdriverio': 4.0.9(vite@7.2.2(@types/node@24.10.1)(jiti@2.6.1)(less@4.4.2)(lightningcss@1.30.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1))(vitest@4.0.9)(webdriverio@9.20.0)
       '@vitest/expect': 4.0.9
-      '@vitest/mocker': 4.0.9(rolldown-vite@7.2.4(@types/node@24.10.1)(esbuild@0.25.12)(jiti@2.6.1)(less@4.4.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1))
+      '@vitest/mocker': 4.0.9(vite@7.2.2(@types/node@24.10.1)(jiti@2.6.1)(less@4.4.2)(lightningcss@1.30.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1))
       '@vitest/pretty-format': 4.0.9
       '@vitest/runner': 4.0.9
       '@vitest/snapshot': 4.0.9
@@ -5196,7 +5141,6 @@ snapshots:
       unplugin-lightningcss: 0.4.3
       unplugin-unused: 0.5.6
       unrun: 0.2.9
-      vite: rolldown-vite@7.2.4(@types/node@24.10.1)(esbuild@0.25.12)(jiti@2.6.1)(less@4.4.2)(sass-embedded@1.93.3)(sass@1.94.0)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(yaml@2.8.1)
       vue: 3.5.24(typescript@5.9.3)
       why-is-node-running: 2.3.0
       yaml: 2.8.1
@@ -5216,6 +5160,7 @@ snapshots:
       - sortablejs
       - supports-color
       - universal-cookie
+      - vite
 
   '@vue/compiler-core@3.5.24':
     dependencies:
