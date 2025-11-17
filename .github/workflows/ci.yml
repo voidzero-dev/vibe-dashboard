@@ -80,7 +80,7 @@ jobs:
           scope: '@voidzero-dev'
           package-manager-cache: false
 
-      - run: npm install -g @voidzero-dev/global
+      - run: npm install -g @voidzero-dev/global@latest
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
