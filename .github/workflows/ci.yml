@@ -92,4 +92,9 @@ jobs:
       - run: vite --version
       - run: vite fmt -c .oxfmtrc.jsonc --check
 
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+        if: matrix.os == 'ubuntu-latest'
+      
       - run: vite lint -c .oxlintrc.json
+        if: matrix.os != 'ubuntu-latest'
