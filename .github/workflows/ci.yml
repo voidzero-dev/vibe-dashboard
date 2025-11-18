@@ -32,11 +32,6 @@ jobs:
       - name: Install Playwright browsers
         run: pnpm exec playwright install chromium
 
-
-      - name: Check Linux rolldown
-        if: matrix.os == 'ubuntu-latest'
-        run: |
-          node -e "console.log(require('./node_modules/@voidzero-dev/vite-plus/dist/rolldown/shared/rolldown-binding.linux-x64-gnu.node'))"
       - name: Check ready
         run: |
           pnpm ready
@@ -84,11 +79,6 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
-      - name: Check rolldown bindings
-        if: matrix.os == 'ubuntu-latest'
-        run: |
-          node -e "console.log(require('/opt/hostedtoolcache/node/24.11.1/x64/lib/node_modules/@voidzero-dev/global/node_modules/@voidzero-dev/vite-plus/dist/rolldown/shared/rolldown-binding.linux-x64-gnu.node'))"
-
       - run: vite --version
       - run: vite fmt -c .oxfmtrc.jsonc --check
 
