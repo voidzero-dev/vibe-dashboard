@@ -37,6 +37,8 @@ jobs:
           pnpm ready
           # run again to check cache hits
           pnpm ready
+        env:
+          VITE_LOG: 'trace'
 
       - name: Check build artifacts
         run: |
