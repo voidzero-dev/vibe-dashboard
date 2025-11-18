@@ -5,6 +5,8 @@ packages:
 verifyDepsBeforeRun: install
 
 catalog:
+  rolldown-vite: ^7.2.5
+  vite: "npm:rolldown-vite"
   typescript: ^5.9.2
 
 minimumReleaseAge: 1440
@@ -14,6 +16,10 @@ minimumReleaseAgeExclude:
   - '@oxfmt/*'
   - '@oxlint-tsgolint/*'
   - '@oxlint/*'
+  - '@oxc-minify/*'
+  - '@oxc-parser/*'
+  - '@oxc-resolver/*'
+  - '@oxc-transform/*'
   - '@oxc-project/*'
   - '@rolldown/*'
   - '@rolldown/pluginutils'
@@ -28,3 +34,18 @@ minimumReleaseAgeExclude:
   - 'vitepress'
   - 'vitest'
   - '@vitest/*'
+
+overrides:
+  "vitest>vite": "npm:rolldown-vite@^7.2.5"
+
+onlyBuiltDependencies:
+  - "@tailwindcss/oxide"
+  - dprint
+  - esbuild
+
+peerDependencyRules:
+  allowAny:
+    - vite
+    - vitest
+  allowedVersions:
+    oxc-minify: '*'
