@@ -1,8 +1,8 @@
 import tailwindcss from "@tailwindcss/vite";
-import { defineProject } from "vitest/config";
+import { defineConfig } from "vitest/config";
 import { playwright } from "@vitest/browser-playwright";
 
-export default defineProject({
+export default defineConfig({
   plugins: [tailwindcss()],
   base: "/vibe-dashboard/",
   test: {
