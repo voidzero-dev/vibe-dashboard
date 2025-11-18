@@ -4933,11 +4933,11 @@ snapshots:
 
   '@types/ws@8.18.1':
     dependencies:
-      '@types/node': 24.10.1
+      '@types/node': 20.19.25
 
   '@types/yauzl@2.10.3':
     dependencies:
-      '@types/node': 24.10.1
+      '@types/node': 20.19.25
     optional: true
 
   '@typescript-eslint/scope-manager@8.46.4':
