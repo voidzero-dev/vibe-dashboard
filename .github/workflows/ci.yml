@@ -37,6 +37,8 @@ jobs:
           pnpm ready
           # run again to check cache hits
           pnpm ready
+        env:
+          VITE_LOG: 'trace'
 
       - name: Check build artifacts
         run: |
@@ -83,3 +85,5 @@ jobs:
       - run: vite fmt -c .oxfmtrc.jsonc --check
 
       - run: vite lint -c .oxlintrc.json
+        env:
+          VITE_LOG: 'trace'
