@@ -5,14 +5,13 @@ packages:
 verifyDepsBeforeRun: install
 
 catalog:
-  rolldown-vite: ^7.2.5
-  vite: "npm:rolldown-vite"
+  vite: "^7.2.4"
   typescript: ^5.9.2
 
 minimumReleaseAge: 1440
 
 minimumReleaseAgeExclude:
-  - '@voidzero-dev/vite-plus'
+  - '@voidzero-dev/*'
   - '@oxfmt/*'
   - '@oxlint-tsgolint/*'
   - '@oxlint/*'
@@ -36,7 +35,8 @@ minimumReleaseAgeExclude:
   - '@vitest/*'
 
 overrides:
-  "vitest>vite": "npm:rolldown-vite@^7.2.5"
+  "vite": "npm:@voidzero-dev/vite-plus-core"
+  "vitest": "npm:@voidzero-dev/vite-plus-test"
 
 onlyBuiltDependencies:
   - "@tailwindcss/oxide"
