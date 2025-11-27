@@ -1,5 +1,6 @@
 import tailwindcss from "@tailwindcss/vite";
-import { defineConfig } from "vite";
+import { playwright } from "@vitest/browser-playwright";
+import { defineConfig } from "@voidzero-dev/vite-plus";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -13,6 +14,18 @@ export default defineConfig({
       experimental: {
         strictExecutionOrder: false,
       },
+    },
+  },
+  test: {
+    browser: {
+      enabled: true,
+      provider: playwright(),
+      headless: true,
+      instances: [
+        {
+          browser: "chromium",
+        },
+      ],
     },
   },
 });
