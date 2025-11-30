@@ -1,0 +1,52 @@
+name: Update GitHub Dependents
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * 0" # Every Sunday at midnight UTC
+
+permissions: {}
+
+jobs:
+  update-dependents:
+    permissions:
+      contents: write
+      packages: read
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+
+      - name: Setup Node.js and pnpm
+        uses: ./.github/actions/setup-node-pnpm
+
+      - name: Run fetch-github-dependents
+        run: node tools/fetch-github-dependents.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          if git diff --exit-code data/dependents.json; then
+            echo "No changes detected in dependents.json"
+            echo "changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "Changes detected in dependents.json"
+            echo "changes=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push changes
+        if: steps.git-check.outputs.changes == 'true'
+        run: |
+          git config --local user.email "1430279+Boshen@users.noreply.github.com"
+          git config --local user.name "Boshen"
+          git add data/dependents.json
+          git commit -m "chore: update github dependents"
+          git push origin main
+
+      - name: No changes to commit
+        if: steps.git-check.outputs.changes != 'true'
+        run: echo "No changes to commit"
