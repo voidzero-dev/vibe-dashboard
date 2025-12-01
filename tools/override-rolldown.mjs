@@ -115,6 +115,7 @@ function installDependencies() {
     execSync("pnpm install --no-frozen-lockfile", {
       stdio: "inherit",
       cwd: process.cwd(),
+      env: process.env,
     });
     console.log("✅ Dependencies installed successfully");
     return true;
