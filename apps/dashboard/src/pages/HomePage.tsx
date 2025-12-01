@@ -64,10 +64,11 @@ function HomePage() {
 
   return (
     <PageContainer>
-      <div className="text-center mb-12">
+      <div className="text-center mb-16">
         <div className="flex justify-center mb-6">
-          <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-xl">
-            <BarChart3 size={40} className="text-white" />
+          <div className="w-24 h-24 bg-gradient-to-br from-blue-500 via-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-2xl animate-gradient relative overflow-hidden group">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-400/20 blur-xl group-hover:blur-2xl transition-all"></div>
+            <BarChart3 size={48} className="text-white relative z-10" />
           </div>
         </div>
         <PageHeader
@@ -81,10 +82,11 @@ function HomePage() {
           const colors = getColorClasses(feature.color);
           return (
             <Link key={feature.link} to={feature.link}>
-              <Card className={`h-full transition-all hover:shadow-lg ${colors.hover} cursor-pointer group`}>
-                <div className="p-6">
+              <Card className={`h-full transition-all hover:shadow-2xl hover:scale-[1.02] ${colors.hover} cursor-pointer group relative overflow-hidden`}>
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-slate-100/50 dark:to-slate-700/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="p-6 relative z-10">
                   <div className="flex items-start gap-4">
-                    <div className={`p-3 rounded-lg ${colors.bg}`}>
+                    <div className={`p-3 rounded-xl ${colors.bg} shadow-sm group-hover:shadow-md transition-all group-hover:scale-110`}>
                       <div className={colors.icon}>{feature.icon}</div>
                     </div>
                     <div className="flex-1">
