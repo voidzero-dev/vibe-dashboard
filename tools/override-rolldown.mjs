@@ -120,7 +120,8 @@ function installDependencies() {
     return true;
   } catch (error) {
     console.error("❌ Error installing dependencies:", error.message);
-    return false;
+    console.error("❌ Aborting due to pnpm install failure");
+    process.exit(1);
   }
 }
 
