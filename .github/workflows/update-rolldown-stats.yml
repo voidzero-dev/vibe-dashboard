@@ -25,6 +25,8 @@ jobs:
 
       - name: Run rolldown stats collection
         run: pnpm run generate
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
 
       - name: Check for changes
         id: git-check
