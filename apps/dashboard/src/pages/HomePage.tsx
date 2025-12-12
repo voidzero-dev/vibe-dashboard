@@ -82,11 +82,15 @@ function HomePage() {
           const colors = getColorClasses(feature.color);
           return (
             <Link key={feature.link} to={feature.link}>
-              <Card className={`h-full transition-all hover:shadow-2xl hover:scale-[1.02] ${colors.hover} cursor-pointer group relative overflow-hidden`}>
+              <Card
+                className={`h-full transition-all hover:shadow-2xl hover:scale-[1.02] ${colors.hover} cursor-pointer group relative overflow-hidden`}
+              >
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-slate-100/50 dark:to-slate-700/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="p-6 relative z-10">
                   <div className="flex items-start gap-4">
-                    <div className={`p-3 rounded-xl ${colors.bg} shadow-sm group-hover:shadow-md transition-all group-hover:scale-110`}>
+                    <div
+                      className={`p-3 rounded-xl ${colors.bg} shadow-sm group-hover:shadow-md transition-all group-hover:scale-110`}
+                    >
                       <div className={colors.icon}>{feature.icon}</div>
                     </div>
                     <div className="flex-1">
