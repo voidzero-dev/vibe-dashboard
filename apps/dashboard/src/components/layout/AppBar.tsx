@@ -12,7 +12,11 @@ export function AppBar({ title, subtitle }: AppBarProps) {
       <div className="h-full flex items-center justify-between">
         {/* Left side - Page title */}
         <div>
-          {title && <h2 className="text-xl font-semibold bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">{title}</h2>}
+          {title && (
+            <h2 className="text-xl font-semibold bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
+              {title}
+            </h2>
+          )}
           {subtitle && <p className="text-sm text-slate-500 dark:text-slate-400">{subtitle}</p>}
         </div>
 

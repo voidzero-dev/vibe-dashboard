@@ -10,7 +10,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // Hardcoded repositories and their packages with dependent types
 const repositories = {
   "vitejs/rolldown-vite": {
-    "rolldown-vite": "repositories"
+    "rolldown-vite": "repositories",
   },
   "rolldown/rolldown": {
     rolldown: "repositories",
