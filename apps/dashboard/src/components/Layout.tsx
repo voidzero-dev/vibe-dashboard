@@ -1,8 +1,11 @@
 import { Outlet } from "react-router-dom";
 import { AppBar } from "./layout/AppBar";
 import { Sidebar } from "./layout/Sidebar";
+import { useSidebar } from "../context/SidebarContext";
 
 function Layout() {
+  const { collapsed } = useSidebar();
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 relative overflow-hidden">
       {/* Background decorative elements */}
@@ -12,7 +15,7 @@ function Layout() {
       <Sidebar />
 
       {/* Main Content Area */}
-      <div className="lg:pl-64 transition-all duration-300 relative z-10">
+      <div className={`${collapsed ? "lg:pl-20" : "lg:pl-64"} transition-all duration-300 relative z-10`}>
         <div className="flex flex-col h-screen">
           <AppBar />
 
