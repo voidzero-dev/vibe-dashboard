@@ -1,6 +1,7 @@
 import { BarChart3, ChevronLeft, Download, GitBranch, Home, Menu, Package, X, Zap } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useSidebar } from "../../context/SidebarContext";
 
 interface NavItem {
   path: string;
@@ -39,7 +40,7 @@ const navItems: NavItem[] = [
 
 export function Sidebar() {
   const location = useLocation();
-  const [collapsed, setCollapsed] = useState(false);
+  const { collapsed, setCollapsed } = useSidebar();
   const [mobileOpen, setMobileOpen] = useState(false);
   // Auto-detect dark mode from system preferences
   useEffect(() => {
