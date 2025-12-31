@@ -86,7 +86,9 @@ export function Sidebar() {
             </div>
             {!collapsed && (
               <div>
-                <h1 className="font-bold bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">Vibe</h1>
+                <h1 className="font-bold bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
+                  Vibe
+                </h1>
                 <p className="text-xs text-slate-500 dark:text-slate-400">Dashboard</p>
               </div>
             )}
