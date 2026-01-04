@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "A frontend dashboard for displaying different metrics using bar charts",
   "private": true,
-  "packageManager": "pnpm@10.26.0",
+  "packageManager": "pnpm@10.27.0",
   "type": "module",
   "scripts": {
     "ready": "vite fmt && vite lint --type-aware --threads 4 && vite test && vite run build",
@@ -17,7 +17,7 @@
   "devDependencies": {
     "@typescript-eslint/scope-manager": "^8.47.0",
     "@voidzero-dev/vite-plus": "latest",
-    "dprint": "^0.50.2",
+    "dprint": "^0.51.0",
     "playwright": "^1.56.1",
     "top-github-dependents-by-stars": "^1.0.4",
     "vitest": "^4.0.14"
