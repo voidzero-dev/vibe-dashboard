@@ -1,5 +1,5 @@
 import tailwindcss from "@tailwindcss/vite";
-import { playwright } from "@vitest/browser-playwright";
+import { playwright } from "@voidzero-dev/vite-plus/test/browser-playwright";
 import { defineConfig } from "@voidzero-dev/vite-plus";
 
 // https://vite.dev/config/
