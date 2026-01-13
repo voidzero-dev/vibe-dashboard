@@ -47,7 +47,7 @@ A modern frontend dashboard for displaying different metrics using bar charts. B
   pnpm fmt
   ```
   - **Timing**: Takes approximately 2 seconds
-  - Runs dprint across all files
+  - Runs vite fmt across all files
   - **ALWAYS run before committing** to avoid CI failures
 
 - Clean build artifacts:

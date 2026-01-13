@@ -8,7 +8,7 @@ pnpm install   # Install deps (~10s, timeout 60s+)
 pnpm dev       # Dev server at localhost:5173
 pnpm build     # Production build (~7s)
 pnpm lint      # Run ESLint
-pnpm fmt       # Format with dprint
+pnpm fmt       # Format with vite fmt
 ```
 
 ## Structure
