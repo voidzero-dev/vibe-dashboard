@@ -80,7 +80,9 @@ export function BundleSizeChart() {
             formatter={(label: React.ReactNode) => {
               const value = typeof label === "number" ? label : Number(label) || 0;
               if (value === 0) return "baseline";
-              return value >= 0 ? `+${formatNumberWithCommas(value)}` : formatNumberWithCommas(value);
+              return value >= 0
+                ? `+${formatNumberWithCommas(value)}`
+                : formatNumberWithCommas(value);
             }}
             style={{ fontSize: "11px", fill: "#94a3b8" }}
           />

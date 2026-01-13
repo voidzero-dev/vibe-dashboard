@@ -118,8 +118,12 @@ function DependentsPage() {
                 <table className="w-full text-sm">
                   <thead className="sticky top-0 bg-white dark:bg-slate-900 z-10">
                     <tr className="border-b border-slate-200 dark:border-slate-700">
-                      <th className="text-left py-2 px-2 font-medium text-slate-600 dark:text-slate-400 w-12">#</th>
-                      <th className="text-left py-2 px-2 font-medium text-slate-600 dark:text-slate-400">Repository</th>
+                      <th className="text-left py-2 px-2 font-medium text-slate-600 dark:text-slate-400 w-12">
+                        #
+                      </th>
+                      <th className="text-left py-2 px-2 font-medium text-slate-600 dark:text-slate-400">
+                        Repository
+                      </th>
                       <th className="text-right py-2 px-2 font-medium text-slate-600 dark:text-slate-400 w-24">
                         Stars
                       </th>
@@ -133,7 +137,9 @@ function DependentsPage() {
                           key={dep.url}
                           className="border-b border-slate-100 dark:border-slate-800 transition-colors duration-150 bg-white dark:bg-slate-950 hover:bg-blue-50 dark:hover:bg-blue-950/40"
                         >
-                          <td className="py-2 px-2 text-slate-500 dark:text-slate-400">{index + 1}</td>
+                          <td className="py-2 px-2 text-slate-500 dark:text-slate-400">
+                            {index + 1}
+                          </td>
                           <td className="py-2 px-2">
                             <a
                               href={dep.url}

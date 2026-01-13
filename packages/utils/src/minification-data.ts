@@ -57,5 +57,7 @@ export const getLibraryData = (library: string, metric: "time" | "compression") 
   });
 
   // Sort data: time from smallest to largest (fastest to slowest), compression from largest to smallest (best to worst)
-  return data.sort((a, b) => (metric === "time" ? a.value - b.value : a.minzippedBytes - b.minzippedBytes));
+  return data.sort((a, b) =>
+    metric === "time" ? a.value - b.value : a.minzippedBytes - b.minzippedBytes,
+  );
 };

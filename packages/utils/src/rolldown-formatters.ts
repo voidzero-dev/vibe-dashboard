@@ -19,7 +19,10 @@ export const bundleSizeDiffTooltipFormatter = (value: any, name: string, props: 
     : " | Publication date unavailable";
 
   if (data.isBaseline) {
-    return [`${formatNumberWithCommas(data.currentSize)} bytes (baseline)${publicationDateText}`, "Bundle Size"];
+    return [
+      `${formatNumberWithCommas(data.currentSize)} bytes (baseline)${publicationDateText}`,
+      "Bundle Size",
+    ];
   }
 
   const sign = value >= 0 ? "+" : "";

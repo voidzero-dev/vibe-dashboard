@@ -103,8 +103,11 @@ export function PackageCard({ packageName }: PackageCardProps) {
   };
 
   // The 'modified' field contains the last modified date
-  const lastPublishDate = packageData?.time?.modified || packageData?.time?.[packageData?.version || ""];
-  const dependenciesCount = packageData?.dependencies ? Object.keys(packageData.dependencies).length : 0;
+  const lastPublishDate =
+    packageData?.time?.modified || packageData?.time?.[packageData?.version || ""];
+  const dependenciesCount = packageData?.dependencies
+    ? Object.keys(packageData.dependencies).length
+    : 0;
   const maintainersCount = packageData?.maintainers?.length || 0;
 
   return (

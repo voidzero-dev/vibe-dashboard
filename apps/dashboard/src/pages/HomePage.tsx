@@ -34,28 +34,32 @@ function HomePage() {
   const features = [
     {
       title: "Rolldown Stats",
-      description: "Track build performance metrics and bundle size evolution across Rolldown versions",
+      description:
+        "Track build performance metrics and bundle size evolution across Rolldown versions",
       icon: <Package className="w-6 h-6" />,
       link: "/rolldown-stats",
       color: "blue",
     },
     {
       title: "Minification Benchmarks",
-      description: "Compare performance of different JavaScript minification tools and their compression ratios",
+      description:
+        "Compare performance of different JavaScript minification tools and their compression ratios",
       icon: <Zap className="w-6 h-6" />,
       link: "/minification",
       color: "amber",
     },
     {
       title: "NPM Packages",
-      description: "Monitor package statistics including downloads, versions, and maintainer information",
+      description:
+        "Monitor package statistics including downloads, versions, and maintainer information",
       icon: <Sparkles className="w-6 h-6" />,
       link: "/npm-packages",
       color: "green",
     },
     {
       title: "GitHub Dependents",
-      description: "Explore repositories that depend on key packages with star counts and usage insights",
+      description:
+        "Explore repositories that depend on key packages with star counts and usage insights",
       icon: <GitBranch className="w-6 h-6" />,
       link: "/dependents",
       color: "purple",

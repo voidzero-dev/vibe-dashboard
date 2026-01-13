@@ -34,7 +34,8 @@ export function StatsCards() {
         </h3>
         <p className="mb-3 text-4xl font-bold text-slate-800 dark:text-slate-100 tracking-tight leading-tight">
           {Math.round(
-            (Math.max(...rolldownStats.map((s) => s.totalSize)) - Math.min(...rolldownStats.map((s) => s.totalSize))) /
+            (Math.max(...rolldownStats.map((s) => s.totalSize)) -
+              Math.min(...rolldownStats.map((s) => s.totalSize))) /
               1024,
           )}
           KB

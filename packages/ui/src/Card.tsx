@@ -9,7 +9,14 @@ interface CardProps {
   noPadding?: boolean;
 }
 
-export function Card({ children, className = "", title, subtitle, headerAction, noPadding = false }: CardProps) {
+export function Card({
+  children,
+  className = "",
+  title,
+  subtitle,
+  headerAction,
+  noPadding = false,
+}: CardProps) {
   return (
     <div
       className={`bg-white dark:bg-slate-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200/50 dark:border-slate-700/50 backdrop-blur-sm ${className}`}
@@ -23,7 +30,9 @@ export function Card({ children, className = "", title, subtitle, headerAction, 
                   {title}
                 </h3>
               )}
-              {subtitle && <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{subtitle}</p>}
+              {subtitle && (
+                <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{subtitle}</p>
+              )}
             </div>
             {headerAction && <div className="ml-4">{headerAction}</div>}
           </div>
@@ -34,6 +43,12 @@ export function Card({ children, className = "", title, subtitle, headerAction, 
   );
 }
 
-export function CardGrid({ children, className = "" }: { children: ReactNode; className?: string }) {
+export function CardGrid({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
   return <div className={`grid gap-6 ${className}`}>{children}</div>;
 }

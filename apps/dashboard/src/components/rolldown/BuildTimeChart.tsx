@@ -1,5 +1,15 @@
 import { buildTimeTooltipFormatter } from "@vibe/utils";
-import { Bar, BarChart, CartesianGrid, LabelList, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import {
+  Bar,
+  BarChart,
+  CartesianGrid,
+  LabelList,
+  Legend,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 import * as semver from "semver";
 import rolldownStats from "../../../../../data/rolldown-version-stats.json";
 

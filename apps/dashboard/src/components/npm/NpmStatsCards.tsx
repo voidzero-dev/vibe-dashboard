@@ -20,7 +20,9 @@ export function NpmStatsCards({ packagesCount }: NpmStatsCardsProps) {
         <h3 className="mb-3 text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-widest">
           Registry
         </h3>
-        <p className="mb-3 text-4xl font-bold text-slate-800 dark:text-slate-100 tracking-tight leading-tight">NPM</p>
+        <p className="mb-3 text-4xl font-bold text-slate-800 dark:text-slate-100 tracking-tight leading-tight">
+          NPM
+        </p>
         <span className="text-sm font-semibold px-3 py-1.5 rounded-lg inline-flex items-center gap-1 text-emerald-700 bg-emerald-100 bg-opacity-100 border border-emerald-200 border-opacity-200">
           Public Registry
         </span>

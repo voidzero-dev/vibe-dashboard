@@ -68,7 +68,11 @@ async function fetchNpmPublicationDates() {
 
             resolve(publicationDates);
           } catch (error) {
-            reject(new Error(`Failed to parse npm registry response for publication dates: ${error.message}`));
+            reject(
+              new Error(
+                `Failed to parse npm registry response for publication dates: ${error.message}`,
+              ),
+            );
           }
         });
       })
@@ -194,7 +198,9 @@ function collectDistStats(version, buildTime = null, publicationDate = null) {
     stats.files = getFilesRecursively(DIST_PATH);
     stats.totalSize = stats.files.reduce((total, file) => total + file.size, 0);
 
-    console.log(`📊 Collected stats for ${stats.files.length} files (${(stats.totalSize / 1024).toFixed(2)} KB total)`);
+    console.log(
+      `📊 Collected stats for ${stats.files.length} files (${(stats.totalSize / 1024).toFixed(2)} KB total)`,
+    );
   } catch (error) {
     console.warn(`⚠️  Error collecting stats for version ${version}:`, error.message);
   }
@@ -258,7 +264,9 @@ async function collectAllVersionStats() {
       const version = stableVersions[i];
       const versionNumber = i + 1;
 
-      console.log(`\n==================== VERSION ${versionNumber}/${stableVersions.length} ====================`);
+      console.log(
+        `\n==================== VERSION ${versionNumber}/${stableVersions.length} ====================`,
+      );
       console.log(`🎯 Testing version: ${version}`);
 
       try {

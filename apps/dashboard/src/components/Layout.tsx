@@ -15,7 +15,9 @@ function Layout() {
       <Sidebar />
 
       {/* Main Content Area */}
-      <div className={`${collapsed ? "lg:pl-20" : "lg:pl-64"} transition-all duration-300 relative z-10`}>
+      <div
+        className={`${collapsed ? "lg:pl-20" : "lg:pl-64"} transition-all duration-300 relative z-10`}
+      >
         <div className="flex flex-col h-screen">
           <AppBar />
 

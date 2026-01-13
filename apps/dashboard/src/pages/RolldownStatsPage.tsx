@@ -28,7 +28,9 @@ function RolldownStatsPage() {
         <Card className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 border-blue-200 dark:border-blue-800">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-blue-600 dark:text-blue-300">Current Bundle Size</p>
+              <p className="text-sm font-medium text-blue-600 dark:text-blue-300">
+                Current Bundle Size
+              </p>
               <p className="text-2xl font-bold text-blue-900 dark:text-white">
                 {Math.round(latestVersion.totalSize / 1024)} KB
               </p>
@@ -40,7 +42,9 @@ function RolldownStatsPage() {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-medium text-purple-600 dark:text-purple-300">Build Time</p>
-              <p className="text-2xl font-bold text-purple-900 dark:text-white">{latestVersion.buildTime}ms</p>
+              <p className="text-2xl font-bold text-purple-900 dark:text-white">
+                {latestVersion.buildTime}ms
+              </p>
             </div>
             <Clock className="w-8 h-8 text-purple-500" />
           </div>
@@ -48,8 +52,12 @@ function RolldownStatsPage() {
         <Card className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 border-green-200 dark:border-green-800">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-green-600 dark:text-green-300">Total Versions</p>
-              <p className="text-2xl font-bold text-green-900 dark:text-white">{rolldownStatsData.length}</p>
+              <p className="text-sm font-medium text-green-600 dark:text-green-300">
+                Total Versions
+              </p>
+              <p className="text-2xl font-bold text-green-900 dark:text-white">
+                {rolldownStatsData.length}
+              </p>
             </div>
             <TrendingUp className="w-8 h-8 text-green-500" />
           </div>

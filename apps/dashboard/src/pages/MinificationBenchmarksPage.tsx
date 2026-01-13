@@ -29,7 +29,9 @@ function MinificationBenchmarksPage() {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-medium text-amber-600 dark:text-amber-300">Minifiers</p>
-              <p className="text-2xl font-bold text-amber-900 dark:text-white">{minifiers.length}</p>
+              <p className="text-2xl font-bold text-amber-900 dark:text-white">
+                {minifiers.length}
+              </p>
             </div>
             <Gauge className="w-8 h-8 text-amber-500" />
           </div>
@@ -46,7 +48,9 @@ function MinificationBenchmarksPage() {
         <Card className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 border-blue-200 dark:border-blue-800">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-blue-600 dark:text-blue-300">Best Compression</p>
+              <p className="text-sm font-medium text-blue-600 dark:text-blue-300">
+                Best Compression
+              </p>
               <p className="text-2xl font-bold text-blue-900 dark:text-white">Terser</p>
             </div>
             <FileDown className="w-8 h-8 text-blue-500" />

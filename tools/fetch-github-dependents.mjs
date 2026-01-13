@@ -77,7 +77,9 @@ async function fetchDependents() {
           latestDependents,
         };
 
-        console.log(`  ✅ Found ${topDependents.length} top + ${latestDependents.length} latest dependents for ${pkg}`);
+        console.log(
+          `  ✅ Found ${topDependents.length} top + ${latestDependents.length} latest dependents for ${pkg}`,
+        );
 
         // Show top 5 for this package
         if (topDependents.length > 0) {
@@ -112,7 +114,10 @@ async function fetchDependents() {
   console.log(`\n✅ Successfully saved all dependents to ${outputPath}`);
 
   // Summary
-  const totalPackages = Object.values(repositories).reduce((sum, packages) => sum + Object.keys(packages).length, 0);
+  const totalPackages = Object.values(repositories).reduce(
+    (sum, packages) => sum + Object.keys(packages).length,
+    0,
+  );
   console.log(`\n📊 Summary:`);
   console.log(`  - Repositories processed: ${Object.keys(repositories).length}`);
   console.log(`  - Packages processed: ${totalPackages}`);
