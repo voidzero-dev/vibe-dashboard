@@ -6,7 +6,7 @@
   "packageManager": "pnpm@10.26.0",
   "type": "module",
   "scripts": {
-    "ready": "vite run fmt --check && vite run lint && vite run test && vite run build",
+    "ready": "vite run fmt --check && vite run lint && vite run test && vite run build && vite run -r typecheck",
     "dev": "vite run @vibe/dashboard#dev",
     "build": "vite run @vibe/dashboard#build",
     "lint": "vite lint --type-aware --type-check --threads 4",
