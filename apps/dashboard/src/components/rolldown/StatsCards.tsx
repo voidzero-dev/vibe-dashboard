@@ -41,9 +41,7 @@ export function StatsCards() {
           <h3 className="mb-2 text-[var(--color-text-muted)] text-xs font-medium uppercase tracking-wider">
             {stat.label}
           </h3>
-          <p className="mb-3 text-2xl font-semibold tracking-tight">
-            {stat.value}
-          </p>
+          <p className="mb-3 text-2xl font-semibold tracking-tight">{stat.value}</p>
           <span className="text-xs px-2 py-1 rounded-md bg-[var(--color-accent-soft)] text-[var(--color-accent)] border border-[var(--color-accent)]/20">
             {stat.badge}
           </span>

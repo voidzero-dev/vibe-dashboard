@@ -18,12 +18,8 @@ export function PageHeader({ title, subtitle, icon, action }: PageHeaderProps) {
             </div>
           )}
           <div>
-            <h1 className="text-xl font-semibold tracking-tight">
-              {title}
-            </h1>
-            {subtitle && (
-              <p className="mt-1 text-sm text-[var(--color-text-muted)]">{subtitle}</p>
-            )}
+            <h1 className="text-xl font-semibold tracking-tight">{title}</h1>
+            {subtitle && <p className="mt-1 text-sm text-[var(--color-text-muted)]">{subtitle}</p>}
           </div>
         </div>
         {action && <div className="flex-shrink-0">{action}</div>}

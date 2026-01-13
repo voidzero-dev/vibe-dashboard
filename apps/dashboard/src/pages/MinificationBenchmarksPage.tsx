@@ -56,7 +56,9 @@ function MinificationBenchmarksPage() {
               {stat.icon}
               <span className="text-xs">{stat.label}</span>
             </div>
-            <div className={`text-xl font-semibold ${stat.highlight ? "text-[var(--color-accent)]" : ""}`}>
+            <div
+              className={`text-xl font-semibold ${stat.highlight ? "text-[var(--color-accent)]" : ""}`}
+            >
               {stat.value}
             </div>
           </div>

@@ -1,15 +1,15 @@
 {
   "name": "vibe-dashboard",
   "version": "0.1.0",
-  "description": "A frontend dashboard for displaying different metrics using bar charts",
+  "description": "A frontend dashboard for displaying different metrics",
   "private": true,
   "packageManager": "pnpm@10.26.0",
   "type": "module",
   "scripts": {
-    "ready": "vite run fmt --check && vite run lint && vite run test && vite run build && vite run -r typecheck",
+    "ready": "vite run fmt && vite run lint && vite run test && vite run build && vite run -r typecheck",
     "dev": "vite run @vibe/dashboard#dev",
     "build": "vite run @vibe/dashboard#build",
-    "lint": "vite lint --type-aware --type-check --threads 4",
+    "lint": "vite lint --type-aware --type-check",
     "test": "vite test",
     "fmt": "vite fmt",
     "generate": "node tools/override-rolldown.mjs --stats"

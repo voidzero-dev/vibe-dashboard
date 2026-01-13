@@ -25,11 +25,7 @@ export function Card({
         <div className="px-5 py-4 border-b border-[var(--color-border)]">
           <div className="flex items-center justify-between">
             <div>
-              {title && (
-                <h3 className="text-sm font-semibold">
-                  {title}
-                </h3>
-              )}
+              {title && <h3 className="text-sm font-semibold">{title}</h3>}
               {subtitle && (
                 <p className="mt-0.5 text-xs text-[var(--color-text-muted)]">{subtitle}</p>
               )}

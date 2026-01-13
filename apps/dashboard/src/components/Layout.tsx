@@ -10,9 +10,7 @@ function Layout() {
       <Sidebar />
 
       {/* Main Content Area */}
-      <div
-        className={`${collapsed ? "lg:pl-20" : "lg:pl-64"} transition-all duration-200`}
-      >
+      <div className={`${collapsed ? "lg:pl-20" : "lg:pl-64"} transition-all duration-200`}>
         <main className="h-screen overflow-auto">
           <Outlet />
         </main>

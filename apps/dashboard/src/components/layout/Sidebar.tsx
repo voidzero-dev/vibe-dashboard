@@ -101,12 +101,8 @@ export function Sidebar() {
             </div>
             {!collapsed && (
               <div>
-                <h1 className="font-semibold text-sm tracking-tight">
-                  Vibe
-                </h1>
-                <p className="text-[10px] text-[var(--color-text-muted)]">
-                  Dashboard
-                </p>
+                <h1 className="font-semibold text-sm tracking-tight">Vibe</h1>
+                <p className="text-[10px] text-[var(--color-text-muted)]">Dashboard</p>
               </div>
             )}
           </div>
@@ -159,7 +155,6 @@ export function Sidebar() {
             ))}
           </ul>
         </nav>
-
       </aside>
     </>
   );

@@ -129,9 +129,7 @@ function HomePage() {
             <BarChart3 size={24} className="text-white" />
           </div>
           <div>
-            <h1 className="text-2xl font-semibold tracking-tight mb-1">
-              VoidZero Dashboard
-            </h1>
+            <h1 className="text-2xl font-semibold tracking-tight mb-1">VoidZero Dashboard</h1>
             <p className="text-[var(--color-text-muted)] text-sm max-w-xl">
               Performance metrics and analytics for the next-generation JavaScript toolchain
             </p>
@@ -186,10 +184,7 @@ function HomePage() {
               className="group p-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-elevated)] hover:border-[var(--color-border-strong)] hover:bg-[var(--color-surface)] transition-all"
             >
               <div className="flex items-center gap-2 mb-3">
-                <div
-                  className="w-2 h-2 rounded-full"
-                  style={{ backgroundColor: project.color }}
-                />
+                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: project.color }} />
                 <span className="font-medium text-sm group-hover:text-[var(--color-accent)] transition-colors">
                   {project.name}
                 </span>
@@ -228,9 +223,7 @@ function HomePage() {
                     }}
                   />
                 </div>
-                <div className="w-16 text-right font-mono text-sm">
-                  {benchmark.time}s
-                </div>
+                <div className="w-16 text-right font-mono text-sm">{benchmark.time}s</div>
               </div>
             ))}
           </div>
@@ -260,12 +253,8 @@ function HomePage() {
               className="p-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-elevated)]"
             >
               <div className="text-sm font-medium mb-1">{bench.tool}</div>
-              <div className="text-xs text-[var(--color-text-muted)] mb-2">
-                {bench.comparison}
-              </div>
-              <div className="text-lg font-semibold text-[var(--color-accent)]">
-                {bench.speed}
-              </div>
+              <div className="text-xs text-[var(--color-text-muted)] mb-2">{bench.comparison}</div>
+              <div className="text-lg font-semibold text-[var(--color-accent)]">{bench.speed}</div>
             </div>
           ))}
         </div>
@@ -322,9 +311,7 @@ function HomePage() {
                   {feature.icon}
                 </div>
                 <div className="text-xs font-medium">{feature.label}</div>
-                <div className="text-[10px] text-[var(--color-text-muted)]">
-                  {feature.sub}
-                </div>
+                <div className="text-[10px] text-[var(--color-text-muted)]">{feature.sub}</div>
               </div>
             ))}
           </div>

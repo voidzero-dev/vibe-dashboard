@@ -141,7 +141,10 @@ function DependentsPage() {
                               className="text-sm hover:text-[var(--color-accent)] transition-colors flex items-center gap-1 group"
                             >
                               <span className="truncate">{repoName}</span>
-                              <ExternalLink size={10} className="opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+                              <ExternalLink
+                                size={10}
+                                className="opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0"
+                              />
                             </a>
                           </td>
                           <td className="py-2 px-4 text-right">

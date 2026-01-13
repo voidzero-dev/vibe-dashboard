@@ -25,9 +25,7 @@ function formatNumber(num: number): string {
 
 function Skeleton({ width }: { width: string }) {
   return (
-    <span
-      className={`inline-block h-4 ${width} bg-[var(--color-surface)] rounded animate-pulse`}
-    />
+    <span className={`inline-block h-4 ${width} bg-[var(--color-surface)] rounded animate-pulse`} />
   );
 }
 
@@ -118,13 +116,25 @@ export function PackageCard({ packageName }: PackageCardProps) {
     {
       icon: <Download size={12} />,
       label: "Weekly",
-      value: loading ? <Skeleton width="w-14" /> : downloads !== null ? formatNumber(downloads) : "N/A",
+      value: loading ? (
+        <Skeleton width="w-14" />
+      ) : downloads !== null ? (
+        formatNumber(downloads)
+      ) : (
+        "N/A"
+      ),
       highlight: true,
     },
     {
       icon: <Calendar size={12} />,
       label: "Updated",
-      value: loading ? <Skeleton width="w-16" /> : lastPublishDate ? formatDate(lastPublishDate) : "N/A",
+      value: loading ? (
+        <Skeleton width="w-16" />
+      ) : lastPublishDate ? (
+        formatDate(lastPublishDate)
+      ) : (
+        "N/A"
+      ),
     },
     {
       icon: <Users size={12} />,
@@ -161,7 +171,10 @@ export function PackageCard({ packageName }: PackageCardProps) {
         <h3 className="font-mono text-sm font-medium group-hover:text-[var(--color-accent)] transition-colors">
           {packageName}
         </h3>
-        <ExternalLink size={12} className="text-[var(--color-text-muted)] opacity-0 group-hover:opacity-100 transition-opacity" />
+        <ExternalLink
+          size={12}
+          className="text-[var(--color-text-muted)] opacity-0 group-hover:opacity-100 transition-opacity"
+        />
       </div>
 
       {/* Stats Grid */}
@@ -173,7 +186,9 @@ export function PackageCard({ packageName }: PackageCardProps) {
             </div>
             <div className="min-w-0 flex-1">
               <p className="text-[10px] text-[var(--color-text-muted)]">{stat.label}</p>
-              <p className={`text-sm font-medium truncate ${stat.highlight ? "text-[var(--color-accent)]" : ""}`}>
+              <p
+                className={`text-sm font-medium truncate ${stat.highlight ? "text-[var(--color-accent)]" : ""}`}
+              >
                 {stat.value}
               </p>
             </div>

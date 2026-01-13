@@ -13,9 +13,7 @@ export function LibraryBenchmarkCard({ library }: LibraryBenchmarkCardProps) {
   return (
     <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] overflow-hidden">
       <div className="px-5 py-3 border-b border-[var(--color-border)]">
-        <h3 className="text-sm font-semibold capitalize">
-          {library}
-        </h3>
+        <h3 className="text-sm font-semibold capitalize">{library}</h3>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-[var(--color-border)]">
         {/* Left column - Minification Time */}
