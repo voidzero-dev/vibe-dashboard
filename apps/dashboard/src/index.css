@@ -1,13 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
-/* Custom base styles */
+/* Custom base styles - VoidZero inspired dark theme */
 :root {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* Typography system - clean sans-serif */
+  --font-display: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
 
-  color: #1e293b;
-  background: #f8fafc;
+  font-family: var(--font-display);
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: -0.011em;
+
+  /* VoidZero-inspired color palette - dark mode default */
+  --color-bg: #08060D;
+  --color-bg-elevated: #0f0d14;
+  --color-surface: #16141c;
+  --color-text: #F4F3EC;
+  --color-text-muted: #8b8a85;
+  --color-border: #1f1d26;
+  --color-border-strong: #2a2833;
+
+  /* VoidZero orange accent */
+  --color-accent: #f48120;
+  --color-accent-soft: rgba(244, 129, 32, 0.12);
+  --color-accent-hover: #ff9640;
+
+  /* Secondary - muted for data visualization */
+  --color-secondary: #6366f1;
+  --color-secondary-soft: rgba(99, 102, 241, 0.12);
+
+  color: var(--color-text);
+  background: var(--color-bg);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,30 +39,41 @@
   -moz-osx-font-smoothing: grayscale;
 
   /* Chart tooltip variables */
-  --tooltip-bg: white;
-  --tooltip-border: #e2e8f0;
+  --tooltip-bg: var(--color-bg-elevated);
+  --tooltip-border: var(--color-border);
+  --tooltip-text: var(--color-text);
 
-  /* Glass morphism variables */
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.18);
-  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  /* Card system */
+  --card-bg: var(--color-bg-elevated);
+  --card-border: var(--color-border);
+  --card-shadow: none;
+  --card-shadow-hover: 0 0 0 1px var(--color-border-strong);
 }
 
-/* Dark mode variables */
-html.dark {
-  --tooltip-bg: #1e293b;
-  --tooltip-border: #475569;
-  --tooltip-text: #f1f5f9;
+/* Light mode override */
+html:not(.dark) {
+  --color-bg: #fafafa;
+  --color-bg-elevated: #ffffff;
+  --color-surface: #f4f4f5;
+  --color-text: #08060D;
+  --color-text-muted: #71717a;
+  --color-border: #e4e4e7;
+  --color-border-strong: #d4d4d8;
 
-  /* Dark mode glass morphism */
-  --glass-bg: rgba(30, 41, 59, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --color-accent: #ea580c;
+  --color-accent-soft: rgba(234, 88, 12, 0.08);
+  --color-accent-hover: #c2410c;
+
+  --color-secondary: #4f46e5;
+  --color-secondary-soft: rgba(79, 70, 229, 0.08);
+
+  --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
-/* Light mode tooltip text */
-:root {
-  --tooltip-text: #1e293b;
+/* Force dark mode by default */
+html {
+  color-scheme: dark;
 }
 
 * {
@@ -49,18 +84,46 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: #f8fafc;
-  transition: background-color 0.3s ease;
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  position: relative;
 }
 
-html.dark body {
-  background: #0f172a;
-  color: #f1f5f9;
+/* Subtle noise texture for depth - minimal like VoidZero */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.015;
+  pointer-events: none;
+  z-index: 9999;
 }
 
+/* Typography - clean professional headings */
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
+  font-family: var(--font-display);
   font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+h1 { font-size: 2.25rem; font-weight: 700; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.125rem; }
+h4 { font-size: 1rem; }
+
+/* Monospace for code/technical elements */
+.font-mono {
+  font-family: var(--font-mono);
+  letter-spacing: 0;
+}
+
+/* Display font utility */
+.font-display {
+  font-family: var(--font-display);
 }
 
 /* Remove default styles */
@@ -97,35 +160,28 @@ button, a, input, textarea, select {
   transition: all 0.2s ease;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - refined, minimal */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
-}
-
-html.dark ::-webkit-scrollbar-track {
-  background: #1e293b;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 4px;
-}
-
-html.dark ::-webkit-scrollbar-thumb {
-  background: #475569;
+  background: var(--color-border-strong);
+  border: 3px solid var(--color-bg);
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: var(--color-text-muted);
 }
 
-html.dark ::-webkit-scrollbar-thumb:hover {
-  background: #64748b;
+::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 /* Chart animations */
@@ -175,16 +231,70 @@ html.dark ::-webkit-scrollbar-thumb:hover {
   animation: float 3s ease-in-out infinite;
 }
 
-/* Pulse glow effect */
+/* Pulse glow effect - VoidZero orange accent */
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+    box-shadow: 0 0 20px rgba(244, 129, 32, 0.3);
   }
   50% {
-    box-shadow: 0 0 30px rgba(59, 130, 246, 0.8);
+    box-shadow: 0 0 30px rgba(244, 129, 32, 0.5);
   }
 }
 
 .animate-pulse-glow {
   animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Stagger animation utilities */
+.stagger-1 { animation-delay: 0.05s; }
+.stagger-2 { animation-delay: 0.1s; }
+.stagger-3 { animation-delay: 0.15s; }
+.stagger-4 { animation-delay: 0.2s; }
+
+/* Card hover lift effect */
+@keyframes card-lift {
+  from { transform: translateY(0); }
+  to { transform: translateY(-4px); }
+}
+
+/* Accent underline on hover */
+.accent-underline {
+  position: relative;
+}
+
+.accent-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transition: width 0.2s ease;
+}
+
+.accent-underline:hover::after {
+  width: 100%;
+}
+
+/* Focus ring using accent color */
+.focus-accent:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Active indicator bar */
+.active-bar {
+  position: relative;
+}
+
+.active-bar::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--color-accent);
+  border-radius: 0 2px 2px 0;
 }

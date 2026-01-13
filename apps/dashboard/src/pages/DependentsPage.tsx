@@ -1,5 +1,4 @@
 import { PageHeader } from "@vibe/shared";
-import { Card } from "@vibe/ui";
 import { GitBranch, ExternalLink, Clock, TrendingUp, Star } from "lucide-react";
 import { useState } from "react";
 import dependentsData from "../../../../data/dependents.json";
@@ -17,7 +16,7 @@ interface DependentsCollection {
 
 interface DependentsData {
   [repo: string]: {
-    [pkg: string]: DependentsCollection | Dependent[]; // Support both old and new format
+    [pkg: string]: DependentsCollection | Dependent[];
   };
 }
 
@@ -32,13 +31,10 @@ function DependentsPage() {
   const [viewMode, setViewMode] = useState<"top" | "latest">("top");
   const data = dependentsData as DependentsData;
 
-  // Flatten the data structure to get all packages
   const allPackages: PackageData[] = [];
   Object.entries(data).forEach(([repo, packages]) => {
     Object.entries(packages).forEach(([pkg, deps]) => {
-      // Handle both old format (array) and new format (object with topDependents/latestDependents)
       if (Array.isArray(deps)) {
-        // Old format - treat as topDependents
         allPackages.push({
           repo,
           package: pkg,
@@ -46,7 +42,6 @@ function DependentsPage() {
           latestDependents: [],
         });
       } else {
-        // New format
         allPackages.push({
           repo,
           package: pkg,
@@ -57,74 +52,72 @@ function DependentsPage() {
     });
   });
 
-  // No stats calculation needed since we removed the cards
-
   return (
     <PageContainer>
       <PageHeader
-        icon={<GitBranch className="text-purple-600 dark:text-purple-400" />}
+        icon={<GitBranch size={20} />}
         title="GitHub Dependents"
         subtitle="Repositories and packages that depend on our projects"
       />
 
       {/* Tab Switcher */}
-      <div className="mb-8 flex justify-center">
-        <div className="flex rounded-lg bg-slate-100 dark:bg-slate-800 p-1.5 shadow-sm">
+      <div className="mb-8">
+        <div className="inline-flex rounded-lg bg-[var(--color-surface)] p-1 border border-[var(--color-border)]">
           <button
             onClick={() => setViewMode("top")}
-            className={`px-6 py-3 rounded-md text-base font-semibold transition-all ${
+            className={`px-4 py-2 rounded-md text-sm font-medium transition-all flex items-center gap-2 ${
               viewMode === "top"
-                ? "bg-white dark:bg-slate-700 text-purple-600 dark:text-purple-400 shadow-md"
-                : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200"
+                ? "bg-[var(--color-bg-elevated)] text-[var(--color-accent)] shadow-sm"
+                : "text-[var(--color-text-muted)] hover:text-[var(--color-text)]"
             }`}
           >
-            <span className="flex items-center gap-2">
-              <TrendingUp className="w-5 h-5" />
-              Top by Stars
-            </span>
+            <TrendingUp size={14} />
+            Top by Stars
           </button>
           <button
             onClick={() => setViewMode("latest")}
-            className={`px-6 py-3 rounded-md text-base font-semibold transition-all ${
+            className={`px-4 py-2 rounded-md text-sm font-medium transition-all flex items-center gap-2 ${
               viewMode === "latest"
-                ? "bg-white dark:bg-slate-700 text-purple-600 dark:text-purple-400 shadow-md"
-                : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200"
+                ? "bg-[var(--color-bg-elevated)] text-[var(--color-accent)] shadow-sm"
+                : "text-[var(--color-text-muted)] hover:text-[var(--color-text)]"
             }`}
           >
-            <span className="flex items-center gap-2">
-              <Clock className="w-5 h-5" />
-              Most Recent
-            </span>
+            <Clock size={14} />
+            Most Recent
           </button>
         </div>
       </div>
 
-      {/* All Packages in 2 Column Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      {/* All Packages Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {allPackages.map(({ repo, package: pkg, topDependents, latestDependents }) => {
           const dependents = viewMode === "top" ? topDependents : latestDependents;
           return (
-            <Card key={`${repo}/${pkg}`} className="p-6">
-              <div className="mb-4 flex items-center justify-between">
+            <div
+              key={`${repo}/${pkg}`}
+              className="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-elevated)] overflow-hidden"
+            >
+              {/* Card Header */}
+              <div className="px-4 py-3 border-b border-[var(--color-border)] flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <GitBranch className="w-4 h-4" />
-                  <span className="text-sm text-slate-600 dark:text-slate-400">{repo}</span>
+                  <GitBranch size={14} className="text-[var(--color-text-muted)]" />
+                  <span className="text-xs text-[var(--color-text-muted)]">{repo}</span>
                 </div>
-                <h3 className="text-lg font-semibold">{pkg}</h3>
-                <div className="w-20"></div>
+                <h3 className="text-sm font-semibold">{pkg}</h3>
               </div>
 
-              <div className="overflow-x-auto max-h-96 overflow-y-auto">
+              {/* Table */}
+              <div className="max-h-80 overflow-y-auto">
                 <table className="w-full text-sm">
-                  <thead className="sticky top-0 bg-white dark:bg-slate-900 z-10">
-                    <tr className="border-b border-slate-200 dark:border-slate-700">
-                      <th className="text-left py-2 px-2 font-medium text-slate-600 dark:text-slate-400 w-12">
+                  <thead className="sticky top-0 bg-[var(--color-surface)] z-10">
+                    <tr className="border-b border-[var(--color-border)]">
+                      <th className="text-left py-2 px-4 font-medium text-[var(--color-text-muted)] text-xs w-10">
                         #
                       </th>
-                      <th className="text-left py-2 px-2 font-medium text-slate-600 dark:text-slate-400">
+                      <th className="text-left py-2 px-4 font-medium text-[var(--color-text-muted)] text-xs">
                         Repository
                       </th>
-                      <th className="text-right py-2 px-2 font-medium text-slate-600 dark:text-slate-400 w-24">
+                      <th className="text-right py-2 px-4 font-medium text-[var(--color-text-muted)] text-xs w-20">
                         Stars
                       </th>
                     </tr>
@@ -135,25 +128,25 @@ function DependentsPage() {
                       return (
                         <tr
                           key={dep.url}
-                          className="border-b border-slate-100 dark:border-slate-800 transition-colors duration-150 bg-white dark:bg-slate-950 hover:bg-blue-50 dark:hover:bg-blue-950/40"
+                          className="border-b border-[var(--color-border)] last:border-0 transition-colors hover:bg-[var(--color-surface)]"
                         >
-                          <td className="py-2 px-2 text-slate-500 dark:text-slate-400">
+                          <td className="py-2 px-4 text-[var(--color-text-muted)] text-xs">
                             {index + 1}
                           </td>
-                          <td className="py-2 px-2">
+                          <td className="py-2 px-4">
                             <a
                               href={dep.url}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center gap-1 group"
+                              className="text-sm hover:text-[var(--color-accent)] transition-colors flex items-center gap-1 group"
                             >
                               <span className="truncate">{repoName}</span>
-                              <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+                              <ExternalLink size={10} className="opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
                             </a>
                           </td>
-                          <td className="py-2 px-2 text-right">
-                            <span className="inline-flex items-center gap-1 text-slate-600 dark:text-slate-400">
-                              <Star className="w-3 h-3" />
+                          <td className="py-2 px-4 text-right">
+                            <span className="inline-flex items-center gap-1 text-[var(--color-text-muted)] text-xs">
+                              <Star size={10} className="text-amber-500" />
                               <span className="font-medium">{dep.stars.toLocaleString()}</span>
                             </span>
                           </td>
@@ -163,7 +156,7 @@ function DependentsPage() {
                   </tbody>
                 </table>
               </div>
-            </Card>
+            </div>
           );
         })}
       </div>

@@ -13,9 +13,9 @@ function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps
     <>
       <MetricNavigation selectedMetric={selectedMetric} setSelectedMetric={setSelectedMetric} />
 
-      <main className="max-w-6xl mx-auto px-8 py-8 flex flex-col gap-8">
-        <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-8 py-8 rounded-xl shadow-sm">
-          <h2 className="mb-6 text-slate-800 dark:text-slate-100 text-3xl font-bold tracking-tight">
+      <main className="px-6 py-6 flex flex-col gap-6">
+        <div>
+          <h2 className="mb-4 text-lg font-semibold">
             {selectedMetric === "bundleSize" ? "Bundle Size" : "Build Time"}
           </h2>
           {selectedMetric === "bundleSize" ? <BundleSizeChart /> : <BuildTimeChart />}
