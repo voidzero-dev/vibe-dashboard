@@ -160,14 +160,6 @@ export function Sidebar() {
           </ul>
         </nav>
 
-        {/* Version indicator */}
-        {!collapsed && (
-          <div className="px-4 py-3 border-t border-[var(--color-border)]">
-            <span className="text-[10px] text-[var(--color-text-muted)]">
-              v0.1.0
-            </span>
-          </div>
-        )}
       </aside>
     </>
   );
