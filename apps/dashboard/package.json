@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "clean": "rm -rf dist",
-    "test": "vite test"
+    "test": "vite test",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@vibe/shared": "workspace:*",

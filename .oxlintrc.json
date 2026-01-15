@@ -5,10 +5,8 @@
     "oxc",
     "react",
     "vitest",
-    "jsx-a11y"
-  ],
-  "jsPlugins": [
-    "./plugins/debugger.js"
+    "jsx-a11y",
+    "import"
   ],
   "categories": {
     "correctness": "deny",
@@ -17,7 +15,8 @@
   },
   "rules": {
     "react/react-in-jsx-scope": "off",
-    "vibe/no-debugger": "error"
+    "no-debugger": "error",
+    "import/no-unassigned-import": ["error", { "allow": ["**/*.css"] }]
   },
   "settings": {
     "jsx-a11y": {
