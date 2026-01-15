@@ -3,7 +3,9 @@
     "unicorn",
     "typescript",
     "oxc",
-    "react"
+    "react",
+    "vitest",
+    "jsx-a11y"
   ],
   "jsPlugins": [
     "./plugins/debugger.js"

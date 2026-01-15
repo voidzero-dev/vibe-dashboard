@@ -154,17 +154,10 @@ export function PackageCard({ packageName }: PackageCardProps) {
   ];
 
   return (
-    <div
-      className="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-elevated)] transition-all cursor-pointer group hover:border-[var(--color-border-strong)]"
+    <button
+      type="button"
+      className="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-elevated)] transition-all cursor-pointer group hover:border-[var(--color-border-strong)] text-left w-full"
       onClick={handleClick}
-      onKeyDown={(e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          handleClick();
-        }
-      }}
-      role="button"
-      tabIndex={0}
     >
       {/* Header */}
       <div className="px-4 py-3 border-b border-[var(--color-border)] flex items-center justify-between">
@@ -195,6 +188,6 @@ export function PackageCard({ packageName }: PackageCardProps) {
           </div>
         ))}
       </div>
-    </div>
+    </button>
   );
 }

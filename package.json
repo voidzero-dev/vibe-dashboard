@@ -12,6 +12,8 @@
     "lint": "vite lint --type-aware --type-check",
     "test": "vite test",
     "fmt": "vite fmt",
+    "fmt:check": "vite fmt --check",
+    "cache:clean": "vite cache clean",
     "generate": "node tools/override-rolldown.mjs --stats"
   },
   "devDependencies": {
