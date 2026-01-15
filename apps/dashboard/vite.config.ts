@@ -1,6 +1,6 @@
 import tailwindcss from "@tailwindcss/vite";
-import { playwright } from "@voidzero-dev/vite-plus/test/browser-playwright";
-import { defineConfig } from "@voidzero-dev/vite-plus";
+import { playwright } from "vite-plus/test/browser-playwright";
+import { defineConfig } from "vite-plus";
 
 // https://vite.dev/config/
 export default defineConfig({

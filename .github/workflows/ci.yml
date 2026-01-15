@@ -34,11 +34,9 @@ jobs:
           check-latest: true
 
       - name: Setup Vite+
-        uses: voidzero-dev/setup-vite-plus-action@8e5c964eecdefb1a599d79ad0c4a00418e193e72 # v1
+        uses: voidzero-dev/setup-vite-plus-action@5bd070e3dfe8fd6a967ab859304e95daa4e64ea0 # v1
         with:
           cache: true
-          registry: github
-          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install Playwright browsers
         run: npx playwright install chromium
