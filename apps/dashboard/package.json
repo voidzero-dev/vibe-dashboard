@@ -34,6 +34,6 @@
     "vite": "catalog:",
     "tailwindcss": "^4.1.13",
     "typescript": "catalog:",
-    "@voidzero-dev/vite-plus": "catalog:"
+    "vite-plus": "catalog:"
   }
 }

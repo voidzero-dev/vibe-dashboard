@@ -8,7 +8,7 @@ catalog:
   vite: npm:@voidzero-dev/vite-plus-core@latest
   typescript: ^5.9.2
   vitest: npm:@voidzero-dev/vite-plus-test@latest
-  '@voidzero-dev/vite-plus': latest
+  vite-plus: latest
 
 minimumReleaseAge: 1440
 
@@ -32,6 +32,7 @@ minimumReleaseAgeExclude:
   - 'rolldown-vite'
   - 'tsdown'
   - 'vite'
+  - 'vite-plus'
   - 'vitepress'
   - 'vitest'
   - '@vitest/*'

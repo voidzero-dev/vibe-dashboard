@@ -7,16 +7,5 @@
       "hostType": "npm",
       "token": "{{ secrets.GITHUB_TOKEN }}"
     }
-  ],
-  "packageRules": [
-    {
-      "matchPackagePatterns": ["@vite-plus/.*"],
-      "registryUrls": ["https://npm.pkg.github.com/"]
-    },
-    {
-      "matchPackagePatterns": ["@voidzero-dev/.*"],
-      "registryUrls": ["https://npm.pkg.github.com/"]
-    }
-  ],
-  "npmrc": "@voidzero-dev:registry=https://npm.pkg.github.com/"
+  ]
 }

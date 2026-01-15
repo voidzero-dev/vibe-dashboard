@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
-import { describe, expect, it } from "@voidzero-dev/vite-plus/test";
+import { describe, expect, it } from "vite-plus/test";
 import App from "../App";
 import MinificationBenchmarksPage from "../pages/MinificationBenchmarksPage";
 import NpmPackagesPage from "../pages/NpmPackagesPage";
