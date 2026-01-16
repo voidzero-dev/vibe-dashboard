@@ -14,7 +14,9 @@ import {
 import * as semver from "semver";
 import rolldownStats from "../../../../../data/rolldown-version-stats.json";
 
-const sortedRolldownStats = [...rolldownStats].toSorted((a, b) => semver.compare(a.version, b.version));
+const sortedRolldownStats = [...rolldownStats].toSorted((a, b) =>
+  semver.compare(a.version, b.version),
+);
 
 const bundleSizeDiffData = sortedRolldownStats.map((stat, index) => {
   if (index === 0) {
