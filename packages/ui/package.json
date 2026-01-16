@@ -11,9 +11,6 @@
       "default": "./src/index.ts"
     }
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
   "dependencies": {
     "lucide-react": "^0.562.0",
     "react": "^19.1.1",

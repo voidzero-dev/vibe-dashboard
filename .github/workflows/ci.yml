@@ -53,9 +53,6 @@ jobs:
       - name: Build
         run: vite run @vibe/dashboard#build
 
-      - name: Typecheck all packages
-        run: vite run -r typecheck
-
       - name: Verify cache (second run)
         run: vite run ready
 

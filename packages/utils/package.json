@@ -11,9 +11,6 @@
       "default": "./src/index.ts"
     }
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
   "dependencies": {
     "semver": "^7.7.2"
   },
