@@ -30,7 +30,6 @@
     "@types/react-dom": "^19.1.7",
     "@types/react-router-dom": "^5.3.3",
     "@types/semver": "^7.7.1",
-    "@vitest/ui": "^4.0.9",
     "playwright": "^1.55.0",
     "vite": "catalog:",
     "tailwindcss": "^4.1.13",

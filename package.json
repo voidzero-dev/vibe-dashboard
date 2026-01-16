@@ -17,10 +17,8 @@
     "generate": "node tools/override-rolldown.mjs --stats"
   },
   "devDependencies": {
-    "@typescript-eslint/scope-manager": "^8.47.0",
     "vite-plus": "catalog:",
     "playwright": "^1.56.1",
-    "top-github-dependents-by-stars": "^1.0.4",
-    "vitest": "catalog:"
+    "top-github-dependents-by-stars": "^1.0.4"
   }
 }
