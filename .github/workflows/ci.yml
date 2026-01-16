@@ -45,7 +45,7 @@ jobs:
         run: vite fmt --check
 
       - name: Lint (with GitHub annotations)
-        run: vite lint --format github --type-aware --type-check
+        run: vite lint --deny-warnings --format github --type-aware --type-check
 
       - name: Run tests
         run: vite test

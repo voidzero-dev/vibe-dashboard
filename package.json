@@ -9,7 +9,7 @@
     "ready": "vite run fmt && vite run lint && vite run test && vite run build",
     "dev": "vite run @vibe/dashboard#dev",
     "build": "vite run @vibe/dashboard#build",
-    "lint": "vite lint --type-aware --type-check",
+    "lint": "vite lint --deny-warnings --type-aware --type-check",
     "test": "vite test",
     "fmt": "vite fmt",
     "fmt:check": "vite fmt --check",
