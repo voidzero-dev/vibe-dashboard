@@ -41,13 +41,23 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install chromium
 
-      - name: Check ready
-        run: |
-          vite run ready
-          # run again to check cache hits
-          vite run ready
-        # env:
-        #   VITE_LOG: 'trace'
+      - name: Check formatting
+        run: vite fmt --check
+
+      - name: Lint (with GitHub annotations)
+        run: vite lint --format github --type-aware --type-check
+
+      - name: Run tests
+        run: vite test
+
+      - name: Build
+        run: vite run @vibe/dashboard#build
+
+      - name: Typecheck all packages
+        run: vite run -r typecheck
+
+      - name: Verify cache (second run)
+        run: vite run ready
 
       - name: Check build artifacts
         if: ${{ matrix.os != 'windows-latest' }}
