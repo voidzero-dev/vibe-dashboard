@@ -6,9 +6,54 @@ settings:
 
 catalogs:
   default:
-    typescript:
-      specifier: ^5.9.2
-      version: 5.9.3
+    '@tailwindcss/vite':
+      specifier: ^4.1.13
+      version: 4.1.17
+    '@testing-library/react':
+      specifier: ^16.3.0
+      version: 16.3.0
+    '@testing-library/user-event':
+      specifier: ^14.6.1
+      version: 14.6.1
+    '@types/react':
+      specifier: ^19.1.10
+      version: 19.2.7
+    '@types/react-dom':
+      specifier: ^19.1.7
+      version: 19.2.3
+    '@types/react-router-dom':
+      specifier: ^5.3.3
+      version: 5.3.3
+    '@types/semver':
+      specifier: ^7.7.1
+      version: 7.7.1
+    lucide-react:
+      specifier: ^0.562.0
+      version: 0.562.0
+    playwright:
+      specifier: ^1.56.1
+      version: 1.56.1
+    react:
+      specifier: ^19.1.1
+      version: 19.2.0
+    react-dom:
+      specifier: ^19.1.1
+      version: 19.2.0
+    react-router-dom:
+      specifier: ^7.8.2
+      version: 7.9.6
+    recharts:
+      specifier: ^3.0.0
+      version: 3.5.0
+    semver:
+      specifier: ^7.7.2
+      version: 7.7.3
+    tailwindcss:
+      specifier: ^4.1.13
+      version: 4.1.17
+    top-github-dependents-by-stars:
+      specifier: ^1.0.4
+      version: 1.0.4
     vite-plus:
       specifier: latest
       version: 0.0.0-6bf6b4c1b360fa4f7f1cee975103c16c21053c72
@@ -22,10 +67,10 @@ importers:
   .:
     devDependencies:
       playwright:
-        specifier: ^1.56.1
+        specifier: 'catalog:'
         version: 1.56.1
       top-github-dependents-by-stars:
-        specifier: ^1.0.4
+        specifier: 'catalog:'
         version: 1.0.4
       vite-plus:
         specifier: 'catalog:'
@@ -43,54 +88,51 @@ importers:
         specifier: workspace:*
         version: link:../../packages/utils
       lucide-react:
-        specifier: ^0.562.0
+        specifier: 'catalog:'
         version: 0.562.0(react@19.2.0)
       react:
-        specifier: ^19.1.1
+        specifier: 'catalog:'
         version: 19.2.0
       react-dom:
-        specifier: ^19.1.1
+        specifier: 'catalog:'
         version: 19.2.0(react@19.2.0)
       react-router-dom:
-        specifier: ^7.8.2
+        specifier: 'catalog:'
         version: 7.9.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       recharts:
-        specifier: ^3.0.0
+        specifier: 'catalog:'
         version: 3.5.0(@types/react@19.2.7)(eslint@9.39.1(jiti@2.6.1))(react-dom@19.2.0(react@19.2.0))(react-is@19.2.0)(react@19.2.0)(redux@5.0.1)
       semver:
-        specifier: ^7.7.2
+        specifier: 'catalog:'
         version: 7.7.3
     devDependencies:
       '@tailwindcss/vite':
-        specifier: ^4.1.13
+        specifier: 'catalog:'
         version: 4.1.17(@voidzero-dev/vite-plus-core@0.0.0-6bf6b4c1b360fa4f7f1cee975103c16c21053c72(@arethetypeswrong/core@0.18.2)(@types/node@24.10.1)(esbuild@0.25.12)(jiti@2.6.1)(less@4.4.2)(publint@0.3.15)(sass-embedded@1.93.3)(sass@1.94.2)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(typescript@5.9.3)(unplugin-lightningcss@0.4.3)(unplugin-unused@0.5.6)(yaml@2.8.1))
       '@testing-library/react':
-        specifier: ^16.3.0
+        specifier: 'catalog:'
         version: 16.3.0(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@testing-library/user-event':
-        specifier: ^14.6.1
+        specifier: 'catalog:'
         version: 14.6.1(@testing-library/dom@10.4.1)
       '@types/react':
-        specifier: ^19.1.10
+        specifier: 'catalog:'
         version: 19.2.7
       '@types/react-dom':
-        specifier: ^19.1.7
+        specifier: 'catalog:'
         version: 19.2.3(@types/react@19.2.7)
       '@types/react-router-dom':
-        specifier: ^5.3.3
+        specifier: 'catalog:'
         version: 5.3.3
       '@types/semver':
-        specifier: ^7.7.1
+        specifier: 'catalog:'
         version: 7.7.1
       playwright:
-        specifier: ^1.55.0
+        specifier: 'catalog:'
         version: 1.56.1
       tailwindcss:
-        specifier: ^4.1.13
-        version: 4.1.17
-      typescript:
         specifier: 'catalog:'
-        version: 5.9.3
+        version: 4.1.17
       vite:
         specifier: npm:@voidzero-dev/vite-plus-core@latest
         version: '@voidzero-dev/vite-plus-core@0.0.0-6bf6b4c1b360fa4f7f1cee975103c16c21053c72(@arethetypeswrong/core@0.18.2)(@types/node@24.10.1)(esbuild@0.25.12)(jiti@2.6.1)(less@4.4.2)(publint@0.3.15)(sass-embedded@1.93.3)(sass@1.94.2)(stylus@0.64.0)(sugarss@5.0.1(postcss@8.5.6))(terser@5.44.1)(tsx@4.20.6)(typescript@5.9.3)(unplugin-lightningcss@0.4.3)(unplugin-unused@0.5.6)(yaml@2.8.1)'
@@ -101,53 +143,44 @@ importers:
   packages/shared:
     dependencies:
       react:
-        specifier: ^19.1.1
+        specifier: 'catalog:'
         version: 19.2.0
       recharts:
-        specifier: ^3.0.0
+        specifier: 'catalog:'
         version: 3.5.0(@types/react@19.2.7)(eslint@9.39.1(jiti@2.6.1))(react-dom@19.2.0(react@19.2.0))(react-is@19.2.0)(react@19.2.0)(redux@5.0.1)
     devDependencies:
       '@types/react':
-        specifier: ^19.1.10
-        version: 19.2.7
-      typescript:
         specifier: 'catalog:'
-        version: 5.9.3
+        version: 19.2.7
 
   packages/ui:
     dependencies:
       lucide-react:
-        specifier: ^0.562.0
+        specifier: 'catalog:'
         version: 0.562.0(react@19.2.0)
       react:
-        specifier: ^19.1.1
+        specifier: 'catalog:'
         version: 19.2.0
       react-dom:
-        specifier: ^19.1.1
+        specifier: 'catalog:'
         version: 19.2.0(react@19.2.0)
     devDependencies:
       '@types/react':
-        specifier: ^19.1.10
+        specifier: 'catalog:'
         version: 19.2.7
       '@types/react-dom':
-        specifier: ^19.1.7
-        version: 19.2.3(@types/react@19.2.7)
-      typescript:
         specifier: 'catalog:'
-        version: 5.9.3
+        version: 19.2.3(@types/react@19.2.7)
 
   packages/utils:
     dependencies:
       semver:
-        specifier: ^7.7.2
+        specifier: 'catalog:'
         version: 7.7.3
     devDependencies:
       '@types/semver':
-        specifier: ^7.7.1
-        version: 7.7.1
-      typescript:
         specifier: 'catalog:'
-        version: 5.9.3
+        version: 7.7.1
 
 packages:
 
@@ -2472,6 +2505,7 @@ packages:
   whatwg-encoding@3.1.1:
     resolution: {integrity: sha512-6qN4hJdMwfYBtE3YBTTHhoeuUrDBPZmbQaxWAqSALV/MeEnR5z1xd8UKud2RAkFoPkmB+hli1TZSnyi84xz1vQ==}
     engines: {node: '>=18'}
+    deprecated: Use @exodus/bytes instead for a more spec-conformant and faster implementation
 
   whatwg-mimetype@3.0.0:
     resolution: {integrity: sha512-nt+N2dzIutVRxARx1nghPKGv1xHikU7HKdfafKkLNLindmPU/ch3U31NOCGGA/dmPcmb1VlofO0vnKAcsm0o/Q==}
@@ -4642,7 +4676,8 @@ snapshots:
   typescript@5.6.1-rc:
     optional: true
 
-  typescript@5.9.3: {}
+  typescript@5.9.3:
+    optional: true
 
   undici-types@6.21.0:
     optional: true
