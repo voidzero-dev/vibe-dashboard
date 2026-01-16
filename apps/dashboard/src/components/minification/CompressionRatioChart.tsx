@@ -51,7 +51,7 @@ export function CompressionRatioChart({ data }: CompressionRatioChartProps) {
           <LabelList
             dataKey="value"
             position="top"
-            formatter={(label) => `${label as number}%`}
+            formatter={(label) => `${Number(label)}%`}
             style={{ fontSize: "10px", fill: "#94a3b8" }}
           />
         </Bar>

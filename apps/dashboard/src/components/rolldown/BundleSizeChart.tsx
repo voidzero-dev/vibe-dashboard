@@ -14,7 +14,7 @@ import {
 import * as semver from "semver";
 import rolldownStats from "../../../../../data/rolldown-version-stats.json";
 
-const sortedRolldownStats = [...rolldownStats].sort((a, b) => semver.compare(a.version, b.version));
+const sortedRolldownStats = [...rolldownStats].toSorted((a, b) => semver.compare(a.version, b.version));
 
 const bundleSizeDiffData = sortedRolldownStats.map((stat, index) => {
   if (index === 0) {
@@ -25,7 +25,7 @@ const bundleSizeDiffData = sortedRolldownStats.map((stat, index) => {
       currentSize: stat.totalSize,
       isBaseline: true,
       version: stat.version,
-      publicationDate: (stat as any).publicationDate,
+      publicationDate: stat.publicationDate,
     };
   }
 
@@ -40,7 +40,7 @@ const bundleSizeDiffData = sortedRolldownStats.map((stat, index) => {
     currentSize: currentSize,
     isBaseline: false,
     version: stat.version,
-    publicationDate: (stat as any).publicationDate,
+    publicationDate: stat.publicationDate,
   };
 });
 

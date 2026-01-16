@@ -4,11 +4,11 @@ export const popularMinifiers = ["terser", "esbuild", "@swc/core", "uglify-js", 
 
 export const libraries = Object.entries(minificationData)
   .map(([name, data]: [string, any]) => ({ name, size: data.size }))
-  .sort((a, b) => b.size - a.size)
+  .toSorted((a, b) => b.size - a.size)
   .map((item) => item.name);
 
 export const getLibraryData = (library: string, metric: "time" | "compression") => {
-  const libraryData = (minificationData as any)[library];
+  const libraryData = (minificationData as Record<string, any>)[library];
   const data: any[] = [];
 
   popularMinifiers.forEach((minifier) => {
@@ -57,7 +57,7 @@ export const getLibraryData = (library: string, metric: "time" | "compression") 
   });
 
   // Sort data: time from smallest to largest (fastest to slowest), compression from largest to smallest (best to worst)
-  return data.sort((a, b) =>
+  return data.toSorted((a, b) =>
     metric === "time" ? a.value - b.value : a.minzippedBytes - b.minzippedBytes,
   );
 };

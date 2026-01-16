@@ -18,9 +18,9 @@ const buildTimeData = rolldownStats
     name: `v${stat.version}`,
     value: stat.buildTime,
     version: stat.version,
-    publicationDate: (stat as any).publicationDate,
+    publicationDate: stat.publicationDate,
   }))
-  .sort((a, b) => semver.compare(a.version, b.version));
+  .toSorted((a, b) => semver.compare(a.version, b.version));
 
 export function BuildTimeChart() {
   return (
@@ -55,7 +55,7 @@ export function BuildTimeChart() {
           <LabelList
             dataKey="value"
             position="top"
-            formatter={(label) => `${label as number}ms`}
+            formatter={(label) => `${Number(label)}ms`}
             style={{ fontSize: "11px", fill: "#94a3b8" }}
           />
         </Bar>

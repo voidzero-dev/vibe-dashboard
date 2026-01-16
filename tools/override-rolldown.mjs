@@ -30,7 +30,7 @@ async function fetchStableVersions() {
         res.on("end", () => {
           try {
             const packageInfo = JSON.parse(data);
-            let versions = Object.keys(packageInfo.versions).sort((a, b) => {
+            let versions = Object.keys(packageInfo.versions).toSorted((a, b) => {
               // Sort by publication date (most recent last)
               const dateA = new Date(packageInfo.time[a]);
               const dateB = new Date(packageInfo.time[b]);
