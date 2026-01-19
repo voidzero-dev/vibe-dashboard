@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "A frontend dashboard for displaying different metrics",
   "private": true,
-  "packageManager": "pnpm@10.26.0",
+  "packageManager": "pnpm@10.28.0",
   "type": "module",
   "scripts": {
     "ready": "vite run fmt && vite run lint && vite run test && vite run build",
