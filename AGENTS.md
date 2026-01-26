@@ -11,56 +11,70 @@ A modern frontend dashboard for displaying different metrics using bar charts. B
 - Install Node.js v20 or higher (verified working with v20.19.4)
 - Install pnpm globally: `npm install -g pnpm` (requires pnpm v10 or higher)
 - Bootstrap the repository:
+
   ```bash
   pnpm install
   ```
+
   - **Timing**: Takes approximately 10 seconds. NEVER CANCEL. Set timeout to 60+ seconds.
 
 ### Build and Development
 
 - Build the project:
+
   ```bash
   pnpm build
   ```
+
   - **Timing**: Takes approximately 7 seconds. NEVER CANCEL. Set timeout to 60+ seconds.
   - Builds TypeScript and creates production bundle with Vite
   - **Expected output**: Creates `dist/` directory in `apps/dashboard/` with minified assets
 
 - Start development server:
+
   ```bash
   pnpm dev
   ```
+
   - Starts at `http://localhost:5173/`
   - **Timing**: Starts in under 1 second (192ms)
   - Uses Vite with hot module replacement (HMR)
 
 - Lint the code:
+
   ```bash
   pnpm lint
   ```
+
   - **Timing**: Takes approximately 2 seconds
   - Runs ESLint across all packages
   - **ALWAYS run before committing** to avoid CI failures
 
 - Format the code:
+
   ```bash
   pnpm fmt
   ```
+
   - **Timing**: Takes approximately 2 seconds
   - Runs vite fmt across all files
   - **ALWAYS run before committing** to avoid CI failures
 
 - Clean build artifacts:
+
   ```bash
   pnpm clean
   ```
+
   - **Timing**: Takes under 1 second
   - Removes `dist/` directories
 
 - Test command:
+
   ```bash
   pnpm test
   ```
+
   - **Note**: Currently no tests are configured, command runs but executes nothing
   - Takes under 1 second
 

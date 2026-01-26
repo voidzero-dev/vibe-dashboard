@@ -1,9 +1,8 @@
 {
   "name": "vibe-dashboard",
   "version": "0.1.0",
-  "description": "A frontend dashboard for displaying different metrics",
   "private": true,
-  "packageManager": "pnpm@10.26.0",
+  "description": "A frontend dashboard for displaying different metrics",
   "type": "module",
   "scripts": {
     "ready": "vite run fmt && vite run lint && vite run test && vite run build",
@@ -20,5 +19,6 @@
     "playwright": "catalog:",
     "top-github-dependents-by-stars": "catalog:",
     "vite-plus": "catalog:"
-  }
+  },
+  "packageManager": "pnpm@10.26.0"
 }

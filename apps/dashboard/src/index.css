@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
 @import "tailwindcss";
 
 /* Custom base styles - VoidZero inspired dark theme */
 :root {
   /* Typography system - clean sans-serif */
-  --font-display: 'Inter', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", monospace;
 
   font-family: var(--font-display);
   line-height: 1.6;
@@ -13,10 +13,10 @@
   letter-spacing: -0.011em;
 
   /* VoidZero-inspired color palette - dark mode default */
-  --color-bg: #08060D;
+  --color-bg: #08060d;
   --color-bg-elevated: #0f0d14;
   --color-surface: #16141c;
-  --color-text: #F4F3EC;
+  --color-text: #f4f3ec;
   --color-text-muted: #8b8a85;
   --color-border: #1f1d26;
   --color-border-strong: #2a2833;
@@ -55,7 +55,7 @@ html:not(.dark) {
   --color-bg: #fafafa;
   --color-bg-elevated: #ffffff;
   --color-surface: #f4f4f5;
-  --color-text: #08060D;
+  --color-text: #08060d;
   --color-text-muted: #71717a;
   --color-border: #e4e4e7;
   --color-border-strong: #d4d4d8;
@@ -86,13 +86,15 @@ body {
   min-height: 100vh;
   background: var(--color-bg);
   color: var(--color-text);
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
   position: relative;
 }
 
 /* Subtle noise texture for depth - minimal like VoidZero */
 body::before {
-  content: '';
+  content: "";
   position: fixed;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
@@ -102,7 +104,12 @@ body::before {
 }
 
 /* Typography - clean professional headings */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   font-family: var(--font-display);
   font-weight: 600;
@@ -110,10 +117,19 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.15;
 }
 
-h1 { font-size: 2.25rem; font-weight: 700; }
-h2 { font-size: 1.5rem; }
-h3 { font-size: 1.125rem; }
-h4 { font-size: 1rem; }
+h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+h2 {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1.125rem;
+}
+h4 {
+  font-size: 1rem;
+}
 
 /* Monospace for code/technical elements */
 .font-mono {
@@ -156,7 +172,11 @@ h4 { font-size: 1rem; }
 }
 
 /* Smooth transitions for interactive elements */
-button, a, input, textarea, select {
+button,
+a,
+input,
+textarea,
+select {
   transition: all 0.2s ease;
 }
 
@@ -204,7 +224,8 @@ button, a, input, textarea, select {
 
 /* Gradient animations */
 @keyframes gradient-shift {
-  0%, 100% {
+  0%,
+  100% {
     background-position: 0% 50%;
   }
   50% {
@@ -219,7 +240,8 @@ button, a, input, textarea, select {
 
 /* Floating animation */
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -233,7 +255,8 @@ button, a, input, textarea, select {
 
 /* Pulse glow effect - VoidZero orange accent */
 @keyframes pulse-glow {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 20px rgba(244, 129, 32, 0.3);
   }
   50% {
@@ -246,15 +269,27 @@ button, a, input, textarea, select {
 }
 
 /* Stagger animation utilities */
-.stagger-1 { animation-delay: 0.05s; }
-.stagger-2 { animation-delay: 0.1s; }
-.stagger-3 { animation-delay: 0.15s; }
-.stagger-4 { animation-delay: 0.2s; }
+.stagger-1 {
+  animation-delay: 0.05s;
+}
+.stagger-2 {
+  animation-delay: 0.1s;
+}
+.stagger-3 {
+  animation-delay: 0.15s;
+}
+.stagger-4 {
+  animation-delay: 0.2s;
+}
 
 /* Card hover lift effect */
 @keyframes card-lift {
-  from { transform: translateY(0); }
-  to { transform: translateY(-4px); }
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-4px);
+  }
 }
 
 /* Accent underline on hover */
@@ -263,7 +298,7 @@ button, a, input, textarea, select {
 }
 
 .accent-underline::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -2px;
   left: 0;
@@ -289,7 +324,7 @@ button, a, input, textarea, select {
 }
 
 .active-bar::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0;

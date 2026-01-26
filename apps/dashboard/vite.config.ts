@@ -11,7 +11,7 @@ export default defineConfig({
   },
   build: {
     rolldownOptions: {
-      experimental: {
+      output: {
         strictExecutionOrder: false,
       },
     },
