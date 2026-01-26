@@ -11,6 +11,7 @@ A modern frontend dashboard for displaying different metrics using bar charts. B
 - Install Node.js v20 or higher (verified working with v20.19.4)
 - Install pnpm globally: `npm install -g pnpm` (requires pnpm v10 or higher)
 - Bootstrap the repository:
+
   ```bash
   pnpm install
   ```
