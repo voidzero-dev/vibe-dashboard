@@ -21,7 +21,7 @@ catalog:
   top-github-dependents-by-stars: ^1.0.4
   typescript: ^5.9.2
   vite: npm:@voidzero-dev/vite-plus-core@latest
-  vite-plus: 0.0.0-ab0b0858cb619f270f5e0a698fea3d6f5622a761
+  vite-plus: 0.0.1
   vitest: npm:@voidzero-dev/vite-plus-test@latest
 
 minimumReleaseAge: 1440
