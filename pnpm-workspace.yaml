@@ -10,7 +10,7 @@ catalog:
   "@types/react-dom": ^19.1.7
   "@types/react-router-dom": ^5.3.3
   "@types/semver": ^7.7.1
-  lucide-react: ^0.562.0
+  lucide-react: ^0.575.0
   playwright: ^1.57.0
   react: ^19.1.1
   react-dom: ^19.1.1
@@ -21,7 +21,7 @@ catalog:
   top-github-dependents-by-stars: ^1.0.4
   typescript: ^5.9.2
   vite: npm:@voidzero-dev/vite-plus-core@latest
-  vite-plus: 0.0.0-ffb4d08a8edafe855c59736c0a38ee85a2373ebb
+  vite-plus: 0.0.1
   vitest: npm:@voidzero-dev/vite-plus-test@latest
 
 minimumReleaseAge: 1440
