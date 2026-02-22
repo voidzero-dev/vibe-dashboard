@@ -24,7 +24,7 @@ jobs:
 
       - uses: oxc-project/setup-node@8958a8e040102244b619c4a94fccb657a44b1c21 # v1.0.6
 
-      - uses: voidzero-dev/setup-vite-plus-action@5bd070e3dfe8fd6a967ab859304e95daa4e64ea0 # v1
+      - uses: voidzero-dev/setup-vite-plus-action@4e6a6069651dac09e68b7f893da6d62a3498c1fa # v1
         with:
           cache: true
 
