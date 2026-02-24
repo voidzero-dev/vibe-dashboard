@@ -28,12 +28,12 @@ jobs:
 
       - run: npx playwright install chromium
 
-      - run: vite run fmt:check
+      - run: vp run fmt:check
 
-      - run: vite run lint --format github
+      - run: vp run lint --format github
 
-      - run: vite run test
+      - run: vp run test
 
-      - run: vite run @vibe/dashboard#build
+      - run: vp run @vibe/dashboard#build
 
-      - run: vite run ready
+      - run: vp run ready
