@@ -30,7 +30,7 @@ jobs:
           cache: true
 
       - name: Build
-        run: vp run @vibe/dashboard#build
+        run: vp run build
 
       - name: Setup Pages
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5.0.0
