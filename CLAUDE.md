@@ -8,8 +8,10 @@ React 19 + TypeScript + Vite 7 dashboard. pnpm monorepo.
 pnpm install   # Install deps (~10s, timeout 60s+)
 pnpm dev       # Dev server at localhost:5173
 pnpm build     # Production build (~7s)
-pnpm lint      # Run ESLint
-pnpm fmt       # Format with vite fmt
+
+# Check (lint + format)
+vp run check
+vp run check:fix
 ```
 
 ## Structure
@@ -28,6 +30,6 @@ You run in an environment where `ast-grep` is available; whenever a search requi
 
 ## Always
 
-- Run `pnpm lint && pnpm build` before commits
+- Run `vp run check && vp run build` before commits
 - Prefer editing existing files over creating new ones
 - Don't create docs unless explicitly requested

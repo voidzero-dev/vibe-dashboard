@@ -40,25 +40,16 @@ A modern frontend dashboard for displaying different metrics using bar charts. B
   - **Timing**: Starts in under 1 second (192ms)
   - Uses Vite with hot module replacement (HMR)
 
-- Lint the code:
+- Check (lint + format):
 
   ```bash
-  pnpm lint
+  pnpm check
   ```
 
   - **Timing**: Takes approximately 2 seconds
-  - Runs ESLint across all packages
+  - Runs `vp check` (lint + format in one command)
   - **ALWAYS run before committing** to avoid CI failures
-
-- Format the code:
-
-  ```bash
-  pnpm fmt
-  ```
-
-  - **Timing**: Takes approximately 2 seconds
-  - Runs vite fmt across all files
-  - **ALWAYS run before committing** to avoid CI failures
+  - Use `pnpm check:fix` to auto-fix issues
 
 - Clean build artifacts:
 
