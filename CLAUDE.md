@@ -2,6 +2,18 @@
 
 React 19 + TypeScript + Vite 7 dashboard. pnpm monorepo.
 
+## Prerequisites
+
+Install the global `vp` CLI first (see https://staging.viteplus.dev/vite/guide/):
+
+```bash
+# Linux / macOS
+curl -fsSL https://staging.viteplus.dev/install.sh | bash
+
+# Windows
+irm https://staging.viteplus.dev/install.ps1 | iex
+```
+
 ## Commands
 
 ```bash
