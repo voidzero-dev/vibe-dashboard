@@ -18,8 +18,6 @@ A modern frontend dashboard for displaying different metrics using bar charts. B
   irm https://staging.viteplus.dev/install.ps1 | iex
   ```
 
-- Install Node.js v20 or higher (verified working with v20.19.4)
-- Install pnpm globally: `npm install -g pnpm` (requires pnpm v10 or higher)
 - Bootstrap the repository:
 
   ```bash
@@ -43,7 +41,7 @@ A modern frontend dashboard for displaying different metrics using bar charts. B
 - Start development server:
 
   ```bash
-  vp dev
+  vp run dev
   ```
 
   - Starts at `http://localhost:5173/`
@@ -110,7 +108,7 @@ vibe-dashboard/
 **ALWAYS test these scenarios after making changes:**
 
 1. **Basic functionality**:
-   - Run `vp dev` and navigate to `http://localhost:5173/`
+   - Run `vp run dev` and navigate to `http://localhost:5173/`
    - Verify the dashboard loads with "Vibe Dashboard" header
    - Confirm Sales chart is displayed by default
 
@@ -172,7 +170,7 @@ vibe-dashboard/
 ```bash
 # Development workflow
 vp install            # Install dependencies (~10s)
-vp dev               # Start dev server (<1s startup)
+vp run dev           # Start dev server (<1s startup)
 vp run build         # Production build (~7s)
 vp run check         # Check (lint + format) (~2s)
 vp run clean         # Clean build artifacts (<1s)
