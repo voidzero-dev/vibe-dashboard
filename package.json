@@ -5,13 +5,12 @@
   "description": "A frontend dashboard for displaying different metrics",
   "type": "module",
   "scripts": {
-    "ready": "vite run fmt && vite run lint && vite run test && vite run build",
+    "ready": "vite run check && vite run test && vite run build",
     "dev": "vite run @vibe/dashboard#dev",
     "build": "vite run @vibe/dashboard#build",
-    "lint": "vite lint --deny-warnings --type-aware --type-check",
+    "check": "vp check",
+    "check:fix": "vp check --fix",
     "test": "vite test",
-    "fmt": "vite fmt",
-    "fmt:check": "vite fmt --check",
     "cache:clean": "vite cache clean",
     "generate": "node tools/override-rolldown.mjs --stats"
   },
