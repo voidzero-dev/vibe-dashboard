@@ -12,12 +12,18 @@
     "check:fix": "vp check --fix",
     "test": "vite test",
     "cache:clean": "vite cache clean",
-    "generate": "node tools/override-rolldown.mjs --stats"
+    "generate": "node tools/override-rolldown.mjs --stats",
+    "prepare": "husky"
   },
   "devDependencies": {
+    "husky": "catalog:",
+    "lint-staged": "catalog:",
     "playwright": "catalog:",
     "top-github-dependents-by-stars": "catalog:",
     "vite-plus": "catalog:"
+  },
+  "lint-staged": {
+    "*": "vp check --fix"
   },
   "packageManager": "pnpm@10.26.0"
 }
