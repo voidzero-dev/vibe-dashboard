@@ -23,7 +23,7 @@ A modern frontend dashboard for displaying different metrics using bar charts. B
 - Bootstrap the repository:
 
   ```bash
-  pnpm install
+  vp install
   ```
 
   - **Timing**: Takes approximately 10 seconds. NEVER CANCEL. Set timeout to 60+ seconds.
@@ -33,7 +33,7 @@ A modern frontend dashboard for displaying different metrics using bar charts. B
 - Build the project:
 
   ```bash
-  pnpm build
+  vp run build
   ```
 
   - **Timing**: Takes approximately 7 seconds. NEVER CANCEL. Set timeout to 60+ seconds.
@@ -43,7 +43,7 @@ A modern frontend dashboard for displaying different metrics using bar charts. B
 - Start development server:
 
   ```bash
-  pnpm dev
+  vp dev
   ```
 
   - Starts at `http://localhost:5173/`
@@ -53,18 +53,18 @@ A modern frontend dashboard for displaying different metrics using bar charts. B
 - Check (lint + format):
 
   ```bash
-  pnpm check
+  vp run check
   ```
 
   - **Timing**: Takes approximately 2 seconds
   - Runs `vp check` (lint + format in one command)
   - **ALWAYS run before committing** to avoid CI failures
-  - Use `pnpm check:fix` to auto-fix issues
+  - Use `vp run check:fix` to auto-fix issues
 
 - Clean build artifacts:
 
   ```bash
-  pnpm clean
+  vp run clean
   ```
 
   - **Timing**: Takes under 1 second
@@ -73,7 +73,7 @@ A modern frontend dashboard for displaying different metrics using bar charts. B
 - Test command:
 
   ```bash
-  pnpm test
+  vp test
   ```
 
   - **Note**: Currently no tests are configured, command runs but executes nothing
@@ -110,7 +110,7 @@ vibe-dashboard/
 **ALWAYS test these scenarios after making changes:**
 
 1. **Basic functionality**:
-   - Run `pnpm dev` and navigate to `http://localhost:5173/`
+   - Run `vp dev` and navigate to `http://localhost:5173/`
    - Verify the dashboard loads with "Vibe Dashboard" header
    - Confirm Sales chart is displayed by default
 
@@ -131,7 +131,7 @@ vibe-dashboard/
 
 - **ALWAYS run before committing**:
   ```bash
-  pnpm lint && pnpm build
+  vp run check && vp run build
   ```
 - Verify build completes without errors
 - Check that no TypeScript compilation errors occur
@@ -171,20 +171,19 @@ vibe-dashboard/
 
 ```bash
 # Development workflow
-pnpm install          # Install dependencies (~10s)
-pnpm dev             # Start dev server (<1s startup)
-pnpm build           # Production build (~7s)
-pnpm lint            # Lint all packages (~2s)
-pnpm clean           # Clean build artifacts (<1s)
+vp install            # Install dependencies (~10s)
+vp dev               # Start dev server (<1s startup)
+vp run build         # Production build (~7s)
+vp run check         # Check (lint + format) (~2s)
+vp run clean         # Clean build artifacts (<1s)
 
 # Monorepo-specific
-pnpm --filter dashboard dev    # Run dev only for dashboard
-pnpm -r build                  # Build all packages recursively
+vp run @vibe/dashboard#dev     # Run dev only for dashboard
 ```
 
 ### Troubleshooting
 
-- **Build fails**: Check TypeScript errors, run `pnpm lint` first
+- **Build fails**: Check TypeScript errors, run `vp run check` first
 - **Dev server won't start**: Ensure port 5173 is available
 - **Charts not rendering**: Verify Recharts data format matches expected structure
 - **Styles broken**: Check CSS imports in `App.tsx` and `main.tsx`

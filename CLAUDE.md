@@ -17,9 +17,9 @@ irm https://staging.viteplus.dev/install.ps1 | iex
 ## Commands
 
 ```bash
-pnpm install   # Install deps (~10s, timeout 60s+)
-pnpm dev       # Dev server at localhost:5173
-pnpm build     # Production build (~7s)
+vp install     # Install deps (~10s, timeout 60s+)
+vp dev         # Dev server at localhost:5173
+vp run build   # Production build (~7s)
 
 # Check (lint + format)
 vp run check
