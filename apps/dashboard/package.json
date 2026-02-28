@@ -4,11 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
-    "preview": "vite preview",
+    "dev": "vp dev",
+    "build": "vp build",
+    "preview": "vp preview",
     "clean": "rm -rf dist",
-    "test": "vite test"
+    "test": "vp test"
   },
   "dependencies": {
     "@vibe/shared": "workspace:*",

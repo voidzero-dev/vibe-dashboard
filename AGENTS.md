@@ -8,12 +8,20 @@ A modern frontend dashboard for displaying different metrics using bar charts. B
 
 ### Prerequisites and Installation
 
-- Install Node.js v20 or higher (verified working with v20.19.4)
-- Install pnpm globally: `npm install -g pnpm` (requires pnpm v10 or higher)
+- Install the global `vp` CLI (see https://staging.viteplus.dev/vite/guide/):
+
+  ```bash
+  # Linux / macOS
+  curl -fsSL https://staging.viteplus.dev/install.sh | bash
+
+  # Windows
+  irm https://staging.viteplus.dev/install.ps1 | iex
+  ```
+
 - Bootstrap the repository:
 
   ```bash
-  pnpm install
+  vp install
   ```
 
   - **Timing**: Takes approximately 10 seconds. NEVER CANCEL. Set timeout to 60+ seconds.
@@ -23,7 +31,7 @@ A modern frontend dashboard for displaying different metrics using bar charts. B
 - Build the project:
 
   ```bash
-  pnpm build
+  vp run build
   ```
 
   - **Timing**: Takes approximately 7 seconds. NEVER CANCEL. Set timeout to 60+ seconds.
@@ -33,37 +41,28 @@ A modern frontend dashboard for displaying different metrics using bar charts. B
 - Start development server:
 
   ```bash
-  pnpm dev
+  vp run dev
   ```
 
   - Starts at `http://localhost:5173/`
   - **Timing**: Starts in under 1 second (192ms)
   - Uses Vite with hot module replacement (HMR)
 
-- Lint the code:
+- Check (lint + format):
 
   ```bash
-  pnpm lint
+  vp run check
   ```
 
   - **Timing**: Takes approximately 2 seconds
-  - Runs ESLint across all packages
+  - Runs `vp check` (lint + format in one command)
   - **ALWAYS run before committing** to avoid CI failures
-
-- Format the code:
-
-  ```bash
-  pnpm fmt
-  ```
-
-  - **Timing**: Takes approximately 2 seconds
-  - Runs vite fmt across all files
-  - **ALWAYS run before committing** to avoid CI failures
+  - Use `vp run check:fix` to auto-fix issues
 
 - Clean build artifacts:
 
   ```bash
-  pnpm clean
+  vp run clean
   ```
 
   - **Timing**: Takes under 1 second
@@ -72,7 +71,7 @@ A modern frontend dashboard for displaying different metrics using bar charts. B
 - Test command:
 
   ```bash
-  pnpm test
+  vp test
   ```
 
   - **Note**: Currently no tests are configured, command runs but executes nothing
@@ -109,7 +108,7 @@ vibe-dashboard/
 **ALWAYS test these scenarios after making changes:**
 
 1. **Basic functionality**:
-   - Run `pnpm dev` and navigate to `http://localhost:5173/`
+   - Run `vp run dev` and navigate to `http://localhost:5173/`
    - Verify the dashboard loads with "Vibe Dashboard" header
    - Confirm Sales chart is displayed by default
 
@@ -130,7 +129,7 @@ vibe-dashboard/
 
 - **ALWAYS run before committing**:
   ```bash
-  pnpm lint && pnpm build
+  vp run check && vp run build
   ```
 - Verify build completes without errors
 - Check that no TypeScript compilation errors occur
@@ -170,20 +169,19 @@ vibe-dashboard/
 
 ```bash
 # Development workflow
-pnpm install          # Install dependencies (~10s)
-pnpm dev             # Start dev server (<1s startup)
-pnpm build           # Production build (~7s)
-pnpm lint            # Lint all packages (~2s)
-pnpm clean           # Clean build artifacts (<1s)
+vp install            # Install dependencies (~10s)
+vp run dev           # Start dev server (<1s startup)
+vp run build         # Production build (~7s)
+vp run check         # Check (lint + format) (~2s)
+vp run clean         # Clean build artifacts (<1s)
 
 # Monorepo-specific
-pnpm --filter dashboard dev    # Run dev only for dashboard
-pnpm -r build                  # Build all packages recursively
+vp run @vibe/dashboard#dev     # Run dev only for dashboard
 ```
 
 ### Troubleshooting
 
-- **Build fails**: Check TypeScript errors, run `pnpm lint` first
+- **Build fails**: Check TypeScript errors, run `vp run check` first
 - **Dev server won't start**: Ensure port 5173 is available
 - **Charts not rendering**: Verify Recharts data format matches expected structure
 - **Styles broken**: Check CSS imports in `App.tsx` and `main.tsx`

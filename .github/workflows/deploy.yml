@@ -24,11 +24,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
-      - name: Setup Node.js and pnpm
-        uses: ./.github/actions/setup-node-pnpm
+      - name: Setup vp
+        uses: voidzero-dev/setup-vp@679fb3bf669a1777bb417e81218c5ab904aa037f # v1
+        with:
+          cache: true
 
       - name: Build
-        run: pnpm build
+        run: vp run build
 
       - name: Setup Pages
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5.0.0

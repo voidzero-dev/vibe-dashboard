@@ -2,14 +2,28 @@
 
 React 19 + TypeScript + Vite 7 dashboard. pnpm monorepo.
 
+## Prerequisites
+
+Install the global `vp` CLI first (see https://staging.viteplus.dev/vite/guide/):
+
+```bash
+# Linux / macOS
+curl -fsSL https://staging.viteplus.dev/install.sh | bash
+
+# Windows
+irm https://staging.viteplus.dev/install.ps1 | iex
+```
+
 ## Commands
 
 ```bash
-pnpm install   # Install deps (~10s, timeout 60s+)
-pnpm dev       # Dev server at localhost:5173
-pnpm build     # Production build (~7s)
-pnpm lint      # Run ESLint
-pnpm fmt       # Format with vite fmt
+vp install     # Install deps (~10s, timeout 60s+)
+vp run dev     # Dev server at localhost:5173
+vp run build   # Production build (~7s)
+
+# Check (lint + format)
+vp run check
+vp run check:fix
 ```
 
 ## Structure
@@ -28,6 +42,6 @@ You run in an environment where `ast-grep` is available; whenever a search requi
 
 ## Always
 
-- Run `pnpm lint && pnpm build` before commits
+- Run `vp run check && vp run build` before commits
 - Prefer editing existing files over creating new ones
 - Don't create docs unless explicitly requested
