@@ -88,9 +88,9 @@ export function BundleSizeChart() {
             }}
             style={{ fontSize: "11px", fill: "#94a3b8" }}
           />
-          {bundleSizeDiffData.map((entry: any, index: number) => (
+          {bundleSizeDiffData.map((entry: any) => (
             <Cell
-              key={`cell-${index}`}
+              key={`cell-${entry.name}`}
               fill={entry.isBaseline ? "#94a3b8" : entry.value >= 0 ? "#dc2626" : "#16a34a"}
             />
           ))}
