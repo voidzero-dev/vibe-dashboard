@@ -28,6 +28,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
+      - name: Format data
+        run: pnpm run check:fix
+
       - name: Check for changes
         id: git-check
         run: |
