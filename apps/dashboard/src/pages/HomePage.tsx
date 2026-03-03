@@ -137,7 +137,7 @@ function HomePage() {
         </div>
 
         {/* Total stats banner */}
-        <div className="flex items-center gap-8 mt-8 py-4 px-5 bg-[var(--color-bg-elevated)] border border-[var(--color-border)] rounded-lg">
+        <div className="flex md:flex-row flex-col space-y-4  md:space-y-0 items-center gap-8 mt-8 py-4 px-5 bg-[var(--color-bg-elevated)] border border-[var(--color-border)] rounded-lg">
           <div>
             <div className="text-2xl font-semibold text-[var(--color-accent)]">124.1k</div>
             <div className="text-xs text-[var(--color-text-muted)]">GitHub Stars</div>
