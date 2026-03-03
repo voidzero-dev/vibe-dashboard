@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - name: Setup vp
-        uses: voidzero-dev/setup-vp@679fb3bf669a1777bb417e81218c5ab904aa037f # v1
+        uses: voidzero-dev/setup-vp@bd1d5cdfff6feadf7edfdf85d0a66e8b3415ee4a # v1
         with:
           cache: true
 
