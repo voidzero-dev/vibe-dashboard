@@ -8,10 +8,11 @@ catalog:
   "@testing-library/user-event": ^14.6.1
   "@types/react": ^19.1.10
   "@types/react-dom": ^19.1.7
-  "@types/react-router-dom": ^5.3.3
   "@types/semver": ^7.7.1
+  husky: ^9.1.7
+  lint-staged: ^16.3.2
   lucide-react: ^0.562.0
-  playwright: ^1.57.0
+  playwright: ^1.58.2
   react: ^19.1.1
   react-dom: ^19.1.1
   react-router-dom: ^7.8.2
@@ -19,55 +20,9 @@ catalog:
   semver: ^7.7.2
   tailwindcss: ^4.1.13
   top-github-dependents-by-stars: ^1.0.4
-  husky: ^9.1.7
-  lint-staged: ^16.2.7
   typescript: ^5.9.2
-  vite: npm:@voidzero-dev/vite-plus-core@latest
-  vite-plus: 0.0.0-g61d318d2.20260227-0939
-  vitest: npm:@voidzero-dev/vite-plus-test@latest
-
-minimumReleaseAge: 1440
-
-minimumReleaseAgeExclude:
-  - "@voidzero-dev/*"
-  - "@oxfmt/*"
-  - "@oxlint-tsgolint/*"
-  - "@oxlint/*"
-  - "@oxc-minify/*"
-  - "@oxc-parser/*"
-  - "@oxc-resolver/*"
-  - "@oxc-transform/*"
-  - "@oxc-project/*"
-  - "@rolldown/*"
-  - "@rolldown/pluginutils"
-  - oxfmt
-  - oxlint
-  - oxlint-tsgolint
-  - rolldown
-  - rolldown-plugin-dts
-  - rolldown-vite
-  - tsdown
-  - vite
-  - vite-plus
-  - vitepress
-  - vitest
-  - "@vitest/*"
+  vite-plus: v0.0.2-g17a37daf.20260304-1136
 
 onlyBuiltDependencies:
   - "@tailwindcss/oxide"
   - esbuild
-
-overrides:
-  vite: "catalog:"
-  vitest: "catalog:"
-
-peerDependencyRules:
-  allowAny:
-    - vite
-    - vitest
-  allowedVersions:
-    oxc-minify: "*"
-    vite: "*"
-    vitest: "*"
-
-verifyDepsBeforeRun: install

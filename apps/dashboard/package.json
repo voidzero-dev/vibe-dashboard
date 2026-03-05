@@ -27,11 +27,9 @@
     "@testing-library/user-event": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
-    "@types/react-router-dom": "catalog:",
     "@types/semver": "catalog:",
     "playwright": "catalog:",
     "tailwindcss": "catalog:",
-    "vite": "catalog:",
     "vite-plus": "catalog:"
   }
 }
