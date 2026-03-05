@@ -50,7 +50,7 @@ catalogs:
       version: 3.5.0
     semver:
       specifier: ^7.7.2
-      version: 7.7.3
+      version: 7.7.4
     tailwindcss:
       specifier: ^4.1.13
       version: 4.1.17
@@ -58,7 +58,7 @@ catalogs:
       specifier: ^1.0.4
       version: 1.0.4
     vite-plus:
-      specifier: v0.0.2-g17a37daf.20260304-1136
+      specifier: 0.0.2-g17a37daf.20260304-1136
       version: 0.0.2-g17a37daf.20260304-1136
 
 importers:
@@ -109,7 +109,7 @@ importers:
         version: 3.5.0(@types/react@19.2.7)(eslint@9.39.1(jiti@2.6.1))(react-dom@19.2.0(react@19.2.0))(react-is@19.2.0)(react@19.2.0)(redux@5.0.1)
       semver:
         specifier: 'catalog:'
-        version: 7.7.3
+        version: 7.7.4
     devDependencies:
       '@tailwindcss/vite':
         specifier: 'catalog:'
@@ -175,7 +175,7 @@ importers:
     dependencies:
       semver:
         specifier: 'catalog:'
-        version: 7.7.3
+        version: 7.7.4
     devDependencies:
       '@types/semver':
         specifier: 'catalog:'
@@ -1976,9 +1976,6 @@ packages:
     resolution: {integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==}
     engines: {node: '>=0.10.0'}
 
-  eventemitter3@5.0.1:
-    resolution: {integrity: sha512-GWkBvjiSZK87ELrYOSESUYeVIc9mvLLf/nXalMOS5dYrgZq9o5OVkbZAVM06CVxYsCwH9BDZFPlQTlPA1j4ahA==}
-
   eventemitter3@5.0.4:
     resolution: {integrity: sha512-mlsTRyGaPBjPedk6Bvw+aqbsXDtoAyAzm5MO7JgU+yVRyMQ5O8bD4Kcci7BS85f93veegeCPkL8R4GLClnjLFw==}
 
@@ -2612,10 +2609,6 @@ packages:
     resolution: {integrity: sha512-LKWqWJRhstyYo9pGvgor/ivk2w94eSjE3RGVuzLGlr3NmD8bf7RcYGze1mNdEHRP6TRP6rMuDHk5t44hnTRyow==}
     engines: {node: '>=14.19.0'}
 
-  postcss@8.5.6:
-    resolution: {integrity: sha512-3Ybi1tAuwAP9s0r1UQ2J4n5Y0G05bJkpUIO0/bI9MhwmD70S5aTWbXGBwxHrelT+XM1k6dM0pk+SwNkpTRN7Pg==}
-    engines: {node: ^10 || ^12 || >=14}
-
   postcss@8.5.8:
     resolution: {integrity: sha512-OW/rX8O/jXnm82Ey1k44pObPtdblfiuWnrd8X7GJ7emImCOstunGbXUpp7HdBrFQX6rJzn3sPT397Wp5aCwCHg==}
     engines: {node: ^10 || ^12 || >=14}
@@ -2887,11 +2880,6 @@ packages:
 
   semver@5.7.2:
     resolution: {integrity: sha512-cBznnQ9KjJqU67B52RMC65CMarK2600WFnbkcaiwWq3xy/5haFJlshgnpjovMVJ+Hff49d8GEn0b87C5pDQ10g==}
-    hasBin: true
-
-  semver@7.7.3:
-    resolution: {integrity: sha512-SdsKMrI9TdgjdweUSR9MweHA4EJ8YxHn8DFaDisvhVlUOe4BF1tLD7GAj0lIqWVl+dPb/rExr0Btby5loQm20Q==}
-    engines: {node: '>=10'}
     hasBin: true
 
   semver@7.7.4:
@@ -4128,7 +4116,7 @@ snapshots:
       '@oxc-project/runtime': 0.115.0
       '@oxc-project/types': 0.115.0
       lightningcss: 1.31.1
-      postcss: 8.5.6
+      postcss: 8.5.8
     optionalDependencies:
       '@arethetypeswrong/core': 0.18.2
       '@types/node': 24.10.1
@@ -4694,8 +4682,6 @@ snapshots:
   estraverse@5.3.0: {}
 
   esutils@2.0.3: {}
-
-  eventemitter3@5.0.1: {}
 
   eventemitter3@5.0.4: {}
 
@@ -5329,12 +5315,6 @@ snapshots:
 
   pngjs@7.0.0: {}
 
-  postcss@8.5.6:
-    dependencies:
-      nanoid: 3.3.11
-      picocolors: 1.1.1
-      source-map-js: 1.2.1
-
   postcss@8.5.8:
     dependencies:
       nanoid: 3.3.11
@@ -5408,7 +5388,7 @@ snapshots:
       decimal.js-light: 2.5.1
       es-toolkit: 1.42.0
       eslint-plugin-react-perf: 3.3.3(eslint@9.39.1(jiti@2.6.1))
-      eventemitter3: 5.0.1
+      eventemitter3: 5.0.4
       immer: 10.2.0
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
@@ -5612,10 +5592,7 @@ snapshots:
   semver@5.7.2:
     optional: true
 
-  semver@7.7.3: {}
-
-  semver@7.7.4:
-    optional: true
+  semver@7.7.4: {}
 
   set-cookie-parser@2.7.2: {}
 
