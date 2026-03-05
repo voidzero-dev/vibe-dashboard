@@ -25,7 +25,7 @@
       "@vibe/*": ["./packages/*/src"]
     }
   },
-  "include": ["apps/*/src", "packages/*/src"],
+  "include": ["apps", "packages", "vite.config.ts"],
   "references": [
     { "path": "./apps/dashboard" },
     { "path": "./packages/ui" },
