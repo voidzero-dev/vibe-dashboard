@@ -20,9 +20,9 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-      - uses: taiki-e/checkout-action@3ab630d442e198ebb0ca30872832406ca01c46eb # v1.4.0
+      - uses: taiki-e/checkout-action@83ed61bfbe2b8abbb3c66e8b65b1335484c70009 # v1.4.1
 
-      - uses: voidzero-dev/setup-vp@bd1d5cdfff6feadf7edfdf85d0a66e8b3415ee4a # v1
+      - uses: voidzero-dev/setup-vp@4a524139920f87f9f7080d3b8545acac019e1852 # v1
         with:
           cache: true
 
