@@ -21,7 +21,7 @@ catalog:
   tailwindcss: ^4.1.13
   top-github-dependents-by-stars: ^1.0.4
   typescript: ^5.9.2
-  vite-plus: 0.0.2-g17a37daf.20260304-1136
+  vite-plus: 0.1.8
 
 onlyBuiltDependencies:
   - "@tailwindcss/oxide"
