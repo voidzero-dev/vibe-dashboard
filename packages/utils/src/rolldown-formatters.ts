@@ -10,9 +10,18 @@ export const formatDate = (dateString: string): string => {
   });
 };
 
-export const bundleSizeDiffTooltipFormatter = (value: any, name: string, props: any) => {
-  const data = props.payload;
-  if (!data) return [value, name];
+// eslint-disable-next-line @typescript-eslint/no-explicit-any -- recharts Formatter type uses `any` for payload
+type TooltipFormatter = (
+  value: any,
+  name: any,
+  item: any,
+  index: number,
+  payload: any,
+) => [string, string];
+
+export const bundleSizeDiffTooltipFormatter: TooltipFormatter = (value, _name, item) => {
+  const data = item.payload;
+  if (!data) return [String(value), ""];
 
   const publicationDateText = data.publicationDate
     ? ` | Published: ${formatDate(data.publicationDate)}`
@@ -32,9 +41,9 @@ export const bundleSizeDiffTooltipFormatter = (value: any, name: string, props: 
   return [`${changeText} ${fromTo}${publicationDateText}`, "Size Change"];
 };
 
-export const buildTimeTooltipFormatter = (value: any, name: string, props: any) => {
-  const data = props.payload;
-  if (!data) return [value, name];
+export const buildTimeTooltipFormatter: TooltipFormatter = (value, _name, item) => {
+  const data = item.payload;
+  if (!data) return [String(value), ""];
 
   const publicationDateText = data.publicationDate
     ? ` | Published: ${formatDate(data.publicationDate)}`

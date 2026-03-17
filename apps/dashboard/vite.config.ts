@@ -6,9 +6,6 @@ import { defineConfig } from "vite-plus";
 export default defineConfig({
   plugins: [tailwindcss()],
   base: "/vibe-dashboard/",
-  experimental: {
-    enableNativePlugin: true,
-  },
   build: {
     rolldownOptions: {
       output: {

@@ -17,6 +17,10 @@ export default defineConfig({
       "import/no-unassigned-import": ["error", { allow: ["**/*.css"] }],
     },
     ignorePatterns: ["dist"],
+    options: {
+      typeCheck: true,
+      typeAware: true,
+    },
   },
   test: {
     projects: ["apps/dashboard"],
