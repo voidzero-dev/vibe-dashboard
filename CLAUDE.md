@@ -20,10 +20,8 @@ irm https://staging.viteplus.dev/install.ps1 | iex
 vp install     # Install deps (~10s, timeout 60s+)
 vp run dev     # Dev server at localhost:5173
 vp run build   # Production build (~7s)
-
-# Check (lint + format)
-vp run check
-vp run check:fix
+vp check       # Check (lint + format)
+vp check --fix # Check and auto-fix
 ```
 
 ## Structure
@@ -42,7 +40,7 @@ You run in an environment where `ast-grep` is available; whenever a search requi
 
 ## Always
 
-- Run `vp run check && vp run build` before commits
+- Run `vp check && vp run build` before commits
 - Prefer editing existing files over creating new ones
 - Don't create docs unless explicitly requested
 

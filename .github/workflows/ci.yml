@@ -29,13 +29,10 @@ jobs:
       - run: npx playwright install chromium
 
       - name: Check
-        run: vp run check
+        run: vp check
 
       - name: Test
-        run: vp run test
+        run: vp test run
 
       - name: Build
-        run: vp run @vibe/dashboard#build
-
-      - name: Ready
-        run: vp run ready
+        run: vp run build

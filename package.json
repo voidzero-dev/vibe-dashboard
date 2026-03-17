@@ -5,13 +5,9 @@
   "description": "A frontend dashboard for displaying different metrics",
   "type": "module",
   "scripts": {
-    "ready": "vp run check && vp run test && vp run build",
     "dev": "vp run @vibe/dashboard#dev",
     "build": "vp run @vibe/dashboard#build",
-    "check": "vp check",
-    "check:fix": "vp check --fix",
     "test": "vp test run",
-    "cache:clean": "vp cache clean",
     "generate": "node tools/override-rolldown.mjs --stats",
     "prepare": "vp config"
   },
