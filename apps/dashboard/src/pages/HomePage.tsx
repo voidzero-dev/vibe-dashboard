@@ -60,6 +60,15 @@ const projects = [
     url: "https://vitepress.dev",
     color: "#5C73E7",
   },
+  {
+    name: "Vite+",
+    description: "The unified toolchain for the web",
+    stars: "1.2k",
+    contributors: "30+",
+    downloads: "50k+/week",
+    url: "https://viteplus.dev",
+    color: "#BD34FE",
+  },
 ];
 
 // Performance benchmarks (Rolldown)
@@ -174,7 +183,7 @@ function HomePage() {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3">
           {projects.map((project) => (
             <a
               key={project.name}

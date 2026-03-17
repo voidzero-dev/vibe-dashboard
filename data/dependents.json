@@ -522,5 +522,11 @@
         }
       ]
     }
+  },
+  "voidzero-dev/vite-plus": {
+    "vite-plus": {
+      "topDependents": [],
+      "latestDependents": []
+    }
   }
 }

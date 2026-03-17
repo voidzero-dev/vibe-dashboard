@@ -26,6 +26,9 @@ const repositories = {
   "oxc-project/oxc-resolver": {
     "oxc-resolver": "packages",
   },
+  "voidzero-dev/vite-plus": {
+    "vite-plus": "repositories",
+  },
 };
 
 async function fetchDependents() {
