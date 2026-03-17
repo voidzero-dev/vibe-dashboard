@@ -1,6 +1,9 @@
 import { defineConfig } from "vite-plus";
 
 export default defineConfig({
+  staged: {
+    "*": "vp check --fix",
+  },
   lint: {
     plugins: ["unicorn", "typescript", "oxc", "react", "vitest", "jsx-a11y", "import"],
     categories: {

@@ -13,17 +13,12 @@
     "test": "vp test run",
     "cache:clean": "vp cache clean",
     "generate": "node tools/override-rolldown.mjs --stats",
-    "prepare": "husky"
+    "prepare": "vp config"
   },
   "devDependencies": {
-    "husky": "catalog:",
-    "lint-staged": "catalog:",
     "playwright": "catalog:",
     "top-github-dependents-by-stars": "catalog:",
     "vite-plus": "catalog:"
-  },
-  "lint-staged": {
-    "*": "vp check --fix"
   },
   "packageManager": "pnpm@10.30.2"
 }
