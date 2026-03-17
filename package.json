@@ -5,11 +5,10 @@
   "description": "A frontend dashboard for displaying different metrics",
   "type": "module",
   "scripts": {
+    "prepare": "vp config",
     "dev": "vp run @vibe/dashboard#dev",
     "build": "vp run @vibe/dashboard#build",
-    "test": "vp test run",
-    "generate": "node tools/override-rolldown.mjs --stats",
-    "prepare": "vp config"
+    "generate": "node tools/override-rolldown.mjs --stats"
   },
   "devDependencies": {
     "playwright": "catalog:",
