@@ -19,9 +19,9 @@ catalog:
   tailwindcss: ^4.1.13
   top-github-dependents-by-stars: ^1.0.4
   typescript: ^5.9.2
-  vite-plus: latest
-  vite: npm:@voidzero-dev/vite-plus-core@latest
-  vitest: npm:@voidzero-dev/vite-plus-test@latest
+  vite-plus: alpha
+  vite: npm:@voidzero-dev/vite-plus-core@alpha
+  vitest: npm:@voidzero-dev/vite-plus-test@alpha
 
 onlyBuiltDependencies:
   - "@tailwindcss/oxide"
