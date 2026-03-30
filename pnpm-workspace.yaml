@@ -9,7 +9,7 @@ catalog:
   "@types/react": ^19.1.10
   "@types/react-dom": ^19.1.7
   "@types/semver": ^7.7.1
-  lucide-react: ^0.577.0
+  lucide-react: ^1.0.0
   playwright: ^1.58.2
   react: ^19.1.1
   react-dom: ^19.1.1
@@ -18,7 +18,7 @@ catalog:
   semver: ^7.7.2
   tailwindcss: ^4.1.13
   top-github-dependents-by-stars: ^1.0.4
-  typescript: ^5.9.2
+  typescript: ^6.0.0
   vite-plus: latest
   vite: npm:@voidzero-dev/vite-plus-core@latest
   vitest: npm:@voidzero-dev/vite-plus-test@latest
