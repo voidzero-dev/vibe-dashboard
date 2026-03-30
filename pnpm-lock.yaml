@@ -25,8 +25,8 @@ catalogs:
       specifier: ^7.7.1
       version: 7.7.1
     lucide-react:
-      specifier: ^0.577.0
-      version: 0.577.0
+      specifier: ^1.0.0
+      version: 1.7.0
     playwright:
       specifier: ^1.58.2
       version: 1.58.2
@@ -86,7 +86,7 @@ importers:
         version: link:../../packages/utils
       lucide-react:
         specifier: 'catalog:'
-        version: 0.577.0(react@19.2.4)
+        version: 1.7.0(react@19.2.4)
       react:
         specifier: 'catalog:'
         version: 19.2.4
@@ -148,7 +148,7 @@ importers:
     dependencies:
       lucide-react:
         specifier: 'catalog:'
-        version: 0.577.0(react@19.2.4)
+        version: 1.7.0(react@19.2.4)
       react:
         specifier: 'catalog:'
         version: 19.2.4
@@ -2088,8 +2088,8 @@ packages:
     resolution: {integrity: sha512-aY/R+aEsRelme17KGQa/1ZSIpLpNYYrhcrepKTZgE+W3WM16YMCaPwOHLHsmopZHELU0Ojin1lPVxKR0MihncA==}
     engines: {node: 20 || >=22}
 
-  lucide-react@0.577.0:
-    resolution: {integrity: sha512-4LjoFv2eEPwYDPg/CUdBJQSDfPyzXCRrVW1X7jrx/trgxnxkHFjnVZINbzvzxjN70dxychOfg+FTYwBiS3pQ5A==}
+  lucide-react@1.7.0:
+    resolution: {integrity: sha512-yI7BeItCLZJTXikmK4KNUGCKoGzSvbKlfCvw44bU4fXAL6v3gYS4uHD1jzsLkfwODYwI6Drw5Tu9Z5ulDe0TSg==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
@@ -4344,7 +4344,7 @@ snapshots:
   lru-cache@11.2.7:
     optional: true
 
-  lucide-react@0.577.0(react@19.2.4):
+  lucide-react@1.7.0(react@19.2.4):
     dependencies:
       react: 19.2.4
 
