@@ -1,30 +1,35 @@
+import { useMemo } from "react";
 import minificationData from "../../../../../data/minification-benchmarks-data.json";
 import { popularMinifiers } from "@vibe/utils";
+import { MINIFICATION_STATS_DATA } from "../../constants/minification";
 
 export function MinificationStats() {
-  const stats = [
-    {
-      label: "Libraries Tested",
-      value: Object.keys(minificationData).length.toString(),
-      badge: "JavaScript Libraries",
-    },
-    {
-      label: "Minifiers Compared",
-      value: popularMinifiers.length.toString(),
-      badge: "Popular Tools",
-    },
-    {
-      label: "Fastest Minifier",
-      value: "OXC",
-      badge: "Rust-based",
-      highlight: true,
-    },
-    {
-      label: "Best Compression",
-      value: "UglifyJS",
-      badge: "Traditional Leader",
-    },
-  ];
+  const stats = useMemo(
+    () => [
+      {
+        label: "Libraries Tested",
+        value: Object.keys(minificationData).length.toString(),
+        badge: "JavaScript Libraries",
+      },
+      {
+        label: "Minifiers Compared",
+        value: popularMinifiers.length.toString(),
+        badge: "Popular Tools",
+      },
+      {
+        label: "Fastest Minifier",
+        value: MINIFICATION_STATS_DATA.fastestMinifier,
+        badge: "Rust-based",
+        highlight: true,
+      },
+      {
+        label: "Best Compression",
+        value: MINIFICATION_STATS_DATA.bestCompression,
+        badge: "Traditional Leader",
+      },
+    ],
+    [],
+  );
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
