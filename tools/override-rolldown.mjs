@@ -89,6 +89,8 @@ function getCurrentVersion() {
   } catch (error) {
     console.error("Error reading package.json:", error.message);
     process.exit(1);
+    // This return is unreachable but satisfies linter
+    return undefined;
   }
 }
 
@@ -127,6 +129,8 @@ function installDependencies() {
     console.error("❌ Error installing dependencies:", error.message);
     console.error("❌ Aborting due to pnpm install failure");
     process.exit(1);
+    // This return is unreachable but satisfies linter
+    return false;
   }
 }
 

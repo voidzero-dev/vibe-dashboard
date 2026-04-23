@@ -10,6 +10,7 @@ import {
   Timer,
   Zap,
 } from "lucide-react";
+import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { PageContainer } from "../components/layout/PageContainer";
 
@@ -78,6 +79,7 @@ const bundlerBenchmarks = [
   { name: "rspack", time: 4.07, color: "#FF6B35" },
   { name: "Rollup + esbuild", time: 40.1, color: "#FF4444" },
 ];
+const maxBundlerTime = Math.max(...bundlerBenchmarks.map((b) => b.time));
 
 // Oxc performance metrics
 const oxcBenchmarks = [
@@ -126,9 +128,26 @@ const trustedBy = [
   "Mercedes",
 ];
 
-function HomePage() {
-  const maxTime = Math.max(...bundlerBenchmarks.map((b) => b.time));
+// Overall statistics
+const overallStats = [
+  { value: "124.1k", label: "GitHub Stars", color: "var(--color-accent)" },
+  { value: "2,208+", label: "Contributors" },
+  { value: "57M+", label: "Weekly Downloads" },
+  { value: "$12.5M", label: "Series A Funding", color: "green-500" },
+];
 
+// Vite+ features
+const vitePlusFeatures = [
+  { icon: <Box size={14} />, label: "Dev", sub: "40x faster" },
+  { icon: <Package size={14} />, label: "Build", sub: "Rolldown" },
+  { icon: <FlaskConical size={14} />, label: "Test", sub: "Vitest" },
+  { icon: <Zap size={14} />, label: "Lint", sub: "100x faster" },
+  { icon: <FileText size={14} />, label: "Format", sub: "Prettier-compat" },
+  { icon: <Timer size={14} />, label: "Cache", sub: "Monorepo" },
+  { icon: <BarChart3 size={14} />, label: "GUI", sub: "Debug tools" },
+];
+
+function HomePage() {
   return (
     <PageContainer>
       {/* Hero Section */}
@@ -147,25 +166,17 @@ function HomePage() {
 
         {/* Total stats banner */}
         <div className="flex md:flex-row flex-col space-y-4  md:space-y-0 items-center gap-8 mt-8 py-4 px-5 bg-[var(--color-bg-elevated)] border border-[var(--color-border)] rounded-lg">
-          <div>
-            <div className="text-2xl font-semibold text-[var(--color-accent)]">124.1k</div>
-            <div className="text-xs text-[var(--color-text-muted)]">GitHub Stars</div>
-          </div>
-          <div className="w-px h-8 bg-[var(--color-border)]" />
-          <div>
-            <div className="text-2xl font-semibold">2,208+</div>
-            <div className="text-xs text-[var(--color-text-muted)]">Contributors</div>
-          </div>
-          <div className="w-px h-8 bg-[var(--color-border)]" />
-          <div>
-            <div className="text-2xl font-semibold">57M+</div>
-            <div className="text-xs text-[var(--color-text-muted)]">Weekly Downloads</div>
-          </div>
-          <div className="w-px h-8 bg-[var(--color-border)]" />
-          <div>
-            <div className="text-2xl font-semibold text-green-500">$12.5M</div>
-            <div className="text-xs text-[var(--color-text-muted)]">Series A Funding</div>
-          </div>
+          {overallStats.map((stat, index) => (
+            <Fragment key={stat.label}>
+              {index > 0 && <div className="w-px h-8 bg-[var(--color-border)]" />}
+              <div>
+                <div className={`text-2xl font-semibold ${stat.color ? `text-${stat.color}` : ""}`}>
+                  {stat.value}
+                </div>
+                <div className="text-xs text-[var(--color-text-muted)]">{stat.label}</div>
+              </div>
+            </Fragment>
+          ))}
         </div>
       </div>
 
@@ -227,7 +238,7 @@ function HomePage() {
                   <div
                     className="h-full rounded transition-all duration-500"
                     style={{
-                      width: `${(benchmark.time / maxTime) * 100}%`,
+                      width: `${(benchmark.time / maxBundlerTime) * 100}%`,
                       backgroundColor: benchmark.color,
                     }}
                   />
@@ -303,15 +314,7 @@ function HomePage() {
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 mb-4">
-            {[
-              { icon: <Box size={14} />, label: "Dev", sub: "40x faster" },
-              { icon: <Package size={14} />, label: "Build", sub: "Rolldown" },
-              { icon: <FlaskConical size={14} />, label: "Test", sub: "Vitest" },
-              { icon: <Zap size={14} />, label: "Lint", sub: "100x faster" },
-              { icon: <FileText size={14} />, label: "Format", sub: "Prettier-compat" },
-              { icon: <Timer size={14} />, label: "Cache", sub: "Monorepo" },
-              { icon: <BarChart3 size={14} />, label: "GUI", sub: "Debug tools" },
-            ].map((feature) => (
+            {vitePlusFeatures.map((feature) => (
               <div
                 key={feature.label}
                 className="p-3 rounded-md bg-[var(--color-surface)] border border-[var(--color-border)] text-center"

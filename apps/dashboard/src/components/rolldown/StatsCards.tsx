@@ -2,32 +2,37 @@ import { formatNumberWithCommas } from "@vibe/utils";
 import rolldownStats from "../../../../../data/rolldown-version-stats.json";
 
 const buildTimeData = rolldownStats.map((stat) => stat.buildTime);
+const bundleSizes = rolldownStats.map((s) => s.totalSize);
+const latestVersion = rolldownStats[rolldownStats.length - 1];
+const firstVersion = rolldownStats[0];
 
 export function StatsCards() {
+  const averageBuildTime = Math.round(
+    buildTimeData.reduce((sum, item) => sum + item, 0) / buildTimeData.length,
+  );
+
+  const bundleSizeRange = Math.round((Math.max(...bundleSizes) - Math.min(...bundleSizes)) / 1024);
+
   const stats = [
     {
       label: "Average Build Time",
-      value: `${Math.round(buildTimeData.reduce((sum, item) => sum + item, 0) / buildTimeData.length)}ms`,
+      value: `${averageBuildTime}ms`,
       badge: `Across ${buildTimeData.length} versions`,
     },
     {
       label: "Latest Bundle Size",
-      value: `${formatNumberWithCommas(rolldownStats[rolldownStats.length - 1]?.totalSize || 0)} bytes`,
-      badge: `v${rolldownStats[rolldownStats.length - 1]?.version}`,
+      value: `${formatNumberWithCommas(latestVersion?.totalSize || 0)} bytes`,
+      badge: `v${latestVersion?.version}`,
     },
     {
       label: "Bundle Size Range",
-      value: `${Math.round(
-        (Math.max(...rolldownStats.map((s) => s.totalSize)) -
-          Math.min(...rolldownStats.map((s) => s.totalSize))) /
-          1024,
-      )}KB`,
+      value: `${bundleSizeRange}KB`,
       badge: "Size Variation",
     },
     {
       label: "Versions Tested",
       value: rolldownStats.length.toString(),
-      badge: `${rolldownStats[0]?.version} - ${rolldownStats[rolldownStats.length - 1]?.version}`,
+      badge: `${firstVersion?.version} - ${latestVersion?.version}`,
     },
   ];
 
