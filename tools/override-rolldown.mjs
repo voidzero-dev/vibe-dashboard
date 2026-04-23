@@ -18,6 +18,7 @@ const STATS_OUTPUT_PATH = join(process.cwd(), "data/rolldown-version-stats.json"
 
 /**
  * Fetch the last 10 stable versions from npm registry
+ * @returns {Promise<string[]>} Array of version strings sorted by publication date
  */
 async function fetchStableVersions() {
   return new Promise((resolve, reject) => {
@@ -52,6 +53,7 @@ async function fetchStableVersions() {
 
 /**
  * Fetch npm publication dates for all versions
+ * @returns {Promise<Record<string, string>>} Object mapping version strings to publication dates
  */
 async function fetchNpmPublicationDates() {
   return new Promise((resolve, reject) => {
@@ -82,6 +84,10 @@ async function fetchNpmPublicationDates() {
   });
 }
 
+/**
+ * Get the current rolldown-vite version from package.json
+ * @returns {string} Current version string
+ */
 function getCurrentVersion() {
   try {
     const packageJson = JSON.parse(readFileSync(DASHBOARD_PACKAGE_PATH, "utf8"));
@@ -89,9 +95,16 @@ function getCurrentVersion() {
   } catch (error) {
     console.error("Error reading package.json:", error.message);
     process.exit(1);
+    // Unreachable return to satisfy consistent-return linter rule
+    return "";
   }
 }
 
+/**
+ * Update the rolldown-vite version in package.json
+ * @param {string} version - Target version to update to
+ * @returns {boolean} Success status
+ */
 function updateRolldownVersion(version) {
   try {
     console.log(`📦 Updating rolldown-vite to version: ${version}`);
@@ -113,6 +126,10 @@ function updateRolldownVersion(version) {
   }
 }
 
+/**
+ * Install dependencies using pnpm
+ * @returns {boolean} Success status
+ */
 function installDependencies() {
   try {
     console.log("📥 Installing dependencies...");
@@ -127,9 +144,15 @@ function installDependencies() {
     console.error("❌ Error installing dependencies:", error.message);
     console.error("❌ Aborting due to pnpm install failure");
     process.exit(1);
+    // Unreachable return to satisfy consistent-return linter rule
+    return false;
   }
 }
 
+/**
+ * Build the application using Vite
+ * @returns {{ success: boolean, buildTime: number | null }} Build result with timing
+ */
 function buildApp() {
   try {
     console.log("🔨 Building application...");
@@ -149,6 +172,10 @@ function buildApp() {
 
 /**
  * Collect file statistics from the dist directory
+ * @param {string} version - Rolldown version
+ * @param {number | null} buildTime - Build time in milliseconds
+ * @param {string | null} publicationDate - NPM publication date
+ * @returns {object} Statistics object with file details
  */
 function collectDistStats(version, buildTime = null, publicationDate = null) {
   const stats = {
@@ -208,6 +235,10 @@ function collectDistStats(version, buildTime = null, publicationDate = null) {
   return stats;
 }
 
+/**
+ * List available rolldown-vite versions from npm
+ * @returns {Promise<{ stableVersions: string[] }>} Object containing stable versions array
+ */
 async function listVersions() {
   console.log("📋 Fetching available rolldown-vite versions...\n");
 
@@ -238,6 +269,8 @@ async function listVersions() {
 
 /**
  * Collect statistics for all available rolldown versions
+ * Builds and analyzes each version, saving results to a JSON file
+ * @returns {Promise<void>}
  */
 async function collectAllVersionStats() {
   console.log("🚀 Starting comprehensive rolldown version analysis...\n");
@@ -336,6 +369,10 @@ async function collectAllVersionStats() {
   }
 }
 
+/**
+ * Main function to handle command-line arguments and execute requested actions
+ * @returns {Promise<void>}
+ */
 async function main() {
   const args = process.argv.slice(2);
 

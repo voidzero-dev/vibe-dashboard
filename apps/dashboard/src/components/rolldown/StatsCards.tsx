@@ -1,35 +1,40 @@
+import { useMemo } from "react";
 import { formatNumberWithCommas } from "@vibe/utils";
 import rolldownStats from "../../../../../data/rolldown-version-stats.json";
 
-const buildTimeData = rolldownStats.map((stat) => stat.buildTime);
-
 export function StatsCards() {
-  const stats = [
-    {
-      label: "Average Build Time",
-      value: `${Math.round(buildTimeData.reduce((sum, item) => sum + item, 0) / buildTimeData.length)}ms`,
-      badge: `Across ${buildTimeData.length} versions`,
-    },
-    {
-      label: "Latest Bundle Size",
-      value: `${formatNumberWithCommas(rolldownStats[rolldownStats.length - 1]?.totalSize || 0)} bytes`,
-      badge: `v${rolldownStats[rolldownStats.length - 1]?.version}`,
-    },
-    {
-      label: "Bundle Size Range",
-      value: `${Math.round(
-        (Math.max(...rolldownStats.map((s) => s.totalSize)) -
-          Math.min(...rolldownStats.map((s) => s.totalSize))) /
-          1024,
-      )}KB`,
-      badge: "Size Variation",
-    },
-    {
-      label: "Versions Tested",
-      value: rolldownStats.length.toString(),
-      badge: `${rolldownStats[0]?.version} - ${rolldownStats[rolldownStats.length - 1]?.version}`,
-    },
-  ];
+  const stats = useMemo(() => {
+    const buildTimeData = rolldownStats.map((stat) => stat.buildTime);
+    const avgBuildTime = Math.round(
+      buildTimeData.reduce((sum, item) => sum + item, 0) / buildTimeData.length,
+    );
+    const latestStat = rolldownStats[rolldownStats.length - 1];
+    const totalSizes = rolldownStats.map((s) => s.totalSize);
+    const sizeRange = Math.round((Math.max(...totalSizes) - Math.min(...totalSizes)) / 1024);
+
+    return [
+      {
+        label: "Average Build Time",
+        value: `${avgBuildTime}ms`,
+        badge: `Across ${buildTimeData.length} versions`,
+      },
+      {
+        label: "Latest Bundle Size",
+        value: `${formatNumberWithCommas(latestStat?.totalSize || 0)} bytes`,
+        badge: `v${latestStat?.version}`,
+      },
+      {
+        label: "Bundle Size Range",
+        value: `${sizeRange}KB`,
+        badge: "Size Variation",
+      },
+      {
+        label: "Versions Tested",
+        value: rolldownStats.length.toString(),
+        badge: `${rolldownStats[0]?.version} - ${latestStat?.version}`,
+      },
+    ];
+  }, []);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">

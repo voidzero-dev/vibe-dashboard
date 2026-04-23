@@ -11,84 +11,13 @@ import {
   Zap,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { BUNDLER_BENCHMARKS, OXC_BENCHMARKS } from "../constants/benchmarks";
+import { TRUSTED_BY, type DashboardSection } from "../constants/dashboard";
+import { PROJECTS } from "../constants/projects";
 import { PageContainer } from "../components/layout/PageContainer";
 
-// VoidZero ecosystem projects
-const projects = [
-  {
-    name: "Vite",
-    description: "The build tool for the web",
-    stars: "75.0k",
-    contributors: "1,161",
-    downloads: "36M+/week",
-    url: "https://vite.dev",
-    color: "#646CFF",
-  },
-  {
-    name: "Vitest",
-    description: "Next-generation testing framework",
-    stars: "14.9k",
-    contributors: "631",
-    downloads: "16.5M+/week",
-    url: "https://vitest.dev",
-    color: "#729B1B",
-  },
-  {
-    name: "Rolldown",
-    description: "Blazing fast Rust-based bundler",
-    stars: "12.2k",
-    contributors: "148",
-    downloads: "—",
-    url: "https://rolldown.rs",
-    color: "#FF6B35",
-  },
-  {
-    name: "Oxc",
-    description: "The JavaScript Oxidation Compiler",
-    stars: "17.2k",
-    contributors: "268",
-    downloads: "3.8M+/week",
-    url: "https://oxc.rs",
-    color: "#6B7FD7",
-  },
-  {
-    name: "VitePress",
-    description: "Markdown to beautiful docs",
-    stars: "13.5k",
-    contributors: "400+",
-    downloads: "1.2M+/week",
-    url: "https://vitepress.dev",
-    color: "#5C73E7",
-  },
-  {
-    name: "Vite+",
-    description: "The unified toolchain for the web",
-    stars: "1.2k",
-    contributors: "30+",
-    downloads: "50k+/week",
-    url: "https://viteplus.dev",
-    color: "#BD34FE",
-  },
-];
-
-// Performance benchmarks (Rolldown)
-const bundlerBenchmarks = [
-  { name: "Rolldown", time: 1.61, color: "var(--color-accent)" },
-  { name: "esbuild", time: 1.7, color: "#FFCF00" },
-  { name: "rspack", time: 4.07, color: "#FF6B35" },
-  { name: "Rollup + esbuild", time: 40.1, color: "#FF4444" },
-];
-
-// Oxc performance metrics
-const oxcBenchmarks = [
-  { tool: "Oxlint", comparison: "vs ESLint", speed: "50-100x faster" },
-  { tool: "Oxfmt", comparison: "vs Prettier", speed: "35x faster" },
-  { tool: "Parser", comparison: "vs SWC", speed: "3x faster" },
-  { tool: "Resolver", comparison: "vs enhanced-resolve", speed: "28x faster" },
-];
-
-// Dashboard sections
-const dashboardSections = [
+// Dashboard sections with icons
+const dashboardSections: DashboardSection[] = [
   {
     title: "Rolldown Stats",
     description: "Build performance metrics and bundle size evolution",
@@ -115,19 +44,8 @@ const dashboardSections = [
   },
 ];
 
-// Trusted by companies
-const trustedBy = [
-  "Shopify",
-  "OpenAI",
-  "Cloudflare",
-  "Linear",
-  "Framer",
-  "Hugging Face",
-  "Mercedes",
-];
-
 function HomePage() {
-  const maxTime = Math.max(...bundlerBenchmarks.map((b) => b.time));
+  const maxTime = Math.max(...BUNDLER_BENCHMARKS.map((b) => b.time));
 
   return (
     <PageContainer>
@@ -184,7 +102,7 @@ function HomePage() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3">
-          {projects.map((project) => (
+          {PROJECTS.map((project) => (
             <a
               key={project.name}
               href={project.url}
@@ -220,7 +138,7 @@ function HomePage() {
             Bundling 19,000 modules (10k React JSX + 9k iconify JS) with minification & source maps
           </p>
           <div className="space-y-3">
-            {bundlerBenchmarks.map((benchmark) => (
+            {BUNDLER_BENCHMARKS.map((benchmark) => (
               <div key={benchmark.name} className="flex items-center gap-4">
                 <div className="w-32 text-sm">{benchmark.name}</div>
                 <div className="flex-1 h-6 bg-[var(--color-surface)] rounded overflow-hidden">
@@ -256,7 +174,7 @@ function HomePage() {
       <section className="mb-16">
         <h2 className="text-lg font-semibold mb-6">Oxc Toolchain Speed</h2>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-          {oxcBenchmarks.map((bench) => (
+          {OXC_BENCHMARKS.map((bench) => (
             <div
               key={bench.tool}
               className="p-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-elevated)]"
@@ -358,7 +276,7 @@ function HomePage() {
       <section className="mb-8">
         <div className="text-xs text-[var(--color-text-muted)] mb-4">Trusted by</div>
         <div className="flex flex-wrap items-center gap-6">
-          {trustedBy.map((company) => (
+          {TRUSTED_BY.map((company) => (
             <span
               key={company}
               className="text-sm text-[var(--color-text-muted)] opacity-60 hover:opacity-100 transition-opacity"

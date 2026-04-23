@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
+import { ErrorBoundary } from "./components/ErrorBoundary";
 import Layout from "./components/Layout";
 import { SidebarProvider } from "./context/SidebarContext";
 
@@ -19,52 +20,54 @@ const PageLoader = () => (
 
 function App() {
   return (
-    <SidebarProvider>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route
-            index
-            element={
-              <Suspense fallback={<PageLoader />}>
-                <HomePage />
-              </Suspense>
-            }
-          />
-          <Route
-            path="rolldown-stats"
-            element={
-              <Suspense fallback={<PageLoader />}>
-                <RolldownStatsPage />
-              </Suspense>
-            }
-          />
-          <Route
-            path="minification"
-            element={
-              <Suspense fallback={<PageLoader />}>
-                <MinificationBenchmarksPage />
-              </Suspense>
-            }
-          />
-          <Route
-            path="npm-packages"
-            element={
-              <Suspense fallback={<PageLoader />}>
-                <NpmPackagesPage />
-              </Suspense>
-            }
-          />
-          <Route
-            path="dependents"
-            element={
-              <Suspense fallback={<PageLoader />}>
-                <DependentsPage />
-              </Suspense>
-            }
-          />
-        </Route>
-      </Routes>
-    </SidebarProvider>
+    <ErrorBoundary>
+      <SidebarProvider>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route
+              index
+              element={
+                <Suspense fallback={<PageLoader />}>
+                  <HomePage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="rolldown-stats"
+              element={
+                <Suspense fallback={<PageLoader />}>
+                  <RolldownStatsPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="minification"
+              element={
+                <Suspense fallback={<PageLoader />}>
+                  <MinificationBenchmarksPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="npm-packages"
+              element={
+                <Suspense fallback={<PageLoader />}>
+                  <NpmPackagesPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="dependents"
+              element={
+                <Suspense fallback={<PageLoader />}>
+                  <DependentsPage />
+                </Suspense>
+              }
+            />
+          </Route>
+        </Routes>
+      </SidebarProvider>
+    </ErrorBoundary>
   );
 }
 

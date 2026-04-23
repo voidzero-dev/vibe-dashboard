@@ -1,5 +1,12 @@
 #!/usr/bin/env node
 
+/**
+ * GitHub Dependents Fetcher
+ *
+ * This tool fetches top GitHub dependents for VoidZero ecosystem packages
+ * and saves them to a JSON file for use in the dashboard.
+ */
+
 import { getDependents } from "top-github-dependents-by-stars";
 import fs from "fs/promises";
 import path from "path";
@@ -7,7 +14,11 @@ import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// Hardcoded repositories and their packages with dependent types
+/**
+ * Repository and package configuration
+ * Maps repository paths to their packages with dependent types
+ * @type {Record<string, Record<string, string>>}
+ */
 const repositories = {
   "vitejs/rolldown-vite": {
     "rolldown-vite": "repositories",
@@ -31,6 +42,11 @@ const repositories = {
   },
 };
 
+/**
+ * Fetch top GitHub dependents for all configured packages
+ * Saves results to data/dependents.json
+ * @returns {Promise<void>}
+ */
 async function fetchDependents() {
   console.log("Fetching top GitHub dependents...");
 
