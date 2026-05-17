@@ -23,7 +23,13 @@ catalog:
   vite: npm:@voidzero-dev/vite-plus-core@latest
   vitest: npm:@voidzero-dev/vite-plus-test@latest
 
+allowBuilds:
+  "@parcel/watcher": true
+  "@tailwindcss/oxide": true
+  esbuild: true
+
 onlyBuiltDependencies:
+  - "@parcel/watcher"
   - "@tailwindcss/oxide"
   - esbuild
 overrides:
