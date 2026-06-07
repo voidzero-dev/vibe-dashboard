@@ -4,7 +4,7 @@ import { describe, expect, it } from "vite-plus/test";
 import App from "../App";
 import MinificationBenchmarksPage from "../pages/MinificationBenchmarksPage";
 import NpmPackagesPage from "../pages/NpmPackagesPage";
-import RolldownStatsPage from "../pages/RolldownStatsPage";
+import ViteStatsPage from "../pages/ViteStatsPage";
 
 describe("Pages rendering tests", () => {
   it("should render App component without errors", () => {
@@ -16,10 +16,10 @@ describe("Pages rendering tests", () => {
     expect(container).toBeTruthy();
   });
 
-  it("should render RolldownStatsPage without errors", () => {
+  it("should render ViteStatsPage without errors", () => {
     const { container } = render(
       <MemoryRouter>
-        <RolldownStatsPage />
+        <ViteStatsPage />
       </MemoryRouter>,
     );
     expect(container).toBeTruthy();

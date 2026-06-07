@@ -27,8 +27,8 @@ const navItems: NavItem[] = [
     icon: <Home size={20} />,
   },
   {
-    path: "/rolldown-stats",
-    label: "Rolldown Stats",
+    path: "/vite-stats",
+    label: "Vite Stats",
     icon: <Package size={20} />,
   },
   {

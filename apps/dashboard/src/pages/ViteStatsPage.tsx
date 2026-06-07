@@ -2,13 +2,13 @@ import { PageHeader } from "@vibe/shared";
 import { Badge } from "@vibe/ui";
 import { BarChart3, Clock, Package, TrendingUp } from "lucide-react";
 import { useState } from "react";
-import rolldownStatsData from "../../../../data/rolldown-version-stats.json";
+import viteStatsData from "../../../../data/vite-version-stats.json";
 import { PageContainer } from "../components/layout/PageContainer";
-import RolldownStats from "../RolldownStats";
+import ViteStats from "../ViteStats";
 
-function RolldownStatsPage() {
+function ViteStatsPage() {
   const [selectedMetric, setSelectedMetric] = useState("bundleSize");
-  const latestVersion = rolldownStatsData[rolldownStatsData.length - 1];
+  const latestVersion = viteStatsData[viteStatsData.length - 1];
 
   const stats = [
     {
@@ -23,7 +23,7 @@ function RolldownStatsPage() {
     },
     {
       label: "Versions Tracked",
-      value: rolldownStatsData.length.toString(),
+      value: viteStatsData.length.toString(),
       icon: <TrendingUp size={16} />,
     },
   ];
@@ -32,7 +32,7 @@ function RolldownStatsPage() {
     <PageContainer>
       <PageHeader
         icon={<Package size={20} />}
-        title="Rolldown Stats"
+        title="Vite Stats"
         subtitle="Track bundle size and build performance across versions"
         action={
           <Badge variant="accent" size="md">
@@ -59,10 +59,10 @@ function RolldownStatsPage() {
 
       {/* Main Chart */}
       <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-elevated)] overflow-hidden">
-        <RolldownStats selectedMetric={selectedMetric} setSelectedMetric={setSelectedMetric} />
+        <ViteStats selectedMetric={selectedMetric} setSelectedMetric={setSelectedMetric} />
       </div>
     </PageContainer>
   );
 }
 
-export default RolldownStatsPage;
+export default ViteStatsPage;

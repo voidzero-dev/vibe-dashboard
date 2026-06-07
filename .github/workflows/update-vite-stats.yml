@@ -1,4 +1,4 @@
-name: Update Rolldown Stats
+name: Update Vite Stats
 
 on:
   workflow_dispatch:
@@ -25,7 +25,7 @@ jobs:
         with:
           cache: true
 
-      - name: Run rolldown stats collection
+      - name: Run vite stats collection
         run: vp run generate
         env:
           GITHUB_TOKEN: ${{ github.token }}
@@ -36,11 +36,11 @@ jobs:
       - name: Check for changes
         id: git-check
         run: |
-          if git diff --exit-code data/rolldown-version-stats.json; then
-            echo "No changes detected in rolldown-version-stats.json"
+          if git diff --exit-code data/vite-version-stats.json; then
+            echo "No changes detected in vite-version-stats.json"
             echo "changes=false" >> $GITHUB_OUTPUT
           else
-            echo "Changes detected in rolldown-version-stats.json"
+            echo "Changes detected in vite-version-stats.json"
             echo "changes=true" >> $GITHUB_OUTPUT
           fi
 
@@ -49,8 +49,8 @@ jobs:
         run: |
           git config --local user.email "1430279+Boshen@users.noreply.github.com"
           git config --local user.name "Boshen"
-          git add data/rolldown-version-stats.json
-          git commit -m "chore: update rolldown version stats"
+          git add data/vite-version-stats.json
+          git commit -m "chore: update vite version stats"
           git push origin main
 
       - name: No changes to commit

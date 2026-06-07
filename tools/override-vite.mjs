@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 /**
- * Rolldown Version Override Tool
+ * Vite Version Override Tool
  *
- * This tool allows testing the vibe-dashboard with different rolldown-vite versions
+ * This tool allows testing the vibe-dashboard with different Vite 8 versions
  * from npm registry.
  */
 
@@ -14,15 +14,15 @@ import { join } from "node:path";
 
 const DASHBOARD_PACKAGE_PATH = join(process.cwd(), "apps/dashboard/package.json");
 const DIST_PATH = join(process.cwd(), "apps/dashboard/dist");
-const STATS_OUTPUT_PATH = join(process.cwd(), "data/rolldown-version-stats.json");
+const STATS_OUTPUT_PATH = join(process.cwd(), "data/vite-version-stats.json");
 
 /**
- * Fetch the last 10 stable versions from npm registry
+ * Fetch the last 10 stable Vite 8 versions from npm registry
  * @returns {Promise<string[]>} Array of version strings sorted by publication date
  */
 async function fetchStableVersions() {
   return new Promise((resolve, reject) => {
-    const url = "https://registry.npmjs.org/rolldown-vite";
+    const url = "https://registry.npmjs.org/vite";
 
     https
       .get(url, (res) => {
@@ -31,12 +31,15 @@ async function fetchStableVersions() {
         res.on("end", () => {
           try {
             const packageInfo = JSON.parse(data);
-            let versions = Object.keys(packageInfo.versions).toSorted((a, b) => {
-              // Sort by publication date (most recent last)
-              const dateA = new Date(packageInfo.time[a]);
-              const dateB = new Date(packageInfo.time[b]);
-              return dateA - dateB;
-            });
+            let versions = Object.keys(packageInfo.versions)
+              // Only stable Vite 8 releases (no prereleases)
+              .filter((v) => /^8\.\d+\.\d+$/.test(v))
+              .toSorted((a, b) => {
+                // Sort by publication date (most recent last)
+                const dateA = new Date(packageInfo.time[a]);
+                const dateB = new Date(packageInfo.time[b]);
+                return dateA - dateB;
+              });
             versions = versions.slice(versions.length - 10, versions.length);
 
             resolve(versions);
@@ -57,7 +60,7 @@ async function fetchStableVersions() {
  */
 async function fetchNpmPublicationDates() {
   return new Promise((resolve, reject) => {
-    const url = "https://registry.npmjs.org/rolldown-vite";
+    const url = "https://registry.npmjs.org/vite";
 
     https
       .get(url, (res) => {
@@ -85,13 +88,13 @@ async function fetchNpmPublicationDates() {
 }
 
 /**
- * Get the current rolldown-vite version from package.json
+ * Get the current Vite version from package.json
  * @returns {string} Current version string
  */
 function getCurrentVersion() {
   try {
     const packageJson = JSON.parse(readFileSync(DASHBOARD_PACKAGE_PATH, "utf8"));
-    return packageJson.devDependencies["rolldown-vite"];
+    return packageJson.devDependencies["vite"];
   } catch (error) {
     console.error("Error reading package.json:", error.message);
     process.exit(1);
@@ -101,19 +104,19 @@ function getCurrentVersion() {
 }
 
 /**
- * Update the rolldown-vite version in package.json
+ * Update the Vite version in package.json
  * @param {string} version - Target version to update to
  * @returns {boolean} Success status
  */
-function updateRolldownVersion(version) {
+function updateViteVersion(version) {
   try {
-    console.log(`📦 Updating rolldown-vite to version: ${version}`);
+    console.log(`📦 Updating vite to version: ${version}`);
 
     // Read current package.json
     const packageJson = JSON.parse(readFileSync(DASHBOARD_PACKAGE_PATH, "utf8"));
 
-    // Update rolldown-vite version
-    packageJson.devDependencies["rolldown-vite"] = version;
+    // Update vite version
+    packageJson.devDependencies["vite"] = version;
 
     // Write back to package.json
     writeFileSync(DASHBOARD_PACKAGE_PATH, JSON.stringify(packageJson, null, 2) + "\n");
@@ -157,7 +160,7 @@ function buildApp() {
   try {
     console.log("🔨 Building application...");
     const startTime = Date.now();
-    execSync("./node_modules/rolldown-vite/bin/vite.js build", {
+    execSync("./node_modules/vite/bin/vite.js build", {
       stdio: "inherit",
       cwd: join(process.cwd(), "apps/dashboard"),
     });
@@ -172,7 +175,7 @@ function buildApp() {
 
 /**
  * Collect file statistics from the dist directory
- * @param {string} version - Rolldown version
+ * @param {string} version - Vite version
  * @param {number | null} buildTime - Build time in milliseconds
  * @param {string | null} publicationDate - NPM publication date
  * @returns {object} Statistics object with file details
@@ -236,11 +239,11 @@ function collectDistStats(version, buildTime = null, publicationDate = null) {
 }
 
 /**
- * List available rolldown-vite versions from npm
+ * List available Vite 8 versions from npm
  * @returns {Promise<{ stableVersions: string[] }>} Object containing stable versions array
  */
 async function listVersions() {
-  console.log("📋 Fetching available rolldown-vite versions...\n");
+  console.log("📋 Fetching available Vite 8 versions...\n");
 
   try {
     // Fetch stable versions from npm
@@ -253,27 +256,27 @@ async function listVersions() {
       console.log(`  ${index + 1}. ${version} ${current ? "(current)" : ""}`);
     });
 
-    console.log("\n💡 Usage: node override-rolldown.js <version-number-or-version-string>");
-    console.log("Example: node override-rolldown.js 2  # Use second stable version");
-    console.log("Example: node override-rolldown.js 7.1.2  # Use specific version");
+    console.log("\n💡 Usage: node override-vite.js <version-number-or-version-string>");
+    console.log("Example: node override-vite.js 2  # Use second stable version");
+    console.log("Example: node override-vite.js 8.0.0  # Use specific version");
 
     return { stableVersions };
   } catch (error) {
     console.error("❌ Error fetching versions:", error.message);
     console.log("\n🔄 Falling back to manual version entry...");
-    console.log("💡 Usage: node override-rolldown.js <version-string>");
-    console.log("Example: node override-rolldown.js 7.1.2");
+    console.log("💡 Usage: node override-vite.js <version-string>");
+    console.log("Example: node override-vite.js 8.0.0");
     return { stableVersions: [] };
   }
 }
 
 /**
- * Collect statistics for all available rolldown versions
+ * Collect statistics for all available Vite 8 versions
  * Builds and analyzes each version, saving results to a JSON file
  * @returns {Promise<void>}
  */
 async function collectAllVersionStats() {
-  console.log("🚀 Starting comprehensive rolldown version analysis...\n");
+  console.log("🚀 Starting comprehensive Vite 8 version analysis...\n");
 
   const allStats = [];
   let successCount = 0;
@@ -304,7 +307,7 @@ async function collectAllVersionStats() {
 
       try {
         // Update version
-        if (!updateRolldownVersion(version)) {
+        if (!updateViteVersion(version)) {
           console.error(`❌ Failed to update package.json for version ${version}`);
           failureCount++;
           continue;
@@ -419,7 +422,7 @@ async function main() {
   console.log(`📍 Current version: ${getCurrentVersion()}\n`);
 
   // Update version
-  if (!updateRolldownVersion(targetVersion)) {
+  if (!updateViteVersion(targetVersion)) {
     process.exit(1);
   }
 
@@ -434,23 +437,23 @@ async function main() {
     process.exit(1);
   }
 
-  console.log("\n🎉 Successfully updated rolldown-vite and rebuilt the application!");
-  console.log(`📊 Dashboard is ready with rolldown-vite ${targetVersion}`);
+  console.log("\n🎉 Successfully updated vite and rebuilt the application!");
+  console.log(`📊 Dashboard is ready with vite ${targetVersion}`);
 }
 
 // Handle command line arguments
 if (process.argv.includes("--help") || process.argv.includes("-h")) {
-  console.log("Rolldown Version Override Tool\n");
+  console.log("Vite Version Override Tool\n");
   console.log("Usage:");
-  console.log("  node override-rolldown.js --list        List available versions");
-  console.log("  node override-rolldown.js --stats       Collect stats for all versions");
-  console.log("  node override-rolldown.js <index>       Use version by index");
-  console.log("  node override-rolldown.js <version>     Use specific version");
+  console.log("  node override-vite.js --list        List available versions");
+  console.log("  node override-vite.js --stats       Collect stats for all versions");
+  console.log("  node override-vite.js <index>       Use version by index");
+  console.log("  node override-vite.js <version>     Use specific version");
   console.log("\nExamples:");
-  console.log("  node override-rolldown.js --list");
-  console.log("  node override-rolldown.js --stats");
-  console.log("  node override-rolldown.js 2");
-  console.log("  node override-rolldown.js 7.1.2");
+  console.log("  node override-vite.js --list");
+  console.log("  node override-vite.js --stats");
+  console.log("  node override-vite.js 2");
+  console.log("  node override-vite.js 8.0.0");
   process.exit(0);
 }
 

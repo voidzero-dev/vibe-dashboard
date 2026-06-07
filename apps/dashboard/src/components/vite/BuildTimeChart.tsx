@@ -11,9 +11,9 @@ import {
   YAxis,
 } from "recharts";
 import * as semver from "semver";
-import rolldownStats from "../../../../../data/rolldown-version-stats.json";
+import viteStats from "../../../../../data/vite-version-stats.json";
 
-const buildTimeData = rolldownStats
+const buildTimeData = viteStats
   .map((stat) => ({
     name: `v${stat.version}`,
     value: stat.buildTime,

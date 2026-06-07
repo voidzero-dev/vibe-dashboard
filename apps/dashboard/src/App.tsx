@@ -8,7 +8,7 @@ import { SidebarProvider } from "./context/SidebarContext";
 const HomePage = lazy(() => import("./pages/HomePage"));
 const MinificationBenchmarksPage = lazy(() => import("./pages/MinificationBenchmarksPage"));
 const NpmPackagesPage = lazy(() => import("./pages/NpmPackagesPage"));
-const RolldownStatsPage = lazy(() => import("./pages/RolldownStatsPage"));
+const ViteStatsPage = lazy(() => import("./pages/ViteStatsPage"));
 const DependentsPage = lazy(() => import("./pages/DependentsPage"));
 
 // Loading component for Suspense fallback
@@ -33,10 +33,10 @@ function App() {
               }
             />
             <Route
-              path="rolldown-stats"
+              path="vite-stats"
               element={
                 <Suspense fallback={<PageLoader />}>
-                  <RolldownStatsPage />
+                  <ViteStatsPage />
                 </Suspense>
               }
             />
