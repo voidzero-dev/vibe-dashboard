@@ -345,9 +345,15 @@ async function collectAllVersionStats() {
     console.log("\n🔄 Restoring original package.json...");
     writeFileSync(DASHBOARD_PACKAGE_PATH, originalPackageJson);
 
-    // Save results
-    console.log(`\n💾 Saving results to ${STATS_OUTPUT_PATH}...`);
-    writeFileSync(STATS_OUTPUT_PATH, JSON.stringify(allStats, null, 2));
+    // Save results. Skip writing an empty dataset (e.g. when no stable Vite 8
+    // release exists yet) so we don't clobber the existing tracked stats and
+    // break the type-checked dashboard build.
+    if (allStats.length === 0) {
+      console.log(`\n⏭️  No stats collected — leaving ${STATS_OUTPUT_PATH} unchanged.`);
+    } else {
+      console.log(`\n💾 Saving results to ${STATS_OUTPUT_PATH}...`);
+      writeFileSync(STATS_OUTPUT_PATH, JSON.stringify(allStats, null, 2));
+    }
 
     console.log("\n==================== ANALYSIS COMPLETE ====================");
     console.log(`📊 Analysis Summary:`);

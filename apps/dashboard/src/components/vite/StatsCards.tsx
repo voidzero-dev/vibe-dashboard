@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { formatNumberWithCommas } from "@vibe/utils";
-import viteStats from "../../../../../data/vite-version-stats.json";
+import { viteStats } from "../../data/viteStats";
 
 export function StatsCards() {
   const stats = useMemo(() => {
