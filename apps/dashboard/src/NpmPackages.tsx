@@ -3,7 +3,6 @@ import { PackageDownloadsList } from "./components/npm/PackageDownloadsList";
 const packages = [
   "vite",
   "vitest",
-  "rolldown-vite",
   "rolldown",
   "tsdown",
   "oxlint",

@@ -8,7 +8,7 @@
     "prepare": "vp config",
     "dev": "vp run @vibe/dashboard#dev",
     "build": "vp run @vibe/dashboard#build",
-    "generate": "node tools/override-rolldown.mjs --stats"
+    "generate": "node tools/override-vite.mjs --stats"
   },
   "devDependencies": {
     "playwright": "catalog:",

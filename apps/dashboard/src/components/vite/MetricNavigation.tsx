@@ -1,6 +1,6 @@
 import { Clock, Package } from "lucide-react";
 
-const rolldownMetrics = [
+const viteMetrics = [
   { id: "bundleSize", name: "Bundle Size", icon: Package },
   { id: "buildTime", name: "Build Time", icon: Clock },
 ];
@@ -13,7 +13,7 @@ interface MetricNavigationProps {
 export function MetricNavigation({ selectedMetric, setSelectedMetric }: MetricNavigationProps) {
   return (
     <nav className="px-6 py-4 border-b border-[var(--color-border)] flex gap-2">
-      {rolldownMetrics.map((metric) => {
+      {viteMetrics.map((metric) => {
         const Icon = metric.icon;
         return (
           <button

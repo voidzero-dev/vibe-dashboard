@@ -19,10 +19,10 @@ import { PageContainer } from "../components/layout/PageContainer";
 // Dashboard sections with icons
 const dashboardSections: DashboardSection[] = [
   {
-    title: "Rolldown Stats",
+    title: "Vite Stats",
     description: "Build performance metrics and bundle size evolution",
     icon: <Package className="w-5 h-5" />,
-    link: "/rolldown-stats",
+    link: "/vite-stats",
   },
   {
     title: "Minification Benchmarks",

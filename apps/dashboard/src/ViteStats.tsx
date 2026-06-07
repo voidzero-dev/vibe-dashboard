@@ -1,14 +1,14 @@
-import { BuildTimeChart } from "./components/rolldown/BuildTimeChart";
-import { BundleSizeChart } from "./components/rolldown/BundleSizeChart";
-import { MetricNavigation } from "./components/rolldown/MetricNavigation";
-import { StatsCards } from "./components/rolldown/StatsCards";
+import { BuildTimeChart } from "./components/vite/BuildTimeChart";
+import { BundleSizeChart } from "./components/vite/BundleSizeChart";
+import { MetricNavigation } from "./components/vite/MetricNavigation";
+import { StatsCards } from "./components/vite/StatsCards";
 
-interface RolldownStatsProps {
+interface ViteStatsProps {
   selectedMetric: string;
   setSelectedMetric: (metric: string) => void;
 }
 
-function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps) {
+function ViteStats({ selectedMetric, setSelectedMetric }: ViteStatsProps) {
   return (
     <>
       <MetricNavigation selectedMetric={selectedMetric} setSelectedMetric={setSelectedMetric} />
@@ -27,4 +27,4 @@ function RolldownStats({ selectedMetric, setSelectedMetric }: RolldownStatsProps
   );
 }
 
-export default RolldownStats;
+export default ViteStats;

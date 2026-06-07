@@ -20,9 +20,6 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
  * @type {Record<string, Record<string, string>>}
  */
 const repositories = {
-  "vitejs/rolldown-vite": {
-    "rolldown-vite": "repositories",
-  },
   "rolldown/rolldown": {
     rolldown: "repositories",
   },

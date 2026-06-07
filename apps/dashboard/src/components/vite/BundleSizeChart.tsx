@@ -12,13 +12,11 @@ import {
   YAxis,
 } from "recharts";
 import * as semver from "semver";
-import rolldownStats from "../../../../../data/rolldown-version-stats.json";
+import viteStats from "../../../../../data/vite-version-stats.json";
 
-const sortedRolldownStats = [...rolldownStats].toSorted((a, b) =>
-  semver.compare(a.version, b.version),
-);
+const sortedViteStats = [...viteStats].toSorted((a, b) => semver.compare(a.version, b.version));
 
-const bundleSizeDiffData = sortedRolldownStats.map((stat, index) => {
+const bundleSizeDiffData = sortedViteStats.map((stat, index) => {
   if (index === 0) {
     return {
       name: `v${stat.version}`,
@@ -31,7 +29,7 @@ const bundleSizeDiffData = sortedRolldownStats.map((stat, index) => {
     };
   }
 
-  const prevSize = sortedRolldownStats[index - 1].totalSize;
+  const prevSize = sortedViteStats[index - 1].totalSize;
   const currentSize = stat.totalSize;
   const diff = currentSize - prevSize;
 

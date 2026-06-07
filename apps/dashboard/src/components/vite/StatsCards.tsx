@@ -1,15 +1,15 @@
 import { useMemo } from "react";
 import { formatNumberWithCommas } from "@vibe/utils";
-import rolldownStats from "../../../../../data/rolldown-version-stats.json";
+import viteStats from "../../../../../data/vite-version-stats.json";
 
 export function StatsCards() {
   const stats = useMemo(() => {
-    const buildTimeData = rolldownStats.map((stat) => stat.buildTime);
+    const buildTimeData = viteStats.map((stat) => stat.buildTime);
     const avgBuildTime = Math.round(
       buildTimeData.reduce((sum, item) => sum + item, 0) / buildTimeData.length,
     );
-    const latestStat = rolldownStats[rolldownStats.length - 1];
-    const totalSizes = rolldownStats.map((s) => s.totalSize);
+    const latestStat = viteStats[viteStats.length - 1];
+    const totalSizes = viteStats.map((s) => s.totalSize);
     const sizeRange = Math.round((Math.max(...totalSizes) - Math.min(...totalSizes)) / 1024);
 
     return [
@@ -30,8 +30,8 @@ export function StatsCards() {
       },
       {
         label: "Versions Tested",
-        value: rolldownStats.length.toString(),
-        badge: `${rolldownStats[0]?.version} - ${latestStat?.version}`,
+        value: viteStats.length.toString(),
+        badge: `${viteStats[0]?.version} - ${latestStat?.version}`,
       },
     ];
   }, []);
