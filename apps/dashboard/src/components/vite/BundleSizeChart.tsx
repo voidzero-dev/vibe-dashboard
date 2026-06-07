@@ -12,7 +12,7 @@ import {
   YAxis,
 } from "recharts";
 import * as semver from "semver";
-import viteStats from "../../../../../data/vite-version-stats.json";
+import { viteStats } from "../../data/viteStats";
 
 const sortedViteStats = [...viteStats].toSorted((a, b) => semver.compare(a.version, b.version));
 

@@ -2,7 +2,7 @@ import { PageHeader } from "@vibe/shared";
 import { Badge } from "@vibe/ui";
 import { BarChart3, Clock, Package, TrendingUp } from "lucide-react";
 import { useState } from "react";
-import viteStatsData from "../../../../data/vite-version-stats.json";
+import { viteStats as viteStatsData } from "../data/viteStats";
 import { PageContainer } from "../components/layout/PageContainer";
 import ViteStats from "../ViteStats";
 
