@@ -12,8 +12,9 @@ import { existsSync, readdirSync, readFileSync, statSync, writeFileSync } from "
 import https from "node:https";
 import { join } from "node:path";
 
-const DASHBOARD_PACKAGE_PATH = join(process.cwd(), "apps/dashboard/package.json");
-const DIST_PATH = join(process.cwd(), "apps/dashboard/dist");
+const DASHBOARD_DIR = join(process.cwd(), "apps/dashboard");
+const WORKSPACE_PATH = join(process.cwd(), "pnpm-workspace.yaml");
+const DIST_PATH = join(DASHBOARD_DIR, "dist");
 const STATS_OUTPUT_PATH = join(process.cwd(), "data/vite-version-stats.json");
 
 /**
@@ -87,16 +88,22 @@ async function fetchNpmPublicationDates() {
   });
 }
 
+// Matches the `vite:` entry inside the top-level `overrides:` block of
+// pnpm-workspace.yaml (the quoted form is unique to overrides; the catalog
+// entry uses an unquoted `npm:` alias).
+const OVERRIDE_VITE_RE = /^(overrides:\n(?:.*\n)*?[ \t]+vite: )"[^"]*"/m;
+
 /**
- * Get the current Vite version from package.json
- * @returns {string} Current version string
+ * Get the current overridden Vite version from pnpm-workspace.yaml
+ * @returns {string} Current override value (e.g. "catalog:" or "8.0.0")
  */
 function getCurrentVersion() {
   try {
-    const packageJson = JSON.parse(readFileSync(DASHBOARD_PACKAGE_PATH, "utf8"));
-    return packageJson.devDependencies["vite"];
+    const workspace = readFileSync(WORKSPACE_PATH, "utf8");
+    const match = workspace.match(OVERRIDE_VITE_RE);
+    return match ? match[0].split('"')[1] : "";
   } catch (error) {
-    console.error("Error reading package.json:", error.message);
+    console.error("Error reading pnpm-workspace.yaml:", error.message);
     process.exit(1);
     // Unreachable return to satisfy consistent-return linter rule
     return "";
@@ -104,39 +111,41 @@ function getCurrentVersion() {
 }
 
 /**
- * Update the Vite version in package.json
- * @param {string} version - Target version to update to
+ * Pin the Vite version via the pnpm `overrides` entry in pnpm-workspace.yaml.
+ * Vite+ resolves the `vite` dependency through this override, so this is the
+ * supported way to build the dashboard against a specific Vite release.
+ * @param {string} version - Target version to pin (e.g. "8.0.0")
  * @returns {boolean} Success status
  */
 function updateViteVersion(version) {
   try {
-    console.log(`📦 Updating vite to version: ${version}`);
+    console.log(`📦 Overriding vite to version: ${version}`);
 
-    // Read current package.json
-    const packageJson = JSON.parse(readFileSync(DASHBOARD_PACKAGE_PATH, "utf8"));
+    const workspace = readFileSync(WORKSPACE_PATH, "utf8");
+    if (!OVERRIDE_VITE_RE.test(workspace)) {
+      console.error("❌ Could not find a `vite` entry under `overrides:` in pnpm-workspace.yaml");
+      return false;
+    }
 
-    // Update vite version
-    packageJson.devDependencies["vite"] = version;
+    const updated = workspace.replace(OVERRIDE_VITE_RE, `$1"${version}"`);
+    writeFileSync(WORKSPACE_PATH, updated);
 
-    // Write back to package.json
-    writeFileSync(DASHBOARD_PACKAGE_PATH, JSON.stringify(packageJson, null, 2) + "\n");
-
-    console.log("✅ Package.json updated successfully");
+    console.log("✅ pnpm-workspace.yaml override updated successfully");
     return true;
   } catch (error) {
-    console.error("❌ Error updating package.json:", error.message);
+    console.error("❌ Error updating pnpm-workspace.yaml:", error.message);
     return false;
   }
 }
 
 /**
- * Install dependencies using pnpm
+ * Install dependencies using Vite+
  * @returns {boolean} Success status
  */
 function installDependencies() {
   try {
     console.log("📥 Installing dependencies...");
-    execSync("pnpm install --no-frozen-lockfile", {
+    execSync("vp install --no-frozen-lockfile", {
       stdio: "inherit",
       cwd: process.cwd(),
       env: process.env,
@@ -145,7 +154,7 @@ function installDependencies() {
     return true;
   } catch (error) {
     console.error("❌ Error installing dependencies:", error.message);
-    console.error("❌ Aborting due to pnpm install failure");
+    console.error("❌ Aborting due to install failure");
     process.exit(1);
     // Unreachable return to satisfy consistent-return linter rule
     return false;
@@ -153,16 +162,16 @@ function installDependencies() {
 }
 
 /**
- * Build the application using Vite
+ * Build the application using Vite+
  * @returns {{ success: boolean, buildTime: number | null }} Build result with timing
  */
 function buildApp() {
   try {
     console.log("🔨 Building application...");
     const startTime = Date.now();
-    execSync("./node_modules/vite/bin/vite.js build", {
+    execSync("vp build", {
       stdio: "inherit",
-      cwd: join(process.cwd(), "apps/dashboard"),
+      cwd: DASHBOARD_DIR,
     });
     const buildTime = Date.now() - startTime;
     console.log(`✅ Build completed successfully in ${buildTime}ms`);
@@ -171,6 +180,40 @@ function buildApp() {
     console.error("❌ Build failed:", error.message);
     return { success: false, buildTime: null };
   }
+}
+
+/**
+ * Recursively list files under a directory with their sizes and types
+ * @param {string} dir - Directory to walk
+ * @param {string} baseDir - Relative path prefix for collected entries
+ * @returns {Array<{ path: string, size: number, type: string }>} File entries
+ */
+function getFilesRecursively(dir, baseDir = "") {
+  const files = [];
+  const items = readdirSync(dir);
+
+  for (const item of items) {
+    const fullPath = join(dir, item);
+    const relativePath = join(baseDir, item);
+    const stat = statSync(fullPath);
+
+    if (stat.isDirectory()) {
+      files.push(...getFilesRecursively(fullPath, relativePath));
+    } else {
+      files.push({
+        path: relativePath,
+        size: stat.size,
+        type: item.endsWith(".js")
+          ? "js"
+          : item.endsWith(".css")
+            ? "css"
+            : item.endsWith(".html")
+              ? "html"
+              : "other",
+      });
+    }
+  }
+  return files;
 }
 
 /**
@@ -196,35 +239,6 @@ function collectDistStats(version, buildTime = null, publicationDate = null) {
   }
 
   try {
-    // Get all files recursively
-    function getFilesRecursively(dir, baseDir = "") {
-      const files = [];
-      const items = readdirSync(dir);
-
-      for (const item of items) {
-        const fullPath = join(dir, item);
-        const relativePath = join(baseDir, item);
-        const stat = statSync(fullPath);
-
-        if (stat.isDirectory()) {
-          files.push(...getFilesRecursively(fullPath, relativePath));
-        } else {
-          files.push({
-            path: relativePath,
-            size: stat.size,
-            type: item.endsWith(".js")
-              ? "js"
-              : item.endsWith(".css")
-                ? "css"
-                : item.endsWith(".html")
-                  ? "html"
-                  : "other",
-          });
-        }
-      }
-      return files;
-    }
-
     stats.files = getFilesRecursively(DIST_PATH);
     stats.totalSize = stats.files.reduce((total, file) => total + file.size, 0);
 
@@ -293,8 +307,8 @@ async function collectAllVersionStats() {
 
     console.log(`📦 Found ${stableVersions.length} versions to analyze`);
 
-    // Store original package.json for restoration
-    const originalPackageJson = readFileSync(DASHBOARD_PACKAGE_PATH, "utf8");
+    // Store original pnpm-workspace.yaml for restoration
+    const originalWorkspace = readFileSync(WORKSPACE_PATH, "utf8");
 
     for (let i = 0; i < stableVersions.length; i++) {
       const version = stableVersions[i];
@@ -308,7 +322,7 @@ async function collectAllVersionStats() {
       try {
         // Update version
         if (!updateViteVersion(version)) {
-          console.error(`❌ Failed to update package.json for version ${version}`);
+          console.error(`❌ Failed to override vite version ${version}`);
           failureCount++;
           continue;
         }
@@ -341,9 +355,10 @@ async function collectAllVersionStats() {
       }
     }
 
-    // Restore original package.json
-    console.log("\n🔄 Restoring original package.json...");
-    writeFileSync(DASHBOARD_PACKAGE_PATH, originalPackageJson);
+    // Restore original pnpm-workspace.yaml and reinstall to reset the lockfile
+    console.log("\n🔄 Restoring original pnpm-workspace.yaml...");
+    writeFileSync(WORKSPACE_PATH, originalWorkspace);
+    installDependencies();
 
     // Save results. Skip writing an empty dataset (e.g. when no stable Vite 8
     // release exists yet) so we don't clobber the existing tracked stats and
