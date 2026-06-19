@@ -28,8 +28,10 @@
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "@types/semver": "catalog:",
+    "@vitest/browser-playwright": "4.1.9",
     "playwright": "catalog:",
     "tailwindcss": "catalog:",
-    "vite-plus": "catalog:"
+    "vite-plus": "catalog:",
+    "vitest": "4.1.9"
   }
 }
