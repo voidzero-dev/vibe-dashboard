@@ -19,9 +19,8 @@ catalog:
   tailwindcss: ^4.1.13
   top-github-dependents-by-stars: ^1.0.4
   typescript: ^6.0.0
-  vite-plus: latest
-  vite: npm:@voidzero-dev/vite-plus-core@latest
-  vitest: npm:@voidzero-dev/vite-plus-test@latest
+  vite-plus: 0.2.1
+  vite: npm:@voidzero-dev/vite-plus-core@0.2.1
 
 allowBuilds:
   "@parcel/watcher": true
@@ -34,11 +33,8 @@ onlyBuiltDependencies:
   - esbuild
 overrides:
   vite: "catalog:"
-  vitest: "catalog:"
 peerDependencyRules:
   allowAny:
     - vite
-    - vitest
   allowedVersions:
     vite: "*"
-    vitest: "*"
