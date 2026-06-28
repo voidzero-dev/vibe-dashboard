@@ -29,7 +29,7 @@ catalogs:
       version: 1.21.0
     playwright:
       specifier: ^1.58.2
-      version: 1.61.0
+      version: 1.61.1
     react:
       specifier: ^19.1.1
       version: 19.2.7
@@ -41,10 +41,10 @@ catalogs:
       version: 7.18.0
     recharts:
       specifier: ^3.0.0
-      version: 3.8.1
+      version: 3.9.0
     semver:
       specifier: ^7.7.2
-      version: 7.8.4
+      version: 7.8.5
     tailwindcss:
       specifier: ^4.1.13
       version: 4.3.1
@@ -64,13 +64,13 @@ importers:
     devDependencies:
       playwright:
         specifier: 'catalog:'
-        version: 1.61.0
+        version: 1.61.1
       top-github-dependents-by-stars:
         specifier: 'catalog:'
         version: 1.0.4
       vite-plus:
         specifier: 'catalog:'
-        version: 0.2.1(@vitest/browser-playwright@4.1.9(playwright@1.61.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
+        version: 0.2.1(@vitest/browser-playwright@4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
 
   apps/dashboard:
     dependencies:
@@ -97,10 +97,10 @@ importers:
         version: 7.18.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       recharts:
         specifier: 'catalog:'
-        version: 3.8.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react-is@19.2.0)(react@19.2.7)(redux@5.0.1)
+        version: 3.9.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react-is@19.2.0)(react@19.2.7)(redux@5.0.1)
       semver:
         specifier: 'catalog:'
-        version: 7.8.4
+        version: 7.8.5
     devDependencies:
       '@tailwindcss/vite':
         specifier: 'catalog:'
@@ -122,19 +122,19 @@ importers:
         version: 7.7.1
       '@vitest/browser-playwright':
         specifier: 4.1.9
-        version: 4.1.9(playwright@1.61.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9)
+        version: 4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9)
       playwright:
         specifier: 'catalog:'
-        version: 1.61.0
+        version: 1.61.1
       tailwindcss:
         specifier: 'catalog:'
         version: 4.3.1
       vite-plus:
         specifier: 'catalog:'
-        version: 0.2.1(@vitest/browser-playwright@4.1.9(playwright@1.61.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
+        version: 0.2.1(@vitest/browser-playwright@4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
       vitest:
         specifier: 4.1.9
-        version: 4.1.9(@vitest/browser-playwright@4.1.9(playwright@1.61.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(@vitest/browser-preview@4.1.9)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
+        version: 4.1.9(@vitest/browser-playwright@4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(@vitest/browser-preview@4.1.9)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
 
   packages/shared:
     dependencies:
@@ -143,7 +143,7 @@ importers:
         version: 19.2.7
       recharts:
         specifier: 'catalog:'
-        version: 3.8.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react-is@19.2.0)(react@19.2.7)(redux@5.0.1)
+        version: 3.9.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react-is@19.2.0)(react@19.2.7)(redux@5.0.1)
     devDependencies:
       '@types/react':
         specifier: 'catalog:'
@@ -172,7 +172,7 @@ importers:
     dependencies:
       semver:
         specifier: 'catalog:'
-        version: 7.8.4
+        version: 7.8.5
     devDependencies:
       '@types/semver':
         specifier: 'catalog:'
@@ -711,8 +711,8 @@ packages:
   '@polka/url@1.0.0-next.29':
     resolution: {integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==}
 
-  '@reduxjs/toolkit@2.11.2':
-    resolution: {integrity: sha512-Kd6kAHTA6/nUpp8mySPqj3en3dm0tdMIgbttnQ1xFMVpufoj+ADi8pXLBsd4xzTRHQa7t/Jv8W5UnCuW4kuWMQ==}
+  '@reduxjs/toolkit@2.12.0':
+    resolution: {integrity: sha512-KiT+RzZbp6mQET+Mg+h2c97+9j1sNflUxQkIHI7Yuzf6Peu+OYpmkn6nbHWmLLWj+1ZODUJFwGZ7gx3L9R9EOw==}
     peerDependencies:
       react: ^16.9.0 || ^17.0.0 || ^18 || ^19
       react-redux: ^7.2.1 || ^8.1.3 || ^9.0.0
@@ -1401,8 +1401,8 @@ packages:
     resolution: {integrity: sha512-j6vWzfrGVfyXxge+O0x5sh6cvxAog0a/4Rdd2K36zCMV5eJ+/+tOAngRO8cODMNWbVRdVlmGZQL2YS3yR8bIUA==}
     engines: {node: '>= 0.4'}
 
-  es-toolkit@1.45.1:
-    resolution: {integrity: sha512-/jhoOj/Fx+A+IIyDNOvO3TItGmlMKhtX8ISAHKE90c4b/k1tqaqEZ+uUqfpU8DMnW5cgNJv606zS55jGvza0Xw==}
+  es-toolkit@1.49.0:
+    resolution: {integrity: sha512-G5iZ6Pc/FNRY/soKZHC+TxGDD83rHUDXxzaWhGCX44vAv/tMs56WMusnm/KMNK+luUPsgA9U28cGr4RDlSzL2g==}
 
   esbuild@0.27.7:
     resolution: {integrity: sha512-IxpibTjyVnmrIQo5aqNpCgoACA/dTKLTlhMHihVHhdkxKyPO1uBBthumT0rdHmcsk9uMonIWS0m4FljWzILh3w==}
@@ -1494,8 +1494,8 @@ packages:
   immer@10.2.0:
     resolution: {integrity: sha512-d/+XTN3zfODyjr89gM3mPq1WNX2B8pYsu7eORitdwyA2sBubnTl3laYlBk4sXY5FUa5qTZGBDPJICVbvqzjlbw==}
 
-  immer@11.1.4:
-    resolution: {integrity: sha512-XREFCPo6ksxVzP4E0ekD5aMdf8WMwmdNaz6vuvxgI40UaEiu6q3p8X52aU6GdyvLY3XXX/8R7JOTXStz/nBbRw==}
+  immer@11.1.8:
+    resolution: {integrity: sha512-/tbkHMW7y10Lx6i1crLjD4/OhNkRG+Fo7byZHtah0547nIeXYcpIXaUh0IAQY6gO5459qpGGYapcEOHtFXkIuA==}
 
   internmap@2.0.3:
     resolution: {integrity: sha512-5Hh7Y1wQbvY5ooGgPbDaL5iYLAPzMTUrjMulskHLH6wnv/A+1q5rgEaiuqEjB+oxGXIVZs1FF+R/KPN3ZSQYYg==}
@@ -1678,13 +1678,13 @@ packages:
     resolution: {integrity: sha512-QP88BAKvMam/3NxH6vj2o21R6MjxZUAd6nlwAS/pnGvN9IVLocLHxGYIzFhg6fUQ+5th6P4dv4eW9jX3DSIj7A==}
     engines: {node: '>=12'}
 
-  playwright-core@1.61.0:
-    resolution: {integrity: sha512-caX7TrY3Ml6egyDX0WUcTHDxodl/b51y5wJOdCEA36QviK/s2g081hvmGs8eaE3DWb6NYZQ6BjO/QkNRPenoPA==}
+  playwright-core@1.61.1:
+    resolution: {integrity: sha512-h7Qlt6m4REp25qvIdvbDtVmD4LqVXfpRxhORv9L0jzETM05p4fuPJ3dKyuSXQxDSbXnmS79HAgi9589lGSpLkg==}
     engines: {node: '>=18'}
     hasBin: true
 
-  playwright@1.61.0:
-    resolution: {integrity: sha512-Z+7BeeqQPRRzklHsVFP4KTGIyMxKUmfeRA4WisM6G3/XW6nwGeX6fX9qYaDa+CiUqpOkb2f6X3nar05R3kSuJQ==}
+  playwright@1.61.1:
+    resolution: {integrity: sha512-DWnY5o3YbLWK4GovuAVwpqL+1VwGNdUGrRr++8j8PtQQzvAVZUIMjKQ90fY689sEJZJBbZVw1rXaOKSTitkzPQ==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -1714,8 +1714,8 @@ packages:
   react-is@19.2.0:
     resolution: {integrity: sha512-x3Ax3kNSMIIkyVYhWPyO09bu0uttcAIoecO/um/rKGQ4EltYWVYtyiGkS/3xMynrbVQdS69Jhlv8FXUEZehlzA==}
 
-  react-redux@9.2.0:
-    resolution: {integrity: sha512-ROY9fvHhwOD9ySfrF0wmvu//bKCQ6AeZZq1nJNtbDC+kk5DuSuNX/n6YWYF/SYy7bSba4D4FSz8DJeKY/S/r+g==}
+  react-redux@9.3.0:
+    resolution: {integrity: sha512-KQopgqFo/p/fgmAs5qz6p5RWaNAzq40WAu7fJIXnQpYxFPbJYtsJPWvGeF2rOBaY/kEuV77AVsX8TsQzKm+A/g==}
     peerDependencies:
       '@types/react': ^18.2.25 || ^19
       react: ^18.0 || ^19
@@ -1747,8 +1747,8 @@ packages:
     resolution: {integrity: sha512-HNe9WslTbXmFK8o8cmwgAeJFSBvt1bPdHCVKtaaV+WlAN36mpT4hcRpwbf3fY56ar2oIXzsBpOAiIRHAdY0OlQ==}
     engines: {node: '>=0.10.0'}
 
-  recharts@3.8.1:
-    resolution: {integrity: sha512-mwzmO1s9sFL0TduUpwndxCUNoXsBw3u3E/0+A+cLcrSfQitSG62L32N69GhqUrrT5qKcAE3pCGVINC6pqkBBQg==}
+  recharts@3.9.0:
+    resolution: {integrity: sha512-dCEcE9y20c8H2tkVeByrAXhhnBJk6/QLbxKmn+dJUptOfc5NMjwRh1jo0vZPRLD+5dMrHrP+hPEsfbGBMfnf5Q==}
     engines: {node: '>=18'}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -1763,8 +1763,8 @@ packages:
   redux@5.0.1:
     resolution: {integrity: sha512-M9/ELqF6fy8FwmkpnF0S3YKOqMyoWJ4+CS5Efg2ct3oY9daQvd/Pc71FpGZsVsbl3Cpb+IIcjBDUnnyBdQbq4w==}
 
-  reselect@5.1.1:
-    resolution: {integrity: sha512-K/BG6eIky/SBpzfHZv/dd+9JBFiS4SWV7FIujVyJRux6e45+73RaUHXLmIR1f7WOMaQ0U1km6qwklRQxpJJY0w==}
+  reselect@5.2.0:
+    resolution: {integrity: sha512-AgZ3UOZm3YndfrJ4OYjgrT7bmCm/1iqkjvEfH/oYjzh6PD2qw4QuT3jjnXIrpdt4MTpMXclMT3lXbmRY+XRakw==}
 
   rollup@4.62.2:
     resolution: {integrity: sha512-RFnrW4lhXA3s3eqHDZvN654g8OTjzRfqpIRJYczCGB6HzphckVAi/Qh4tbPUbRuDi7s1Llv8g/NspLkttY3gTA==}
@@ -1777,8 +1777,8 @@ packages:
   scheduler@0.27.0:
     resolution: {integrity: sha512-eNv+WrVbKu1f3vbYJT/xtiF5syA5HPIMtf9IgY/nKg0sWqzAUEvqY/xm7OcZc/qafLx/iO9FgOmeSAp4v5ti/Q==}
 
-  semver@7.8.4:
-    resolution: {integrity: sha512-rUCObTnP32Q08R2uuIrt7r9PlEonuTmtuXYcW6s5kjdlj3xbnwe+21yXptAUYcMAABLkYYTtnmzb3w3EDZfueA==}
+  semver@7.8.5:
+    resolution: {integrity: sha512-Y7/KDsb8LjooZpwaqGyulO6DQlksgCncchHGk+sZIY4SBvUocMBEFH5Ur1fI4dV+Jvl0w6cjvucaIi40puRioA==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -2299,17 +2299,17 @@ snapshots:
 
   '@polka/url@1.0.0-next.29': {}
 
-  '@reduxjs/toolkit@2.11.2(react-redux@9.2.0(@types/react@19.2.17)(react@19.2.7)(redux@5.0.1))(react@19.2.7)':
+  '@reduxjs/toolkit@2.12.0(react-redux@9.3.0(@types/react@19.2.17)(react@19.2.7)(redux@5.0.1))(react@19.2.7)':
     dependencies:
       '@standard-schema/spec': 1.1.0
       '@standard-schema/utils': 0.3.0
-      immer: 11.1.4
+      immer: 11.1.8
       redux: 5.0.1
       redux-thunk: 3.1.0(redux@5.0.1)
-      reselect: 5.1.1
+      reselect: 5.2.0
     optionalDependencies:
       react: 19.2.7
-      react-redux: 9.2.0(@types/react@19.2.17)(react@19.2.7)(redux@5.0.1)
+      react-redux: 9.3.0(@types/react@19.2.17)(react@19.2.7)(redux@5.0.1)
 
   '@rollup/rollup-android-arm-eabi@4.62.2':
     optional: true
@@ -2530,13 +2530,13 @@ snapshots:
 
   '@types/use-sync-external-store@0.0.6': {}
 
-  '@vitest/browser-playwright@4.1.9(playwright@1.61.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9)':
+  '@vitest/browser-playwright@4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9)':
     dependencies:
       '@vitest/browser': 4.1.9(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9)
       '@vitest/mocker': 4.1.9(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
-      playwright: 1.61.0
+      playwright: 1.61.1
       tinyrainbow: 3.1.0
-      vitest: 4.1.9(@vitest/browser-playwright@4.1.9(playwright@1.61.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(@vitest/browser-preview@4.1.9)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
+      vitest: 4.1.9(@vitest/browser-playwright@4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(@vitest/browser-preview@4.1.9)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
     transitivePeerDependencies:
       - bufferutil
       - msw
@@ -2548,7 +2548,7 @@ snapshots:
       '@testing-library/dom': 10.4.1
       '@testing-library/user-event': 14.6.1(@testing-library/dom@10.4.1)
       '@vitest/browser': 4.1.9(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9)
-      vitest: 4.1.9(@vitest/browser-playwright@4.1.9(playwright@1.61.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(@vitest/browser-preview@4.1.9)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
+      vitest: 4.1.9(@vitest/browser-playwright@4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(@vitest/browser-preview@4.1.9)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
     transitivePeerDependencies:
       - bufferutil
       - msw
@@ -2564,7 +2564,7 @@ snapshots:
       pngjs: 7.0.0
       sirv: 3.0.2
       tinyrainbow: 3.1.0
-      vitest: 4.1.9(@vitest/browser-playwright@4.1.9(playwright@1.61.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(@vitest/browser-preview@4.1.9)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
+      vitest: 4.1.9(@vitest/browser-playwright@4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(@vitest/browser-preview@4.1.9)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
       ws: 8.21.0
     transitivePeerDependencies:
       - bufferutil
@@ -2845,7 +2845,7 @@ snapshots:
       has-tostringtag: 1.0.2
       hasown: 2.0.2
 
-  es-toolkit@1.45.1: {}
+  es-toolkit@1.49.0: {}
 
   esbuild@0.27.7:
     optionalDependencies:
@@ -2953,7 +2953,7 @@ snapshots:
 
   immer@10.2.0: {}
 
-  immer@11.1.4: {}
+  immer@11.1.8: {}
 
   internmap@2.0.3: {}
 
@@ -3042,7 +3042,7 @@ snapshots:
 
   obug@2.1.2: {}
 
-  oxfmt@0.55.0(vite-plus@0.2.1(@vitest/browser-playwright@4.1.9(playwright@1.61.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))):
+  oxfmt@0.55.0(vite-plus@0.2.1(@vitest/browser-playwright@4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))):
     dependencies:
       tinypool: 2.1.0
     optionalDependencies:
@@ -3065,7 +3065,7 @@ snapshots:
       '@oxfmt/binding-win32-arm64-msvc': 0.55.0
       '@oxfmt/binding-win32-ia32-msvc': 0.55.0
       '@oxfmt/binding-win32-x64-msvc': 0.55.0
-      vite-plus: 0.2.1(@vitest/browser-playwright@4.1.9(playwright@1.61.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
+      vite-plus: 0.2.1(@vitest/browser-playwright@4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
 
   oxlint-tsgolint@0.23.0:
     optionalDependencies:
@@ -3076,7 +3076,7 @@ snapshots:
       '@oxlint-tsgolint/win32-arm64': 0.23.0
       '@oxlint-tsgolint/win32-x64': 0.23.0
 
-  oxlint@1.70.0(oxlint-tsgolint@0.23.0)(vite-plus@0.2.1(@vitest/browser-playwright@4.1.9(playwright@1.61.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))):
+  oxlint@1.70.0(oxlint-tsgolint@0.23.0)(vite-plus@0.2.1(@vitest/browser-playwright@4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))):
     optionalDependencies:
       '@oxlint/binding-android-arm-eabi': 1.70.0
       '@oxlint/binding-android-arm64': 1.70.0
@@ -3098,7 +3098,7 @@ snapshots:
       '@oxlint/binding-win32-ia32-msvc': 1.70.0
       '@oxlint/binding-win32-x64-msvc': 1.70.0
       oxlint-tsgolint: 0.23.0
-      vite-plus: 0.2.1(@vitest/browser-playwright@4.1.9(playwright@1.61.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
+      vite-plus: 0.2.1(@vitest/browser-playwright@4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
 
   parse5-htmlparser2-tree-adapter@7.1.0:
     dependencies:
@@ -3119,11 +3119,11 @@ snapshots:
 
   picomatch@4.0.4: {}
 
-  playwright-core@1.61.0: {}
+  playwright-core@1.61.1: {}
 
-  playwright@1.61.0:
+  playwright@1.61.1:
     dependencies:
-      playwright-core: 1.61.0
+      playwright-core: 1.61.1
     optionalDependencies:
       fsevents: 2.3.2
 
@@ -3152,7 +3152,7 @@ snapshots:
 
   react-is@19.2.0: {}
 
-  react-redux@9.2.0(@types/react@19.2.17)(react@19.2.7)(redux@5.0.1):
+  react-redux@9.3.0(@types/react@19.2.17)(react@19.2.7)(redux@5.0.1):
     dependencies:
       '@types/use-sync-external-store': 0.0.6
       react: 19.2.7
@@ -3177,19 +3177,19 @@ snapshots:
 
   react@19.2.7: {}
 
-  recharts@3.8.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react-is@19.2.0)(react@19.2.7)(redux@5.0.1):
+  recharts@3.9.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react-is@19.2.0)(react@19.2.7)(redux@5.0.1):
     dependencies:
-      '@reduxjs/toolkit': 2.11.2(react-redux@9.2.0(@types/react@19.2.17)(react@19.2.7)(redux@5.0.1))(react@19.2.7)
+      '@reduxjs/toolkit': 2.12.0(react-redux@9.3.0(@types/react@19.2.17)(react@19.2.7)(redux@5.0.1))(react@19.2.7)
       clsx: 2.1.1
       decimal.js-light: 2.5.1
-      es-toolkit: 1.45.1
+      es-toolkit: 1.49.0
       eventemitter3: 5.0.4
       immer: 10.2.0
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
       react-is: 19.2.0
-      react-redux: 9.2.0(@types/react@19.2.17)(react@19.2.7)(redux@5.0.1)
-      reselect: 5.1.1
+      react-redux: 9.3.0(@types/react@19.2.17)(react@19.2.7)(redux@5.0.1)
+      reselect: 5.2.0
       tiny-invariant: 1.3.3
       use-sync-external-store: 1.6.0(react@19.2.7)
       victory-vendor: 37.3.6
@@ -3203,7 +3203,7 @@ snapshots:
 
   redux@5.0.1: {}
 
-  reselect@5.1.1: {}
+  reselect@5.2.0: {}
 
   rollup@4.62.2:
     dependencies:
@@ -3240,7 +3240,7 @@ snapshots:
 
   scheduler@0.27.0: {}
 
-  semver@7.8.4: {}
+  semver@7.8.5: {}
 
   set-cookie-parser@2.7.2: {}
 
@@ -3326,7 +3326,7 @@ snapshots:
       d3-time: 3.1.0
       d3-timer: 3.0.1
 
-  vite-plus@0.2.1(@vitest/browser-playwright@4.1.9(playwright@1.61.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0)):
+  vite-plus@0.2.1(@vitest/browser-playwright@4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0)):
     dependencies:
       '@oxc-project/types': 0.136.0
       '@oxlint/plugins': 1.68.0
@@ -3340,12 +3340,12 @@ snapshots:
       '@vitest/spy': 4.1.9
       '@vitest/utils': 4.1.9
       '@voidzero-dev/vite-plus-core': 0.2.1(esbuild@0.27.7)(jiti@2.7.0)
-      oxfmt: 0.55.0(vite-plus@0.2.1(@vitest/browser-playwright@4.1.9(playwright@1.61.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0)))
-      oxlint: 1.70.0(oxlint-tsgolint@0.23.0)(vite-plus@0.2.1(@vitest/browser-playwright@4.1.9(playwright@1.61.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0)))
+      oxfmt: 0.55.0(vite-plus@0.2.1(@vitest/browser-playwright@4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0)))
+      oxlint: 1.70.0(oxlint-tsgolint@0.23.0)(vite-plus@0.2.1(@vitest/browser-playwright@4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0)))
       oxlint-tsgolint: 0.23.0
-      vitest: 4.1.9(@vitest/browser-playwright@4.1.9(playwright@1.61.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(@vitest/browser-preview@4.1.9)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
+      vitest: 4.1.9(@vitest/browser-playwright@4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(@vitest/browser-preview@4.1.9)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
     optionalDependencies:
-      '@vitest/browser-playwright': 4.1.9(playwright@1.61.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9)
+      '@vitest/browser-playwright': 4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9)
       '@voidzero-dev/vite-plus-darwin-arm64': 0.2.1
       '@voidzero-dev/vite-plus-darwin-x64': 0.2.1
       '@voidzero-dev/vite-plus-linux-arm64-gnu': 0.2.1
@@ -3400,7 +3400,7 @@ snapshots:
       jiti: 2.7.0
       lightningcss: 1.32.0
 
-  vitest@4.1.9(@vitest/browser-playwright@4.1.9(playwright@1.61.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(@vitest/browser-preview@4.1.9)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0)):
+  vitest@4.1.9(@vitest/browser-playwright@4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(@vitest/browser-preview@4.1.9)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0)):
     dependencies:
       '@vitest/expect': 4.1.9
       '@vitest/mocker': 4.1.9(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
@@ -3423,7 +3423,7 @@ snapshots:
       vite: 7.3.1(jiti@2.7.0)(lightningcss@1.32.0)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@vitest/browser-playwright': 4.1.9(playwright@1.61.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9)
+      '@vitest/browser-playwright': 4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9)
       '@vitest/browser-preview': 4.1.9(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9)
     transitivePeerDependencies:
       - msw
