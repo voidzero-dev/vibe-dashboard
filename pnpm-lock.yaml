@@ -70,7 +70,7 @@ importers:
         version: 1.0.4
       vite-plus:
         specifier: 'catalog:'
-        version: 0.2.1(@vitest/browser-playwright@4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
+        version: 0.2.1(@vitest/browser-playwright@4.1.9)(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
 
   apps/dashboard:
     dependencies:
@@ -131,10 +131,10 @@ importers:
         version: 4.3.1
       vite-plus:
         specifier: 'catalog:'
-        version: 0.2.1(@vitest/browser-playwright@4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
+        version: 0.2.1(@vitest/browser-playwright@4.1.9)(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
       vitest:
         specifier: 4.1.9
-        version: 4.1.9(@vitest/browser-playwright@4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(@vitest/browser-preview@4.1.9)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
+        version: 4.1.9(@vitest/browser-playwright@4.1.9)(@vitest/browser-preview@4.1.9)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
 
   packages/shared:
     dependencies:
@@ -2536,7 +2536,7 @@ snapshots:
       '@vitest/mocker': 4.1.9(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
       playwright: 1.61.1
       tinyrainbow: 3.1.0
-      vitest: 4.1.9(@vitest/browser-playwright@4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(@vitest/browser-preview@4.1.9)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
+      vitest: 4.1.9(@vitest/browser-playwright@4.1.9)(@vitest/browser-preview@4.1.9)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
     transitivePeerDependencies:
       - bufferutil
       - msw
@@ -2548,7 +2548,7 @@ snapshots:
       '@testing-library/dom': 10.4.1
       '@testing-library/user-event': 14.6.1(@testing-library/dom@10.4.1)
       '@vitest/browser': 4.1.9(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9)
-      vitest: 4.1.9(@vitest/browser-playwright@4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(@vitest/browser-preview@4.1.9)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
+      vitest: 4.1.9(@vitest/browser-playwright@4.1.9)(@vitest/browser-preview@4.1.9)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
     transitivePeerDependencies:
       - bufferutil
       - msw
@@ -2564,7 +2564,7 @@ snapshots:
       pngjs: 7.0.0
       sirv: 3.0.2
       tinyrainbow: 3.1.0
-      vitest: 4.1.9(@vitest/browser-playwright@4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(@vitest/browser-preview@4.1.9)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
+      vitest: 4.1.9(@vitest/browser-playwright@4.1.9)(@vitest/browser-preview@4.1.9)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
       ws: 8.21.0
     transitivePeerDependencies:
       - bufferutil
@@ -3042,7 +3042,7 @@ snapshots:
 
   obug@2.1.2: {}
 
-  oxfmt@0.55.0(vite-plus@0.2.1(@vitest/browser-playwright@4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))):
+  oxfmt@0.55.0(vite-plus@0.2.1(@vitest/browser-playwright@4.1.9)(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))):
     dependencies:
       tinypool: 2.1.0
     optionalDependencies:
@@ -3065,7 +3065,7 @@ snapshots:
       '@oxfmt/binding-win32-arm64-msvc': 0.55.0
       '@oxfmt/binding-win32-ia32-msvc': 0.55.0
       '@oxfmt/binding-win32-x64-msvc': 0.55.0
-      vite-plus: 0.2.1(@vitest/browser-playwright@4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
+      vite-plus: 0.2.1(@vitest/browser-playwright@4.1.9)(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
 
   oxlint-tsgolint@0.23.0:
     optionalDependencies:
@@ -3076,7 +3076,7 @@ snapshots:
       '@oxlint-tsgolint/win32-arm64': 0.23.0
       '@oxlint-tsgolint/win32-x64': 0.23.0
 
-  oxlint@1.70.0(oxlint-tsgolint@0.23.0)(vite-plus@0.2.1(@vitest/browser-playwright@4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))):
+  oxlint@1.70.0(oxlint-tsgolint@0.23.0)(vite-plus@0.2.1(@vitest/browser-playwright@4.1.9)(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))):
     optionalDependencies:
       '@oxlint/binding-android-arm-eabi': 1.70.0
       '@oxlint/binding-android-arm64': 1.70.0
@@ -3098,7 +3098,7 @@ snapshots:
       '@oxlint/binding-win32-ia32-msvc': 1.70.0
       '@oxlint/binding-win32-x64-msvc': 1.70.0
       oxlint-tsgolint: 0.23.0
-      vite-plus: 0.2.1(@vitest/browser-playwright@4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
+      vite-plus: 0.2.1(@vitest/browser-playwright@4.1.9)(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
 
   parse5-htmlparser2-tree-adapter@7.1.0:
     dependencies:
@@ -3326,7 +3326,7 @@ snapshots:
       d3-time: 3.1.0
       d3-timer: 3.0.1
 
-  vite-plus@0.2.1(@vitest/browser-playwright@4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0)):
+  vite-plus@0.2.1(@vitest/browser-playwright@4.1.9)(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0)):
     dependencies:
       '@oxc-project/types': 0.136.0
       '@oxlint/plugins': 1.68.0
@@ -3340,10 +3340,10 @@ snapshots:
       '@vitest/spy': 4.1.9
       '@vitest/utils': 4.1.9
       '@voidzero-dev/vite-plus-core': 0.2.1(esbuild@0.27.7)(jiti@2.7.0)
-      oxfmt: 0.55.0(vite-plus@0.2.1(@vitest/browser-playwright@4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0)))
-      oxlint: 1.70.0(oxlint-tsgolint@0.23.0)(vite-plus@0.2.1(@vitest/browser-playwright@4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0)))
+      oxfmt: 0.55.0(vite-plus@0.2.1(@vitest/browser-playwright@4.1.9)(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0)))
+      oxlint: 1.70.0(oxlint-tsgolint@0.23.0)(vite-plus@0.2.1(@vitest/browser-playwright@4.1.9)(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0)))
       oxlint-tsgolint: 0.23.0
-      vitest: 4.1.9(@vitest/browser-playwright@4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(@vitest/browser-preview@4.1.9)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
+      vitest: 4.1.9(@vitest/browser-playwright@4.1.9)(@vitest/browser-preview@4.1.9)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
     optionalDependencies:
       '@vitest/browser-playwright': 4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9)
       '@voidzero-dev/vite-plus-darwin-arm64': 0.2.1
@@ -3400,7 +3400,7 @@ snapshots:
       jiti: 2.7.0
       lightningcss: 1.32.0
 
-  vitest@4.1.9(@vitest/browser-playwright@4.1.9(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))(vitest@4.1.9))(@vitest/browser-preview@4.1.9)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0)):
+  vitest@4.1.9(@vitest/browser-playwright@4.1.9)(@vitest/browser-preview@4.1.9)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0)):
     dependencies:
       '@vitest/expect': 4.1.9
       '@vitest/mocker': 4.1.9(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
