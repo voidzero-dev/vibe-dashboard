@@ -18,7 +18,7 @@ catalog:
   semver: ^7.7.2
   tailwindcss: ^4.1.13
   top-github-dependents-by-stars: ^1.0.4
-  typescript: ^6.0.0
+  typescript: ^7.0.0
   vite-plus: 0.2.2
   vite: npm:@voidzero-dev/vite-plus-core@0.2.4
 
