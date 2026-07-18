@@ -19,7 +19,7 @@ catalog:
   tailwindcss: ^4.1.13
   top-github-dependents-by-stars: ^1.0.4
   typescript: ^7.0.0
-  vite-plus: 0.2.4
+  vite-plus: 0.2.5
   vite: npm:@voidzero-dev/vite-plus-core@0.2.4
 
 allowBuilds:

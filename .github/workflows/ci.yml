@@ -26,6 +26,8 @@ jobs:
         with:
           cache: true
 
+      - run: vp install
+
       - run: npx playwright install chromium
 
       - name: Check
