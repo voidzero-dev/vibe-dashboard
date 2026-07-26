@@ -26,22 +26,22 @@ catalogs:
       version: 7.7.1
     lucide-react:
       specifier: ^1.0.0
-      version: 1.24.0
+      version: 1.26.0
     playwright:
       specifier: ^1.58.2
       version: 1.61.1
     react:
       specifier: ^19.1.1
-      version: 19.2.7
+      version: 19.2.8
     react-dom:
       specifier: ^19.1.1
-      version: 19.2.7
+      version: 19.2.8
     react-router-dom:
       specifier: ^7.8.2
       version: 7.18.1
     recharts:
       specifier: ^3.0.0
-      version: 3.9.2
+      version: 3.10.0
     semver:
       specifier: ^7.7.2
       version: 7.8.5
@@ -56,7 +56,7 @@ catalogs:
       version: 0.2.5
 
 overrides:
-  vite: npm:@voidzero-dev/vite-plus-core@0.2.5
+  vite: npm:@voidzero-dev/vite-plus-core@0.2.6
 
 importers:
 
@@ -85,19 +85,19 @@ importers:
         version: link:../../packages/utils
       lucide-react:
         specifier: 'catalog:'
-        version: 1.24.0(react@19.2.7)
+        version: 1.26.0(react@19.2.8)
       react:
         specifier: 'catalog:'
-        version: 19.2.7
+        version: 19.2.8
       react-dom:
         specifier: 'catalog:'
-        version: 19.2.7(react@19.2.7)
+        version: 19.2.8(react@19.2.8)
       react-router-dom:
         specifier: 'catalog:'
-        version: 7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        version: 7.18.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       recharts:
         specifier: 'catalog:'
-        version: 3.9.2(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react-is@19.2.0)(react@19.2.7)(redux@5.0.1)
+        version: 3.10.0(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react-is@19.2.0)(react@19.2.8)(redux@5.0.1)
       semver:
         specifier: 'catalog:'
         version: 7.8.5
@@ -107,7 +107,7 @@ importers:
         version: 4.3.3(vite@7.3.1(jiti@2.7.0)(lightningcss@1.32.0))
       '@testing-library/react':
         specifier: 'catalog:'
-        version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@testing-library/user-event':
         specifier: 'catalog:'
         version: 14.6.1(@testing-library/dom@10.4.1)
@@ -140,10 +140,10 @@ importers:
     dependencies:
       react:
         specifier: 'catalog:'
-        version: 19.2.7
+        version: 19.2.8
       recharts:
         specifier: 'catalog:'
-        version: 3.9.2(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react-is@19.2.0)(react@19.2.7)(redux@5.0.1)
+        version: 3.10.0(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react-is@19.2.0)(react@19.2.8)(redux@5.0.1)
     devDependencies:
       '@types/react':
         specifier: 'catalog:'
@@ -153,13 +153,13 @@ importers:
     dependencies:
       lucide-react:
         specifier: 'catalog:'
-        version: 1.24.0(react@19.2.7)
+        version: 1.26.0(react@19.2.8)
       react:
         specifier: 'catalog:'
-        version: 19.2.7
+        version: 19.2.8
       react-dom:
         specifier: 'catalog:'
-        version: 19.2.7(react@19.2.7)
+        version: 19.2.8(react@19.2.8)
     devDependencies:
       '@types/react':
         specifier: 'catalog:'
@@ -1520,8 +1520,8 @@ packages:
     resolution: {integrity: sha512-j6vWzfrGVfyXxge+O0x5sh6cvxAog0a/4Rdd2K36zCMV5eJ+/+tOAngRO8cODMNWbVRdVlmGZQL2YS3yR8bIUA==}
     engines: {node: '>= 0.4'}
 
-  es-toolkit@1.49.0:
-    resolution: {integrity: sha512-G5iZ6Pc/FNRY/soKZHC+TxGDD83rHUDXxzaWhGCX44vAv/tMs56WMusnm/KMNK+luUPsgA9U28cGr4RDlSzL2g==}
+  es-toolkit@1.50.0:
+    resolution: {integrity: sha512-OyZKhUVvEep9ITEiwHn8GKnMRQIVqoSIX7WnRbkWgJkllCujilqP2rD0u979tkl8wqyc8ICwlc1UBVv/Sl1G6w==}
 
   esbuild@0.27.7:
     resolution: {integrity: sha512-IxpibTjyVnmrIQo5aqNpCgoACA/dTKLTlhMHihVHhdkxKyPO1uBBthumT0rdHmcsk9uMonIWS0m4FljWzILh3w==}
@@ -1610,8 +1610,8 @@ packages:
     resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
     engines: {node: '>=0.10.0'}
 
-  immer@11.1.11:
-    resolution: {integrity: sha512-qzXuyXAkPySAGYkfsAwodDPWT8Zm7/Uo5BNt4BjhMhG5WlWyZZ4wQqnWwdS8kjlQ1Cwu6gjw3A6+0gTQwlyYtw==}
+  immer@11.1.15:
+    resolution: {integrity: sha512-VrNANlmnWQnh5COXIIOQXM9oOJw7naGKlBT74ZOOR6lpVXc3gFEu9FJLDFcpCJ2j+NWr8TIwtWD//T6ZX6TKiQ==}
 
   internmap@2.0.3:
     resolution: {integrity: sha512-5Hh7Y1wQbvY5ooGgPbDaL5iYLAPzMTUrjMulskHLH6wnv/A+1q5rgEaiuqEjB+oxGXIVZs1FF+R/KPN3ZSQYYg==}
@@ -1705,8 +1705,8 @@ packages:
     resolution: {integrity: sha512-NXYBzinNrblfraPGyrbPoD19C1h9lfI/1mzgWYvXUTe414Gz/X1FD2XBZSZM7rRTrMA8JL3OtAaGifrIKhQ5yQ==}
     engines: {node: '>= 12.0.0'}
 
-  lucide-react@1.24.0:
-    resolution: {integrity: sha512-YT6mBD8lGKkg4nM39enlm94/sfJIiW0YKUT60fBy4YK8tai31ylg1VhGNWxkpSKHo9UagfnZqwIff3HTDQwXeA==}
+  lucide-react@1.26.0:
+    resolution: {integrity: sha512-raglYVR2+VkMfJL158krjVmE+rV5ST2lzA/KQm1FRSjMHT4MnWaegHxoVEpmc2So3nOEhp9oGejJwAPX8MoAjg==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
@@ -1808,8 +1808,8 @@ packages:
     resolution: {integrity: sha512-LKWqWJRhstyYo9pGvgor/ivk2w94eSjE3RGVuzLGlr3NmD8bf7RcYGze1mNdEHRP6TRP6rMuDHk5t44hnTRyow==}
     engines: {node: '>=14.19.0'}
 
-  postcss@8.5.19:
-    resolution: {integrity: sha512-Mz8SaolMd8nB+G13WkORcxQKHZ/NE4xXevtkJHVuG+guo9/wYKlIMTKAqGdEmYOXR2ijPjTYNHssizdaVSUNdQ==}
+  postcss@8.5.23:
+    resolution: {integrity: sha512-g50586zr4bZmwFiTlflMu8E0bDTb5I5gertgwAKmsdUlTQIhZtunzUlD1WSzwcVWPoAVpsrA6vlfCD7oXvRwgg==}
     engines: {node: ^10 || ^12 || >=14}
 
   pretty-format@27.5.1:
@@ -1819,10 +1819,10 @@ packages:
   proxy-from-env@1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
 
-  react-dom@19.2.7:
-    resolution: {integrity: sha512-t0BRVXvbiE/o20Hfw669rLbMCDWtYZLvmJigy2f0MxsXF+71pxhR3xOkspmsO8h3ZlNzyibAmtCa3l4lYKk6gQ==}
+  react-dom@19.2.8:
+    resolution: {integrity: sha512-rVprimfGBG3DR+Tq0IQG2DT5PxKth1WIGDmj5yPmlzr4YBe7uyE+Du4oVqTDXZSHGGGXRtTJEGSSePyQCMBglQ==}
     peerDependencies:
-      react: ^19.2.7
+      react: ^19.2.8
 
   react-is@17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
@@ -1859,12 +1859,12 @@ packages:
       react-dom:
         optional: true
 
-  react@19.2.7:
-    resolution: {integrity: sha512-HNe9WslTbXmFK8o8cmwgAeJFSBvt1bPdHCVKtaaV+WlAN36mpT4hcRpwbf3fY56ar2oIXzsBpOAiIRHAdY0OlQ==}
+  react@19.2.8:
+    resolution: {integrity: sha512-PWaYA1L/q9u2u7xYQi+Y3L3Yfnie7XyLeaJICV1MGD6LprsBxcAqGjYyr0eY3p+QdsA+x/Irkt4Qif8D63+Sbw==}
     engines: {node: '>=0.10.0'}
 
-  recharts@3.9.2:
-    resolution: {integrity: sha512-G4fy+Pk46RaXgwWMh+Nzhyo/lbFAVqXo9gtetlyehe6Ehge9CsgDuOTwQDD+i1+llaLktNBiNq4bhnGlDRXFtw==}
+  recharts@3.10.0:
+    resolution: {integrity: sha512-wulMvfncpIlmu2uFtRU/mE5/+NiVtASXkw2KdwJTdHs3WsASX0WxZlX+rpKgyn5BDbIhkPtCpUKkB9XNK5KE0w==}
     engines: {node: '>=18'}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -2421,17 +2421,17 @@ snapshots:
 
   '@polka/url@1.0.0-next.29': {}
 
-  '@reduxjs/toolkit@2.12.0(react-redux@9.3.0(@types/react@19.2.17)(react@19.2.7)(redux@5.0.1))(react@19.2.7)':
+  '@reduxjs/toolkit@2.12.0(react-redux@9.3.0(@types/react@19.2.17)(react@19.2.8)(redux@5.0.1))(react@19.2.8)':
     dependencies:
       '@standard-schema/spec': 1.1.0
       '@standard-schema/utils': 0.3.0
-      immer: 11.1.11
+      immer: 11.1.15
       redux: 5.0.1
       redux-thunk: 3.1.0(redux@5.0.1)
       reselect: 5.2.0
     optionalDependencies:
-      react: 19.2.7
-      react-redux: 9.3.0(@types/react@19.2.17)(react@19.2.7)(redux@5.0.1)
+      react: 19.2.8
+      react-redux: 9.3.0(@types/react@19.2.17)(react@19.2.8)(redux@5.0.1)
 
   '@rollup/rollup-android-arm-eabi@4.62.2':
     optional: true
@@ -2591,12 +2591,12 @@ snapshots:
       picocolors: 1.1.1
       pretty-format: 27.5.1
 
-  '@testing-library/react@16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@testing-library/react@16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
     dependencies:
       '@babel/runtime': 7.29.7
       '@testing-library/dom': 10.4.1
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
     optionalDependencies:
       '@types/react': 19.2.17
       '@types/react-dom': 19.2.3(@types/react@19.2.17)
@@ -2740,7 +2740,7 @@ snapshots:
       '@oxc-project/runtime': 0.139.0
       '@oxc-project/types': 0.139.0
       lightningcss: 1.32.0
-      postcss: 8.5.19
+      postcss: 8.5.23
       yuku-codegen: 0.5.48
       yuku-parser: 0.5.48
     optionalDependencies:
@@ -3037,7 +3037,7 @@ snapshots:
       has-tostringtag: 1.0.2
       hasown: 2.0.2
 
-  es-toolkit@1.49.0: {}
+  es-toolkit@1.50.0: {}
 
   esbuild@0.27.7:
     optionalDependencies:
@@ -3143,7 +3143,7 @@ snapshots:
     dependencies:
       safer-buffer: 2.1.2
 
-  immer@11.1.11: {}
+  immer@11.1.15: {}
 
   internmap@2.0.3: {}
 
@@ -3204,9 +3204,9 @@ snapshots:
       lightningcss-win32-arm64-msvc: 1.32.0
       lightningcss-win32-x64-msvc: 1.32.0
 
-  lucide-react@1.24.0(react@19.2.7):
+  lucide-react@1.26.0(react@19.2.8):
     dependencies:
-      react: 19.2.7
+      react: 19.2.8
 
   lz-string@1.5.0: {}
 
@@ -3319,7 +3319,7 @@ snapshots:
 
   pngjs@7.0.0: {}
 
-  postcss@8.5.19:
+  postcss@8.5.23:
     dependencies:
       nanoid: 3.3.16
       picocolors: 1.1.1
@@ -3333,55 +3333,55 @@ snapshots:
 
   proxy-from-env@1.1.0: {}
 
-  react-dom@19.2.7(react@19.2.7):
+  react-dom@19.2.8(react@19.2.8):
     dependencies:
-      react: 19.2.7
+      react: 19.2.8
       scheduler: 0.27.0
 
   react-is@17.0.2: {}
 
   react-is@19.2.0: {}
 
-  react-redux@9.3.0(@types/react@19.2.17)(react@19.2.7)(redux@5.0.1):
+  react-redux@9.3.0(@types/react@19.2.17)(react@19.2.8)(redux@5.0.1):
     dependencies:
       '@types/use-sync-external-store': 0.0.6
-      react: 19.2.7
-      use-sync-external-store: 1.6.0(react@19.2.7)
+      react: 19.2.8
+      use-sync-external-store: 1.6.0(react@19.2.8)
     optionalDependencies:
       '@types/react': 19.2.17
       redux: 5.0.1
 
-  react-router-dom@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7):
+  react-router-dom@7.18.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
     dependencies:
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
-      react-router: 7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
+      react-router: 7.18.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
 
-  react-router@7.18.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7):
+  react-router@7.18.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
     dependencies:
       cookie: 1.1.1
-      react: 19.2.7
+      react: 19.2.8
       set-cookie-parser: 2.7.2
     optionalDependencies:
-      react-dom: 19.2.7(react@19.2.7)
+      react-dom: 19.2.8(react@19.2.8)
 
-  react@19.2.7: {}
+  react@19.2.8: {}
 
-  recharts@3.9.2(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react-is@19.2.0)(react@19.2.7)(redux@5.0.1):
+  recharts@3.10.0(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react-is@19.2.0)(react@19.2.8)(redux@5.0.1):
     dependencies:
-      '@reduxjs/toolkit': 2.12.0(react-redux@9.3.0(@types/react@19.2.17)(react@19.2.7)(redux@5.0.1))(react@19.2.7)
+      '@reduxjs/toolkit': 2.12.0(react-redux@9.3.0(@types/react@19.2.17)(react@19.2.8)(redux@5.0.1))(react@19.2.8)
       clsx: 2.1.1
       decimal.js-light: 2.5.1
-      es-toolkit: 1.49.0
+      es-toolkit: 1.50.0
       eventemitter3: 5.0.4
-      immer: 11.1.11
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
+      immer: 11.1.15
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
       react-is: 19.2.0
-      react-redux: 9.3.0(@types/react@19.2.17)(react@19.2.7)(redux@5.0.1)
+      react-redux: 9.3.0(@types/react@19.2.17)(react@19.2.8)(redux@5.0.1)
       reselect: 5.2.0
       tiny-invariant: 1.3.3
-      use-sync-external-store: 1.6.0(react@19.2.7)
+      use-sync-external-store: 1.6.0(react@19.2.8)
       victory-vendor: 37.3.6
     transitivePeerDependencies:
       - '@types/react'
@@ -3495,9 +3495,9 @@ snapshots:
 
   universal-user-agent@7.0.3: {}
 
-  use-sync-external-store@1.6.0(react@19.2.7):
+  use-sync-external-store@1.6.0(react@19.2.8):
     dependencies:
-      react: 19.2.7
+      react: 19.2.8
 
   victory-vendor@37.3.6:
     dependencies:
@@ -3580,7 +3580,7 @@ snapshots:
       esbuild: 0.27.7
       fdir: 6.5.0(picomatch@4.0.5)
       picomatch: 4.0.5
-      postcss: 8.5.19
+      postcss: 8.5.23
       rollup: 4.62.2
       tinyglobby: 0.2.17
     optionalDependencies:
