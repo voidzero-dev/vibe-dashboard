@@ -45,12 +45,14 @@ jobs:
 
       - name: Commit and push changes
         if: steps.git-check.outputs.changes == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --local user.email "1430279+Boshen@users.noreply.github.com"
           git config --local user.name "Boshen"
           git add data/dependents.json
           git commit -m "chore: update github dependents"
-          git push origin main
+          git push "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" main
 
       - name: No changes to commit
         if: steps.git-check.outputs.changes != 'true'
