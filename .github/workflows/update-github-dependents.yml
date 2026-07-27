@@ -43,17 +43,30 @@ jobs:
             echo "changes=true" >> $GITHUB_OUTPUT
           fi
 
-      - name: Commit and push changes
+      - uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        id: app-token
         if: steps.git-check.outputs.changes == 'true'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git config --local user.email "1430279+Boshen@users.noreply.github.com"
-          git config --local user.name "Boshen"
-          git add data/dependents.json
-          git commit -m "chore: update github dependents"
-          git push "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" main
+        with:
+          client-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
 
+      - uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+        id: cpr
+        if: steps.git-check.outputs.changes == 'true'
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          branch: auto/update-github-dependents
+          delete-branch: true
+          title: "chore: update github dependents"
+          commit-message: "chore: update github dependents"
+          add-paths: data/dependents.json
+
+      - uses: peter-evans/enable-pull-request-automerge@a660677d5469627102a1c1e11409dd063606628d # v3
+        if: steps.cpr.outputs.pull-request-operation == 'created'
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
+          merge-method: squash
       - name: No changes to commit
         if: steps.git-check.outputs.changes != 'true'
         run: echo "No changes to commit"
