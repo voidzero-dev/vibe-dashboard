@@ -1,31 +1,31 @@
 [
   {
     "version": "8.0.14",
-    "timestamp": "2026-07-31T19:51:16.216Z",
+    "timestamp": "2026-07-31T19:54:27.914Z",
     "publicationDate": "2026-05-21T07:16:03.179Z",
     "files": [
       {
-        "path": "assets/BarChart-Di-rYGe0.js",
+        "path": "assets/BarChart-CRCUXSKT.js",
         "size": 392492,
         "type": "js"
       },
       {
-        "path": "assets/DependentsPage-BtfJ53um.js",
+        "path": "assets/DependentsPage-CeeV_2oH.js",
         "size": 16711,
         "type": "js"
       },
       {
-        "path": "assets/HomePage-D5as8JHO.js",
+        "path": "assets/HomePage-CmTOsOrv.js",
         "size": 13158,
         "type": "js"
       },
       {
-        "path": "assets/MinificationBenchmarksPage-DbyCMOff.js",
+        "path": "assets/MinificationBenchmarksPage-Da8vUZKC.js",
         "size": 6393,
         "type": "js"
       },
       {
-        "path": "assets/NpmPackagesPage-BcA3KCe4.js",
+        "path": "assets/NpmPackagesPage-D6be4OtZ.js",
         "size": 5239,
         "type": "js"
       },
@@ -35,7 +35,7 @@
         "type": "js"
       },
       {
-        "path": "assets/ViteStatsPage-0bbN7uWq.js",
+        "path": "assets/ViteStatsPage-s5Qxt-uL.js",
         "size": 58327,
         "type": "js"
       },
@@ -50,7 +50,7 @@
         "type": "js"
       },
       {
-        "path": "assets/index-BPAlzI6t.js",
+        "path": "assets/index--NjmlScL.js",
         "size": 229069,
         "type": "js"
       },
@@ -91,35 +91,35 @@
       }
     ],
     "totalSize": 767536,
-    "buildTime": 1198
+    "buildTime": 1265
   },
   {
     "version": "8.0.15",
-    "timestamp": "2026-07-31T19:51:20.880Z",
+    "timestamp": "2026-07-31T19:54:32.693Z",
     "publicationDate": "2026-06-01T04:14:26.515Z",
     "files": [
       {
-        "path": "assets/BarChart-Di-rYGe0.js",
+        "path": "assets/BarChart-CRCUXSKT.js",
         "size": 392492,
         "type": "js"
       },
       {
-        "path": "assets/DependentsPage-BtfJ53um.js",
+        "path": "assets/DependentsPage-CeeV_2oH.js",
         "size": 16711,
         "type": "js"
       },
       {
-        "path": "assets/HomePage-D5as8JHO.js",
+        "path": "assets/HomePage-CmTOsOrv.js",
         "size": 13158,
         "type": "js"
       },
       {
-        "path": "assets/MinificationBenchmarksPage-DbyCMOff.js",
+        "path": "assets/MinificationBenchmarksPage-Da8vUZKC.js",
         "size": 6393,
         "type": "js"
       },
       {
-        "path": "assets/NpmPackagesPage-BcA3KCe4.js",
+        "path": "assets/NpmPackagesPage-D6be4OtZ.js",
         "size": 5239,
         "type": "js"
       },
@@ -129,7 +129,7 @@
         "type": "js"
       },
       {
-        "path": "assets/ViteStatsPage-0bbN7uWq.js",
+        "path": "assets/ViteStatsPage-s5Qxt-uL.js",
         "size": 58327,
         "type": "js"
       },
@@ -144,7 +144,7 @@
         "type": "js"
       },
       {
-        "path": "assets/index-BPAlzI6t.js",
+        "path": "assets/index--NjmlScL.js",
         "size": 229069,
         "type": "js"
       },
@@ -185,35 +185,35 @@
       }
     ],
     "totalSize": 767536,
-    "buildTime": 1184
+    "buildTime": 1234
   },
   {
     "version": "8.0.16",
-    "timestamp": "2026-07-31T19:51:25.423Z",
+    "timestamp": "2026-07-31T19:54:37.320Z",
     "publicationDate": "2026-06-01T09:50:43.261Z",
     "files": [
       {
-        "path": "assets/BarChart-Di-rYGe0.js",
+        "path": "assets/BarChart-CRCUXSKT.js",
         "size": 392492,
         "type": "js"
       },
       {
-        "path": "assets/DependentsPage-BtfJ53um.js",
+        "path": "assets/DependentsPage-CeeV_2oH.js",
         "size": 16711,
         "type": "js"
       },
       {
-        "path": "assets/HomePage-D5as8JHO.js",
+        "path": "assets/HomePage-CmTOsOrv.js",
         "size": 13158,
         "type": "js"
       },
       {
-        "path": "assets/MinificationBenchmarksPage-DbyCMOff.js",
+        "path": "assets/MinificationBenchmarksPage-Da8vUZKC.js",
         "size": 6393,
         "type": "js"
       },
       {
-        "path": "assets/NpmPackagesPage-BcA3KCe4.js",
+        "path": "assets/NpmPackagesPage-D6be4OtZ.js",
         "size": 5239,
         "type": "js"
       },
@@ -223,7 +223,7 @@
         "type": "js"
       },
       {
-        "path": "assets/ViteStatsPage-0bbN7uWq.js",
+        "path": "assets/ViteStatsPage-s5Qxt-uL.js",
         "size": 58327,
         "type": "js"
       },
@@ -238,7 +238,7 @@
         "type": "js"
       },
       {
-        "path": "assets/index-BPAlzI6t.js",
+        "path": "assets/index--NjmlScL.js",
         "size": 229069,
         "type": "js"
       },
@@ -279,35 +279,35 @@
       }
     ],
     "totalSize": 767536,
-    "buildTime": 1194
+    "buildTime": 1214
   },
   {
     "version": "8.1.0",
-    "timestamp": "2026-07-31T19:51:30.078Z",
+    "timestamp": "2026-07-31T19:54:42.183Z",
     "publicationDate": "2026-06-23T11:34:04.988Z",
     "files": [
       {
-        "path": "assets/BarChart-Di-rYGe0.js",
+        "path": "assets/BarChart-CRCUXSKT.js",
         "size": 392492,
         "type": "js"
       },
       {
-        "path": "assets/DependentsPage-BtfJ53um.js",
+        "path": "assets/DependentsPage-CeeV_2oH.js",
         "size": 16711,
         "type": "js"
       },
       {
-        "path": "assets/HomePage-D5as8JHO.js",
+        "path": "assets/HomePage-CmTOsOrv.js",
         "size": 13158,
         "type": "js"
       },
       {
-        "path": "assets/MinificationBenchmarksPage-DbyCMOff.js",
+        "path": "assets/MinificationBenchmarksPage-Da8vUZKC.js",
         "size": 6393,
         "type": "js"
       },
       {
-        "path": "assets/NpmPackagesPage-BcA3KCe4.js",
+        "path": "assets/NpmPackagesPage-D6be4OtZ.js",
         "size": 5239,
         "type": "js"
       },
@@ -317,7 +317,7 @@
         "type": "js"
       },
       {
-        "path": "assets/ViteStatsPage-0bbN7uWq.js",
+        "path": "assets/ViteStatsPage-s5Qxt-uL.js",
         "size": 58327,
         "type": "js"
       },
@@ -332,7 +332,7 @@
         "type": "js"
       },
       {
-        "path": "assets/index-BPAlzI6t.js",
+        "path": "assets/index--NjmlScL.js",
         "size": 229069,
         "type": "js"
       },
@@ -373,35 +373,35 @@
       }
     ],
     "totalSize": 767536,
-    "buildTime": 1190
+    "buildTime": 1241
   },
   {
     "version": "8.1.1",
-    "timestamp": "2026-07-31T19:51:34.713Z",
+    "timestamp": "2026-07-31T19:54:46.846Z",
     "publicationDate": "2026-06-30T10:31:53.600Z",
     "files": [
       {
-        "path": "assets/BarChart-Di-rYGe0.js",
+        "path": "assets/BarChart-CRCUXSKT.js",
         "size": 392492,
         "type": "js"
       },
       {
-        "path": "assets/DependentsPage-BtfJ53um.js",
+        "path": "assets/DependentsPage-CeeV_2oH.js",
         "size": 16711,
         "type": "js"
       },
       {
-        "path": "assets/HomePage-D5as8JHO.js",
+        "path": "assets/HomePage-CmTOsOrv.js",
         "size": 13158,
         "type": "js"
       },
       {
-        "path": "assets/MinificationBenchmarksPage-DbyCMOff.js",
+        "path": "assets/MinificationBenchmarksPage-Da8vUZKC.js",
         "size": 6393,
         "type": "js"
       },
       {
-        "path": "assets/NpmPackagesPage-BcA3KCe4.js",
+        "path": "assets/NpmPackagesPage-D6be4OtZ.js",
         "size": 5239,
         "type": "js"
       },
@@ -411,7 +411,7 @@
         "type": "js"
       },
       {
-        "path": "assets/ViteStatsPage-0bbN7uWq.js",
+        "path": "assets/ViteStatsPage-s5Qxt-uL.js",
         "size": 58327,
         "type": "js"
       },
@@ -426,7 +426,7 @@
         "type": "js"
       },
       {
-        "path": "assets/index-BPAlzI6t.js",
+        "path": "assets/index--NjmlScL.js",
         "size": 229069,
         "type": "js"
       },
@@ -467,35 +467,35 @@
       }
     ],
     "totalSize": 767536,
-    "buildTime": 1224
+    "buildTime": 1245
   },
   {
     "version": "8.1.2",
-    "timestamp": "2026-07-31T19:51:39.526Z",
+    "timestamp": "2026-07-31T19:54:51.670Z",
     "publicationDate": "2026-06-30T16:46:39.800Z",
     "files": [
       {
-        "path": "assets/BarChart-Di-rYGe0.js",
+        "path": "assets/BarChart-CRCUXSKT.js",
         "size": 392492,
         "type": "js"
       },
       {
-        "path": "assets/DependentsPage-BtfJ53um.js",
+        "path": "assets/DependentsPage-CeeV_2oH.js",
         "size": 16711,
         "type": "js"
       },
       {
-        "path": "assets/HomePage-D5as8JHO.js",
+        "path": "assets/HomePage-CmTOsOrv.js",
         "size": 13158,
         "type": "js"
       },
       {
-        "path": "assets/MinificationBenchmarksPage-DbyCMOff.js",
+        "path": "assets/MinificationBenchmarksPage-Da8vUZKC.js",
         "size": 6393,
         "type": "js"
       },
       {
-        "path": "assets/NpmPackagesPage-BcA3KCe4.js",
+        "path": "assets/NpmPackagesPage-D6be4OtZ.js",
         "size": 5239,
         "type": "js"
       },
@@ -505,7 +505,7 @@
         "type": "js"
       },
       {
-        "path": "assets/ViteStatsPage-0bbN7uWq.js",
+        "path": "assets/ViteStatsPage-s5Qxt-uL.js",
         "size": 58327,
         "type": "js"
       },
@@ -520,7 +520,7 @@
         "type": "js"
       },
       {
-        "path": "assets/index-BPAlzI6t.js",
+        "path": "assets/index--NjmlScL.js",
         "size": 229069,
         "type": "js"
       },
@@ -561,35 +561,35 @@
       }
     ],
     "totalSize": 767536,
-    "buildTime": 1189
+    "buildTime": 1250
   },
   {
     "version": "8.1.3",
-    "timestamp": "2026-07-31T19:51:44.078Z",
+    "timestamp": "2026-07-31T19:54:56.310Z",
     "publicationDate": "2026-07-02T04:45:03.337Z",
     "files": [
       {
-        "path": "assets/BarChart-Di-rYGe0.js",
+        "path": "assets/BarChart-CRCUXSKT.js",
         "size": 392492,
         "type": "js"
       },
       {
-        "path": "assets/DependentsPage-BtfJ53um.js",
+        "path": "assets/DependentsPage-CeeV_2oH.js",
         "size": 16711,
         "type": "js"
       },
       {
-        "path": "assets/HomePage-D5as8JHO.js",
+        "path": "assets/HomePage-CmTOsOrv.js",
         "size": 13158,
         "type": "js"
       },
       {
-        "path": "assets/MinificationBenchmarksPage-DbyCMOff.js",
+        "path": "assets/MinificationBenchmarksPage-Da8vUZKC.js",
         "size": 6393,
         "type": "js"
       },
       {
-        "path": "assets/NpmPackagesPage-BcA3KCe4.js",
+        "path": "assets/NpmPackagesPage-D6be4OtZ.js",
         "size": 5239,
         "type": "js"
       },
@@ -599,7 +599,7 @@
         "type": "js"
       },
       {
-        "path": "assets/ViteStatsPage-0bbN7uWq.js",
+        "path": "assets/ViteStatsPage-s5Qxt-uL.js",
         "size": 58327,
         "type": "js"
       },
@@ -614,7 +614,7 @@
         "type": "js"
       },
       {
-        "path": "assets/index-BPAlzI6t.js",
+        "path": "assets/index--NjmlScL.js",
         "size": 229069,
         "type": "js"
       },
@@ -655,35 +655,35 @@
       }
     ],
     "totalSize": 767536,
-    "buildTime": 1217
+    "buildTime": 1212
   },
   {
     "version": "8.1.4",
-    "timestamp": "2026-07-31T19:51:48.592Z",
+    "timestamp": "2026-07-31T19:55:00.982Z",
     "publicationDate": "2026-07-09T04:44:45.017Z",
     "files": [
       {
-        "path": "assets/BarChart-Di-rYGe0.js",
+        "path": "assets/BarChart-CRCUXSKT.js",
         "size": 392492,
         "type": "js"
       },
       {
-        "path": "assets/DependentsPage-BtfJ53um.js",
+        "path": "assets/DependentsPage-CeeV_2oH.js",
         "size": 16711,
         "type": "js"
       },
       {
-        "path": "assets/HomePage-D5as8JHO.js",
+        "path": "assets/HomePage-CmTOsOrv.js",
         "size": 13158,
         "type": "js"
       },
       {
-        "path": "assets/MinificationBenchmarksPage-DbyCMOff.js",
+        "path": "assets/MinificationBenchmarksPage-Da8vUZKC.js",
         "size": 6393,
         "type": "js"
       },
       {
-        "path": "assets/NpmPackagesPage-BcA3KCe4.js",
+        "path": "assets/NpmPackagesPage-D6be4OtZ.js",
         "size": 5239,
         "type": "js"
       },
@@ -693,7 +693,7 @@
         "type": "js"
       },
       {
-        "path": "assets/ViteStatsPage-0bbN7uWq.js",
+        "path": "assets/ViteStatsPage-s5Qxt-uL.js",
         "size": 58327,
         "type": "js"
       },
@@ -708,7 +708,7 @@
         "type": "js"
       },
       {
-        "path": "assets/index-BPAlzI6t.js",
+        "path": "assets/index--NjmlScL.js",
         "size": 229069,
         "type": "js"
       },
@@ -749,35 +749,35 @@
       }
     ],
     "totalSize": 767536,
-    "buildTime": 1197
+    "buildTime": 1241
   },
   {
     "version": "8.1.5",
-    "timestamp": "2026-07-31T19:51:53.190Z",
+    "timestamp": "2026-07-31T19:55:05.670Z",
     "publicationDate": "2026-07-16T06:51:13.015Z",
     "files": [
       {
-        "path": "assets/BarChart-Di-rYGe0.js",
+        "path": "assets/BarChart-CRCUXSKT.js",
         "size": 392492,
         "type": "js"
       },
       {
-        "path": "assets/DependentsPage-BtfJ53um.js",
+        "path": "assets/DependentsPage-CeeV_2oH.js",
         "size": 16711,
         "type": "js"
       },
       {
-        "path": "assets/HomePage-D5as8JHO.js",
+        "path": "assets/HomePage-CmTOsOrv.js",
         "size": 13158,
         "type": "js"
       },
       {
-        "path": "assets/MinificationBenchmarksPage-DbyCMOff.js",
+        "path": "assets/MinificationBenchmarksPage-Da8vUZKC.js",
         "size": 6393,
         "type": "js"
       },
       {
-        "path": "assets/NpmPackagesPage-BcA3KCe4.js",
+        "path": "assets/NpmPackagesPage-D6be4OtZ.js",
         "size": 5239,
         "type": "js"
       },
@@ -787,7 +787,7 @@
         "type": "js"
       },
       {
-        "path": "assets/ViteStatsPage-0bbN7uWq.js",
+        "path": "assets/ViteStatsPage-s5Qxt-uL.js",
         "size": 58327,
         "type": "js"
       },
@@ -802,7 +802,7 @@
         "type": "js"
       },
       {
-        "path": "assets/index-BPAlzI6t.js",
+        "path": "assets/index--NjmlScL.js",
         "size": 229069,
         "type": "js"
       },
@@ -843,35 +843,35 @@
       }
     ],
     "totalSize": 767536,
-    "buildTime": 1213
+    "buildTime": 1255
   },
   {
     "version": "8.2.0",
-    "timestamp": "2026-07-31T19:51:57.924Z",
+    "timestamp": "2026-07-31T19:55:10.538Z",
     "publicationDate": "2026-07-30T12:03:25.771Z",
     "files": [
       {
-        "path": "assets/BarChart-Di-rYGe0.js",
+        "path": "assets/BarChart-CRCUXSKT.js",
         "size": 392492,
         "type": "js"
       },
       {
-        "path": "assets/DependentsPage-BtfJ53um.js",
+        "path": "assets/DependentsPage-CeeV_2oH.js",
         "size": 16711,
         "type": "js"
       },
       {
-        "path": "assets/HomePage-D5as8JHO.js",
+        "path": "assets/HomePage-CmTOsOrv.js",
         "size": 13158,
         "type": "js"
       },
       {
-        "path": "assets/MinificationBenchmarksPage-DbyCMOff.js",
+        "path": "assets/MinificationBenchmarksPage-Da8vUZKC.js",
         "size": 6393,
         "type": "js"
       },
       {
-        "path": "assets/NpmPackagesPage-BcA3KCe4.js",
+        "path": "assets/NpmPackagesPage-D6be4OtZ.js",
         "size": 5239,
         "type": "js"
       },
@@ -881,7 +881,7 @@
         "type": "js"
       },
       {
-        "path": "assets/ViteStatsPage-0bbN7uWq.js",
+        "path": "assets/ViteStatsPage-s5Qxt-uL.js",
         "size": 58327,
         "type": "js"
       },
@@ -896,7 +896,7 @@
         "type": "js"
       },
       {
-        "path": "assets/index-BPAlzI6t.js",
+        "path": "assets/index--NjmlScL.js",
         "size": 229069,
         "type": "js"
       },
@@ -937,6 +937,6 @@
       }
     ],
     "totalSize": 767536,
-    "buildTime": 1219
+    "buildTime": 1275
   }
 ]
