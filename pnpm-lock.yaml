@@ -70,7 +70,7 @@ importers:
         version: 1.0.4
       vite-plus:
         specifier: 'catalog:'
-        version: 0.2.6(@vitest/browser-playwright@4.1.10)(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))
+        version: 0.2.6(@vitest/browser-playwright@4.1.10(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))
 
   apps/dashboard:
     dependencies:
@@ -3355,6 +3355,31 @@ snapshots:
 
   obug@2.1.2: {}
 
+  oxfmt@0.60.0(vite-plus@0.2.6(@vitest/browser-playwright@4.1.10(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))):
+    dependencies:
+      tinypool: 2.1.0
+    optionalDependencies:
+      '@oxfmt/binding-android-arm-eabi': 0.60.0
+      '@oxfmt/binding-android-arm64': 0.60.0
+      '@oxfmt/binding-darwin-arm64': 0.60.0
+      '@oxfmt/binding-darwin-x64': 0.60.0
+      '@oxfmt/binding-freebsd-x64': 0.60.0
+      '@oxfmt/binding-linux-arm-gnueabihf': 0.60.0
+      '@oxfmt/binding-linux-arm-musleabihf': 0.60.0
+      '@oxfmt/binding-linux-arm64-gnu': 0.60.0
+      '@oxfmt/binding-linux-arm64-musl': 0.60.0
+      '@oxfmt/binding-linux-ppc64-gnu': 0.60.0
+      '@oxfmt/binding-linux-riscv64-gnu': 0.60.0
+      '@oxfmt/binding-linux-riscv64-musl': 0.60.0
+      '@oxfmt/binding-linux-s390x-gnu': 0.60.0
+      '@oxfmt/binding-linux-x64-gnu': 0.60.0
+      '@oxfmt/binding-linux-x64-musl': 0.60.0
+      '@oxfmt/binding-openharmony-arm64': 0.60.0
+      '@oxfmt/binding-win32-arm64-msvc': 0.60.0
+      '@oxfmt/binding-win32-ia32-msvc': 0.60.0
+      '@oxfmt/binding-win32-x64-msvc': 0.60.0
+      vite-plus: 0.2.6(@vitest/browser-playwright@4.1.10(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))
+
   oxfmt@0.60.0(vite-plus@0.2.6(@vitest/browser-playwright@4.1.10)(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))):
     dependencies:
       tinypool: 2.1.0
@@ -3388,6 +3413,30 @@ snapshots:
       '@oxlint-tsgolint/linux-x64': 7.0.2001
       '@oxlint-tsgolint/win32-arm64': 7.0.2001
       '@oxlint-tsgolint/win32-x64': 7.0.2001
+
+  oxlint@1.75.0(oxlint-tsgolint@7.0.2001)(vite-plus@0.2.6(@vitest/browser-playwright@4.1.10(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))):
+    optionalDependencies:
+      '@oxlint/binding-android-arm-eabi': 1.75.0
+      '@oxlint/binding-android-arm64': 1.75.0
+      '@oxlint/binding-darwin-arm64': 1.75.0
+      '@oxlint/binding-darwin-x64': 1.75.0
+      '@oxlint/binding-freebsd-x64': 1.75.0
+      '@oxlint/binding-linux-arm-gnueabihf': 1.75.0
+      '@oxlint/binding-linux-arm-musleabihf': 1.75.0
+      '@oxlint/binding-linux-arm64-gnu': 1.75.0
+      '@oxlint/binding-linux-arm64-musl': 1.75.0
+      '@oxlint/binding-linux-ppc64-gnu': 1.75.0
+      '@oxlint/binding-linux-riscv64-gnu': 1.75.0
+      '@oxlint/binding-linux-riscv64-musl': 1.75.0
+      '@oxlint/binding-linux-s390x-gnu': 1.75.0
+      '@oxlint/binding-linux-x64-gnu': 1.75.0
+      '@oxlint/binding-linux-x64-musl': 1.75.0
+      '@oxlint/binding-openharmony-arm64': 1.75.0
+      '@oxlint/binding-win32-arm64-msvc': 1.75.0
+      '@oxlint/binding-win32-ia32-msvc': 1.75.0
+      '@oxlint/binding-win32-x64-msvc': 1.75.0
+      oxlint-tsgolint: 7.0.2001
+      vite-plus: 0.2.6(@vitest/browser-playwright@4.1.10(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))
 
   oxlint@1.75.0(oxlint-tsgolint@7.0.2001)(vite-plus@0.2.6(@vitest/browser-playwright@4.1.10)(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))):
     optionalDependencies:
@@ -3638,6 +3687,65 @@ snapshots:
       d3-shape: 3.2.0
       d3-time: 3.1.0
       d3-timer: 3.0.1
+
+  vite-plus@0.2.6(@vitest/browser-playwright@4.1.10(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0)):
+    dependencies:
+      '@oxc-project/types': 0.141.0
+      '@oxlint/plugins': 1.73.0
+      '@vitest/browser': 4.1.10(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10)
+      '@vitest/browser-preview': 4.1.10(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10)
+      '@vitest/expect': 4.1.10
+      '@vitest/mocker': 4.1.10(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))
+      '@vitest/pretty-format': 4.1.10
+      '@vitest/runner': 4.1.10
+      '@vitest/snapshot': 4.1.10
+      '@vitest/spy': 4.1.10
+      '@vitest/utils': 4.1.10
+      '@voidzero-dev/vite-plus-core': 0.2.6(esbuild@0.27.7)(jiti@2.7.0)
+      oxfmt: 0.60.0(vite-plus@0.2.6(@vitest/browser-playwright@4.1.10(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0)))
+      oxlint: 1.75.0(oxlint-tsgolint@7.0.2001)(vite-plus@0.2.6(@vitest/browser-playwright@4.1.10(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0)))
+      oxlint-tsgolint: 7.0.2001
+      vitest: 4.1.10(@vitest/browser-playwright@4.1.10)(@vitest/browser-preview@4.1.10)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))
+    optionalDependencies:
+      '@vitest/browser-playwright': 4.1.10(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10)
+      '@voidzero-dev/vite-plus-darwin-arm64': 0.2.6
+      '@voidzero-dev/vite-plus-darwin-x64': 0.2.6
+      '@voidzero-dev/vite-plus-linux-arm64-gnu': 0.2.6
+      '@voidzero-dev/vite-plus-linux-arm64-musl': 0.2.6
+      '@voidzero-dev/vite-plus-linux-x64-gnu': 0.2.6
+      '@voidzero-dev/vite-plus-linux-x64-musl': 0.2.6
+      '@voidzero-dev/vite-plus-win32-arm64-msvc': 0.2.6
+      '@voidzero-dev/vite-plus-win32-x64-msvc': 0.2.6
+    transitivePeerDependencies:
+      - '@arethetypeswrong/core'
+      - '@edge-runtime/vm'
+      - '@opentelemetry/api'
+      - '@types/node'
+      - '@vitejs/devtools'
+      - '@vitest/coverage-istanbul'
+      - '@vitest/coverage-v8'
+      - '@vitest/ui'
+      - bufferutil
+      - esbuild
+      - happy-dom
+      - jiti
+      - jsdom
+      - less
+      - msw
+      - publint
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - svelte
+      - terser
+      - tsx
+      - typescript
+      - unplugin-unused
+      - unrun
+      - utf-8-validate
+      - vite
+      - yaml
 
   vite-plus@0.2.6(@vitest/browser-playwright@4.1.10)(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0)):
     dependencies:
