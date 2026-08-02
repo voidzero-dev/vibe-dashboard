@@ -26,10 +26,10 @@ catalogs:
       version: 7.7.1
     lucide-react:
       specifier: ^1.0.0
-      version: 1.26.0
+      version: 1.28.0
     playwright:
       specifier: ^1.58.2
-      version: 1.61.1
+      version: 1.62.1
     react:
       specifier: ^19.1.1
       version: 19.2.8
@@ -38,10 +38,10 @@ catalogs:
       version: 19.2.8
     react-router-dom:
       specifier: ^7.8.2
-      version: 7.18.1
+      version: 7.18.2
     recharts:
       specifier: ^3.0.0
-      version: 3.10.0
+      version: 3.10.1
     semver:
       specifier: ^7.7.2
       version: 7.8.5
@@ -64,13 +64,13 @@ importers:
     devDependencies:
       playwright:
         specifier: 'catalog:'
-        version: 1.61.1
+        version: 1.62.1
       top-github-dependents-by-stars:
         specifier: 'catalog:'
         version: 1.0.4
       vite-plus:
         specifier: 'catalog:'
-        version: 0.2.7(@vitest/browser-playwright@4.1.10(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))
+        version: 0.2.7(@vitest/browser-playwright@4.1.10(playwright@1.62.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))
 
   apps/dashboard:
     dependencies:
@@ -85,7 +85,7 @@ importers:
         version: link:../../packages/utils
       lucide-react:
         specifier: 'catalog:'
-        version: 1.26.0(react@19.2.8)
+        version: 1.28.0(react@19.2.8)
       react:
         specifier: 'catalog:'
         version: 19.2.8
@@ -94,10 +94,10 @@ importers:
         version: 19.2.8(react@19.2.8)
       react-router-dom:
         specifier: 'catalog:'
-        version: 7.18.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+        version: 7.18.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       recharts:
         specifier: 'catalog:'
-        version: 3.10.0(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react-is@19.2.0)(react@19.2.8)(redux@5.0.1)
+        version: 3.10.1(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react-is@19.2.0)(react@19.2.8)(redux@5.0.1)
       semver:
         specifier: 'catalog:'
         version: 7.8.5
@@ -122,10 +122,10 @@ importers:
         version: 7.7.1
       '@vitest/browser-playwright':
         specifier: 4.1.10
-        version: 4.1.10(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10)
+        version: 4.1.10(playwright@1.62.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10)
       playwright:
         specifier: 'catalog:'
-        version: 1.61.1
+        version: 1.62.1
       tailwindcss:
         specifier: 'catalog:'
         version: 4.3.3
@@ -143,7 +143,7 @@ importers:
         version: 19.2.8
       recharts:
         specifier: 'catalog:'
-        version: 3.10.0(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react-is@19.2.0)(react@19.2.8)(redux@5.0.1)
+        version: 3.10.1(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react-is@19.2.0)(react@19.2.8)(redux@5.0.1)
     devDependencies:
       '@types/react':
         specifier: 'catalog:'
@@ -153,7 +153,7 @@ importers:
     dependencies:
       lucide-react:
         specifier: 'catalog:'
-        version: 1.26.0(react@19.2.8)
+        version: 1.28.0(react@19.2.8)
       react:
         specifier: 'catalog:'
         version: 19.2.8
@@ -1779,8 +1779,8 @@ packages:
     resolution: {integrity: sha512-WkUDrojuJs0xkgGf2udWxa3yGBRxPtxUkB79i6aCZLRgc7PM8fZe9TosfPDcvEpQZbuFASnHYmRLBLUbmLOIIA==}
     engines: {node: '>= 12.0.0'}
 
-  lucide-react@1.26.0:
-    resolution: {integrity: sha512-raglYVR2+VkMfJL158krjVmE+rV5ST2lzA/KQm1FRSjMHT4MnWaegHxoVEpmc2So3nOEhp9oGejJwAPX8MoAjg==}
+  lucide-react@1.28.0:
+    resolution: {integrity: sha512-fARAFJULsGuDDydjp6+6blekG/sBIM29TerzLjc9bQUKAcEfrSc4ZQKb25KRz4OMKd87cZTb5dgq0w/T6KufVg==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
@@ -1868,14 +1868,14 @@ packages:
     resolution: {integrity: sha512-RvwwcruNjI1ncT5xRakeyS9Lf8lcItv34KD+aif+VH9kduAyfYBipGh12274xtenIPZ119/R9BdTBa8gAwSh0A==}
     engines: {node: '>=12'}
 
-  playwright-core@1.61.1:
-    resolution: {integrity: sha512-h7Qlt6m4REp25qvIdvbDtVmD4LqVXfpRxhORv9L0jzETM05p4fuPJ3dKyuSXQxDSbXnmS79HAgi9589lGSpLkg==}
-    engines: {node: '>=18'}
+  playwright-core@1.62.1:
+    resolution: {integrity: sha512-wPYSwEBJY9GHraISXqyqtx0na0LpO3XEX7jNDhntbex7tzUS7kLnZsOlFruFJB4Hi/rhDMjXGqHewDZ68nYZVw==}
+    engines: {node: '>=20'}
     hasBin: true
 
-  playwright@1.61.1:
-    resolution: {integrity: sha512-DWnY5o3YbLWK4GovuAVwpqL+1VwGNdUGrRr++8j8PtQQzvAVZUIMjKQ90fY689sEJZJBbZVw1rXaOKSTitkzPQ==}
-    engines: {node: '>=18'}
+  playwright@1.62.1:
+    resolution: {integrity: sha512-0M+L3LAD8/nm554LOla9Ayx0j0tmFZ0FBcoQ7F1VuVHpM/XpiC8RcDzBQB8W5+hA8L22THxELzeF+2WcUzvcLg==}
+    engines: {node: '>=20'}
     hasBin: true
 
   pngjs@7.0.0:
@@ -1916,15 +1916,15 @@ packages:
       redux:
         optional: true
 
-  react-router-dom@7.18.1:
-    resolution: {integrity: sha512-KaZh+X/6UtEp28x51AUYZDMg9NGoz2ja3dNHa+ta/tk40vCzKhQ/RypCWBMLbmDr6//E24Vv5uPsrqXFozdkAg==}
+  react-router-dom@7.18.2:
+    resolution: {integrity: sha512-AIKJ/jgGlFb3EbfCXk5Gzshiwt+l3mqbCrNjmEWMMjqQxNJ3svBa6bgzFyCC2Sw3RA0VWF1kg3uQf2OFhxb8hw==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       react: '>=18'
       react-dom: '>=18'
 
-  react-router@7.18.1:
-    resolution: {integrity: sha512-GDLgg3i3uM0aeJO3Fm+TCS+sDQ7gu12T6x0qdTEzcwqEfleci7JwugVNIF3U//0FWKnJT7ptG+20B2jfDqnZAg==}
+  react-router@7.18.2:
+    resolution: {integrity: sha512-aUVMjFm3GAPTTZL7oYr5E7ETiqfQCHRLH+B+5afnICvf0r7kkK4eR6SMuwbSTJw/7t+12khT/Kahij49fqOCIg==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       react: '>=18'
@@ -1937,8 +1937,8 @@ packages:
     resolution: {integrity: sha512-PWaYA1L/q9u2u7xYQi+Y3L3Yfnie7XyLeaJICV1MGD6LprsBxcAqGjYyr0eY3p+QdsA+x/Irkt4Qif8D63+Sbw==}
     engines: {node: '>=0.10.0'}
 
-  recharts@3.10.0:
-    resolution: {integrity: sha512-wulMvfncpIlmu2uFtRU/mE5/+NiVtASXkw2KdwJTdHs3WsASX0WxZlX+rpKgyn5BDbIhkPtCpUKkB9XNK5KE0w==}
+  recharts@3.10.1:
+    resolution: {integrity: sha512-QXFrvt6IVcw7eeZCoyXTwkIJAX3Dv1nyVhMicXJ47GsGDDpcN8z6o644DibE9XjpBTThtsomLKnTV6lc+cVFUA==}
     engines: {node: '>=18'}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -2726,11 +2726,11 @@ snapshots:
 
   '@types/use-sync-external-store@0.0.6': {}
 
-  '@vitest/browser-playwright@4.1.10(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10)':
+  '@vitest/browser-playwright@4.1.10(playwright@1.62.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10)':
     dependencies:
       '@vitest/browser': 4.1.10(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10)
       '@vitest/mocker': 4.1.10(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))
-      playwright: 1.61.1
+      playwright: 1.62.1
       tinyrainbow: 3.1.0
       vitest: 4.1.10(@vitest/browser-playwright@4.1.10)(@vitest/browser-preview@4.1.10)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))
     transitivePeerDependencies:
@@ -3327,7 +3327,7 @@ snapshots:
       lightningcss-win32-arm64-msvc: 1.33.0
       lightningcss-win32-x64-msvc: 1.33.0
 
-  lucide-react@1.26.0(react@19.2.8):
+  lucide-react@1.28.0(react@19.2.8):
     dependencies:
       react: 19.2.8
 
@@ -3355,7 +3355,7 @@ snapshots:
 
   obug@2.1.2: {}
 
-  oxfmt@0.60.0(vite-plus@0.2.7(@vitest/browser-playwright@4.1.10(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))):
+  oxfmt@0.60.0(vite-plus@0.2.7(@vitest/browser-playwright@4.1.10(playwright@1.62.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))):
     dependencies:
       tinypool: 2.1.0
     optionalDependencies:
@@ -3378,7 +3378,7 @@ snapshots:
       '@oxfmt/binding-win32-arm64-msvc': 0.60.0
       '@oxfmt/binding-win32-ia32-msvc': 0.60.0
       '@oxfmt/binding-win32-x64-msvc': 0.60.0
-      vite-plus: 0.2.7(@vitest/browser-playwright@4.1.10(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))
+      vite-plus: 0.2.7(@vitest/browser-playwright@4.1.10(playwright@1.62.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))
 
   oxfmt@0.60.0(vite-plus@0.2.7(@vitest/browser-playwright@4.1.10)(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))):
     dependencies:
@@ -3414,7 +3414,7 @@ snapshots:
       '@oxlint-tsgolint/win32-arm64': 7.0.2001
       '@oxlint-tsgolint/win32-x64': 7.0.2001
 
-  oxlint@1.75.0(oxlint-tsgolint@7.0.2001)(vite-plus@0.2.7(@vitest/browser-playwright@4.1.10(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))):
+  oxlint@1.75.0(oxlint-tsgolint@7.0.2001)(vite-plus@0.2.7(@vitest/browser-playwright@4.1.10(playwright@1.62.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))):
     optionalDependencies:
       '@oxlint/binding-android-arm-eabi': 1.75.0
       '@oxlint/binding-android-arm64': 1.75.0
@@ -3436,7 +3436,7 @@ snapshots:
       '@oxlint/binding-win32-ia32-msvc': 1.75.0
       '@oxlint/binding-win32-x64-msvc': 1.75.0
       oxlint-tsgolint: 7.0.2001
-      vite-plus: 0.2.7(@vitest/browser-playwright@4.1.10(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))
+      vite-plus: 0.2.7(@vitest/browser-playwright@4.1.10(playwright@1.62.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))
 
   oxlint@1.75.0(oxlint-tsgolint@7.0.2001)(vite-plus@0.2.7(@vitest/browser-playwright@4.1.10)(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))):
     optionalDependencies:
@@ -3481,11 +3481,11 @@ snapshots:
 
   picomatch@4.0.5: {}
 
-  playwright-core@1.61.1: {}
+  playwright-core@1.62.1: {}
 
-  playwright@1.61.1:
+  playwright@1.62.1:
     dependencies:
-      playwright-core: 1.61.1
+      playwright-core: 1.62.1
     optionalDependencies:
       fsevents: 2.3.2
 
@@ -3523,13 +3523,13 @@ snapshots:
       '@types/react': 19.2.17
       redux: 5.0.1
 
-  react-router-dom@7.18.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
+  react-router-dom@7.18.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
     dependencies:
       react: 19.2.8
       react-dom: 19.2.8(react@19.2.8)
-      react-router: 7.18.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      react-router: 7.18.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
 
-  react-router@7.18.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
+  react-router@7.18.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
     dependencies:
       cookie: 1.1.1
       react: 19.2.8
@@ -3539,7 +3539,7 @@ snapshots:
 
   react@19.2.8: {}
 
-  recharts@3.10.0(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react-is@19.2.0)(react@19.2.8)(redux@5.0.1):
+  recharts@3.10.1(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react-is@19.2.0)(react@19.2.8)(redux@5.0.1):
     dependencies:
       '@reduxjs/toolkit': 2.12.0(react-redux@9.3.0(@types/react@19.2.17)(react@19.2.8)(redux@5.0.1))(react@19.2.8)
       clsx: 2.1.1
@@ -3688,7 +3688,7 @@ snapshots:
       d3-time: 3.1.0
       d3-timer: 3.0.1
 
-  vite-plus@0.2.7(@vitest/browser-playwright@4.1.10(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0)):
+  vite-plus@0.2.7(@vitest/browser-playwright@4.1.10(playwright@1.62.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0)):
     dependencies:
       '@oxc-project/types': 0.141.0
       '@oxlint/plugins': 1.73.0
@@ -3702,12 +3702,12 @@ snapshots:
       '@vitest/spy': 4.1.10
       '@vitest/utils': 4.1.10
       '@voidzero-dev/vite-plus-core': 0.2.7(esbuild@0.27.7)(jiti@2.7.0)
-      oxfmt: 0.60.0(vite-plus@0.2.7(@vitest/browser-playwright@4.1.10(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0)))
-      oxlint: 1.75.0(oxlint-tsgolint@7.0.2001)(vite-plus@0.2.7(@vitest/browser-playwright@4.1.10(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0)))
+      oxfmt: 0.60.0(vite-plus@0.2.7(@vitest/browser-playwright@4.1.10(playwright@1.62.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0)))
+      oxlint: 1.75.0(oxlint-tsgolint@7.0.2001)(vite-plus@0.2.7(@vitest/browser-playwright@4.1.10(playwright@1.62.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10))(esbuild@0.27.7)(jiti@2.7.0)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0)))
       oxlint-tsgolint: 7.0.2001
       vitest: 4.1.10(@vitest/browser-playwright@4.1.10)(@vitest/browser-preview@4.1.10)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))
     optionalDependencies:
-      '@vitest/browser-playwright': 4.1.10(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10)
+      '@vitest/browser-playwright': 4.1.10(playwright@1.62.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10)
       '@voidzero-dev/vite-plus-darwin-arm64': 0.2.7
       '@voidzero-dev/vite-plus-darwin-x64': 0.2.7
       '@voidzero-dev/vite-plus-linux-arm64-gnu': 0.2.7
@@ -3766,7 +3766,7 @@ snapshots:
       oxlint-tsgolint: 7.0.2001
       vitest: 4.1.10(@vitest/browser-playwright@4.1.10)(@vitest/browser-preview@4.1.10)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))
     optionalDependencies:
-      '@vitest/browser-playwright': 4.1.10(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10)
+      '@vitest/browser-playwright': 4.1.10(playwright@1.62.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10)
       '@voidzero-dev/vite-plus-darwin-arm64': 0.2.7
       '@voidzero-dev/vite-plus-darwin-x64': 0.2.7
       '@voidzero-dev/vite-plus-linux-arm64-gnu': 0.2.7
@@ -3842,7 +3842,7 @@ snapshots:
       vite: 7.3.1(jiti@2.7.0)(lightningcss@1.33.0)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@vitest/browser-playwright': 4.1.10(playwright@1.61.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10)
+      '@vitest/browser-playwright': 4.1.10(playwright@1.62.1)(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10)
       '@vitest/browser-preview': 4.1.10(vite@7.3.1(jiti@2.7.0)(lightningcss@1.33.0))(vitest@4.1.10)
     transitivePeerDependencies:
       - msw
