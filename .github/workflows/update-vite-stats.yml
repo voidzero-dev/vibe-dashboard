@@ -5,6 +5,8 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - data/vite-version-stats.json
 
 permissions: {}
 
