@@ -4,6 +4,14 @@ import { defineConfig } from "vite-plus";
 
 // https://vite.dev/config/
 export default defineConfig({
+  run: {
+    tasks: {
+      build: {
+        command: "vp build",
+        cache: true,
+      },
+    },
+  },
   plugins: [tailwindcss()],
   base: "/vibe-dashboard/",
   build: {

@@ -5,7 +5,6 @@
   "type": "module",
   "scripts": {
     "dev": "vp dev",
-    "build": "vp build",
     "preview": "vp preview",
     "clean": "rm -rf dist",
     "test": "vp test"
