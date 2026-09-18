@@ -1,12 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>Boshen/renovate"],
-  "packageRules": [
-    {
-      "matchPackageNames": ["vite-plus", "@voidzero-dev/*"],
-      "minimumReleaseAge": null
-    }
-  ],
   "hostRules": [
     {
       "matchHost": "https://npm.pkg.github.com/",

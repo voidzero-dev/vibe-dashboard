@@ -22,6 +22,10 @@ catalog:
   vite-plus: 0.3.3
   vite: npm:@voidzero-dev/vite-plus-core@0.3.3
 
+minimumReleaseAgeExclude:
+  - vite-plus
+  - "@voidzero-dev/*"
+
 allowBuilds:
   "@parcel/watcher": true
   "@tailwindcss/oxide": true
