@@ -13,6 +13,7 @@
   "devDependencies": {
     "playwright": "catalog:",
     "top-github-dependents-by-stars": "catalog:",
+    "vite": "catalog:",
     "vite-plus": "catalog:"
   },
   "packageManager": "pnpm@11.24.0"

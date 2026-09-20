@@ -65,3 +65,4 @@ Thumbs.db
 
 # Build tools
 .turbo
+.vitest/

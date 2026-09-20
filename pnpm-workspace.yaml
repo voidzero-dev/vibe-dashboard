@@ -19,8 +19,10 @@ catalog:
   tailwindcss: ^4.1.13
   top-github-dependents-by-stars: ^1.0.4
   typescript: ^7.0.0
-  vite-plus: 0.3.3
-  vite: npm:@voidzero-dev/vite-plus-core@0.3.3
+  vite-plus: 0.0.0-commit.2d331e6bae169462409c1a9d311801d29de7a25a
+  vite: npm:@voidzero-dev/vite-plus-core@0.0.0-commit.2d331e6bae169462409c1a9d311801d29de7a25a
+  vitest: 5.0.1
+  "@vitest/browser-playwright": 5.0.1
 
 minimumReleaseAgeExclude:
   - vite-plus
@@ -36,9 +38,12 @@ onlyBuiltDependencies:
   - "@tailwindcss/oxide"
   - esbuild
 overrides:
-  vite: "catalog:"
+  vite@*: "catalog:"
+  vitest@*: "catalog:"
 peerDependencyRules:
   allowAny:
     - vite
+    - vitest
   allowedVersions:
     vite: "*"
+    vitest: "*"
