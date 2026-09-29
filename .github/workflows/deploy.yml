@@ -15,6 +15,12 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      VP_REMOTE_CACHE: >-
+        ${{ github.event_name == 'push' &&
+            github.ref == 'refs/heads/main' &&
+            github.repository == 'voidzero-dev/vibe-dashboard' &&
+            'read-write' || 'read' }}
     permissions:
       contents: read
       pages: write
