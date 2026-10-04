@@ -3,165 +3,165 @@
     "rolldown": {
       "topDependents": [
         {
-          "url": "https://github.com/electron/electron",
-          "stars": 123279
+          "url": "https://github.com/coollabsio/coolify",
+          "stars": 62558
         },
         {
-          "url": "https://github.com/koala73/worldmonitor",
-          "stars": 87431
+          "url": "https://github.com/Mathieu2301/TradingView-API",
+          "stars": 5505
         },
         {
-          "url": "https://github.com/withastro/astro",
-          "stars": 62842
+          "url": "https://github.com/guilhermeborgesbastos/live-resume",
+          "stars": 487
         },
         {
-          "url": "https://github.com/BerriAI/litellm",
-          "stars": 59676
+          "url": "https://github.com/aykutkardas/react-icomoon",
+          "stars": 245
         },
         {
-          "url": "https://github.com/bmad-code-org/BMAD-METHOD",
-          "stars": 53509
+          "url": "https://github.com/yippee-fun/morphlex",
+          "stars": 218
         },
         {
-          "url": "https://github.com/ionic-team/ionic-framework",
-          "stars": 52683
+          "url": "https://github.com/get-thriving/thrive",
+          "stars": 175
         },
         {
-          "url": "https://github.com/TanStack/query",
-          "stars": 50364
+          "url": "https://github.com/SunkenInTime/icarus",
+          "stars": 91
         },
         {
-          "url": "https://github.com/RocketChat/Rocket.Chat",
-          "stars": 46178
+          "url": "https://github.com/qwerty084/vue3-chessboard",
+          "stars": 86
         },
         {
-          "url": "https://github.com/directus/directus",
-          "stars": 37976
+          "url": "https://github.com/futureware-tech/simulator-action",
+          "stars": 79
         },
         {
-          "url": "https://github.com/pcottle/learnGitBranching",
-          "stars": 34083
+          "url": "https://github.com/Idem-AI/idem",
+          "stars": 60
         },
         {
-          "url": "https://github.com/honojs/hono",
-          "stars": 32352
+          "url": "https://github.com/rekursiv-ai/trackinizer",
+          "stars": 57
         },
         {
-          "url": "https://github.com/Infisical/infisical",
-          "stars": 29452
+          "url": "https://github.com/zhygtx/LoomBot",
+          "stars": 44
         },
         {
-          "url": "https://github.com/postcss/postcss",
-          "stars": 28976
+          "url": "https://github.com/IogaMaster/videos",
+          "stars": 44
         },
         {
-          "url": "https://github.com/responsively-org/responsively-app",
-          "stars": 25200
+          "url": "https://github.com/diveshpatil9104/owlmic",
+          "stars": 40
         },
         {
-          "url": "https://github.com/tursodatabase/turso",
-          "stars": 24397
+          "url": "https://github.com/HeiCg/svelte-grab",
+          "stars": 37
         },
         {
-          "url": "https://github.com/pingdotgg/t3code",
-          "stars": 23639
+          "url": "https://github.com/fangyi-zhou/sii-decode-rs",
+          "stars": 27
         },
         {
-          "url": "https://github.com/bokeh/bokeh",
-          "stars": 20462
+          "url": "https://github.com/Alaa-Taieb/tunisia-kit",
+          "stars": 25
         },
         {
-          "url": "https://github.com/camsong/You-Dont-Need-jQuery",
-          "stars": 20125
+          "url": "https://github.com/margani/pricedb",
+          "stars": 25
         },
         {
-          "url": "https://github.com/nukeop/nuclear",
-          "stars": 18532
+          "url": "https://github.com/sashachabin/genplanekb",
+          "stars": 20
         },
         {
-          "url": "https://github.com/overleaf/overleaf",
-          "stars": 18187
+          "url": "https://github.com/aykutkardas/svgps",
+          "stars": 19
         }
       ],
       "latestDependents": [
         {
-          "url": "https://github.com/javillamip/colegio-yariguies-web",
-          "stars": 0
-        },
-        {
-          "url": "https://github.com/aaronsaray/aaronsaray.com",
-          "stars": 0
-        },
-        {
-          "url": "https://github.com/datastudioapp/website",
-          "stars": 0
-        },
-        {
-          "url": "https://github.com/soney/constraintjs",
-          "stars": 205
-        },
-        {
-          "url": "https://github.com/ComunidadAylas/PackSquash-action",
-          "stars": 66
-        },
-        {
-          "url": "https://github.com/motherskitchenblr2/munder-difflin",
-          "stars": 0
-        },
-        {
-          "url": "https://github.com/savvy-web/systems",
+          "url": "https://github.com/stnjs/wen365",
           "stars": 1
         },
         {
-          "url": "https://github.com/civitai/civitai-app-starters",
+          "url": "https://github.com/ethanmacleod/portfolio",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/plumthedev/plumthedev.cloud",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/geico/mermaid-preview",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/andreyka-web/content-hub",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/Ryado/ryado.github.io",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/etalii-adp/etalii.adp.ide.standalone",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/txchiefcybernetics-lang/tradexpress-app",
+          "stars": 1
+        },
+        {
+          "url": "https://github.com/rgdevment/Tisty",
           "stars": 3
         },
         {
-          "url": "https://github.com/Hbrauveres/xove",
+          "url": "https://github.com/Mizu0025/FateBot-v2",
           "stars": 0
         },
         {
-          "url": "https://github.com/wjdavis5/lunarlog",
+          "url": "https://github.com/AnanthaRajuC/QueryAPIGate",
+          "stars": 4
+        },
+        {
+          "url": "https://github.com/ostrichick/remotejobsearch",
           "stars": 0
         },
         {
-          "url": "https://github.com/alecf/pathforge",
+          "url": "https://github.com/ostrichick/dubipoly",
           "stars": 0
         },
         {
-          "url": "https://github.com/dreammy1/website-builder",
+          "url": "https://github.com/ostrichick/splendor-web",
           "stars": 0
         },
         {
-          "url": "https://github.com/AlexKachur98/alexkachur.com",
+          "url": "https://github.com/ostrichick/Clueamos",
           "stars": 0
         },
         {
-          "url": "https://github.com/barthelemy-33/la-maison-jungle",
+          "url": "https://github.com/SuperCharly/estudia-dev",
           "stars": 0
         },
         {
-          "url": "https://github.com/dsasante1/mk",
+          "url": "https://github.com/soundor/soundor",
+          "stars": 2
+        },
+        {
+          "url": "https://github.com/NAA-SMAA/composio",
           "stars": 0
         },
         {
-          "url": "https://github.com/kraai-io/kraai",
-          "stars": 1
+          "url": "https://github.com/zhygtx/LoomBot",
+          "stars": 44
         },
         {
-          "url": "https://github.com/jeremy-code/react-save-file",
-          "stars": 0
-        },
-        {
-          "url": "https://github.com/amic25/vibe-to-production",
-          "stars": 0
-        },
-        {
-          "url": "https://github.com/JRVector9/nomorevibe",
-          "stars": 0
-        },
-        {
-          "url": "https://github.com/ivangetsitdone/website",
+          "url": "https://github.com/chirathyh/chirathyh.github.io",
           "stars": 0
         }
       ]
@@ -171,165 +171,165 @@
     "tsdown": {
       "topDependents": [
         {
-          "url": "https://github.com/reduxjs/redux",
-          "stars": 61488
+          "url": "https://github.com/makeplane/plane",
+          "stars": 60334
         },
         {
-          "url": "https://github.com/TanStack/query",
-          "stars": 50364
+          "url": "https://github.com/ComposioHQ/composio",
+          "stars": 30425
         },
         {
-          "url": "https://github.com/moeru-ai/airi",
-          "stars": 49426
+          "url": "https://github.com/vercel/ai",
+          "stars": 27104
         },
         {
-          "url": "https://github.com/prisma/orm",
-          "stars": 47675
+          "url": "https://github.com/mswjs/msw",
+          "stars": 18254
         },
         {
-          "url": "https://github.com/directus/directus",
-          "stars": 37976
+          "url": "https://github.com/CherryHQ/cherry-studio-app",
+          "stars": 3964
         },
         {
-          "url": "https://github.com/onyx-dot-app/onyx",
-          "stars": 32258
+          "url": "https://github.com/ax-llm/ax",
+          "stars": 2959
         },
         {
-          "url": "https://github.com/better-auth/better-auth",
-          "stars": 30093
+          "url": "https://github.com/vuejs/devtools",
+          "stars": 2920
         },
         {
-          "url": "https://github.com/mastra-ai/mastra",
-          "stars": 28350
+          "url": "https://github.com/yeojz/otplib",
+          "stars": 2292
         },
         {
-          "url": "https://github.com/nilbuild/driver.js",
-          "stars": 26844
+          "url": "https://github.com/unadlib/mutative",
+          "stars": 1998
         },
         {
-          "url": "https://github.com/browserbase/stagehand",
-          "stars": 25404
+          "url": "https://github.com/cloudflare/cf",
+          "stars": 738
         },
         {
-          "url": "https://github.com/zama-ai/fhevm",
-          "stars": 24808
+          "url": "https://github.com/DigitecGalaxus/next-yak",
+          "stars": 592
         },
         {
-          "url": "https://github.com/pingdotgg/t3code",
-          "stars": 23639
+          "url": "https://github.com/sno-ai/sno-station",
+          "stars": 400
         },
         {
-          "url": "https://github.com/reduxjs/react-redux",
-          "stars": 23426
+          "url": "https://github.com/oliver225/thingsboard-ui-vue3",
+          "stars": 378
         },
         {
-          "url": "https://github.com/QwikDev/qwik",
-          "stars": 22068
+          "url": "https://github.com/shift-editor/shift",
+          "stars": 320
         },
         {
-          "url": "https://github.com/reduxjs/reselect",
-          "stars": 19013
+          "url": "https://github.com/sankeyangshu/lemon-admin",
+          "stars": 317
         },
         {
-          "url": "https://github.com/vuejs/vitepress",
-          "stars": 18352
+          "url": "https://github.com/skilld-dev/skilld",
+          "stars": 308
         },
         {
-          "url": "https://github.com/triggerdotdev/trigger.dev",
-          "stars": 16422
+          "url": "https://github.com/databricks/tmm",
+          "stars": 307
         },
         {
-          "url": "https://github.com/liketrek/TREK",
-          "stars": 14378
-        },
-        {
-          "url": "https://github.com/PipedreamHQ/pipedream",
-          "stars": 11713
-        },
-        {
-          "url": "https://github.com/reduxjs/redux-toolkit",
-          "stars": 11225
-        }
-      ],
-      "latestDependents": [
-        {
-          "url": "https://github.com/ComunidadAylas/PackSquash-action",
-          "stars": 66
-        },
-        {
-          "url": "https://github.com/savvy-web/systems",
-          "stars": 1
-        },
-        {
-          "url": "https://github.com/m4bwav/format-json-files",
-          "stars": 0
-        },
-        {
-          "url": "https://github.com/Meeovi/alternate-framework",
-          "stars": 0
-        },
-        {
-          "url": "https://github.com/cyberuni/agent-harness",
-          "stars": 0
-        },
-        {
-          "url": "https://github.com/lvogt/wireless-mbus-parser",
-          "stars": 1
-        },
-        {
-          "url": "https://github.com/rxova/shared",
-          "stars": 0
-        },
-        {
-          "url": "https://github.com/TylonHH/openclaw",
-          "stars": 0
-        },
-        {
-          "url": "https://github.com/Nikita-Filonov/ui-coverage-tool-js",
-          "stars": 5
+          "url": "https://github.com/gioboa/jira-plugin",
+          "stars": 268
         },
         {
           "url": "https://github.com/soney/constraintjs",
           "stars": 205
         },
         {
-          "url": "https://github.com/m4bwav/stack-exchange-markdown-retriever",
-          "stars": 0
-        },
+          "url": "https://github.com/sanity-io/ui",
+          "stars": 175
+        }
+      ],
+      "latestDependents": [
         {
-          "url": "https://github.com/marioparaschiv/telecord-ingestion",
-          "stars": 0
-        },
-        {
-          "url": "https://github.com/thousandreasonswhy904-tech/n8n",
-          "stars": 0
-        },
-        {
-          "url": "https://github.com/envoy1084/ens-social-verification",
-          "stars": 0
-        },
-        {
-          "url": "https://github.com/Jahid11978/openclaw-jahid.ai",
-          "stars": 1
-        },
-        {
-          "url": "https://github.com/m4bwav/is-an-image-url",
+          "url": "https://github.com/soundor/soundor",
           "stars": 2
         },
         {
-          "url": "https://github.com/levino/mock-jwks",
-          "stars": 64
-        },
-        {
-          "url": "https://github.com/joaopalmeiro/rolldown-plugin-build-size",
+          "url": "https://github.com/NAA-SMAA/composio",
           "stars": 0
         },
         {
-          "url": "https://github.com/LangChat/langchat",
-          "stars": 1285
+          "url": "https://github.com/kjanat/actionlint",
+          "stars": 42
         },
         {
-          "url": "https://github.com/publira/publira",
+          "url": "https://github.com/remarkablemark/websfx",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/ashakirzianov/pult",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/remarkablemark/npm-package-typescript-template",
+          "stars": 2
+        },
+        {
+          "url": "https://github.com/LucasCoppola/tagged-error-kit",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/alexfigliolia/type-safe-storage",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/norskeld/sigma",
+          "stars": 28
+        },
+        {
+          "url": "https://github.com/sanketgautam/openclaw",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/Floriferous/tipee-tools",
+          "stars": 1
+        },
+        {
+          "url": "https://github.com/Firefox2100/dsh-ai-providers",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/luisfagottani/periplus",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/KeepOak/Branch-Agent",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/opinionated-ts/ai-context-tree",
+          "stars": 5
+        },
+        {
+          "url": "https://github.com/pedrobastosribeiro/vercel_ai",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/LiliumStargazer/wiki-copilot",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/herominutes/supermemory",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/herominutes/ccusage",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/herominutes/sentry-mcp",
           "stars": 0
         }
       ]
@@ -347,166 +347,166 @@
     "oxlint": {
       "topDependents": [
         {
-          "url": "https://github.com/anomalyco/opencode",
-          "stars": 210244
-        },
-        {
           "url": "https://github.com/n8n-io/n8n",
-          "stars": 206057
+          "stars": 206588
         },
         {
-          "url": "https://github.com/langgenius/dify",
-          "stars": 157288
+          "url": "https://github.com/makeplane/plane",
+          "stars": 60334
         },
         {
-          "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-          "stars": 139891
+          "url": "https://github.com/lerna/lerna",
+          "stars": 36045
         },
         {
-          "url": "https://github.com/electron/electron",
-          "stars": 123279
+          "url": "https://github.com/honojs/hono",
+          "stars": 32407
         },
         {
-          "url": "https://github.com/oven-sh/bun",
-          "stars": 96044
+          "url": "https://github.com/requarks/wiki",
+          "stars": 29003
         },
         {
-          "url": "https://github.com/Stirling-Tools/Stirling-PDF",
-          "stars": 93068
+          "url": "https://github.com/invoke-ai/InvokeAI",
+          "stars": 28340
         },
         {
-          "url": "https://github.com/infiniflow/ragflow",
-          "stars": 91332
+          "url": "https://github.com/apify/crawlee",
+          "stars": 25979
         },
         {
-          "url": "https://github.com/storybookjs/storybook",
-          "stars": 91155
+          "url": "https://github.com/elastic/kibana",
+          "stars": 21304
         },
         {
-          "url": "https://github.com/vitejs/vite",
-          "stars": 83026
+          "url": "https://github.com/mswjs/msw",
+          "stars": 18254
         },
         {
-          "url": "https://github.com/stablyai/orca",
-          "stars": 78924
+          "url": "https://github.com/vitest-dev/vitest",
+          "stars": 17180
         },
         {
-          "url": "https://github.com/nestjs/nest",
-          "stars": 76739
+          "url": "https://github.com/electron-userland/electron-builder",
+          "stars": 14668
         },
         {
-          "url": "https://github.com/apache/superset",
-          "stars": 74939
+          "url": "https://github.com/libnyanpasu/clash-nyanpasu",
+          "stars": 13209
         },
         {
-          "url": "https://github.com/strapi/strapi",
-          "stars": 73241
+          "url": "https://github.com/usekaneo/kaneo",
+          "stars": 9328
         },
         {
-          "url": "https://github.com/reduxjs/redux",
-          "stars": 61488
+          "url": "https://github.com/DylanVann/react-native-fast-image",
+          "stars": 8411
         },
         {
-          "url": "https://github.com/heygen-com/hyperframes",
-          "stars": 53343
+          "url": "https://github.com/chakra-ui/panda",
+          "stars": 6209
         },
         {
-          "url": "https://github.com/expo/expo",
-          "stars": 52450
+          "url": "https://github.com/Tencent/teamai-cli",
+          "stars": 5109
         },
         {
-          "url": "https://github.com/astral-sh/ruff",
-          "stars": 49805
+          "url": "https://github.com/homarr-labs/homarr",
+          "stars": 4978
         },
         {
-          "url": "https://github.com/metabase/metabase",
-          "stars": 49431
+          "url": "https://github.com/ant-design/pro-components",
+          "stars": 4837
         },
         {
-          "url": "https://github.com/moeru-ai/airi",
-          "stars": 49426
+          "url": "https://github.com/alexjlockwood/ShapeShifter",
+          "stars": 4068
+        },
+        {
+          "url": "https://github.com/algolia/instantsearch",
+          "stars": 4062
         }
       ],
       "latestDependents": [
         {
-          "url": "https://github.com/Hbrauveres/xove",
+          "url": "https://github.com/ethanmacleod/portfolio",
           "stars": 0
         },
         {
-          "url": "https://github.com/isthisgitlab/gurushots-auto-vote",
-          "stars": 10
-        },
-        {
-          "url": "https://github.com/jeremy-code/react-save-file",
-          "stars": 0
-        },
-        {
-          "url": "https://github.com/SY-2024/ae-website",
-          "stars": 0
-        },
-        {
-          "url": "https://github.com/effinrich/untangle-expo",
-          "stars": 0
-        },
-        {
-          "url": "https://github.com/mrishab/ML-Playground",
-          "stars": 0
-        },
-        {
-          "url": "https://github.com/Lukk1a/openship",
-          "stars": 0
-        },
-        {
-          "url": "https://github.com/bsv-blockchain/uhrp-services",
-          "stars": 0
-        },
-        {
-          "url": "https://github.com/hkbertoson/spool",
-          "stars": 0
-        },
-        {
-          "url": "https://github.com/7ovr/shadcn-vite-starter",
+          "url": "https://github.com/txchiefcybernetics-lang/tradexpress-app",
           "stars": 1
         },
         {
-          "url": "https://github.com/christophehurpeau/pob",
+          "url": "https://github.com/Tonypost949/OsintNeoAi",
           "stars": 4
         },
         {
-          "url": "https://github.com/BSoDium/WhatsApp-content-moderation",
+          "url": "https://github.com/ostrichick/dubipoly",
           "stars": 0
         },
         {
-          "url": "https://github.com/MathieuBurnat/frogstation",
+          "url": "https://github.com/ostrichick/splendor-web",
           "stars": 0
         },
         {
-          "url": "https://github.com/j0n1c4/web-portfolio",
+          "url": "https://github.com/soundor/soundor",
+          "stars": 2
+        },
+        {
+          "url": "https://github.com/NAA-SMAA/composio",
           "stars": 0
         },
         {
-          "url": "https://github.com/chizhangucb/demo-apps",
+          "url": "https://github.com/Campus-Gaming-Network/core",
           "stars": 0
         },
         {
-          "url": "https://github.com/crimsonDaMi/fantasy-draft-helper",
+          "url": "https://github.com/xaviergilmore/xaviergilmore.github.io",
           "stars": 0
         },
         {
-          "url": "https://github.com/10krco/pi-workflows",
+          "url": "https://github.com/0pilatos0/bitbucket-cli",
+          "stars": 11
+        },
+        {
+          "url": "https://github.com/lagudafuadtosin/editor-web",
           "stars": 0
         },
         {
-          "url": "https://github.com/10krco/pi-sandbox",
+          "url": "https://github.com/alfonsmr/subs-to-podcast",
           "stars": 0
         },
         {
-          "url": "https://github.com/spliit-app/spliit-web",
-          "stars": 25
+          "url": "https://github.com/FuouM/DynastyReader",
+          "stars": 0
         },
         {
-          "url": "https://github.com/neccrr/medicine",
+          "url": "https://github.com/mark-mcdermott/pupluv",
           "stars": 0
+        },
+        {
+          "url": "https://github.com/DavSanchez/nixpkgs",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/ashakirzianov/pult",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/webX22/School-Algerian-manager",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/Balmasexy/magcharge-sales-saas",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/LucasCoppola/tagged-error-kit",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/styiannis/prefix-tries",
+          "stars": 1
         }
       ]
     }
@@ -516,47 +516,47 @@
       "topDependents": [
         {
           "url": "https://github.com/storybookjs/storybook",
-          "stars": 91155
+          "stars": 91195
         },
         {
           "url": "https://github.com/storybookjs/storybook",
-          "stars": 91155
+          "stars": 91195
         },
         {
           "url": "https://github.com/remix-run/remix",
-          "stars": 33376
+          "stars": 33387
         },
         {
           "url": "https://github.com/remix-run/remix",
-          "stars": 33376
+          "stars": 33387
         },
         {
           "url": "https://github.com/millionco/react-doctor",
-          "stars": 14925
+          "stars": 14951
         },
         {
           "url": "https://github.com/fuma-nama/fumadocs",
-          "stars": 13237
+          "stars": 13290
         },
         {
           "url": "https://github.com/webpro-nl/knip",
-          "stars": 12352
+          "stars": 12402
         },
         {
           "url": "https://github.com/rolldown/tsdown",
-          "stars": 4283
+          "stars": 4285
         },
         {
           "url": "https://github.com/millionco/expect",
-          "stars": 3553
+          "stars": 3557
         },
         {
           "url": "https://github.com/analogjs/analog",
-          "stars": 3184
+          "stars": 3187
         },
         {
           "url": "https://github.com/vue-macros/vue-macros",
-          "stars": 1987
+          "stars": 1985
         },
         {
           "url": "https://github.com/swc-project/swc-node",
@@ -564,11 +564,11 @@
         },
         {
           "url": "https://github.com/microsoft/rnx-kit",
-          "stars": 1735
+          "stars": 1737
         },
         {
           "url": "https://github.com/microsoft/rnx-kit",
-          "stars": 1735
+          "stars": 1737
         },
         {
           "url": "https://github.com/aleclarson/vite-tsconfig-paths",
@@ -576,15 +576,15 @@
         },
         {
           "url": "https://github.com/microsoft/fluentui-react-native",
-          "stars": 1442
+          "stars": 1444
         },
         {
           "url": "https://github.com/microsoft/fluentui-react-native",
-          "stars": 1442
+          "stars": 1444
         },
         {
           "url": "https://github.com/microsoft/fluentui-react-native",
-          "stars": 1442
+          "stars": 1444
         },
         {
           "url": "https://github.com/microsoft/griffel",
@@ -597,8 +597,20 @@
       ],
       "latestDependents": [
         {
+          "url": "https://github.com/Levo-Studio/codemap",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/cstrlcs/configs",
+          "stars": 0
+        },
+        {
           "url": "https://github.com/kamp-us/demlik",
-          "stars": 4
+          "stars": 6
+        },
+        {
+          "url": "https://github.com/adamaho/nopeus",
+          "stars": 0
         },
         {
           "url": "https://github.com/getcronit/pylon",
@@ -606,7 +618,7 @@
         },
         {
           "url": "https://github.com/halqme/oxdg",
-          "stars": 0
+          "stars": 1
         },
         {
           "url": "https://github.com/ImRLopezAG/cvx-kit",
@@ -614,11 +626,11 @@
         },
         {
           "url": "https://github.com/pmndrs/glyph",
-          "stars": 367
+          "stars": 389
         },
         {
           "url": "https://github.com/wevm/zyzz",
-          "stars": 8
+          "stars": 14
         },
         {
           "url": "https://github.com/ohos-ports/ohos-ports",
@@ -642,15 +654,15 @@
         },
         {
           "url": "https://github.com/Variance-Authority/variance-authority",
-          "stars": 0
+          "stars": 4
         },
         {
           "url": "https://github.com/microsoft/fluentui-react-native",
-          "stars": 1442
+          "stars": 1444
         },
         {
           "url": "https://github.com/gajus/bamboocss",
-          "stars": 38
+          "stars": 41
         },
         {
           "url": "https://github.com/jubayertalha/vibeframe",
@@ -658,23 +670,11 @@
         },
         {
           "url": "https://github.com/microsoft/rnx-kit",
-          "stars": 1735
+          "stars": 1737
         },
         {
           "url": "https://github.com/pkishorez/monorepo",
           "stars": 39
-        },
-        {
-          "url": "https://github.com/muzam1l/pnext",
-          "stars": 2
-        },
-        {
-          "url": "https://github.com/storybookjs/storybook",
-          "stars": 91155
-        },
-        {
-          "url": "https://github.com/lovrozagar/flare",
-          "stars": 1
         }
       ]
     }
@@ -684,165 +684,165 @@
       "topDependents": [
         {
           "url": "https://github.com/langgenius/dify",
-          "stars": 157288
+          "stars": 157783
         },
         {
           "url": "https://github.com/yangshun/tech-interview-handbook",
-          "stars": 142965
-        },
-        {
-          "url": "https://github.com/yangshun/front-end-interview-handbook",
-          "stars": 44007
-        },
-        {
-          "url": "https://github.com/halo-dev/halo",
-          "stars": 39896
-        },
-        {
-          "url": "https://github.com/ueberdosis/tiptap",
-          "stars": 38540
+          "stars": 143112
         },
         {
           "url": "https://github.com/debpalash/VoiceStudio",
-          "stars": 36891
+          "stars": 52602
+        },
+        {
+          "url": "https://github.com/yangshun/front-end-interview-handbook",
+          "stars": 44011
+        },
+        {
+          "url": "https://github.com/halo-dev/halo",
+          "stars": 39926
+        },
+        {
+          "url": "https://github.com/ueberdosis/tiptap",
+          "stars": 38633
         },
         {
           "url": "https://github.com/honojs/hono",
-          "stars": 32352
+          "stars": 32407
         },
         {
           "url": "https://github.com/sampotts/plyr",
-          "stars": 30018
+          "stars": 30017
         },
         {
           "url": "https://github.com/pingdotgg/t3code",
-          "stars": 23639
+          "stars": 24697
         },
         {
           "url": "https://github.com/oxc-project/oxc",
-          "stars": 22895
+          "stars": 22936
         },
         {
           "url": "https://github.com/aidenybai/react-scan",
-          "stars": 21857
+          "stars": 21864
         },
         {
           "url": "https://github.com/mountain-loop/yaak",
-          "stars": 19255
+          "stars": 19285
         },
         {
           "url": "https://github.com/koel/koel",
-          "stars": 17266
+          "stars": 17269
         },
         {
           "url": "https://github.com/millionco/react-doctor",
-          "stars": 14925
+          "stars": 14951
         },
         {
           "url": "https://github.com/rolldown/rolldown",
-          "stars": 13957
+          "stars": 13960
         },
         {
           "url": "https://github.com/webpro-nl/knip",
-          "stars": 12352
-        },
-        {
-          "url": "https://github.com/addyosmani/critical",
-          "stars": 10284
-        },
-        {
-          "url": "https://github.com/TypeCellOS/BlockNote",
-          "stars": 10231
+          "stars": 12402
         },
         {
           "url": "https://github.com/cloudflare/cloudflare-os",
-          "stars": 10142
+          "stars": 10573
+        },
+        {
+          "url": "https://github.com/addyosmani/critical",
+          "stars": 10286
+        },
+        {
+          "url": "https://github.com/TypeCellOS/BlockNote",
+          "stars": 10261
         },
         {
           "url": "https://github.com/greatfrontend/top-javascript-interview-questions",
-          "stars": 10047
+          "stars": 10064
         }
       ],
       "latestDependents": [
         {
-          "url": "https://github.com/Aperrix/puck-plugins",
+          "url": "https://github.com/ashakirzianov/pult",
           "stars": 0
         },
         {
-          "url": "https://github.com/francoism90/stry",
-          "stars": 7
-        },
-        {
-          "url": "https://github.com/snutij/draw-pixels",
+          "url": "https://github.com/webX22/School-Algerian-manager",
           "stars": 0
         },
         {
-          "url": "https://github.com/ccxtwf/VLW-Page-Generator-v3",
+          "url": "https://github.com/yielded-dev/auth",
+          "stars": 164
+        },
+        {
+          "url": "https://github.com/EloToJaa/blog",
           "stars": 0
         },
         {
-          "url": "https://github.com/sayuprc/soralink",
+          "url": "https://github.com/pocket-id/website",
+          "stars": 15
+        },
+        {
+          "url": "https://github.com/Florencea/vite-start-antd",
+          "stars": 4
+        },
+        {
+          "url": "https://github.com/sQVe/phi",
           "stars": 0
         },
         {
-          "url": "https://github.com/chill-institute/chill-stremio",
+          "url": "https://github.com/connorshea/wikidata-discographer",
           "stars": 0
         },
         {
-          "url": "https://github.com/luisfun/discord-hono",
-          "stars": 150
-        },
-        {
-          "url": "https://github.com/eddymac-code/hospitality-platform",
+          "url": "https://github.com/hopeugetherpes/plurality",
           "stars": 0
         },
         {
-          "url": "https://github.com/ponko2/web-extensions",
+          "url": "https://github.com/louislam/uptime-kuma-website",
+          "stars": 17
+        },
+        {
+          "url": "https://github.com/herominutes/dify",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/valhallatickets/cloudflare-os",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/brunomoyse/tsb-core",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/brunomoyse/tsb-dashboard",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/donvargax/itos",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/delta-comic/delta-comic",
+          "stars": 255
+        },
+        {
+          "url": "https://github.com/unoplat/setu",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/alyssaheeter/agentsview",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/kyledickey/alias",
+          "stars": 1
+        },
+        {
+          "url": "https://github.com/q15co/q15",
           "stars": 2
-        },
-        {
-          "url": "https://github.com/IndrajeetPatil/chatbot-template",
-          "stars": 8
-        },
-        {
-          "url": "https://github.com/Drakaniia/mongo-query-quiz",
-          "stars": 0
-        },
-        {
-          "url": "https://github.com/kombiz/dify",
-          "stars": 0
-        },
-        {
-          "url": "https://github.com/Syphon1205/Modesto",
-          "stars": 11
-        },
-        {
-          "url": "https://github.com/kelvindk9w/tws-laravel-starter-kit",
-          "stars": 0
-        },
-        {
-          "url": "https://github.com/chenxin-yan/crust",
-          "stars": 405
-        },
-        {
-          "url": "https://github.com/motlin/janesterlis.com",
-          "stars": 0
-        },
-        {
-          "url": "https://github.com/yungifez/Laravel-App-Builder",
-          "stars": 0
-        },
-        {
-          "url": "https://github.com/superdoc/docx-editor",
-          "stars": 1062
-        },
-        {
-          "url": "https://github.com/hytfjwr/Masu",
-          "stars": 0
-        },
-        {
-          "url": "https://github.com/MaxtuneLee/memora",
-          "stars": 12
         }
       ]
     }
