@@ -26,10 +26,10 @@ catalogs:
       version: 7.8.0
     lucide-react:
       specifier: ^1.0.0
-      version: 1.51.0
+      version: 1.55.0
     playwright:
       specifier: ^1.58.2
-      version: 1.63.0
+      version: 1.64.0
     react:
       specifier: ^19.1.1
       version: 19.3.0
@@ -64,13 +64,13 @@ importers:
     devDependencies:
       playwright:
         specifier: 'catalog:'
-        version: 1.63.0
+        version: 1.64.0
       top-github-dependents-by-stars:
         specifier: 'catalog:'
         version: 1.0.4
       vite-plus:
         specifier: 'catalog:'
-        version: 1.1.0(@vitest/browser-playwright@5.0.3(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))(playwright@1.63.0)(vitest@5.0.3))(@vitest/ui@5.0.3(vitest@5.0.3))(esbuild@0.27.7)(jiti@2.7.0)(playwright@1.63.0)
+        version: 1.1.0(@vitest/browser-playwright@5.0.3(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))(playwright@1.64.0)(vitest@5.0.3))(@vitest/ui@5.0.3(vitest@5.0.3))(esbuild@0.27.7)(jiti@2.7.0)(playwright@1.64.0)
 
   apps/dashboard:
     dependencies:
@@ -85,7 +85,7 @@ importers:
         version: link:../../packages/utils
       lucide-react:
         specifier: 'catalog:'
-        version: 1.51.0(@types/react@19.3.0)(react@19.3.0)
+        version: 1.55.0(@types/react@19.3.0)(react@19.3.0)
       react:
         specifier: 'catalog:'
         version: 19.3.0
@@ -122,16 +122,16 @@ importers:
         version: 7.8.0
       '@vitest/browser-playwright':
         specifier: 5.0.3
-        version: 5.0.3(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))(playwright@1.63.0)(vitest@5.0.3)
+        version: 5.0.3(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))(playwright@1.64.0)(vitest@5.0.3)
       playwright:
         specifier: 'catalog:'
-        version: 1.63.0
+        version: 1.64.0
       tailwindcss:
         specifier: 'catalog:'
         version: 4.3.3
       vite-plus:
         specifier: 'catalog:'
-        version: 1.1.0(@vitest/browser-playwright@5.0.3)(@vitest/ui@5.0.3)(esbuild@0.27.7)(jiti@2.7.0)(playwright@1.63.0)
+        version: 1.1.0(@vitest/browser-playwright@5.0.3)(@vitest/ui@5.0.3)(esbuild@0.27.7)(jiti@2.7.0)(playwright@1.64.0)
       vitest:
         specifier: 5.0.3
         version: 5.0.3(@vitest/browser-playwright@5.0.3)(@vitest/browser-preview@5.0.3)(@vitest/ui@5.0.3(vitest@5.0.3))(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))
@@ -153,7 +153,7 @@ importers:
     dependencies:
       lucide-react:
         specifier: 'catalog:'
-        version: 1.51.0(@types/react@19.3.0)(react@19.3.0)
+        version: 1.55.0(@types/react@19.3.0)(react@19.3.0)
       react:
         specifier: 'catalog:'
         version: 19.3.0
@@ -1687,8 +1687,8 @@ packages:
     resolution: {integrity: sha512-WkUDrojuJs0xkgGf2udWxa3yGBRxPtxUkB79i6aCZLRgc7PM8fZe9TosfPDcvEpQZbuFASnHYmRLBLUbmLOIIA==}
     engines: {node: '>= 12.0.0'}
 
-  lucide-react@1.51.0:
-    resolution: {integrity: sha512-9929jimol5y7VbXUlVKcgURMSeIxFJB7dtWCkRAaNnF7KiCRkSkhmqWPUmAmUFYPezNawFk6qvz3Mu0gEnfI4g==}
+  lucide-react@1.55.0:
+    resolution: {integrity: sha512-bSozQHiI3/8q7JvgoqVRGOYUi7fYT3siAZwmZsljjsOH2Husp/2ODdFf/leD+ZC/2yKfn7r8oh6yeoR3ITR5vA==}
     peerDependencies:
       '@types/react': '*'
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -1783,13 +1783,13 @@ packages:
     resolution: {integrity: sha512-qcJu88Q2IWqJsDD529JKMdwGm/dvInW4HvQnRwiH9JtihJvzGOscDtHE3x1pBKeUOTysQ8kVmLnJ2kJu7yhcGA==}
     engines: {node: '>=12'}
 
-  playwright-core@1.63.0:
-    resolution: {integrity: sha512-rYCsBF/M5HjUch52bbtVONEFjv6Xu8sm8h72dNlR5bzIE1fvC/bxgspzkjSfU+MweEMmPM8KJebG6nnyxo5mCg==}
+  playwright-core@1.64.0:
+    resolution: {integrity: sha512-T9r+MZkTECl2+oUcZ26YgZzTrYidTsIhYYkJix+6iDOymOb1FB2RLLSOxRGnZGv5DStt+aduIVbt+E8WygXYpg==}
     engines: {node: '>=20'}
     hasBin: true
 
-  playwright@1.63.0:
-    resolution: {integrity: sha512-+7ziBLidS4NaNCdt57SUDT+wYmmd5fmiQejUic/kb+YsYSCPyOOE9sebzMjNmQrsnNpDJqd4WHvV/8lfKfUDUg==}
+  playwright@1.64.0:
+    resolution: {integrity: sha512-kVzTnYFYEyQ9RGzBjNCd2+yEqWmVbxl3AHPynv3qQ6JTjv4a+kwRcnqQwIpuP3NnrnIrE/Q6wWAIAvMfIE2/Yg==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -2522,11 +2522,11 @@ snapshots:
 
   '@types/use-sync-external-store@0.0.6': {}
 
-  '@vitest/browser-playwright@5.0.3(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))(playwright@1.63.0)(vitest@5.0.3)':
+  '@vitest/browser-playwright@5.0.3(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))(playwright@1.64.0)(vitest@5.0.3)':
     dependencies:
       '@vitest/browser': 5.0.3(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))(vitest@5.0.3)
       '@vitest/mocker': 5.0.3(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))
-      playwright: 1.63.0
+      playwright: 1.64.0
       tinyrainbow: 3.1.1
       vitest: 5.0.3(@vitest/browser-playwright@5.0.3)(@vitest/browser-preview@5.0.3)(@vitest/ui@5.0.3(vitest@5.0.3))(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))
     transitivePeerDependencies:
@@ -3137,7 +3137,7 @@ snapshots:
       lightningcss-win32-arm64-msvc: 1.33.0
       lightningcss-win32-x64-msvc: 1.33.0
 
-  lucide-react@1.51.0(@types/react@19.3.0)(react@19.3.0):
+  lucide-react@1.55.0(@types/react@19.3.0)(react@19.3.0):
     dependencies:
       react: 19.3.0
     optionalDependencies:
@@ -3171,7 +3171,7 @@ snapshots:
 
   obug@2.2.1: {}
 
-  oxfmt@0.72.0(vite-plus@1.1.0(@vitest/browser-playwright@5.0.3(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))(playwright@1.63.0)(vitest@5.0.3))(@vitest/ui@5.0.3(vitest@5.0.3))(esbuild@0.27.7)(jiti@2.7.0)(playwright@1.63.0)):
+  oxfmt@0.72.0(vite-plus@1.1.0(@vitest/browser-playwright@5.0.3(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))(playwright@1.64.0)(vitest@5.0.3))(@vitest/ui@5.0.3(vitest@5.0.3))(esbuild@0.27.7)(jiti@2.7.0)(playwright@1.64.0)):
     dependencies:
       tinypool: 2.2.0
     optionalDependencies:
@@ -3194,9 +3194,9 @@ snapshots:
       '@oxfmt/binding-win32-arm64-msvc': 0.72.0
       '@oxfmt/binding-win32-ia32-msvc': 0.72.0
       '@oxfmt/binding-win32-x64-msvc': 0.72.0
-      vite-plus: 1.1.0(@vitest/browser-playwright@5.0.3(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))(playwright@1.63.0)(vitest@5.0.3))(@vitest/ui@5.0.3(vitest@5.0.3))(esbuild@0.27.7)(jiti@2.7.0)(playwright@1.63.0)
+      vite-plus: 1.1.0(@vitest/browser-playwright@5.0.3(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))(playwright@1.64.0)(vitest@5.0.3))(@vitest/ui@5.0.3(vitest@5.0.3))(esbuild@0.27.7)(jiti@2.7.0)(playwright@1.64.0)
 
-  oxfmt@0.72.0(vite-plus@1.1.0(@vitest/browser-playwright@5.0.3)(@vitest/ui@5.0.3)(esbuild@0.27.7)(jiti@2.7.0)(playwright@1.63.0)):
+  oxfmt@0.72.0(vite-plus@1.1.0(@vitest/browser-playwright@5.0.3)(@vitest/ui@5.0.3)(esbuild@0.27.7)(jiti@2.7.0)(playwright@1.64.0)):
     dependencies:
       tinypool: 2.2.0
     optionalDependencies:
@@ -3219,7 +3219,7 @@ snapshots:
       '@oxfmt/binding-win32-arm64-msvc': 0.72.0
       '@oxfmt/binding-win32-ia32-msvc': 0.72.0
       '@oxfmt/binding-win32-x64-msvc': 0.72.0
-      vite-plus: 1.1.0(@vitest/browser-playwright@5.0.3)(@vitest/ui@5.0.3)(esbuild@0.27.7)(jiti@2.7.0)(playwright@1.63.0)
+      vite-plus: 1.1.0(@vitest/browser-playwright@5.0.3)(@vitest/ui@5.0.3)(esbuild@0.27.7)(jiti@2.7.0)(playwright@1.64.0)
 
   oxlint-tsgolint@7.0.2003:
     optionalDependencies:
@@ -3230,7 +3230,7 @@ snapshots:
       '@oxlint-tsgolint/win32-arm64': 7.0.2003
       '@oxlint-tsgolint/win32-x64': 7.0.2003
 
-  oxlint@1.87.0(oxlint-tsgolint@7.0.2003)(vite-plus@1.1.0(@vitest/browser-playwright@5.0.3(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))(playwright@1.63.0)(vitest@5.0.3))(@vitest/ui@5.0.3(vitest@5.0.3))(esbuild@0.27.7)(jiti@2.7.0)(playwright@1.63.0)):
+  oxlint@1.87.0(oxlint-tsgolint@7.0.2003)(vite-plus@1.1.0(@vitest/browser-playwright@5.0.3(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))(playwright@1.64.0)(vitest@5.0.3))(@vitest/ui@5.0.3(vitest@5.0.3))(esbuild@0.27.7)(jiti@2.7.0)(playwright@1.64.0)):
     optionalDependencies:
       '@oxlint/binding-android-arm-eabi': 1.87.0
       '@oxlint/binding-android-arm64': 1.87.0
@@ -3252,9 +3252,9 @@ snapshots:
       '@oxlint/binding-win32-ia32-msvc': 1.87.0
       '@oxlint/binding-win32-x64-msvc': 1.87.0
       oxlint-tsgolint: 7.0.2003
-      vite-plus: 1.1.0(@vitest/browser-playwright@5.0.3(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))(playwright@1.63.0)(vitest@5.0.3))(@vitest/ui@5.0.3(vitest@5.0.3))(esbuild@0.27.7)(jiti@2.7.0)(playwright@1.63.0)
+      vite-plus: 1.1.0(@vitest/browser-playwright@5.0.3(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))(playwright@1.64.0)(vitest@5.0.3))(@vitest/ui@5.0.3(vitest@5.0.3))(esbuild@0.27.7)(jiti@2.7.0)(playwright@1.64.0)
 
-  oxlint@1.87.0(oxlint-tsgolint@7.0.2003)(vite-plus@1.1.0(@vitest/browser-playwright@5.0.3)(@vitest/ui@5.0.3)(esbuild@0.27.7)(jiti@2.7.0)(playwright@1.63.0)):
+  oxlint@1.87.0(oxlint-tsgolint@7.0.2003)(vite-plus@1.1.0(@vitest/browser-playwright@5.0.3)(@vitest/ui@5.0.3)(esbuild@0.27.7)(jiti@2.7.0)(playwright@1.64.0)):
     optionalDependencies:
       '@oxlint/binding-android-arm-eabi': 1.87.0
       '@oxlint/binding-android-arm64': 1.87.0
@@ -3276,7 +3276,7 @@ snapshots:
       '@oxlint/binding-win32-ia32-msvc': 1.87.0
       '@oxlint/binding-win32-x64-msvc': 1.87.0
       oxlint-tsgolint: 7.0.2003
-      vite-plus: 1.1.0(@vitest/browser-playwright@5.0.3)(@vitest/ui@5.0.3)(esbuild@0.27.7)(jiti@2.7.0)(playwright@1.63.0)
+      vite-plus: 1.1.0(@vitest/browser-playwright@5.0.3)(@vitest/ui@5.0.3)(esbuild@0.27.7)(jiti@2.7.0)(playwright@1.64.0)
 
   parse5-htmlparser2-tree-adapter@7.1.0:
     dependencies:
@@ -3297,11 +3297,11 @@ snapshots:
 
   picomatch@4.0.7: {}
 
-  playwright-core@1.63.0: {}
+  playwright-core@1.64.0: {}
 
-  playwright@1.63.0:
+  playwright@1.64.0:
     dependencies:
-      playwright-core: 1.63.0
+      playwright-core: 1.64.0
 
   pngjs@7.0.0: {}
 
@@ -3467,7 +3467,7 @@ snapshots:
       d3-time: 3.1.0
       d3-timer: 3.0.1
 
-  vite-plus@1.1.0(@vitest/browser-playwright@5.0.3(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))(playwright@1.63.0)(vitest@5.0.3))(@vitest/ui@5.0.3(vitest@5.0.3))(esbuild@0.27.7)(jiti@2.7.0)(playwright@1.63.0):
+  vite-plus@1.1.0(@vitest/browser-playwright@5.0.3(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))(playwright@1.64.0)(vitest@5.0.3))(@vitest/ui@5.0.3(vitest@5.0.3))(esbuild@0.27.7)(jiti@2.7.0)(playwright@1.64.0):
     dependencies:
       '@oxc-project/types': 0.153.0
       '@oxlint/plugins': 1.79.0
@@ -3478,13 +3478,13 @@ snapshots:
       '@vitest/snapshot': 5.0.3
       '@vitest/spy': 5.0.3
       '@vitest/utils': 5.0.3
-      oxfmt: 0.72.0(vite-plus@1.1.0(@vitest/browser-playwright@5.0.3(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))(playwright@1.63.0)(vitest@5.0.3))(@vitest/ui@5.0.3(vitest@5.0.3))(esbuild@0.27.7)(jiti@2.7.0)(playwright@1.63.0))
-      oxlint: 1.87.0(oxlint-tsgolint@7.0.2003)(vite-plus@1.1.0(@vitest/browser-playwright@5.0.3(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))(playwright@1.63.0)(vitest@5.0.3))(@vitest/ui@5.0.3(vitest@5.0.3))(esbuild@0.27.7)(jiti@2.7.0)(playwright@1.63.0))
+      oxfmt: 0.72.0(vite-plus@1.1.0(@vitest/browser-playwright@5.0.3(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))(playwright@1.64.0)(vitest@5.0.3))(@vitest/ui@5.0.3(vitest@5.0.3))(esbuild@0.27.7)(jiti@2.7.0)(playwright@1.64.0))
+      oxlint: 1.87.0(oxlint-tsgolint@7.0.2003)(vite-plus@1.1.0(@vitest/browser-playwright@5.0.3(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))(playwright@1.64.0)(vitest@5.0.3))(@vitest/ui@5.0.3(vitest@5.0.3))(esbuild@0.27.7)(jiti@2.7.0)(playwright@1.64.0))
       oxlint-tsgolint: 7.0.2003
       vite: '@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0)'
       vitest: 5.0.3(@vitest/browser-playwright@5.0.3)(@vitest/browser-preview@5.0.3)(@vitest/ui@5.0.3(vitest@5.0.3))(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))
     optionalDependencies:
-      '@vitest/browser-playwright': 5.0.3(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))(playwright@1.63.0)(vitest@5.0.3)
+      '@vitest/browser-playwright': 5.0.3(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))(playwright@1.64.0)(vitest@5.0.3)
       '@voidzero-dev/vite-plus-darwin-arm64': 1.1.0
       '@voidzero-dev/vite-plus-darwin-x64': 1.1.0
       '@voidzero-dev/vite-plus-linux-arm64-gnu': 1.1.0
@@ -3493,7 +3493,7 @@ snapshots:
       '@voidzero-dev/vite-plus-linux-x64-musl': 1.1.0
       '@voidzero-dev/vite-plus-win32-arm64-msvc': 1.1.0
       '@voidzero-dev/vite-plus-win32-x64-msvc': 1.1.0
-      playwright: 1.63.0
+      playwright: 1.64.0
     transitivePeerDependencies:
       - '@arethetypeswrong/core'
       - '@edge-runtime/vm'
@@ -3528,7 +3528,7 @@ snapshots:
       - vue-tsc
       - yaml
 
-  vite-plus@1.1.0(@vitest/browser-playwright@5.0.3)(@vitest/ui@5.0.3)(esbuild@0.27.7)(jiti@2.7.0)(playwright@1.63.0):
+  vite-plus@1.1.0(@vitest/browser-playwright@5.0.3)(@vitest/ui@5.0.3)(esbuild@0.27.7)(jiti@2.7.0)(playwright@1.64.0):
     dependencies:
       '@oxc-project/types': 0.153.0
       '@oxlint/plugins': 1.79.0
@@ -3539,13 +3539,13 @@ snapshots:
       '@vitest/snapshot': 5.0.3
       '@vitest/spy': 5.0.3
       '@vitest/utils': 5.0.3
-      oxfmt: 0.72.0(vite-plus@1.1.0(@vitest/browser-playwright@5.0.3)(@vitest/ui@5.0.3)(esbuild@0.27.7)(jiti@2.7.0)(playwright@1.63.0))
-      oxlint: 1.87.0(oxlint-tsgolint@7.0.2003)(vite-plus@1.1.0(@vitest/browser-playwright@5.0.3)(@vitest/ui@5.0.3)(esbuild@0.27.7)(jiti@2.7.0)(playwright@1.63.0))
+      oxfmt: 0.72.0(vite-plus@1.1.0(@vitest/browser-playwright@5.0.3)(@vitest/ui@5.0.3)(esbuild@0.27.7)(jiti@2.7.0)(playwright@1.64.0))
+      oxlint: 1.87.0(oxlint-tsgolint@7.0.2003)(vite-plus@1.1.0(@vitest/browser-playwright@5.0.3)(@vitest/ui@5.0.3)(esbuild@0.27.7)(jiti@2.7.0)(playwright@1.64.0))
       oxlint-tsgolint: 7.0.2003
       vite: '@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0)'
       vitest: 5.0.3(@vitest/browser-playwright@5.0.3)(@vitest/browser-preview@5.0.3)(@vitest/ui@5.0.3(vitest@5.0.3))(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))
     optionalDependencies:
-      '@vitest/browser-playwright': 5.0.3(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))(playwright@1.63.0)(vitest@5.0.3)
+      '@vitest/browser-playwright': 5.0.3(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))(playwright@1.64.0)(vitest@5.0.3)
       '@voidzero-dev/vite-plus-darwin-arm64': 1.1.0
       '@voidzero-dev/vite-plus-darwin-x64': 1.1.0
       '@voidzero-dev/vite-plus-linux-arm64-gnu': 1.1.0
@@ -3554,7 +3554,7 @@ snapshots:
       '@voidzero-dev/vite-plus-linux-x64-musl': 1.1.0
       '@voidzero-dev/vite-plus-win32-arm64-msvc': 1.1.0
       '@voidzero-dev/vite-plus-win32-x64-msvc': 1.1.0
-      playwright: 1.63.0
+      playwright: 1.64.0
     transitivePeerDependencies:
       - '@arethetypeswrong/core'
       - '@edge-runtime/vm'
@@ -3606,7 +3606,7 @@ snapshots:
       vite: '@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0)'
       why-is-node-running: 3.2.1
     optionalDependencies:
-      '@vitest/browser-playwright': 5.0.3(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))(playwright@1.63.0)(vitest@5.0.3)
+      '@vitest/browser-playwright': 5.0.3(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))(playwright@1.64.0)(vitest@5.0.3)
       '@vitest/browser-preview': 5.0.3(@voidzero-dev/vite-plus-core@1.1.0(esbuild@0.27.7)(jiti@2.7.0))(vitest@5.0.3)
       '@vitest/ui': 5.0.3(vitest@5.0.3)
     transitivePeerDependencies:
