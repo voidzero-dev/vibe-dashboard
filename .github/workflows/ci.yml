@@ -11,6 +11,8 @@ permissions: {}
 jobs:
   ci:
     timeout-minutes: 15
+    env:
+      VP_REMOTE_CACHE: read
 
     strategy:
       fail-fast: false

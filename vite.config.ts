@@ -1,6 +1,12 @@
 import { defineConfig } from "vite-plus";
 
 export default defineConfig({
+  run: {
+    cache: true,
+    remoteCache: {
+      url: "https://vibe-dashboard-cache.remote-cache-demo.workers.dev/projects/vibe-dashboard",
+    },
+  },
   staged: {
     "*": "vp check --fix",
   },
