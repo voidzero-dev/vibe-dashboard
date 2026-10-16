@@ -15,7 +15,7 @@
     "playwright": "catalog:",
     "top-github-dependents-by-stars": "catalog:",
     "vite-plus": "catalog:",
-    "void": "1.1.11"
+    "void": "catalog:"
   },
   "packageManager": "pnpm@11.24.0"
 }
