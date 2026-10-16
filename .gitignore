@@ -55,6 +55,7 @@ Thumbs.db
 .cache
 .parcel-cache
 .vite
+.void
 
 # Temporary files
 .tmp
