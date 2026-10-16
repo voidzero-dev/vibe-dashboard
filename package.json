@@ -8,12 +8,14 @@
     "prepare": "vp config",
     "dev": "vp run @vibe/dashboard#dev",
     "build": "vp run @vibe/dashboard#build",
+    "deploy": "vp run build && void deploy --platform void --project vibe-dashboard --dir apps/dashboard/dist --spa",
     "generate": "node tools/override-vite.mjs --stats"
   },
   "devDependencies": {
     "playwright": "catalog:",
     "top-github-dependents-by-stars": "catalog:",
-    "vite-plus": "catalog:"
+    "vite-plus": "catalog:",
+    "void": "catalog:"
   },
   "packageManager": "pnpm@11.24.0"
 }
