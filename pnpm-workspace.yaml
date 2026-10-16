@@ -25,6 +25,8 @@ catalog:
 minimumReleaseAgeExclude:
   - vite-plus
   - "@voidzero-dev/*"
+  - vitest
+  - "@vitest/*"
 
 allowBuilds:
   "@parcel/watcher": true
