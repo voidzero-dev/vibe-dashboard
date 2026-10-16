@@ -21,6 +21,8 @@ catalog:
   typescript: ^7.0.0
   vite-plus: 1.3.0
   vite: npm:@voidzero-dev/vite-plus-core@1.3.0
+  vitest: 5.0.5
+  "@vitest/browser-playwright": 5.0.5
 
 minimumReleaseAgeExclude:
   - vite-plus
