@@ -11,6 +11,8 @@ const packages = [
   "oxc-minify",
   "oxc-resolver",
   "vite-plus",
+  "tsrs",
+  "void",
 ];
 
 function NpmPackages() {

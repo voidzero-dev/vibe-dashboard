@@ -519,10 +519,6 @@
           "stars": 91365
         },
         {
-          "url": "https://github.com/storybookjs/storybook",
-          "stars": 91365
-        },
-        {
           "url": "https://github.com/remix-run/remix",
           "stars": 33424
         },
@@ -563,28 +559,12 @@
           "stars": 1739
         },
         {
-          "url": "https://github.com/microsoft/rnx-kit",
-          "stars": 1739
-        },
-        {
           "url": "https://github.com/aleclarson/vite-tsconfig-paths",
           "stars": 1632
         },
         {
           "url": "https://github.com/microsoft/fluentui-react-native",
           "stars": 1446
-        },
-        {
-          "url": "https://github.com/microsoft/fluentui-react-native",
-          "stars": 1446
-        },
-        {
-          "url": "https://github.com/microsoft/fluentui-react-native",
-          "stars": 1446
-        },
-        {
-          "url": "https://github.com/microsoft/griffel",
-          "stars": 1282
         },
         {
           "url": "https://github.com/microsoft/griffel",
@@ -842,6 +822,342 @@
         },
         {
           "url": "https://github.com/ashakirzianov/pult",
+          "stars": 0
+        }
+      ]
+    }
+  },
+  "oxc-project/tsrs": {
+    "tsrs": {
+      "topDependents": [
+        {
+          "url": "https://github.com/morluto/rea",
+          "stars": 430962
+        },
+        {
+          "url": "https://github.com/openclaw/openclaw",
+          "stars": 393918
+        },
+        {
+          "url": "https://github.com/langgenius/dify",
+          "stars": 160417
+        },
+        {
+          "url": "https://github.com/clash-verge-rev/clash-verge-rev",
+          "stars": 156351
+        },
+        {
+          "url": "https://github.com/stablyai/orca",
+          "stars": 115495
+        },
+        {
+          "url": "https://github.com/lobehub/lobehub",
+          "stars": 83896
+        },
+        {
+          "url": "https://github.com/reactive-resume/reactive-resume",
+          "stars": 45338
+        },
+        {
+          "url": "https://github.com/dream-num/univer",
+          "stars": 22893
+        },
+        {
+          "url": "https://github.com/open-metadata/OpenMetadata",
+          "stars": 15675
+        },
+        {
+          "url": "https://github.com/yc-software/qm",
+          "stars": 15636
+        },
+        {
+          "url": "https://github.com/webpro-nl/knip",
+          "stars": 12603
+        },
+        {
+          "url": "https://github.com/openclaw/clawhub",
+          "stars": 9545
+        },
+        {
+          "url": "https://github.com/lightdash/lightdash",
+          "stars": 6222
+        },
+        {
+          "url": "https://github.com/cloudflare/agents",
+          "stars": 5951
+        },
+        {
+          "url": "https://github.com/nightly-labs/openbot",
+          "stars": 5572
+        },
+        {
+          "url": "https://github.com/fallow-rs/fallow",
+          "stars": 5298
+        },
+        {
+          "url": "https://github.com/langwatch/langwatch",
+          "stars": 5014
+        },
+        {
+          "url": "https://github.com/get-bb/bb",
+          "stars": 4882
+        },
+        {
+          "url": "https://github.com/inkeep/open-knowledge",
+          "stars": 4790
+        },
+        {
+          "url": "https://github.com/redpanda-data/console",
+          "stars": 4352
+        }
+      ],
+      "latestDependents": [
+        {
+          "url": "https://github.com/B0x-world/rea",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/Sidiora-Labs/paxeer-monorepo",
+          "stars": 546
+        },
+        {
+          "url": "https://github.com/zoonk/zoonk",
+          "stars": 157
+        },
+        {
+          "url": "https://github.com/ZAZPAY/lightdash",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/Tradelord223/t3code",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/My-Clone-AI/openclaw",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/christophehurpeau/liwi",
+          "stars": 1
+        },
+        {
+          "url": "https://github.com/selfactor/t3code",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/TailorAU/t3code",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/kdlbs/kandev",
+          "stars": 1061
+        },
+        {
+          "url": "https://github.com/DGriff88/rea",
+          "stars": 1
+        },
+        {
+          "url": "https://github.com/Shards-inc/shardsclaw",
+          "stars": 1
+        },
+        {
+          "url": "https://github.com/ismailkarsli/TypeSQL",
+          "stars": 28
+        },
+        {
+          "url": "https://github.com/NourEldinShobier/speak-kit",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/christophehurpeau/pm-tools",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/christophehurpeau/react-error-html",
+          "stars": 1
+        },
+        {
+          "url": "https://github.com/christophehurpeau/alouette",
+          "stars": 1
+        },
+        {
+          "url": "https://github.com/SolZeroAI/grokcast",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/GLanDrive/lobe-chat",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/SolZeroAI/oxlint-plugin-solzero",
+          "stars": 1
+        }
+      ]
+    }
+  },
+  "voidzero-dev/void": {
+    "void": {
+      "topDependents": [
+        {
+          "url": "https://github.com/rolldown/rolldown",
+          "stars": 13994
+        },
+        {
+          "url": "https://github.com/rolldown/tsdown",
+          "stars": 4331
+        },
+        {
+          "url": "https://github.com/matschik/component-party.dev",
+          "stars": 3346
+        },
+        {
+          "url": "https://github.com/oxc-project/tsrs",
+          "stars": 2775
+        },
+        {
+          "url": "https://github.com/ubugeeei-prod/vize",
+          "stars": 922
+        },
+        {
+          "url": "https://github.com/Justineo/vue-clamp",
+          "stars": 840
+        },
+        {
+          "url": "https://github.com/Brooooooklyn/Image",
+          "stars": 418
+        },
+        {
+          "url": "https://github.com/Brooooooklyn/simple-git",
+          "stars": 192
+        },
+        {
+          "url": "https://github.com/oxc-project/website",
+          "stars": 101
+        },
+        {
+          "url": "https://github.com/ianstormtaylor/void",
+          "stars": 76
+        },
+        {
+          "url": "https://github.com/oxc-project/playground",
+          "stars": 74
+        },
+        {
+          "url": "https://github.com/tutur3u/platform",
+          "stars": 55
+        },
+        {
+          "url": "https://github.com/ftdebugger/whole-npm",
+          "stars": 53
+        },
+        {
+          "url": "https://github.com/nusmodifications/nuswhispers",
+          "stars": 43
+        },
+        {
+          "url": "https://github.com/kentxxq/pusher",
+          "stars": 37
+        },
+        {
+          "url": "https://github.com/Dunqing/source-map-viewer",
+          "stars": 18
+        },
+        {
+          "url": "https://github.com/yangshun/yangshuntay.com",
+          "stars": 17
+        },
+        {
+          "url": "https://github.com/narumincho/definy",
+          "stars": 17
+        },
+        {
+          "url": "https://github.com/fengmk2/fengmk2.com",
+          "stars": 17
+        },
+        {
+          "url": "https://github.com/voidzero-dev/pkg-pr-registry-bridge",
+          "stars": 15
+        }
+      ],
+      "latestDependents": [
+        {
+          "url": "https://github.com/nekobato/nekobato.net",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/kentxxq/pusher",
+          "stars": 37
+        },
+        {
+          "url": "https://github.com/kaz/6715.jp",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/wwwyo/paperless",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/asa1984/asa1984.dev",
+          "stars": 2
+        },
+        {
+          "url": "https://github.com/manji-0/blog",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/shu-matsukubo/matsu-second-brain",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/ianrothfuss/tsrs",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/rbxts-rs/tsrs",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/asvirts/camerareviewed",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/asvirts/wellfedpetguide",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/oboroxyz/fuda-sh",
+          "stars": 2
+        },
+        {
+          "url": "https://github.com/thasmo/resume",
+          "stars": 2
+        },
+        {
+          "url": "https://github.com/thasmo/website",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/thasmo/erna-ole-website",
+          "stars": 1
+        },
+        {
+          "url": "https://github.com/teitei-tk/KorekaiteShine",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/yangshun/yangshuntay.com",
+          "stars": 17
+        },
+        {
+          "url": "https://github.com/buyra-labs/tsrs",
+          "stars": 0
+        },
+        {
+          "url": "https://github.com/ellreka/ellreka.net",
+          "stars": 3
+        },
+        {
+          "url": "https://github.com/elecdeer/tsuke",
           "stars": 0
         }
       ]

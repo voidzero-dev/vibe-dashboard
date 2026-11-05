@@ -37,7 +37,30 @@ const repositories = {
   "voidzero-dev/vite-plus": {
     "vite-plus": "repositories",
   },
+  "oxc-project/tsrs": {
+    tsrs: "repositories",
+  },
+  "voidzero-dev/void": {
+    void: "repositories",
+  },
 };
+
+/**
+ * Keep only the fields we store, and the first entry for each repository URL.
+ * The scraper can return the same repository twice, which breaks React keys
+ * on the Dependents page.
+ * @param {Array<{ url: string; stars: number }>} repos
+ * @returns {Array<{ url: string; stars: number }>}
+ */
+function toDependents(repos) {
+  const byUrl = new Map();
+  for (const repo of repos) {
+    if (!byUrl.has(repo.url)) {
+      byUrl.set(repo.url, { url: repo.url, stars: repo.stars });
+    }
+  }
+  return [...byUrl.values()];
+}
 
 /**
  * Fetch top GitHub dependents for all configured packages
@@ -78,15 +101,8 @@ async function fetchDependents() {
         });
 
         // Transform to our format - save both top and latest dependents
-        const topDependents = (result.repositories || []).map((repo) => ({
-          url: repo.url,
-          stars: repo.stars,
-        }));
-
-        const latestDependents = (result.latestDependents || []).map((repo) => ({
-          url: repo.url,
-          stars: repo.stars,
-        }));
+        const topDependents = toDependents(result.repositories || []);
+        const latestDependents = toDependents(result.latestDependents || []);
 
         allDependents[repoPath][pkg] = {
           topDependents,
